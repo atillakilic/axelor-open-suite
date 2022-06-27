@@ -9,6 +9,7 @@
       <button name="printEmployeePhoneBookBtn" title="Employee PhoneBook" icon="fa-print"
         onClick="action-print-employee-phonebook"/>
     </toolbar>
+    <hilite background="danger" if="passDateOfExpiry &lt; _todayDate"/>
     <field name="contactPartner.partnerSeq" width="120"/>
     <field name="contactPartner.simpleFullName"/>
     <field name="contactPartner.fixedPhone" widget="phone"
@@ -19,6 +20,7 @@
       grid-view="company-department-grid"/>
     <field name="mainEmploymentContract.payCompany"/>
     <field name="archived" hidden="true"/>
+    <field name="passDateOfExpiry"/>
   </grid>
 
   <grid name="employee-lite-grid" title="Employee" model="com.axelor.apps.hr.db.Employee">
@@ -75,13 +77,13 @@
 
             <field name="emailAddress" canNew="true" form-view="email-address-simple-form"
               canSelect="false"/>
-            <field name="webSite" placeholder="http://www.url.com" widget="url"
+            <field name="webSite" placeholder="http://www.url.com" widget="url" hidden="true"
               pattern="^(?:http(?:s)?://)?\S+(?:\.\S+)+$"/>
 
             <field name="fixedPhone" widget="phone" colSpan="4"
               x-placeholder-number-type="FIXED_LINE"/>
             <field name="mobilePhone" widget="phone" colSpan="4"/>
-            <field name="fax" widget="phone" colSpan="4"/>
+            <field name="fax" widget="phone" colSpan="4" hidden="true"/>
           </panel>
         </editor>
       </field>
@@ -120,7 +122,7 @@
       <field name="emergencyContactRelationship" colSpan="4" title="Relationship"/>
     </panel>
 
-    <panel name="rhInfoSBSPanel" title="HR information" showIf="stepByStepSelect == 1">
+    <panel name="rhInfoSBSPanel" title="HR information" hidden="true">
       <panel colSpan="12">
         <field name="managerUser" canEdit="false" canNew="false" canView="false" colSpan="4"
           form-view="user-form" grid-view="user-grid"/>
@@ -319,9 +321,10 @@
           <field name="emergencyContact" colSpan="4"/>
           <field name="emergencyNumber" widget="phone" colSpan="4"/>
           <field name="emergencyContactRelationship" colSpan="4" title="Relationship"/>
+          <field name="passFirstName" colSpan="4"/>
         </panel>
 
-        <panel name="rhInfoPanel" title="HR information" colSpan="12">
+        <panel name="rhInfoPanel" title="HR information" colSpan="12" hidden="true">
           <panel colSpan="12">
             <field name="managerUser" canEdit="false" canNew="false" canView="false"
               colSpan="4" form-view="user-form" grid-view="user-grid"/>
@@ -476,6 +479,161 @@
           </editor>
         </field>
       </panel>
+    </panel-tabs>
+
+    <panel-tabs>
+      <panel name="passportDetails" title="Passport Details">
+        <field name="passFirstName" colSpan="4"/>
+        <field name="passSurname" colSpan="4"/>
+        <field name="passFatherName" colSpan="4"/>
+        <field name="passportNo"/>
+        <field name="passType"/>
+        <field name="passNationalty"/>
+        <field name="passCodeOfIssuingState"/>
+        <field name="passDocumentAuthority"/>
+        <field name="passIsMan" colSpan="3"/>
+        <field name="passIsWoman" colSpan="3"/>
+        <field name="placeOfBirth"/>
+        <field name="passDateOfBirth"/>
+        <field name="passDateOfIssue"/>
+        <field name="passDateOfExpiry"/>
+        <field name="passNotes" colSpan="12"/>
+      </panel>
+
+      <panel name="residencePermit" title="Residence permit">
+        <field name="residencePermitType" colSpan="4"/>
+        <field name="residencePermitSeriesType" colSpan="4"/>
+        <field name="residencePermitSeriesNo" colSpan="4"/>
+        <field name="residenceIssuingAuthority"/>
+        <field name="residenceDecisionDate"/>
+        <field name="residenceDateOfArrangement"/>
+        <field name="residenceDateOfIssue"/>
+        <field name="residenceDateOfExpiry" colSpan="3"/>
+        <field name="residenceNotes" colSpan="12"/>
+      </panel>
+
+      <panel name="visa" title="Visa">
+        <field name="visaCategory" title="Category"/>
+        <field name="visaDateOfIssue" title="Visa Date of issue"/>
+        <field name="visaDateOfExpiry" title="Visa Date of expiry"/>
+        <field name="visaDays" title="Visa Days"/>
+        <field name="visaNo" title="Visa No"/>
+        <field name="visaInvitationNo" title="Invitation No"/>
+        <field name="visaReasonForTravel" title="Reason for travel"/>
+        <field name="visaCompany" title="Company"/>
+        <field name="visaNotes" title="Notes"/>
+      </panel>
+
+      <panel name="migrationCard" title="Migration Card">
+        <field name="migrationCardSerial" title="Migration Card Serial"/>
+        <field name="migrationCardNo" title="Migration Card No"/>
+        <field name="migrationCardOfficerCode" title="Migration Card Officer code"/>
+        <field name="migrationNotes" title="Notes"/>
+        <field name="migrationCardStart" title="Migration Card Start"/>
+        <field name="migrationCardFinish" title="Migration Card Finish"/>
+      </panel>
+
+      <panel name="workingCard" title=" Working card">
+        <field name="workingCardSerial" title="Working card serial"/>
+        <field name="workingCardNo" title="Working card No"/>
+        <field name="workingPersonalTaxNo" title="Personal Tax no"/>
+        <field name="workingStatus" title="Working status"/>
+        <field name="workingIssuingAuthority" title="The issuing authority"/>
+        <field name="workingCompany" title="Company"/>
+        <field name="workingCompanyTaxNumber" title="Company tax number"/>
+        <field name="workingCategory" title="Category"/>
+        <field name="workingFMSSerial" title="FMS serial"/>
+        <field name="workingFMSNo" title="FMS No"/>
+        <field name="workingNotes" title="Notes"/>
+        <field name="workingDateOfIssue" title="Date of issue"/>
+        <field name="workingEffectiveStartDate" title="Effective start date"/>
+        <field name="workingExpiryDateOfValidityPeriod"
+          title="Expiry date of the validity period"/>
+        <field name="workingAreaOfValidity" title="Area of validity"/>
+      </panel>
+
+      <panel name="workAddress" title="Work Address">
+        <field name="workMobilePhone" title="Mobile phone" widget="phone"/>
+        <field name="workTelephoneNo" title="Work Telephone No" widget="phone"/>
+        <field name="workEmail" title="E-mail"/>
+        <field name="workCountry" title="Country"/>
+        <field name="workCity" title="City"/>
+        <field name="workStreet" title="Street"/>
+        <field name="workBuilding" title="Building"/>
+        <field name="workEntry" title="Entry"/>
+        <field name="workApartment" title="Apartment"/>
+        <field name="workZipCode" title="Zip code"/>
+        <field name="workNotes" title="Notes"/>
+      </panel>
+
+      <panel name="homeAddress" title="Home Address">
+        <field name="homeMobilePhone" title="Mobile phone" widget="phone"/>
+        <field name="homeTelephoneNo" title="Home Telephone No" widget="phone"/>
+        <field name="homeEmail" title="E-mail"/>
+        <field name="homeCountry" title="Country"/>
+        <field name="homeCity" title="City"/>
+        <field name="homeStreet" title="Street"/>
+        <field name="homeBuilding" title="Building"/>
+        <field name="homeEntry" title="Entry"/>
+        <field name="homeApartment" title="Apartment"/>
+        <field name="homeZipCode" title="Zip code"/>
+        <field name="homeNotes" title="Notes"/>
+      </panel>
+
+      <panel name="bodyDimensions" title=" Body dimensions">
+        <field name="bodyShoesNo" title="Shoes no"/>
+        <field name="bodySizeOfTrousers" title="The size of trousers"/>
+        <field name="bodyMont" title="Body Mont"/>
+        <field name="bodySize" title="Size"/>
+        <field name="bodyWeight" title="Weight"/>
+        <field name="bodyNotes" title="Notes"/>
+      </panel>
+
+      <panel name="personalInfo" title="Info">
+        <field name="infoMaritalstatus" title="Marital status"/>
+        <field name="infoMilitaryStatus" title="Military Status"/>
+        <field name="infoChilderen" title="Childeren"/>
+        <field name="infoNotes" title="Notes"/>
+      </panel>
+
+      <panel name="drivingLicence" title="Driving licence">
+        <field name="drivingLicenceClass" title="Class"/>
+        <field name="drivingLicenceIssue" title="Date of issue (Driving licence)"/>
+        <field name="drivingLicenceExpiry" title="Date of expiry (Driving licence)"/>
+        <field name="drivingLicenceNotes" title="Notes"/>
+      </panel>
+
+      <panel name="health" title="Health">
+        <field name="healthSigaraKullanimi" title="Sigara kullanimi"/>
+        <field name="healthKanGrubu" title="Kan Grubu"/>
+        <field name="healthKronikHastalik" title="Kronik hastalik"/>
+        <field name="healthAlerji" title="Alerji"/>
+        <field name="healthNotes" title="Notes"/>
+      </panel>
+
+      <panel name="educationStatus" title="Education">
+        <field name="eduSchoolUniversity" title="School / University"/>
+        <field name="eduFaculty" title="Faculty"/>
+        <field name="eduForeignLanguages" title="Knowledge of foreign languages"/>
+        <field name="eduNotes" title="Notes"/>
+      </panel>
+
+      <panel name="bankDetails" title="Bank Details">
+        <field name="bankBankName" title="Bank name"/>
+        <field name="bankCardNo" title="Card no"/>
+        <field name="bankAccountNo" title="Account no"/>
+        <field name="bankTelephone" title="Telephone No For Bank"/>
+        <field name="bankNotes" title="Notes"/>
+
+
+        <label name="secondBank" title="Second Bank details" colSpan="12"/>
+        <field name="bankBankNameSecond" title="Bank name"/>
+        <field name="bankCardNoSecond" title="Card no"/>
+        <field name="bankAccountNoSecond" title="Account no"/>
+        <field name="bankTelephoneSecond" title="Telephone No For Bank"/>
+        <field name="bankNotesSecond" title="Notes"/>
+      </panel>
+
     </panel-tabs>
 
     <panel-mail name="mailPanel">
@@ -710,11 +868,16 @@
     <field name="socialSecurityNumber" title="Social security number" hidden="true"/>
     <field name="contactPartner.firstName" title="First name"/>
     <filter title="New employees">
-      <domain>self.leavingDate IS NULL AND self.hireDate &gt; CURRENT_DATE - 30</domain>
+      <domain>self.leavingDate IS NULL AND self.hireDate &gt; CURRENT_DATE
+        - 30
+      </domain>
     </filter>
     <filter title="Active employees">
-      <domain>(self.leavingDate IS NULL OR self.leavingDate &gt; CURRENT_DATE) AND (self.hireDate IS
-        NULL OR self.hireDate &lt; CURRENT_DATE)</domain>
+      <domain>(self.leavingDate IS NULL OR self.leavingDate &gt;
+        CURRENT_DATE) AND (self.hireDate IS
+        NULL OR self.hireDate &lt;
+        CURRENT_DATE)
+      </domain>
     </filter>
     <filter title="Former employees">
       <domain>self.leavingDate &lt; CURRENT_DATE</domain>

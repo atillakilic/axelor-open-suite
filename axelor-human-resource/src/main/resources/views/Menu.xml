@@ -18,6 +18,7 @@
     <view type="grid" name="employee-grid"/>
     <view type="form" name="employee-form"/>
     <view-param name="search-filters" value="employee-filters"/>
+    <context name="_todayDate" expr="eval: __date__"/>
   </action-view>
 
   <menuitem name="all-employment-contract" parent="hr-root-emp-mgt"

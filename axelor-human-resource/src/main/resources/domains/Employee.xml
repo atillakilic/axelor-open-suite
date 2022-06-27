@@ -102,6 +102,181 @@
     <string name="maidenName" title="Maiden name"/>
     <string name="maritalName" title="Marital name"/>
 
+    <!-- Passport details -->
+
+    <string name="passFirstName" title="First Name"/>
+    <string name="passSurname" title="Surname"/>
+    <string name="passFatherName" title="Father Name"/>
+    <string name="passNationalty" title="Nationalty"/>
+    <string name="passType" title="Type"/>
+    <string name="passCodeOfIssuingState" title="Code of issuing state"/>
+    <string name="passportNo" title="Passport no"/>
+    <string name="passDocumentAuthority" title="Document Authority"/>
+    <string name="passNotes" title="Notes"/>
+    <string name="placeOfBirth" title="Place of Birth"/>
+    <date name="passDateOfBirth" title="Date of Birth"/>
+    <date name="passDateOfIssue" title="Date of issue"/>
+    <date name="passDateOfExpiry" title="Date of expiry"/>
+    <boolean name="passIsMan" title="Man"/>
+    <boolean name="passIsWoman" title="Woman"/>
+
+    <!-- Residence permit -->
+
+    <integer name="residencePermitType" title="Residence permit Type"
+      selection="hr.employee.residence.permit.type"/>
+    <string name="residencePermitSeriesType" title="Residence permit Series Type"/>
+    <string name="residencePermitSeriesNo" title="Residence permit Series No"/>
+    <string name="residenceIssuingAuthority" title="Issuing authority"/>
+    <string name="residenceNotes" title="Notes"/>
+    <date name="residenceDecisionDate" title="Decision date"/>
+    <date name="residenceDateOfArrangement" title="Date of arrangement"/>
+    <date name="residenceDateOfIssue" title="Date of issue (Residence permit)"/>
+    <date name="residenceDateOfExpiry" title="Date of expiry (Residence permit)"/>
+
+    <!-- Visa -->
+
+    <integer name="visaCategory" title="Category" selection="hr.employee.visa.category.type"/>
+    <date name="visaDateOfIssue" title="Visa Date of issue"/>
+    <date name="visaDateOfExpiry" title="Visa Date of expiry"/>
+    <date name="visaDays" title="Visa Days"/>
+    <string name="visaNo" title="Visa No"/>
+    <string name="visaInvitationNo" title="Invitation No"/>
+    <string name="visaReasonForTravel" title="Reason for travel"/>
+    <string name="visaCompany" title="Company"/>
+    <string name="visaNotes" title="Notes"/>
+
+
+    <!-- Migration Card -->
+
+
+    <string name="migrationCardSerial" title="Migration Card Serial"/>
+    <string name="migrationCardNo" title="Migration Card No"/>
+    <string name="migrationCardOfficerCode" title="Migration Card Officer code"/>
+    <string name="migrationNotes" title="Notes"/>
+    <date name="migrationCardStart" title="Migration Card Start"/>
+    <date name="migrationCardFinish" title="Migration Card Finish"/>
+
+    <!-- Working card -->
+
+    <string name="workingCardSerial" title="Working card serial"/>
+    <string name="workingCardNo" title="Working card No"/>
+    <string name="workingPersonalTaxNo" title="Personal Tax no"/>
+    <string name="workingStatus" title="Working status"/>
+    <string name="workingIssuingAuthority" title="The issuing authority"/>
+    <string name="workingCompany" title="Company"/>
+    <string name="workingCompanyTaxNumber" title="Company tax number"/>
+    <string name="workingCategory" title="Category"/>
+    <string name="workingFMSSerial" title="FMS serial"/>
+    <string name="workingFMSNo" title="FMS No"/>
+    <string name="workingNotes" title="Notes"/>
+    <date name="workingDateOfIssue" title="Date of issue"/>
+    <date name="workingEffectiveStartDate" title="Effective start date"/>
+    <date name="workingExpiryDateOfValidityPeriod" title="Expiry date of the validity period"/>
+    <date name="workingAreaOfValidity" title="Area of validity"/>
+
+
+    <!-- Registration Address -->
+
+    <string name="registrationCountry" title="Country"/>
+    <string name="registrationCity" title="City"/>
+    <string name="registrationStreet" title="Street"/>
+    <string name="registrationBuilding" title="Building"/>
+    <string name="registrationEntry" title="Entry"/>
+    <string name="registrationApartment" title="Apartment"/>
+    <string name="registrationOtherInfo" title="Other Info"/>
+    <string name="registrationInvitationNo" title="Invitation No"/>
+    <date name="registrationDate" title="Date"/>
+    <string name="registrationCompany" title="Company"/>
+    <string name="registrationNotes" title="Notes"/>
+
+
+    <!-- Work Address -1 -->
+
+    <string name="workMobilePhone" title="mobile phone"/>
+    <string name="workTelephoneNo" title="Work Telephone No"/>
+    <string name="workEmail" title="E-mail"/>
+    <string name="workCountry" title="Country"/>
+    <string name="workCity" title="City"/>
+    <string name="workStreet" title="Street"/>
+    <string name="workBuilding" title="Building"/>
+    <string name="workEntry" title="Entry"/>
+    <string name="workApartment" title="Apartment"/>
+    <string name="workZipCode" title="Zip code"/>
+    <string name="workNotes" title="Notes"/>
+
+    <!-- Home Address -1 -->
+
+    <string name="homeMobilePhone" title="mobile phone"/>
+    <string name="homeTelephoneNo" title="Home Telephone No"/>
+    <string name="homeEmail" title="E-mail"/>
+    <string name="homeCountry" title="Country"/>
+    <string name="homeCity" title="City"/>
+    <string name="homeStreet" title="Street"/>
+    <string name="homeBuilding" title="Building"/>
+    <string name="homeEntry" title="Entry"/>
+    <string name="homeApartment" title="Apartment"/>
+    <string name="homeZipCode" title="Zip code"/>
+    <string name="homeNotes" title="Notes"/>
+
+    <!-- Body dimensions -->
+
+    <string name="bodyShoesNo" title="Shoes no"/>
+    <string name="bodySizeOfTrousers" title="The size of trousers"/>
+    <string name="bodyMont" title="Body Mont"/>
+    <string name="bodySize" title="Size"/>
+    <string name="bodyWeight" title="Weight"/>
+    <string name="bodyNotes" title="Notes"/>
+
+    <!-- personal Info -->
+
+    <integer name="infoMaritalstatus" title="Marital status"
+      selection="hr.employee.marital.status"/>
+    <integer name="infoMilitaryStatus" title="Military Status"
+      selection="hr.employee.military.status"/>
+    <integer name="infoChilderen" title="Childeren"/>
+    <string name="infoNotes" title="Notes"/>
+
+    <!-- Driving licence -->
+
+    <string name="drivingLicenceClass" title="DrivingClass"/>
+    <date name="drivingLicenceIssue" title="Date of issue (Driving licence)"/>
+    <date name="drivingLicenceExpiry" title="Date of expiry (Driving licence)"/>
+    <string name="drivingLicenceNotes" title="Notes"/>
+
+
+    <!-- Health -->
+
+    <integer name="healthSigaraKullanimi" title="Sigara kullanimi"
+      selection="hr.employee.sigara.kullanimi"/>
+    <integer name="healthKanGrubu" title="Kan Grubu" selection="hr.employee.kan.grubu"/>
+    <string name="healthKronikHastalik" title="Kronik hastalik"/>
+    <string name="healthAlerji" title="Alerji"/>
+    <string name="healthNotes" title="Notes"/>
+
+
+    <!-- Education status -->
+
+    <string name="eduSchoolUniversity" title="School / University"/>
+    <string name="eduFaculty" title="Faculty"/>
+    <string name="eduForeignLanguages" title="Knowledge of foreign languages"/>
+    <string name="eduNotes" title="Notes"/>
+
+    <!-- Bank Details Local -->
+
+    <string name="bankBankName" title="Bank name"/>
+    <string name="bankCardNo" title="Card no"/>
+    <string name="bankAccountNo" title="Account no"/>
+    <string name="bankTelephone" title="Telephone No For Bank"/>
+    <string name="bankNotes" title="Notes"/>
+
+    <!-- Bank Details 2 -->
+
+    <string name="bankBankNameSecond" title="Bank name"/>
+    <string name="bankCardNoSecond" title="Card no"/>
+    <string name="bankAccountNoSecond" title="Account no"/>
+    <string name="bankTelephoneSecond" title="Telephone No For Bank"/>
+    <string name="bankNotesSecond" title="Notes"/>
+
     <extra-code>
    		<![CDATA[
    			public static final String TIME_PREFERENCE_DAYS = "days";

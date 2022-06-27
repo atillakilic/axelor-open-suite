@@ -222,4 +222,47 @@
     <option value="active">Active employee</option>
   </selection>
 
+  <selection name="hr.employee.residence.permit.type">
+    <option value="1">VNJ</option>
+    <option value="2">RVP</option>
+    <option value="3">OTHER</option>
+  </selection>
+
+  <selection name="hr.employee.visa.category.type">
+    <option value="1">Work Permission</option>
+    <option value="2">Tourist</option>
+    <option value="3">Business Visa</option>
+    <option value="4">Other</option>
+  </selection>
+
+
+  <selection name="hr.employee.military.status">
+    <option value="1">Done</option>
+    <option value="2">Not Done</option>
+    <option value="3">Postponement</option>
+  </selection>
+
+  <selection name="hr.employee.marital.status">
+    <option value="1">Single</option>
+    <option value="2">Married</option>
+    <option value="3">Divorced</option>
+  </selection>
+
+  <selection name="hr.employee.sigara.kullanimi">
+    <option value="1">Yes</option>
+    <option value="2">No</option>
+  </selection>
+
+  <selection name="hr.employee.kan.grubu">
+    <option value="1">A+</option>
+    <option value="2">A</option>
+    <option value="3">B+</option>
+    <option value="4">B</option>
+    <option value="5">AB+</option>
+    <option value="6">AB</option>
+    <option value="7">O+</option>
+    <option value="8">O</option>
+  </selection>
+
+
 </object-views>
