@@ -476,13 +476,11 @@
   </selection>
 
   <selection name="select.language" id="base.language.select">
-    <option value="de">German Beta</option>
-    <option value="es">Spanish Beta</option>
-    <option value="pt">Portuguese Beta</option>
-    <option value="it">Italian Beta</option>
-    <option value="nl">Dutch Beta</option>
-    <option value="pl">Polish Beta</option>
-    <option value="ru">Russian Beta</option>
+    <!-- <option value="de">German Beta</option> <option value="es">Spanish Beta</option> <option value="pt">Portuguese
+      Beta</option> <option value="it">Italian Beta</option> <option value="nl">Dutch Beta</option> <option
+      value="pl">Polish Beta</option> -->
+    <option value="ru">Russian</option>
+    <option value="tr">Turkey</option>
   </selection>
 
   <selection name="frequency.base.type.select">

@@ -533,7 +533,7 @@
         <field name="migrationCardFinish" title="Migration Card Finish"/>
       </panel>
 
-      <panel name="workingCard" title=" Working card">
+      <panel name="workingCard" title="Working card">
         <field name="workingCardSerial" title="Working card serial"/>
         <field name="workingCardNo" title="Working card No"/>
         <field name="workingPersonalTaxNo" title="Personal Tax no"/>
@@ -580,7 +580,7 @@
         <field name="homeNotes" title="Notes"/>
       </panel>
 
-      <panel name="bodyDimensions" title=" Body dimensions">
+      <panel name="bodyDimensions" title="Body dimensions">
         <field name="bodyShoesNo" title="Shoes no"/>
         <field name="bodySizeOfTrousers" title="The size of trousers"/>
         <field name="bodyMont" title="Body Mont"/>
