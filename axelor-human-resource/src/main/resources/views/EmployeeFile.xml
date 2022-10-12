@@ -15,6 +15,7 @@
       <field name="metaFile" widget="binary-link" colSpan="3"
         onChange="action-record-set-record-date"/>
       <field name="recordDate" colSpan="3" readonly="true"/>
+      <field name="preparationTime" colSpan="3"/>
       <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="3"/>
       <field name="fileType.hasExpirationDate" hidden="true"/>
     </panel>
@@ -28,6 +29,7 @@
   <action-record name="action-record-set-expiration-date"
     model="com.axelor.apps.hr.db.EmployeeFile">
     <field name="expirationDate" expr="eval: null" if="!fileType?.hasExpirationDate"/>
+    <field name="preparationTime" expr="eval: fileType?.preparationTime"/>
   </action-record>
 
 </object-views>

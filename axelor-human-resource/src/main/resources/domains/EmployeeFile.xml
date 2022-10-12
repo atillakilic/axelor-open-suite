@@ -12,6 +12,7 @@
     <date name="recordDate" title="Record date"/>
     <many-to-one name="employee" ref="com.axelor.apps.hr.db.Employee"/>
     <date name="expirationDate" title="Expiration date"/>
+    <integer name="preparationTime" title="Preparation Time"/>
   </entity>
 
 </domain-models>

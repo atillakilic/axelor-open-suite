@@ -21,20 +21,35 @@
       <spacer/>
       <field name="product" colSpan="6" form-view="product-form" grid-view="product-grid"
         hideIf="newProduct" requiredIf="!newProduct" canEdit="false"
-        onChange="action-purchase-request-line-product-on-change"
+        onChange="action-purchase-request-line-product-on-change,action-purchase-request-line-calculate-total-cost"
         onSelect="action-purchase-request-line-attrs-product-domain"/>
       <field name="productTitle" colSpan="6" showIf="newProduct" requiredIf="newProduct"/>
+      <field name="productCategory" colSpan="6"/>
       <field name="unit" colSpan="6"/>
-      <field name="quantity" colSpan="6"/>
+      <field name="unitPrice" title="Unit Price" colSpan="3"
+        onChange="action-purchase-request-line-calculate-total-cost"/>
+      <field name="quantity" colSpan="3"
+        onChange="action-purchase-request-line-calculate-total-cost"/>
+      <field name="deliveryCost" title="Delivery Cost" colSpan="3"
+        onChange="action-purchase-request-line-calculate-total-cost"/>
+      <field name="totalCost" title="Total Cost" colSpan="3"/>
+      <field name="supplier" title="Supplier" colSpan="6"/>
+      <field name="deliveryTime" title="Delivery Time (Day)" colSpan="6"/>
       <field name="purchaseRequest" hideIf="$popup()"/>
+      <field name="url" title="URL" colSpan="12"/>
+      <field name="description" title="Note/Description" large="true" colSpan="12"/>
     </panel>
   </form>
+
+
+
 
   <action-record name="action-purchase-request-line-product-on-change"
     model="com.axelor.apps.purchase.db.PurchaseRequestLine">
     <field name="unit"
       expr="eval: product?.purchasesUnit ? product.purchasesUnit : product?.unit"/>
     <field name="productTitle" expr="eval: product?.name"/>
+    <field name="unitPrice" expr="eval: product?.salePrice"/>
   </action-record>
 
   <action-attrs name="action-purchase-request-line-attrs-product-domain">
@@ -57,5 +72,10 @@
       expr="eval: __repo__(Product).find(__parent__?._product?.id)?.getPurchasesUnit() ?: __repo__(Product).find(__parent__?._product?.id)?.getUnit()"
       if="__parent__?._product"/>
   </action-record>
+
+  <action-attrs name="action-purchase-request-line-calculate-total-cost">
+    <attribute name="value" for="totalCost"
+      expr="eval: (unitPrice * quantity) + deliveryCost"/>
+  </action-attrs>
 
 </object-views>

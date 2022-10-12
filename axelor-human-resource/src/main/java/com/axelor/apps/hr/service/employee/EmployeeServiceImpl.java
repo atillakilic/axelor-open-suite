@@ -26,6 +26,7 @@ import com.axelor.apps.base.service.user.UserServiceImpl;
 import com.axelor.apps.base.service.weeklyplanning.WeeklyPlanningService;
 import com.axelor.apps.hr.db.DPAE;
 import com.axelor.apps.hr.db.Employee;
+import com.axelor.apps.hr.db.EmployeeFile;
 import com.axelor.apps.hr.db.EmploymentContract;
 import com.axelor.apps.hr.db.HRConfig;
 import com.axelor.apps.hr.db.LeaveRequest;
@@ -38,11 +39,14 @@ import com.axelor.exception.AxelorException;
 import com.axelor.exception.db.repo.TraceBackRepository;
 import com.axelor.i18n.I18n;
 import com.axelor.inject.Beans;
+import com.axelor.team.db.TeamTask;
+import com.axelor.team.db.repo.TeamTaskRepository;
 import com.google.inject.Inject;
 import com.google.inject.persist.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -262,5 +266,62 @@ public class EmployeeServiceImpl extends UserServiceImpl implements EmployeeServ
 
     Beans.get(EmployeeRepository.class).save(employee);
     return newDPAE.getId();
+  }
+
+  @Override
+  public boolean validateEmployeeDocuments(List<EmployeeFile> employeeFiles) {
+    for (EmployeeFile employeeFile : employeeFiles) {
+
+      if (employeeFile.getExpirationDate() == null) {
+        continue;
+      }
+
+      LocalDate expiryDate = employeeFile.getExpirationDate();
+      LocalDate todayDate = LocalDate.now();
+
+      int days = (int) ChronoUnit.DAYS.between(todayDate, expiryDate);
+
+      if (days < employeeFile.getPreparationTime()) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @Override
+  @Transactional
+  public void validateAllEmployeeDocuments() {
+
+    List<Employee> employees = Beans.get(EmployeeRepository.class).all().fetch();
+    for (Employee employee : employees) {
+      List<EmployeeFile> employeeFiles = employee.getEmployeeFileList();
+      for (EmployeeFile employeeFile : employeeFiles) {
+        if (employeeFile.getExpirationDate() == null) {
+          continue;
+        }
+        LocalDate expiryDate = employeeFile.getExpirationDate();
+        LocalDate todayDate = LocalDate.now();
+        int days = (int) ChronoUnit.DAYS.between(todayDate, expiryDate);
+
+        if (days < employeeFile.getPreparationTime()) {
+          if (!employee.getUpdateDocument()) {
+            TeamTask teamTask = new TeamTask();
+            teamTask.setName(employee.getContactPartner().getFullName() + ": " + "Document update");
+            teamTask.setPriority("normal");
+            teamTask.setStatus("new");
+            teamTask.setTaskDate(todayDate);
+            teamTask.setTaskDuration(days);
+            teamTask.setDescription(
+                "Employee "
+                    + employee.getContactPartner().getFullName()
+                    + " "
+                    + "needs to update.");
+            Beans.get(TeamTaskRepository.class).save(teamTask);
+            employee.setUpdateDocument(true);
+            Beans.get(EmployeeRepository.class).save(employee);
+          }
+        }
+      }
+    }
   }
 }

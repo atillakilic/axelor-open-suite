@@ -21,6 +21,7 @@ import com.axelor.apps.ReportFactory;
 import com.axelor.apps.base.db.Partner;
 import com.axelor.apps.hr.db.DPAE;
 import com.axelor.apps.hr.db.Employee;
+import com.axelor.apps.hr.db.EmployeeFile;
 import com.axelor.apps.hr.db.repo.EmployeeRepository;
 import com.axelor.apps.hr.report.IReport;
 import com.axelor.apps.hr.service.employee.EmployeeService;
@@ -37,6 +38,7 @@ import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
 import java.lang.invoke.MethodHandles;
+import java.util.List;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -173,5 +175,18 @@ public class EmployeeController {
     }
 
     response.setReload(true);
+  }
+
+  public void validateDocuments(ActionRequest request, ActionResponse response) {
+
+    Beans.get(EmployeeService.class).validateAllEmployeeDocuments();
+  }
+
+  public void validateEmployeeDocuments(ActionRequest request, ActionResponse response) {
+    Employee employee = request.getContext().asType(Employee.class);
+    List<EmployeeFile> employeeFiles = employee.getEmployeeFileList();
+    boolean documetStatus =
+        Beans.get(EmployeeService.class).validateEmployeeDocuments(employeeFiles);
+    response.setValue("updateDocument", documetStatus);
   }
 }

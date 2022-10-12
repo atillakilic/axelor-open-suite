@@ -8,8 +8,11 @@
     <toolbar>
       <button name="printEmployeePhoneBookBtn" title="Employee PhoneBook" icon="fa-print"
         onClick="action-print-employee-phonebook"/>
+      <button name="documentValidation" title="Validate Documents"
+        onClick="action-employee-document-validation-all-employee"/>
     </toolbar>
-    <hilite background="danger" if="passDateOfExpiry &lt; _todayDate"/>
+    <!-- <hilite background="danger" if="passDateOfExpiry &lt; _todayDate"/> -->
+    <hilite background="danger" if="updateDocument"/>
     <field name="contactPartner.partnerSeq" width="120"/>
     <field name="contactPartner.simpleFullName"/>
     <field name="contactPartner.fixedPhone" widget="phone"
@@ -21,6 +24,7 @@
     <field name="mainEmploymentContract.payCompany"/>
     <field name="archived" hidden="true"/>
     <field name="passDateOfExpiry"/>
+    <field name="updateDocument"/>
   </grid>
 
   <grid name="employee-lite-grid" title="Employee" model="com.axelor.apps.hr.db.Employee">
@@ -59,12 +63,12 @@
         onClick="validate,action-employee-record-finish-sbs,save"
         showIf="stepByStepSelect == 4 || (user &amp;&amp; stepByStepSelect == 3)"/>
     </panel>
-
+ 
     <panel name="contactSBSPanel" colSpan="12" showIf="stepByStepSelect &lt; 5">
       <field name="contactPartner" colSpan="12"
         domain="self.employee = null AND (self.partnerTypeSelect = 2 OR self.isContact = true)"
         form-view="partner-contact-form" grid-view="partner-contact-grid" showTitle="false">
-        <editor x-viewer="true">
+         <editor x-viewer="false">
           <field name="picture" colSpan="2" css="center" showTitle="false" widget="Image"/>
           <panel name="contactDetailsPanel" colSpan="10">
             <field name="titleSelect" colSpan="2"/>
@@ -79,15 +83,16 @@
               canSelect="false"/>
             <field name="webSite" placeholder="http://www.url.com" widget="url" hidden="true"
               pattern="^(?:http(?:s)?://)?\S+(?:\.\S+)+$"/>
-
+			
             <field name="fixedPhone" widget="phone" colSpan="4"
               x-placeholder-number-type="FIXED_LINE"/>
             <field name="mobilePhone" widget="phone" colSpan="4"/>
             <field name="fax" widget="phone" colSpan="4" hidden="true"/>
           </panel>
-        </editor>
+        </editor> 
       </field>
     </panel>
+
 
     <!-- Basic info -->
     <panel name="phoneProSBSPanel" title="Work phones" showIf="stepByStepSelect == 1">
@@ -468,13 +473,17 @@
       </panel>
 
       <panel name="employeeFileListPanel" title="Files" colSpan="12">
+        <field name="updateDocument" readonly="true"/>
+        <button name="validateDocument" title="Validate Document"
+          onClick="action-employee-document-validation-on-employee,save" colSpan="3"/>
         <field name="employeeFileList" showTitle="false" colSpan="12">
           <editor colSpan="12" x-viewer="true" x-show-on-new="true" x-layout="table">
-            <field name="fileType" colSpan="3" onChange="action-record-set-expiration-date"/>
-            <field name="metaFile" widget="binary-link" colSpan="3"
+            <field name="fileType" colSpan="2" onChange="action-record-set-expiration-date"/>
+            <field name="metaFile" widget="binary-link" colSpan="2"
               onChange="action-record-set-record-date"/>
-            <field name="recordDate" colSpan="3" readonly="true"/>
-            <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="3"/>
+            <field name="recordDate" colSpan="2" readonly="true"/>
+            <field name="preparationTime" colSpan="2"/>
+            <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="2"/>
             <field name="fileType.hasExpirationDate" hidden="true"/>
           </editor>
         </field>
@@ -488,7 +497,7 @@
         <field name="passFatherName" colSpan="4"/>
         <field name="passportNo"/>
         <field name="passType"/>
-        <field name="passNationalty"/>
+        <field name="employeeNationality"/>
         <field name="passCodeOfIssuingState"/>
         <field name="passDocumentAuthority"/>
         <field name="passIsMan" colSpan="3"/>
@@ -840,6 +849,14 @@
     <attribute name="value" for="seniorityDate" expr="eval: hireDate"
       if="seniorityDate == null"/>
   </action-attrs>
+
+  <action-method name="action-employee-document-validation-all-employee">
+    <call class="com.axelor.apps.hr.web.EmployeeController" method="validateDocuments"/>
+  </action-method>
+
+  <action-method name="action-employee-document-validation-on-employee">
+    <call class="com.axelor.apps.hr.web.EmployeeController" method="validateEmployeeDocuments"/>
+  </action-method>
 
   <search-filters name="employee-filters" model="com.axelor.apps.hr.db.Employee"
     title="Employee filters">

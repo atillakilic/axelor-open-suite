@@ -9,6 +9,7 @@
     <string name="code" title="Code"/>
     <string name="name" title="Name"/>
     <boolean name="hasExpirationDate" title="Display an expiration date"/>
+    <integer name="preparationTime" title="Preparation Time"/>
   </entity>
 
 </domain-models>

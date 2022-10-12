@@ -13,6 +13,17 @@
     <string name="productTitle" title="Product"/>
     <many-to-one name="purchaseRequest"
       ref="com.axelor.apps.purchase.db.PurchaseRequest" title="Purchase request"/>
+
+    <many-to-one name="productCategory" ref="com.axelor.apps.base.db.ProductCategory"
+      title="Product category"/>
+    <decimal name="unitPrice" title="Unit Price"/>
+    <decimal name="deliveryCost" title="Delivery Cost"/>
+    <decimal name="totalCost" title="Total Cost"/>
+    <integer name="deliveryTime" title="Delivery Time (Day)"/>
+    <string name="supplier" title="Supplier"/>
+    <string name="url" title="URL"/>
+    <string name="description" title="Note/Description" large="true"/>
+
   </entity>
 
 </domain-models>

@@ -424,6 +424,7 @@
     <option value="com.axelor.apps.base.job.MailJob">com.axelor.apps.base.job.MailJob</option>
     <option value="com.axelor.apps.base.job.BatchJob">com.axelor.apps.base.job.BatchJob</option>
     <option value="com.axelor.apps.base.job.CurrencyConversionJob">com.axelor.apps.base.job.CurrencyConversionJob</option>
+    <option value="com.axelor.apps.hr.job.ValidateEmployeesDocument">com.axelor.apps.hr.job.ValidateEmployeesDocument</option>
   </selection>
 
   <selection name="meta.schedule.batch.service.select"
