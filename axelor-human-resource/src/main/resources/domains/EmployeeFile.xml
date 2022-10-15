@@ -13,6 +13,8 @@
     <many-to-one name="employee" ref="com.axelor.apps.hr.db.Employee"/>
     <date name="expirationDate" title="Expiration date"/>
     <integer name="preparationTime" title="Preparation Time"/>
+    <integer name="criticalTime" title="Critical Time"/>
+    <decimal name="price" title="Price"/>
   </entity>
 
 </domain-models>

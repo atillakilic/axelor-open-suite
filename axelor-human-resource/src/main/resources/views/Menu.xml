@@ -612,6 +612,15 @@
 
   <menuitem name="hr-report-root" parent="hr-root" title="Reportings" order="300"
     icon="fa-bar-chart"/>
+    
+  <menuitem name="employee-document-all" parent="hr-report-root" title="Employee Document Reports"
+    action="employee.file.all"/>
+
+  <action-view name="employee.file.all" title="Employee Doc"
+    model="com.axelor.apps.hr.db.EmployeeFile">
+    <view type="grid" name="employee-file-grid"/>
+    <view type="form" name="employee-file-form"/>
+  </action-view>
 
   <menuitem name="menu-hr-manager-dashboard" parent="hr-report-root"
     title="Human Resources Manager" action="hr.manager.dashboard.view"/>
@@ -638,7 +647,7 @@
     <context name="_projectIds"
       expr="call:com.axelor.apps.hr.service.timesheet.TimesheetService:getContextProjectIds()"/>
   </action-view>
-
+  
   <!-- Top Menus -->
 
   <menuitem name="top-menu-hr" title="HR" order="4" top="true" left="false"
