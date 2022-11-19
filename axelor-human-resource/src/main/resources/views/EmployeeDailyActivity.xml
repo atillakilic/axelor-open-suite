@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-grid" title="Daily Activity"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivity">
+    <hilite color="success" if="statusSelect == 3"/>
+    <hilite color="warning" if="statusSelect == 2"/>
+    <field name="statusSelect"/>
+    <field name="company" title="Company"/>
+    <field name="startDate" title="Start Date"/>
+    <field name="toDate" title="To Date"/>
+    <field name="activityUser" title="User"/>
+    <field name="project" title="Project"/>
+  </grid>
+
+  <grid name="hr-employee-daily-activity-hr-manger-grid" title="Daily Activity"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivity">
+    <toolbar>
+      <button name="calculateSalary" title="Calculate Salary"
+        onClick="action-emp-daily-activity-method-calculate-salary"
+        prompt="Are you sure you want to ganarate Salary for all below records?"/>
+    </toolbar>
+    <hilite color="warning" if="statusSelect == 2"/>
+    <hilite color="success" if="statusSelect == 3"/>
+    <field name="statusSelect"/>
+    <field name="company" title="Company"/>
+    <field name="startDate" title="Start Date"/>
+    <field name="toDate" title="To Date"/>
+    <field name="activityUser" title="User"/>
+    <field name="project" title="Project"/>
+  </grid>
+
+  <form name="hr-employee-daily-activity-form" title="Daily Activity"
+    onNew="action-attrs-hr-employee-daily-activity-on-new"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivity" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel"
+      readonlyIf="statusSelect >= 2">
+      <field name="statusSelect" widget="NavSelect" colSpan="12" showTitle="false"
+        readonly="true"/>
+      <field name="company" title="Company"/>
+      <spacer/>
+      <field name="startDate" title="Start Date"/>
+      <field name="toDate" title="To Date"/>
+      <field name="activityUser" title="User" readonly="true"/>
+      <field name="project" title="Project"/>
+    </panel>
+
+    <panel-related field="activityRecord" readonlyIf="statusSelect >= 2"
+      form-view="hr-employee-daily-activity-line-form"
+      grid-view="hr-employee-daily-activity-line-grid" canEdit="true"/>
+
+    <panel sidebar="true" name="panelSideBar" readonlyIf="statusSelect >= 2">
+      <button onClick="action-attrs-hr-employee-daily-activity-send-manager,save"
+        name="sendVerfiyBtn" title="Send Verify"
+        prompt="Are you sure you want to send to HR manager?"/>
+    </panel>
+
+  </form>
+
+  <form name="hr-employee-daily-activity-hr-manger-form" title="Daily Activity"
+    onNew="action-attrs-hr-employee-daily-activity-on-new"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivity" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel"
+      readonlyIf="statusSelect >= 3">
+      <field name="statusSelect" widget="NavSelect" colSpan="12" showTitle="false"
+        readonly="true"/>
+      <field name="company" title="Company"/>
+      <spacer/>
+      <field name="startDate" title="Start Date"/>
+      <field name="toDate" title="To Date"/>
+      <field name="activityUser" title="User" readonly="true"/>
+      <field name="project" title="Project"/>
+    </panel>
+
+    <panel-related field="activityRecord" readonlyIf="statusSelect >= 3"
+      form-view="hr-employee-daily-activity-line-hr-manager-form"
+      grid-view="hr-employee-daily-activity-line-hr-manager-grid" canEdit="true"/>
+
+  </form>
+
+
+  <action-attrs name="action-attrs-hr-employee-daily-activity-on-new">
+    <attribute name="value" for="activityUser" expr="eval: __user__"/>
+    <attribute name="value" for="statusSelect" expr="eval: 1"/>
+    <attribute name="value" for="startDate" expr="eval: __date__"/>
+    <attribute name="value" for="toDate" expr="eval: __date__"/>
+  </action-attrs>
+
+  <action-attrs name="action-attrs-hr-employee-daily-activity-send-manager">
+    <attribute name="value" for="statusSelect" expr="eval: 2"/>
+  </action-attrs>
+
+  <action-method name="action-emp-daily-activity-method-calculate-salary">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+      method="calculateSalary"/>
+  </action-method>
+
+</object-views>

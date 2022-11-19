@@ -165,7 +165,8 @@
 
   <selection name="meta.schedule.batch.service.select"
     id="hr.meta.schedule.batch.service.select">
-    <option value="com.axelor.apps.hr.service.batch.HrBatchService">com.axelor.apps.hr.service.batch.HrBatchService</option>
+    <option value="com.axelor.apps.hr.service.batch.HrBatchService">com.axelor.apps.hr.service.batch.HrBatchService
+    </option>
   </selection>
 
   <selection name="sequence.generic.code.select" id="hr.sequence.generic.code.select">
@@ -184,6 +185,13 @@
     <option value="3">Leaves and timesheets</option>
     <option value="4">User creation</option>
     <option value="5">Finished</option>
+  </selection>
+
+  <selection name="hr.employee.hr.form.step.by.step.select">
+    <option value="1">Basic information</option>
+    <option value="2">Employment contract</option>
+    <option value="3">Leaves and timesheets</option>
+    <option value="4">Print Forms</option>
   </selection>
 
   <selection name="employee.hr.sex.select">
@@ -242,13 +250,18 @@
     <option value="3">Postponement</option>
   </selection>
 
-  <selection name="hr.employee.marital.status">
+  <selection name="hr.employee.hr.marital.status">
     <option value="1">Single</option>
     <option value="2">Married</option>
     <option value="3">Divorced</option>
   </selection>
 
   <selection name="hr.employee.sigara.kullanimi">
+    <option value="1">Yes</option>
+    <option value="2">No</option>
+  </selection>
+
+  <selection name="hr.employee.hr.smoking">
     <option value="1">Yes</option>
     <option value="2">No</option>
   </selection>
@@ -264,5 +277,56 @@
     <option value="8">O</option>
   </selection>
 
+  <selection name="hr.employee.hr.blood.type">
+    <option value="1">A RH+</option>
+    <option value="2">B RH+</option>
+    <option value="3">AB RH+</option>
+    <option value="4">O RH+</option>
+    <option value="5">A RH-</option>
+    <option value="6">B RH-</option>
+    <option value="7">AB RH-</option>
+    <option value="8">O RH-</option>
+  </selection>
+
+  <selection name="hr.employee.hr.emp.doc.status">
+    <option value="visa">Visa</option>
+  </selection>
+
+  <selection name="hr.employee.hr.emp.bank.type">
+    <option value="Local">Local</option>
+    <option value="Homeland">Homeland</option>
+  </selection>
+
+  <selection name="hr.employee.body.type">
+    <option value="Weak">Weak</option>
+    <option value="Fat">Fat</option>
+    <option value="Normal">Normal</option>
+    <option value="Tiny">Tiny</option>
+  </selection>
+
+  <selection name="hr.employee.hr.driving.class">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="B-Auto">B-Auto</option>
+    <option value="B-Manuel">B-Manuel</option>
+    <option value="E">E</option>
+  </selection>
+
+  <selection name="hr.employee.hr.education.level">
+    <option value="High School">High School</option>
+    <option value="Universty">Universty</option>
+    <option value="Master">Master</option>
+  </selection>
+
+  <selection name="hr.employee.daily.activity">
+    <option value="1">HR Officer</option>
+    <option value="2">HR Manger</option>
+    <option value="3">Adjusted in Salary</option>
+  </selection>
+
+  <selection name="hr.employee.salary.status">
+    <option value="1">Salary Created</option>
+    <option value="2">Finance Department</option>
+  </selection>
 
 </object-views>

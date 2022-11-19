@@ -6,14 +6,18 @@
   <module name="human-resource" package="com.axelor.apps.hr.db"/>
 
   <entity name="EmployeeFile" cacheable="true">
+    <string name="name" namecolumn="true" title="Name"/>
     <many-to-one name="fileType" title="File type"
       ref="com.axelor.apps.base.db.FileType"/>
     <many-to-one name="metaFile" title="File" ref="com.axelor.meta.db.MetaFile"/>
     <date name="recordDate" title="Record date"/>
     <many-to-one name="employee" ref="com.axelor.apps.hr.db.Employee"/>
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
     <date name="expirationDate" title="Expiration date"/>
     <integer name="preparationTime" title="Preparation Time"/>
     <integer name="criticalTime" title="Critical Time"/>
+    <integer name="remainingDays" title="Remaining Days"/>
     <decimal name="price" title="Price"/>
   </entity>
 

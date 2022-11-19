@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeePersonalInfo" cacheable="true">
+
+    <integer name="maritalStatus" title="Marital status"
+      selection="hr.employee.hr.marital.status"/>
+    <string name="maritalName" title="Marital name"/>
+    <string name="childCount" title="Child Count"/>
+    <integer name="militaryServiceStatus" title="Military Service Status"
+      selection="hr.employee.military.status"/>
+    <integer name="smoking" title="Smoking" selection="hr.employee.hr.smoking"/>
+    <string name="bloodType" title="Blood Type" selection="hr.employee.hr.blood.type"/>
+    <string name="allergies" title="Allergies"/>
+    <string name="emergencyContact" title="Emergency contact"/>
+    <string name="emergencyPhone" title="Emergency Phone"/>
+    <string name="emergencyRelationship" title="Emergency Relationship"/>
+    <string name="descriptons" title="Descriptons"/>
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
+
+  </entity>
+
+</domain-models>
+

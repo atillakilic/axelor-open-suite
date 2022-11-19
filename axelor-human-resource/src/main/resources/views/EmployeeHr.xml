@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-hr-grid" title="Employee HR" model="com.axelor.apps.hr.db.EmployeeHr">
+    <field name="name"/>
+    <field name="surname"/>
+    <field name="hireDate"/>
+    <field name="hireEndDate"/>
+    <field name="mobilePhone"/>
+    <field name="email"/>
+  </grid>
+
+  <form name="hr-employee-hr-form" title="Employee HR" model="com.axelor.apps.hr.db.EmployeeHr"
+    width="large">
+    <panel name="mainPanel">
+      <field name="stepByStepSelect" widget="NavSelect" colSpan="12" showTitle="false"/>
+      <field name="picture" colSpan="2" css="center" showTitle="false" widget="Image"/>
+      <panel name="contactDetailsPanel" colSpan="10">
+        <field name="employeeNationality" colSpan="4"/>
+        <field name="empDocStatus" colSpan="4"/>
+        <field name="contractNumber" colSpan="4"/>
+        <field name="name" colSpan="4"/>
+        <field name="surname" colSpan="4"/>
+        <field name="fatherName" colSpan="4"/>
+        <field name="nameCyrillic" colSpan="4"/>
+        <field name="surnameCyrillic" colSpan="4"/>
+        <field name="fatherNameCyrillic" colSpan="4"/>
+        <field name="code" colSpan="3"/>
+        <field name="oneCode" colSpan="3"/>
+        <field name="gender" colSpan="3"/>
+        <field name="archiveNo" colSpan="3"/>
+      </panel>
+
+      <field name="hireDate" colSpan="4"/>
+      <field name="hireEndDate" colSpan="4"/>
+      <field name="payCompany" colSpan="4"/>
+      <field name="companyDepartment" colSpan="4"/>
+      <field name="manager" colSpan="4"/>
+      <field name="referenceEmp" colSpan="4"/>
+      <field name="mobilePhone" colSpan="4"/>
+      <field name="phone" colSpan="4"/>
+      <field name="email" colSpan="4"/>
+      <field name="description" colSpan="12"/>
+    </panel>
+
+    <!-- Basic info -->
+    <panel name="phoneProSBSPanel" title="Work phones" showIf="stepByStepSelect == 1">
+      <field name="fixedProPhone" colSpan="4" x-placeholder-number-type="FIXED_LINE"/>
+      <field name="mobileProPhone" colSpan="4"/>
+      <field name="phoneAtCustomer" colSpan="4"/>
+    </panel>
+
+    <panel name="personalInfoSBSPanel" title="Personal information"
+      showIf="stepByStepSelect == 1">
+      <field name="birthDate" colSpan="4"/>
+      <field name="maritalStatus" colSpan="4"/>
+      <field name="sexSelect" colSpan="4"/>
+      <field name="countryOfBirth" colSpan="4"/>
+      <field name="cityOfBirth" colSpan="4"/>
+      <field name="citizenship" colSpan="4"/>
+      <field name="maritalName" colSpan="4"/>
+      <field name="socialSecurityNumber" colSpan="4" max="15" min="12"/>
+    </panel>
+
+    <panel name="emergencyContactSBSPanel" title="Contact in case of emergency"
+      showIf="stepByStepSelect == 1">
+      <field name="emergencyContact" colSpan="4"/>
+      <field name="emergencyNumber" colSpan="4"/>
+      <field name="emergencyContactRelationship" colSpan="4" title="Relationship"/>
+    </panel>
+
+    <!-- Contract data -->
+
+    <panel name="contractInfo" title="Contact Information" showTitle="true"
+      showIf="stepByStepSelect == 2">
+      <field name="weeklyWorkHours" title="Weekly work hours" colSpan="4"/>
+      <field name="dailyWorkHours" title="Daily work hours" colSpan="4"/>
+      <field name="hourlyRate" title="Hourly rate" colSpan="4"/>
+    </panel>
+
+    <panel-related field="employeePassport" form-view="hr-employee-passport-form"
+      showIf="stepByStepSelect == 2" grid-view="hr-employee-passport-grid"/>
+
+    <panel-related field="employeeWorkPermit" form-view="hr-employee-workpermit-form"
+      showIf="stepByStepSelect == 2" grid-view="hr-employee-workpermit-grid"/>
+
+    <panel-related field="employeeAddressInfoReg" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-employee-address-info-form"
+      grid-view="hr-employee-employee-address-info-grid"/>
+
+    <panel-related field="employeeAddressInfo" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-employee-address-info-form"
+      grid-view="hr-employee-employee-address-info-grid"/>
+
+    <panel-related field="employeeBankDetails"
+      form-view="hr-employee-employee-bank-details-form" showIf="stepByStepSelect == 2"
+      grid-view="hr-employee-employee-bank-details-grid"/>
+
+    <panel-related field="employeePersonalInfo" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-personal-info-form" grid-view="hr-employee-personal-info-grid"/>
+
+    <panel-related field="employeeTaxInsurance" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-tax-insurance-form" grid-view="hr-employee-tax-insurance-grid"/>
+
+    <panel-related field="employeeBodyMeasurements" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-body-measurements-form" grid-view="hr-employee-body-measurements-grid"/>
+
+    <panel-related field="employeeDrivingLicense" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-driving-llicense-form" grid-view="hr-employee-driving-llicense-grid"/>
+
+    <panel-related field="employeeEducation" form-view="hr-employee-education-form"
+      showIf="stepByStepSelect == 2" grid-view="hr-employee-education-grid"/>
+
+    <panel-related field="employeeService" form-view="product-form"
+      domain="self.productTypeSelect = 'service'" showIf="stepByStepSelect == 2"
+      grid-view="product-grid"/>
+
+    <panel-related field="employeeVnj" form-view="hr-employee-vnj-form"
+      showIf="stepByStepSelect == 2" grid-view="hr-employee-vnj-grid"/>
+
+    <panel-related field="employeeRvp" form-view="hr-employee-rvp-form"
+      showIf="stepByStepSelect == 2" grid-view="hr-employee-rvp-grid"/>
+
+    <panel name="printForms" title="Print Forms" showIf="stepByStepSelect == 4">
+      <field name="exampleForm1"/>
+      <field name="exampleForm2"/>
+      <button onClick="" name="Print" title="Print Selected"/>
+    </panel>
+
+  </form>
+</object-views>

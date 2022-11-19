@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-salary-grid" title="Salary"
+    model="com.axelor.apps.hr.db.EmployeeSalary">
+    <field name="statusSelect"/>
+    <field name="creationDate" title="Creation Date"/>
+  </grid>
+
+  <form name="hr-employee-salary-form" title="Salary"
+    model="com.axelor.apps.hr.db.EmployeeSalary" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="statusSelect" widget="NavSelect" colSpan="12" showTitle="false"
+        readonly="true"/>
+      <field name="creationDate" title="Creation Date"/>
+    </panel>
+
+    <panel-related field="employeeSalaryRecord"
+      form-view="hr-employee-salary-line-form" grid-view="hr-employee-salary-line-grid"
+      canEdit="true"/>
+
+    <panel sidebar="true" name="panelSideBar">
+      <button onClick="save" name="sendVerfiyBtn" title="Send to Finance"
+        prompt="Are you sure you want to send to Finance?"/>
+    </panel>
+
+  </form>
+
+
+
+
+
+</object-views>

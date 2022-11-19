@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-rvp-grid" title="Employee VNJ"
+    model="com.axelor.apps.hr.db.EmployeeRvp">
+    <field name="startDate" title="Validity period start date"/>
+    <field name="expirationDate" title="Expiration date"/>
+    <field name="effectiveDate" title="Effective date"/>
+    <field name="serial" title="Serial"/>
+    <field name="seriesNo" title="Series No"/>
+    <field name="issuingAuthority" title="Issuing authority"/>
+  </grid>
+
+  <form name="hr-employee-rvp-form" title="Employee RVP"
+    model="com.axelor.apps.hr.db.EmployeeRvp" width="large">
+    <panel name="employeeRvp" showTitle="true" title="Employee RVP">
+      <field name="rvpMetaFile" title="File" colSpan="12" canEdit="true" canNew="true"/>
+      <field name="startDate" title="Validity period start date"/>
+      <field name="expirationDate" title="Expiration date"/>
+      <field name="effectiveDate" title="Effective date"/>
+      <field name="serial" title="Serial"/>
+      <field name="seriesNo" title="Series No"/>
+      <field name="issuingAuthority" title="Issuing authority"/>
+      <field name="descriptons" title="Descriptons" colSpan="12"/>
+    </panel>
+
+  </form>
+</object-views>

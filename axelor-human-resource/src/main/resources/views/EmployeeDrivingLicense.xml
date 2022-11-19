@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-driving-llicense-grid" title="Driving License"
+    model="com.axelor.apps.hr.db.EmployeeDrivingLicense">
+    <field name="licenseClass" title="Driving license class"/>
+    <field name="issueDate" title="date of issue"/>
+    <field name="expireDate" title="Expiration date"/>
+    <field name="descriptons" title="Descriptons" colSpan="12"/>
+
+  </grid>
+
+  <form name="hr-employee-driving-llicense-form" title="Driving License"
+    model="com.axelor.apps.hr.db.EmployeeDrivingLicense" width="large">
+    <panel name="employeeDrivingLicense" showTitle="true" title="Employee Driving License">
+      <field name="licenseMetaFile" title="Driving License document" canEdit="true"
+        canNew="true" colSpan="12"/>
+      <field name="licenseClass" title="Driving license class"/>
+      <field name="issueDate" title="date of issue"/>
+      <field name="expireDate" title="Expiration date"/>
+      <field name="descriptons" title="Descriptons" colSpan="12"/>
+
+    </panel>
+
+  </form>
+</object-views>

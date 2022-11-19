@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-employee-address-info-grid" title="Employee Address"
+    model="com.axelor.apps.hr.db.EmployeeAddressInfo">
+    <field name="empMobile" title="Tel No.; Mobile"/>
+    <field name="empPhone" title="Tel No; House"/>
+    <field name="empEmail" title="E-mail"/>
+    <field name="empRegion" title="Region"/>
+    <field name="empCity" title="City"/>
+    <field name="empCountry" title="Country"/>
+    <field name="empEntry" title="Entry"/>
+    <field name="empBuilding" title="Building"/>
+    <field name="empStreet" title="Street"/>
+    <field name="empApartment" title="Apartment"/>
+    <field name="empFlat" title="Flat"/>
+    <field name="empZipCode" title="Zip code"/>
+  </grid>
+
+  <form name="hr-employee-employee-address-info-form" title="Employee Address"
+    model="com.axelor.apps.hr.db.EmployeeAddressInfo" width="large">
+    <panel name="workPermitInfo" showTitle="true" title="Address Information">
+      <field name="addressMetaFile" colSpan="12"/>
+      <field colSpan="4" name="empMobile" title="Tel No.; Mobile"/>
+      <field colSpan="4" name="empPhone" title="Tel No; House"/>
+      <field colSpan="4" name="empEmail" title="E-mail"/>
+      <field colSpan="4" name="empRegion" title="Region"/>
+      <field colSpan="4" name="empCity" title="City"/>
+      <field colSpan="4" name="empCountry" title="Country"/>
+      <field colSpan="4" name="empEntry" title="Entry"/>
+      <field colSpan="4" name="empBuilding" title="Building"/>
+      <field colSpan="4" name="empStreet" title="Street"/>
+      <field colSpan="4" name="empApartment" title="Apartment"/>
+      <field colSpan="4" name="empFlat" title="Flat"/>
+      <field colSpan="4" name="empZipCode" title="Zip code"/>
+      <field colSpan="12" name="empDescription" title="Zip code"/>
+
+    </panel>
+
+  </form>
+</object-views>

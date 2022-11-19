@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeHr" cacheable="true">
+
+    <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+    <many-to-one name="employeeNationality" ref="com.axelor.apps.base.db.Country"
+      title="Nationality"/>
+    <integer name="stepByStepSelect" title="Step by step"
+      selection="hr.employee.hr.form.step.by.step.select" default="1"/>
+
+    <string name="empDocStatus" title="Status" selection="hr.employee.hr.emp.doc.status"/>
+
+    <string name="code" title="Code"/>
+    <string name="oneCode" title="1C Code"/>
+    <string name="name" title="Name"/>
+    <string name="nameCyrillic" title="Name Cyrillic"/>
+    <string name="surname" title="Surname"/>
+    <string name="surnameCyrillic" title="Surname Cyrillic"/>
+    <string name="fatherName" title="Fathername"/>
+    <string name="fatherNameCyrillic" title="Fathername Cyrillic"/>
+    <string name="gender" title="Gender" selection="employee.hr.sex.select"/>
+    <string name="archiveNo" title="Archive No"/>
+    <date name="hireDate" title="Date of Hire"/>
+    <date name="hireEndDate" title="End of Hire"/>
+
+
+    <!-- Basic Info -->
+    <string name="fixedProPhone" title="Work fixed phone"/>
+    <string name="mobileProPhone" title="Work mobile phone"/>
+    <string name="phoneAtCustomer" title="Phone at the customer"/>
+    <date name="birthDate" title="Birth date"/>
+    <string name="maritalStatus" title="Marital status"
+      selection="hr.employee.marital.status"/>
+    <string name="sexSelect" title="Sex" selection="employee.hr.sex.select"/>
+    <many-to-one name="countryOfBirth" title="Country of birth"
+      ref="com.axelor.apps.base.db.Country"/>
+    <many-to-one name="cityOfBirth" title="City of birth"
+      ref="com.axelor.apps.base.db.City"/>
+    <many-to-one name="citizenship" title="Citizenship"
+      ref="com.axelor.apps.base.db.Citizenship"/>
+    <string name="maritalName" title="Marital name"/>
+    <string name="socialSecurityNumber" title="Social security number"/>
+    <string name="emergencyContact" title="Emergency contact"/>
+    <string name="emergencyNumber" title="Phone"/>
+    <string name="emergencyContactRelationship" title="Emergency contact relationship"/>
+
+    <!-- Contract Info -->
+
+    <decimal name="weeklyWorkHours" title="Weekly work hours" scale="2" precision="20"/>
+    <decimal name="dailyWorkHours" title="Daily work hours" scale="2" precision="20"/>
+    <decimal name="hourlyRate" title="Hourly rate" scale="2" precision="20"/>
+
+    <many-to-one name="payCompany" ref="com.axelor.apps.base.db.Company"
+      title="Pay Company"/>
+    <many-to-one name="companyDepartment"
+      ref="com.axelor.apps.base.db.CompanyDepartment" title="Company department"/>
+    <string name="manager" title="Manager"/>
+    <string name="referenceEmp" title="Reference Emp"/>
+
+    <string name="mobilePhone" title="Mobile Phone"/>
+    <string name="phone" title="Phone"/>
+    <string name="email" title="Email"/>
+    <string name="contractNumber" title="Contract number"/>
+    <string name="description" title="Description"/>
+
+    <!-- Passport details -->
+    <one-to-many name="employeePassport" ref="com.axelor.apps.hr.db.EmployeePassport"
+      mappedBy="employeeHr" title="Employee Passport"/>
+
+    <!-- Work Permit -->
+    <one-to-many name="employeeWorkPermit" ref="com.axelor.apps.hr.db.EmployeePassport"
+      mappedBy="employeeHr" title="Employee WorkPermit"/>
+
+    <one-to-many name="employeeAddressInfoReg"
+      ref="com.axelor.apps.hr.db.EmployeeAddressInfo" mappedBy="employeeHrAddReg"
+      title="Adress Information- Registration(On documents)"/>
+
+    <one-to-many name="employeeAddressInfo"
+      ref="com.axelor.apps.hr.db.EmployeeAddressInfo" mappedBy="employeeHrAdd" title="Adress"/>
+
+    <one-to-many name="employeeBankDetails"
+      ref="com.axelor.apps.hr.db.EmployeeBankDetails" mappedBy="employeeHr" title="Bank Details"/>
+
+    <one-to-many name="employeePersonalInfo"
+      ref="com.axelor.apps.hr.db.EmployeePersonalInfo" mappedBy="employeeHr"
+      title="Personal Information"/>
+
+    <one-to-many name="employeeTaxInsurance"
+      ref="com.axelor.apps.hr.db.EmployeeTaxInsurance" mappedBy="employeeHr"
+      title="Tax and Insurance"/>
+
+    <one-to-many name="employeeBodyMeasurements"
+      ref="com.axelor.apps.hr.db.EmployeeBodyMeasurements" mappedBy="employeeHr"
+      title="Body Measurement"/>
+
+    <one-to-many name="employeeDrivingLicense"
+      ref="com.axelor.apps.hr.db.EmployeeDrivingLicense" mappedBy="employeeHr"
+      title="Driving License"/>
+
+    <one-to-many name="employeeEducation" ref="com.axelor.apps.hr.db.EmployeeEducation"
+      mappedBy="employeeHr" title="Employee Education"/>
+
+    <one-to-many name="employeeSkill" ref="com.axelor.apps.hr.db.EmployeeSkill"
+      mappedBy="employeeHr" title="Employee Skill"/>
+
+    <many-to-many name="employeeService" ref="com.axelor.apps.base.db.Product"
+      title="Employee Service"/>
+
+    <one-to-many name="employeeVnj" ref="com.axelor.apps.hr.db.EmployeeVnj"
+      mappedBy="employeeHr" title="Employee VNJ"/>
+
+    <one-to-many name="employeeRvp" ref="com.axelor.apps.hr.db.EmployeeRvp"
+      mappedBy="employeeHr" title="Employee RVP"/>
+
+
+
+    <!-- Print Form -->
+    <boolean name="exampleForm1" title="Example Form 1"/>
+    <boolean name="exampleForm2" title="Example Form 2"/>
+
+
+  </entity>
+
+</domain-models>

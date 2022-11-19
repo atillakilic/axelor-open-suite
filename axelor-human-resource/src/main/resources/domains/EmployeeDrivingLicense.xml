@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDrivingLicense" cacheable="true">
+
+    <many-to-one name="licenseMetaFile" title="Driving License document"
+      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <string name="licenseClass" title="Driving license class"
+      selection="hr.employee.hr.driving.class"/>
+    <date name="issueDate" title="date of issue"/>
+    <date name="expireDate" title="Expiration date"/>
+    <string name="descriptons" title="Descriptons"/>
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
+
+  </entity>
+
+</domain-models>
+

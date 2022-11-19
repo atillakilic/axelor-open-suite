@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeVisa" cacheable="true">
+
+    <many-to-one name="visaMetaFile" title="File" ref="com.axelor.meta.db.MetaFile"/>
+    <integer name="visaCategory" title="Category" selection="hr.employee.visa.category.type"/>
+    <string name="visaNo" title="Visa No"/>
+    <date name="visaDateOfIssue" title="Start Date"/>
+    <date name="visaDateOfExpiry" title="Expiration date"/>
+    <string name="visaDays" title="Visa Days"/>
+    <string name="visaId" title="ID No"/>
+    <string name="visaReasonForTravel" title="Reason for travel"/>
+    <string name="visaCompany" title="Company"/>
+    <string name="descriptons" title="Descriptons"/>
+
+
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
+
+  </entity>
+
+</domain-models>
+

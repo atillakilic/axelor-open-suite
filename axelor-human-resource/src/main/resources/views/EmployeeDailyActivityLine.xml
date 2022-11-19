@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-line-grid" title="Daily Activity Line" editable="true"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityLine">
+    <field name="employee" canEdit="true"
+      onChange="action-deily-activity-line-set-employee-work-hour"/>
+    <field name="project" canEdit="true"
+      onSelect="action-deily-activity-line-attr-set-parent-project,action-deily-activity-line-attr-set-project-domain"/>
+    <field name="dailyWorkHours" canEdit="true"/>
+    <field name="quantity" canEdit="true"/>
+    <field name="productOrService" canEdit="true"/>
+    <field name="comments" canEdit="true"/>
+    <field name="_parentProject" title="Project" type="many-to-one"
+      target="com.axelor.apps.project.db.Project" hidden="true"/>
+  </grid>
+
+
+  <grid name="hr-employee-daily-activity-line-hr-manager-grid" title="Daily Activity Line"
+    editable="true" model="com.axelor.apps.hr.db.EmployeeDailyActivityLine">
+    <field name="employee" canEdit="true"
+      onChange="action-deily-activity-line-set-employee-work-hour"/>
+    <field name="project" canEdit="true"
+      onSelect="action-deily-activity-line-attr-set-parent-project,action-deily-activity-line-attr-set-project-domain"/>
+    <field name="dailyWorkHours" canEdit="true"/>
+    <field name="quantity" canEdit="true"/>
+    <field name="productOrService" canEdit="true"/>
+    <field name="penaltyOrReward" canEdit="true"/>
+    <field name="comments" canEdit="true"/>
+    <field name="_parentProject" title="Project" type="many-to-one"
+      target="com.axelor.apps.project.db.Project" hidden="true"/>
+  </grid>
+
+  <form name="hr-employee-daily-activity-line-form" title="Daily Activity Line"
+    onLoad="action-deily-activity-line-attr-set-parent-project"
+    onNew="action-deily-activity-line-attr-set-parent-project"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityLine" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employee" onChange="action-deily-activity-line-set-employee-work-hour"/>
+      <field name="project" domain="self.parentProject = :_parentProject"/>
+      <field name="dailyWorkHours"/>
+      <field name="quantity"/>
+      <field name="productOrService"/>
+      <field name="comments"/>
+      <field name="_parentProject" title="Project" type="many-to-one"
+        target="com.axelor.apps.project.db.Project" hidden="true"/>
+    </panel>
+  </form>
+
+  <form name="hr-employee-daily-activity-line-hr-manager-form" title="Daily Activity Line"
+    onLoad="action-deily-activity-line-attr-set-parent-project"
+    onNew="action-deily-activity-line-attr-set-parent-project"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityLine" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employee" onChange="action-deily-activity-line-set-employee-work-hour"/>
+      <field name="project" domain="self.parentProject = :_parentProject"/>
+      <field name="dailyWorkHours"/>
+      <field name="quantity"/>
+      <field name="productOrService"/>
+      <field name="penaltyOrReward"/>
+      <field name="comments"/>
+      <field name="_parentProject" title="Project" type="many-to-one"
+        target="com.axelor.apps.project.db.Project" hidden="true"/>
+    </panel>
+  </form>
+
+  <action-attrs name="action-deily-activity-line-set-employee-work-hour">
+    <attribute name="value" for="dailyWorkHoursOnContact"
+      expr="eval: employee?.dailyWorkHours"/>
+  </action-attrs>
+
+  <action-attrs name="action-deily-activity-line-attr-set-parent-project">
+    <attribute name="value" for="_parentProject" expr="eval: __parent__?.project"/>
+  </action-attrs>
+
+  <action-attrs name="action-deily-activity-line-attr-set-project-domain">
+    <attribute name="domain" for="project"
+      expr="eval: &quot; self.parentProject = :_parentProject &quot;"/>
+  </action-attrs>
+
+</object-views>

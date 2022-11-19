@@ -4,14 +4,14 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
   <grid name="product-grid" title="Products" model="com.axelor.apps.base.db.Product"
-    orderBy="code,name" x-row-height="80">
+    orderBy="code,name">
     <toolbar>
       <button name="catalogBtn" title="Catalog" onClick="action-print-product-catalog"
         icon="fa-book"/>
       <button name="checkDuplicateBtn" title="Check Duplicate"
         onClick="action-general-check-duplicate-records"/>
     </toolbar>
-    <field name="picture" widget="Image"/>
+    <field name="picture" widget="Image" hidden="true"/>
     <field name="code" x-bind="{{code|unaccent|uppercase}}" width="120"/>
     <field name="name" width="300"/>
     <field name="productCategory" form-view="product-category-form"
@@ -22,8 +22,6 @@
     <field name="salePrice" x-scale="2"/>
     <field name="unit" width="70" form-view="unit-form" grid-view="unit-grid"/>
     <field name="internalDescription" widget="html" width="400"/>
-    <button name="sendByEmailBtn" title="Send Email" icon="fa-envelope"
-      onClick="action-send-by-email-with-template"/>
   </grid>
 
   <grid name="product-purchase-grid" title="Products" model="com.axelor.apps.base.db.Product"

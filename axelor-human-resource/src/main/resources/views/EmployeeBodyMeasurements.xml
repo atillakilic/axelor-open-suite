@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-body-measurements-grid" title="Employee BodyMeasurements"
+    model="com.axelor.apps.hr.db.EmployeeBodyMeasurements">
+    <field name="shoesSize" title="Shoes size"/>
+    <field name="pantsSize" title="Pants size"/>
+    <field name="coatSize" title="Coat Size"/>
+    <field name="height" title="Height"/>
+    <field name="weight" title="Weight"/>
+    <field name="bodyType" title="Body Type"/>
+  </grid>
+
+  <form name="hr-employee-body-measurements-form" title="Employee BodyMeasurements"
+    model="com.axelor.apps.hr.db.EmployeeBodyMeasurements" width="large">
+    <panel name="employeeBodyMeasurements" showTitle="true" title="Employee Skill">
+      <field name="shoesSize" title="Shoes size"/>
+      <field name="pantsSize" title="Pants size"/>
+      <field name="coatSize" title="Coat Size"/>
+      <field name="height" title="Height"/>
+      <field name="weight" title="Weight"/>
+      <field name="bodyType" title="Body Type"/>
+      <field name="descriptons" title="Descriptons"/>
+    </panel>
+
+  </form>
+</object-views>

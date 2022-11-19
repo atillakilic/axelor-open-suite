@@ -4,35 +4,42 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
   <grid name="employee-file-grid" title="Files" model="com.axelor.apps.hr.db.EmployeeFile">
-  	<menubar>
-      <menu name="employeeFileReportsMenu" title="Reports" icon="fa-files-o" showTitle="true" >
-        <item name="printItem" title="Doc ExpirationDate Report" action="action-employee-file-view-reports-wizard"/>
+    <menubar>
+      <menu name="employeeFileReportsMenu" title="Reports" icon="fa-files-o" showTitle="true">
+        <item name="printItem2" title="Doc Report"
+          action="action-emoloyee-file-print-docexpiration-date-report"/>
       </menu>
     </menubar>
-  	<hilite background="danger"
-      if="$moment(expirationDate).diff(todayDate,'days') &lt;= criticalTime" />
-  	<hilite background="warning"
-      if="$moment(expirationDate).diff(todayDate,'days') &lt;= preparationTime" />
-    <field name="employee"/>
-    <field name="employee.employeeNationality"/>
+    <hilite background="danger"
+      if="$moment(expirationDate).diff(todayDate,'days') &lt;= criticalTime"/>
+    <hilite background="warning"
+      if="$moment(expirationDate).diff(todayDate,'days') &lt;= preparationTime"/>
+    <field name="name"/>
+    <field name="employee" hidden="true"/>
+    <field name="employeeHr"/>
+    <field name="employeeHr.employeeNationality"/>
     <field name="fileType"/>
     <field name="metaFile"/>
     <field name="expirationDate"/>
+    <field name="remainingDays"/>
     <field name="preparationTime"/>
     <field name="criticalTime"/>
-    <field name="price"/>
+    <field name="price" canEdit="true"/>
   </grid>
 
   <form name="employee-file-form" title="File" model="com.axelor.apps.hr.db.EmployeeFile">
     <panel name="mainPanel">
-      <field name="employee"/>
-      <spacer/>
-      <field name="fileType" colSpan="3" onChange="action-record-set-expiration-date"/>
+      <field name="name" colSpan="4"/>
+      <field name="employeeHr" colSpan="4"/>
+      <field name="employee" hidden="true" colSpan="4"/>
+      <field name="fileType" colSpan="3" onChange="action-record-set-expiration-date,save"/>
       <field name="metaFile" widget="binary-link" colSpan="3"
         onChange="action-record-set-record-date"/>
       <field name="recordDate" colSpan="3" readonly="true"/>
-      <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="3"/>
+      <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="3"
+        onChange="action-employee-file-record-calcuate-remain-day"/>
       <field name="preparationTime" colSpan="3"/>
+      <field name="remainingDays" title="Remaining Days" colSpan="4"/>
       <field name="criticalTime" colSpan="3"/>
       <field name="price" colSpan="3"/>
       <field name="fileType.hasExpirationDate" hidden="true"/>
@@ -43,9 +50,9 @@
   <form name="employee-file-form-wizard" model="com.axelor.apps.base.db.Wizard"
     title="Select ExpirationDate Range" width="large">
     <panel>
-    	<field name="$startDate" type="date" title="Start Date" required="true"/>
-    	<field name="$endDate" type="date" title="End Date" required="true"/>
-    	<button name="printEmployeeDocReport" title="Print"
+      <field name="$startDate" type="date" title="Start Date" required="true"/>
+      <field name="$endDate" type="date" title="End Date" required="true"/>
+      <button name="printEmployeeDocReport" title="Print"
         onClick="action-emoloyee-file-print-docexpiration-date-report,close"/>
     </panel>
   </form>
@@ -61,17 +68,22 @@
     <field name="preparationTime" expr="eval: fileType?.preparationTime"/>
   </action-record>
 
-  <action-view name="action-employee-file-view-reports-wizard" title="Select ExpirationDate Range"
-    model="com.axelor.apps.base.db.Wizard">
+  <action-view name="action-employee-file-view-reports-wizard"
+    title="Select ExpirationDate Range" model="com.axelor.apps.base.db.Wizard">
     <view type="form" name="employee-file-form-wizard"/>
     <view-param name="popup" value="reload"/>
     <view-param name="popup-save" value="false"/>
     <view-param name="show-toolbar" value="false"/>
     <view-param name="show-confirm" value="false"/>
   </action-view>
- 
+
   <action-method name="action-emoloyee-file-print-docexpiration-date-report">
-  	<call class="com.axelor.apps.hr.web.EmployeeFileController" method="printExpeirationDateReport"/>
+    <call class="com.axelor.apps.hr.web.EmployeeFileController"
+      method="printExpeirationDateReport"/>
   </action-method>
- 
+
+  <action-method name="action-employee-file-record-calcuate-remain-day">
+    <call class="com.axelor.apps.hr.web.EmployeeFileController" method="calculateRemainingDays"/>
+  </action-method>
+
 </object-views>

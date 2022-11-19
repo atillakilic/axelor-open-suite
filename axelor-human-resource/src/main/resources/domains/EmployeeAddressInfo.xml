@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeAddressInfo" cacheable="true">
+
+    <!-- Address details -->
+    <many-to-one name="addressMetaFile" title="File"
+      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <string name="empMobile" title="Tel No.; Mobile"/>
+    <string name="empPhone" title="Tel No; House"/>
+    <string name="empEmail" title="E-mail"/>
+    <string name="empRegion" title="Region"/>
+    <string name="empCity" title="City"/>
+    <string name="empCountry" title="Country"/>
+    <string name="empEntry" title="Entry"/>
+    <string name="empBuilding" title="Building"/>
+    <string name="empStreet" title="Street"/>
+    <string name="empApartment" title="Apartment"/>
+    <string name="empFlat" title="Flat"/>
+    <string name="empZipCode" title="Zip code"/>
+    <string name="empDescription" title="Descriptons"/>
+
+    <many-to-one name="employeeHrAddReg" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="EmployeeHrAddReg"/>
+
+    <many-to-one name="employeeHrAdd" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="EmployeeHrAdd"/>
+
+  </entity>
+
+</domain-models>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-workpermit-grid" title="Employee WorkPermit"
+    model="com.axelor.apps.hr.db.EmployeeWorkPermit">
+    <field name="workPermitSeriesNo" title="Serial No" colSpan="4"/>
+  </grid>
+
+  <form name="hr-employee-workpermit-form" title="Employee WorkPermit"
+    model="com.axelor.apps.hr.db.EmployeeWorkPermit" width="large">
+    <panel name="workPermitInfo" showTitle="true" title="Work Permit Information">
+      <field name="workPermitMetaFile" colSpan="12" canEdit="true" canNew="true"/>
+      <field name="workPermitSeriesNo" title="Serial No" colSpan="4"/>
+      <field name="workPermitDescription" title="Description" colSpan="12"/>
+    </panel>
+
+  </form>
+</object-views>

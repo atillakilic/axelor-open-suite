@@ -21,6 +21,15 @@
     <context name="_todayDate" expr="eval: __date__"/>
   </action-view>
 
+  <menuitem name="employee-hr-all" parent="hr-root-emp-mgt" title="Eemployees"
+    action="employee.hr.all" order="-1"/>
+
+  <action-view name="employee.hr.all" title="Employee"
+    model="com.axelor.apps.hr.db.EmployeeHr">
+    <view type="grid" name="hr-employee-hr-grid"/>
+    <view type="form" name="hr-employee-hr-form"/>
+  </action-view>
+
   <menuitem name="all-employment-contract" parent="hr-root-emp-mgt"
     title="Employment Contracts" action="employment.contracts.all"/>
 
@@ -280,6 +289,43 @@
     model="com.axelor.apps.hr.db.HealthMutualRejectionReason">
     <view type="grid" name="health-mutual-rejection-reason-grid"/>
     <view type="form" name="health-mutual-rejection-reason-form"/>
+  </action-view>
+
+  <!-- Daily Activity -->
+
+  <menuitem name="hr-root-hr-daily-activity" parent="hr-root" icon="fa-plane"
+    icon-background="#84429f" title="Daily Activity" order="2"/>
+
+  <menuitem name="hr-root-hr-daily-activity-officer-sub" order="5"
+    parent="hr-root-hr-daily-activity" title="Daily Activity Officer"
+    action="hr.employee.hr.daily.activity"/>
+
+  <action-view name="hr.employee.hr.daily.activity"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivity" title="Daily Activity Officer">
+    <view name="hr-employee-daily-activity-grid" type="grid"/>
+    <view name="hr-employee-daily-activity-form" type="form"/>
+    <domain>self.statusSelect &gt; 0</domain>
+  </action-view>
+
+
+  <menuitem name="hr-root-hr-daily-activity-manager-sub" order="10"
+    parent="hr-root-hr-daily-activity" title="Daily Activity Manager"
+    action="hr.employee.hr.daily.activity.manager"/>
+
+  <action-view name="hr.employee.hr.daily.activity.manager"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivity" title="Daily Activity Manager">
+    <view name="hr-employee-daily-activity-hr-manger-grid" type="grid"/>
+    <view name="hr-employee-daily-activity-hr-manger-form" type="form"/>
+    <domain>self.statusSelect &gt; 1</domain>
+  </action-view>
+
+  <menuitem name="hr-root-hr-employee-salary" order="10" parent="hr-root-hr-daily-activity"
+    title="Employee Salary" action="hr.employee.hr.employee.salary"/>
+
+  <action-view name="hr.employee.hr.employee.salary"
+    model="com.axelor.apps.hr.db.EmployeeSalary" title="Employee Salary">
+    <view name="hr-employee-salary-grid" type="grid"/>
+    <view name="hr-employee-salary-form" type="form"/>
   </action-view>
 
   <!-- Leave App -->
@@ -612,9 +658,9 @@
 
   <menuitem name="hr-report-root" parent="hr-root" title="Reportings" order="300"
     icon="fa-bar-chart"/>
-    
-  <menuitem name="employee-document-all" parent="hr-report-root" title="Employee Document Reports"
-    action="employee.file.all"/>
+
+  <menuitem name="employee-document-all" parent="hr-report-root"
+    title="Employee Document Reports" action="employee.file.all"/>
 
   <action-view name="employee.file.all" title="Employee Doc"
     model="com.axelor.apps.hr.db.EmployeeFile">
@@ -647,7 +693,7 @@
     <context name="_projectIds"
       expr="call:com.axelor.apps.hr.service.timesheet.TimesheetService:getContextProjectIds()"/>
   </action-view>
-  
+
   <!-- Top Menus -->
 
   <menuitem name="top-menu-hr" title="HR" order="4" top="true" left="false"

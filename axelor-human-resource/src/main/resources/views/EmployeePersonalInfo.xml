@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-personal-info-grid" title="Personal Info"
+    model="com.axelor.apps.hr.db.EmployeePersonalInfo">
+    <field name="maritalStatus" title="Marital status"/>
+    <field name="maritalName" title="Marital name"/>
+    <field name="childCount" title="Child Count"/>
+    <field name="militaryServiceStatus" title="Military Service Status"/>
+    <field name="smoking" title="Smoking"/>
+    <field name="bloodType" title="Blood Type"/>
+    <field name="allergies" title="Allergies"/>
+    <field name="emergencyContact" title="Emergency contact"/>
+    <field name="emergencyPhone" title="Emergency Phone"/>
+    <field name="emergencyRelationship" title="Emergency Relationship"/>
+  </grid>
+
+  <form name="hr-employee-personal-info-form" title="Personal Info"
+    model="com.axelor.apps.hr.db.EmployeePersonalInfo" width="large">
+
+    <panel name="personalInfo" showTitle="true" title="Personal Info">
+      <field name="maritalStatus" title="Marital status"/>
+      <field name="maritalName" title="Marital name"/>
+      <field name="childCount" title="Child Count"/>
+      <field name="militaryServiceStatus" title="Military Service Status"/>
+      <field name="smoking" title="Smoking"/>
+      <field name="bloodType" title="Blood Type"/>
+      <field name="allergies" title="Allergies"/>
+      <field name="emergencyContact" title="Emergency contact"/>
+      <field name="emergencyPhone" title="Emergency Phone"/>
+      <field name="emergencyRelationship" title="Emergency Relationship"/>
+      <field name="descriptons" title="Descriptons"/>
+
+    </panel>
+
+  </form>
+</object-views>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeEducation" cacheable="true">
+
+    <string name="graduateSchoolLevel" title="Graduate school level"
+      selection="hr.employee.hr.education.level"/>
+    <string name="graduateSchoolName" title="Graduate school name"/>
+    <string name="score" title="Score"/>
+    <string name="descriptons" title="Descriptons"/>
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
+
+  </entity>
+
+</domain-models>
+

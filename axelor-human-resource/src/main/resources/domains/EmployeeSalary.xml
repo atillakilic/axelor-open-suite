@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeSalary" cacheable="true">
+
+    <integer name="statusSelect" title="ActivityStatus"
+      selection="hr.employee.salary.status"/>
+    <date name="creationDate" title="Creation Date"/>
+
+    <one-to-many name="employeeSalaryRecord"
+      ref="com.axelor.apps.hr.db.EmployeeSalaryLine" mappedBy="employeeSalary"
+      title="Employee Salary"/>
+
+
+  </entity>
+
+</domain-models>
+

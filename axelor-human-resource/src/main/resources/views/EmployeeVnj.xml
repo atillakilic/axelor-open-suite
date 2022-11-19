@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-vnj-grid" title="Employee VNJ"
+    model="com.axelor.apps.hr.db.EmployeeVnj">
+    <field name="decisionNo" title="Decision no"/>
+    <field name="decisionDate" title="Decision date"/>
+    <field name="expirationDate" title="Expiration date"/>
+    <field name="effectiveDate" title="Effective date"/>
+    <field name="serial" title="Serial"/>
+    <field name="seriesNo" title="Series No"/>
+  </grid>
+
+  <form name="hr-employee-vnj-form" title="Employee VNJ"
+    model="com.axelor.apps.hr.db.EmployeeVnj" width="large">
+    <panel name="employeeVnj" showTitle="true" title="Employee VNJ">
+      <field name="vnjMetaFile" title="File" colSpan="12" canEdit="true" canNew="true"/>
+      <field name="decisionNo" title="Decision no"/>
+      <field name="decisionDate" title="Decision date"/>
+      <field name="expirationDate" title="Expiration date"/>
+      <field name="effectiveDate" title="Effective date"/>
+      <field name="serial" title="Serial"/>
+      <field name="seriesNo" title="Series No"/>
+      <field name="descriptons" title="Descriptons" colSpan="12"/>
+    </panel>
+
+  </form>
+</object-views>

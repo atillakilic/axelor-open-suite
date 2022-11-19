@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-employee-bank-details-grid" title="Employee BankDetails"
+    model="com.axelor.apps.hr.db.EmployeeBankDetails">
+    <field colSpan="4" name="bankName"/>
+    <field colSpan="4" name="bankCardNo"/>
+    <field colSpan="4" name="bankAccountNo"/>
+  </grid>
+
+  <form name="hr-employee-employee-bank-details-form" title="Employee BankDetails"
+    model="com.axelor.apps.hr.db.EmployeeBankDetails" width="large">
+    <panel name="bankInfo" showTitle="true">
+      <field colSpan="6" name="bankCountry"/>
+      <field colSpan="6" name="bankType"/>
+      <field colSpan="4" name="bankName"/>
+      <field colSpan="4" name="bankCardNo"/>
+      <field colSpan="4" name="bankAccountNo"/>
+      <field colSpan="12" name="bankDescription"/>
+
+    </panel>
+
+  </form>
+</object-views>

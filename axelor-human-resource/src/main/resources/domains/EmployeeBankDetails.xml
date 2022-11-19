@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeBankDetails" cacheable="true">
+
+    <!-- Bank details -->
+    <many-to-one name="bankCountry" ref="com.axelor.apps.base.db.Country"
+      title="Country"/>
+
+    <string name="bankType" title="Type" selection="hr.employee.hr.emp.bank.type"/>
+
+    <string name="bankName" title="Bank name"/>
+    <string name="bankCardNo" title="Card no."/>
+    <string name="bankAccountNo" title="Account number"/>
+    <string name="bankDescription" title="Descriptons"/>
+
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee Bank Details"/>
+
+  </entity>
+
+</domain-models>
+

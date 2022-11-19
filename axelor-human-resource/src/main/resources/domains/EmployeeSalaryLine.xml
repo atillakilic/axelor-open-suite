@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeSalaryLine" cacheable="true">
+
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeHr" title="Emoloyee"/>
+    <decimal name="totalWorkHours" title="Total hours" scale="2" precision="20"/>
+    <decimal name="totalWorkDays" title="Total Days" scale="2" precision="20"/>
+    <decimal name="totalPenaltyOrReward" title="Total penalty or Reward"/>
+    <decimal name="newPenaltyOrReward" title="New penalty or Reward"/>
+    <decimal name="totalSalary" title="Total Salary"/>
+
+    <string name="comments" title="Comments"/>
+
+    <many-to-one name="employeeSalary" ref="com.axelor.apps.hr.db.EmployeeSalary"
+      title="Employee Salary"/>
+  </entity>
+
+</domain-models>
+

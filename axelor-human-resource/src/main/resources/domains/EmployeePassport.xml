@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeePassport" cacheable="true">
+
+    <!-- Passport details -->
+    <many-to-one name="passMetaFile" title="File"
+      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <string name="passFirstName" title="First Name"/>
+    <string name="passLastname" title="Last Name"/>
+    <string name="passFatherName" title="Father Name"/>
+    <many-to-one name="passEmployeeNationality" ref="com.axelor.apps.base.db.Country"
+      title="Nationality"/>
+    <string name="passType" title="Type"/>
+    <string name="passCountryCode" title="Country code"/>
+    <string name="passSerial" title="Serial"/>
+    <string name="passSeriesNo" title="Series No"/>
+    <string name="passIssuingAuthority" title="The issuing authority"/>
+    <date name="passEditingDate" title="Editing date"/>
+    <date name="passEffectiveDate" title="Effective date"/>
+    <date name="passDateOfBirth" title="Date of birth"/>
+    <string name="passBirthplace" title="Birthplace"/>
+    <string name="passGender" title="Gender" selection="employee.hr.sex.select"/>
+    <string name="passTcIdNo" title="T.C ID No"/>
+    <string name="passdescription" title="Description"/>
+
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
+
+  </entity>
+
+</domain-models>
+

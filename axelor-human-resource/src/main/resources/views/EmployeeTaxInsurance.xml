@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-tax-insurance-grid" title="Tax and Insurance"
+    model="com.axelor.apps.hr.db.EmployeeTaxInsurance">
+    <field name="innInnNo" title="Inn No"/>
+    <field name="snilsNo" title="SNILS No"/>
+    <field name="voNumber" title="VO Number"/>
+
+  </grid>
+
+  <form name="hr-employee-tax-insurance-form" title="Tax and Insurance"
+    model="com.axelor.apps.hr.db.EmployeeTaxInsurance" width="large">
+
+    <panel name="taxInsurance" showTitle="true" title="Tax Insurance">
+      <field name="innDateOfRegistration" title="Inn Date of registration"/>
+      <field name="innInnNo" title="Inn No"/>
+      <field name="innTaxAuthority" title="Inn Tax authority"/>
+
+      <field name="snilsNo" title="SNILS No"/>
+      <field name="snilsDateOfRegistration" title="SNILS Date of registration"/>
+
+      <field name="voSeries" title="Series"/>
+      <field name="voNumber" title="Number"/>
+      <field name="voIssuedBy" title="Issued by whom"/>
+      <field name="voPeriodFrom" title="Period from"/>
+      <field name="voPeriodTo" title="Period up to"/>
+      <field name="voTerritory" title="Territory"/>
+      <field name="voVmiMmi" title="VMI or MMI"/>
+
+    </panel>
+
+  </form>
+</object-views>

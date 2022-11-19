@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-salary-line-grid" title="Salary Line" editable="true"
+    model="com.axelor.apps.hr.db.EmployeeSalaryLine">
+    <field name="employee" canEdit="true"/>
+    <field name="totalWorkHours" canEdit="true"/>
+    <field name="totalWorkDays" canEdit="true"/>
+    <field name="totalPenaltyOrReward" canEdit="true"/>
+    <field name="newPenaltyOrReward" canEdit="true"/>
+    <field name="totalSalary" canEdit="true"/>
+    <field name="comments" canEdit="true"/>
+  </grid>
+
+  <form name="hr-employee-salary-line-form" title="Salary Line"
+    model="com.axelor.apps.hr.db.EmployeeSalaryLine" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employee"/>
+      <field name="totalWorkHours"/>
+      <field name="totalWorkDays"/>
+      <field name="totalPenaltyOrReward"/>
+      <field name="newPenaltyOrReward"/>
+      <field name="totalSalary"/>
+      <field name="comments"/>
+    </panel>
+  </form>
+
+</object-views>
