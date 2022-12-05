@@ -652,4 +652,11 @@
     <option value="1">Left</option>
   </selection>
 
+  <selection name="citizenship.group.selection">
+    <option value="1">Local Employers</option>
+    <option value="2">Employers With Visa</option>
+    <option value="3">Employers Without Visa (Pantent)</option>
+    <option value="4">Employers Without Visa (Gov. Agreement)</option>
+  </selection>
+
 </object-views>

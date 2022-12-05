@@ -542,6 +542,16 @@
     <view type="form" name="citizenship-form"/>
   </action-view>
 
+  <menuitem name="admin-root-organisation-territory-citizenship-group"
+    parent="admin-root-organisation-territory" title="CitizenshipGroup"
+    action="admin.root.organisation.territory.citizenship.group"/>
+
+  <action-view name="admin.root.organisation.territory.citizenship.group"
+    title="citizenshipGroup" model="com.axelor.apps.base.db.CitizenshipGroup">
+    <view type="grid" name="citizenship-group-grid"/>
+    <view type="form" name="citizenship-group-form"/>
+  </action-view>
+
   <menuitem name="admin-root-user" parent="admin-root" if="__config__.app.isApp('base')"
     title="Users/Companies" order="25"/>
 

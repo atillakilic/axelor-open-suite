@@ -10,6 +10,9 @@
     <string name="name" title="Name"/>
     <boolean name="hasExpirationDate" title="Display an expiration date"/>
     <integer name="preparationTime" title="Preparation Time"/>
+    <integer name="criticalTime" title="Critical Time"/>
+    <integer name="remainingDays" title="Remaining Days"/>
+    <decimal name="price" title="Price"/>
   </entity>
 
 </domain-models>

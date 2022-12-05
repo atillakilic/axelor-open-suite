@@ -5,22 +5,25 @@
 
   <grid name="hr-employee-passport-grid" title="Employee Passport"
     model="com.axelor.apps.hr.db.EmployeePassport">
+
+    <field name="empFile"/>
     <field name="passFirstName" title="First Name" colSpan="4"/>
     <field name="passLastname" title="Last Name" colSpan="4"/>
     <field name="passFatherName" title="Father Name" colSpan="4"/>
     <field name="passEmployeeNationality" title="Nationality" colSpan="4"/>
     <field name="passSerial" title="Serial" colSpan="4"/>
     <field name="passEditingDate" title="Editing date" colSpan="4"/>
-    <field name="passEffectiveDate" title="Effective date" colSpan="4"/>
     <field name="passDateOfBirth" title="Date of birth" colSpan="4"/>
     <field name="passBirthplace" title="Birthplace" colSpan="4"/>
     <field name="passGender" title="Gender" colSpan="4"/>
+    <field name="employeeHr"/>
   </grid>
 
   <form name="hr-employee-passport-form" title="Employee Passport"
-    model="com.axelor.apps.hr.db.EmployeePassport" width="large">
-    <panel name="passportInfo" showTitle="true" title="Passport Information">
-      <field name="passMetaFile" colSpan="12" canEdit="true" canNew="true"/>
+    model="com.axelor.apps.hr.db.EmployeePassport" width="large" onNew="">
+    <panel name="passportInfo" showTitle="true" title="Passport Information" required="true">
+      <field name="empFile" colSpan="6" canNew="true" canEdit="true" canSelect="false"/>
+      <spacer/>
       <field name="passFirstName" title="First Name" colSpan="4"/>
       <field name="passLastname" title="Last Name" colSpan="4"/>
       <field name="passFatherName" title="Father Name" colSpan="4"/>
@@ -31,7 +34,6 @@
       <field name="passSeriesNo" title="Series No" colSpan="4"/>
       <field name="passIssuingAuthority" title="The issuing authority" colSpan="4"/>
       <field name="passEditingDate" title="Editing date" colSpan="4"/>
-      <field name="passEffectiveDate" title="Effective date" colSpan="4"/>
       <field name="passDateOfBirth" title="Date of birth" colSpan="4"/>
       <field name="passBirthplace" title="Birthplace" colSpan="4"/>
       <field name="passGender" title="Gender" colSpan="4"/>
@@ -40,4 +42,10 @@
     </panel>
 
   </form>
+
+  <action-attrs name="action-employee-passport-on-new-set-file-type">
+    <attribute name="value" for="fileType"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Passport').fetchOne()"/>
+  </action-attrs>
+
 </object-views>

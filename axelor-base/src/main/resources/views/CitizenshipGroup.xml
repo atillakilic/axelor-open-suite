@@ -3,19 +3,17 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
-  <grid name="citizenship-grid" title="Citizenship" model="com.axelor.apps.base.db.Citizenship">
-    <field name="code"/>
+  <grid name="citizenship-group-grid" title="Citizenship Group"
+    model="com.axelor.apps.base.db.CitizenshipGroup">
     <field name="name"/>
-    <field name="nameRussian"/>
-    <field name="citizenshipGroup"/>
+    <field name="groupType"/>
   </grid>
 
-  <form name="citizenship-form" title="Citizenship" model="com.axelor.apps.base.db.Citizenship">
+  <form name="citizenship-group-form" title="Citizenship Group"
+    model="com.axelor.apps.base.db.CitizenshipGroup">
     <panel name="mainPanel">
-      <field name="code"/>
       <field name="name"/>
-      <field name="nameRussian"/>
-      <field name="citizenshipGroup"/>
+      <field name="groupType"/>
     </panel>
   </form>
 

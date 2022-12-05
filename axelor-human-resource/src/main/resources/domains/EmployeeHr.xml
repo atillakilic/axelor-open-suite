@@ -9,10 +9,12 @@
 
     <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
       index="false"/>
-    <many-to-one name="employeeNationality" ref="com.axelor.apps.base.db.Country"
-      title="Nationality"/>
+    <many-to-one name="employeeNationality" ref="com.axelor.apps.base.db.Citizenship"
+      title="Nationality (Citizenships)"/>
     <integer name="stepByStepSelect" title="Step by step"
       selection="hr.employee.hr.form.step.by.step.select" default="1"/>
+    <boolean name="isActive" title="Is Active"/>
+
 
     <string name="empDocStatus" title="Status" selection="hr.employee.hr.emp.doc.status"/>
 
@@ -34,22 +36,14 @@
     <string name="fixedProPhone" title="Work fixed phone"/>
     <string name="mobileProPhone" title="Work mobile phone"/>
     <string name="phoneAtCustomer" title="Phone at the customer"/>
-    <date name="birthDate" title="Birth date"/>
-    <string name="maritalStatus" title="Marital status"
-      selection="hr.employee.marital.status"/>
-    <string name="sexSelect" title="Sex" selection="employee.hr.sex.select"/>
-    <many-to-one name="countryOfBirth" title="Country of birth"
-      ref="com.axelor.apps.base.db.Country"/>
-    <many-to-one name="cityOfBirth" title="City of birth"
-      ref="com.axelor.apps.base.db.City"/>
-    <many-to-one name="citizenship" title="Citizenship"
-      ref="com.axelor.apps.base.db.Citizenship"/>
-    <string name="maritalName" title="Marital name"/>
-    <string name="socialSecurityNumber" title="Social security number"/>
-    <string name="emergencyContact" title="Emergency contact"/>
-    <string name="emergencyNumber" title="Phone"/>
-    <string name="emergencyContactRelationship" title="Emergency contact relationship"/>
-
+    <!-- <date name="birthDate" title="Birth date"/> <string name="maritalStatus" title="Marital status"
+      selection="hr.employee.marital.status"/> <string name="sexSelect" title="Sex" selection="employee.hr.sex.select"/>
+      <many-to-one name="countryOfBirth" title="Country of birth" ref="com.axelor.apps.base.db.Country"/> <many-to-one
+      name="cityOfBirth" title="City of birth" ref="com.axelor.apps.base.db.City"/> <many-to-one name="citizenship"
+      title="Citizenship" ref="com.axelor.apps.base.db.Citizenship"/> <string name="maritalName" title="Marital
+      name"/> <string name="socialSecurityNumber" title="Social security number"/> <string name="emergencyContact"
+      title="Emergency contact"/> <string name="emergencyNumber" title="Phone"/> <string name="emergencyContactRelationship"
+      title="Emergency contact relationship"/> -->
     <!-- Contract Info -->
 
     <decimal name="weeklyWorkHours" title="Weekly work hours" scale="2" precision="20"/>
@@ -74,12 +68,9 @@
       mappedBy="employeeHr" title="Employee Passport"/>
 
     <!-- Work Permit -->
-    <one-to-many name="employeeWorkPermit" ref="com.axelor.apps.hr.db.EmployeePassport"
-      mappedBy="employeeHr" title="Employee WorkPermit"/>
-
-    <one-to-many name="employeeAddressInfoReg"
-      ref="com.axelor.apps.hr.db.EmployeeAddressInfo" mappedBy="employeeHrAddReg"
-      title="Adress Information- Registration(On documents)"/>
+    <one-to-many name="employeeWorkPermit"
+      ref="com.axelor.apps.hr.db.EmployeeWorkPermit" mappedBy="employeeHr"
+      title="Employee WorkPermit"/>
 
     <one-to-many name="employeeAddressInfo"
       ref="com.axelor.apps.hr.db.EmployeeAddressInfo" mappedBy="employeeHrAdd" title="Adress"/>
@@ -95,16 +86,9 @@
       ref="com.axelor.apps.hr.db.EmployeeTaxInsurance" mappedBy="employeeHr"
       title="Tax and Insurance"/>
 
-    <one-to-many name="employeeBodyMeasurements"
-      ref="com.axelor.apps.hr.db.EmployeeBodyMeasurements" mappedBy="employeeHr"
-      title="Body Measurement"/>
-
     <one-to-many name="employeeDrivingLicense"
       ref="com.axelor.apps.hr.db.EmployeeDrivingLicense" mappedBy="employeeHr"
       title="Driving License"/>
-
-    <one-to-many name="employeeEducation" ref="com.axelor.apps.hr.db.EmployeeEducation"
-      mappedBy="employeeHr" title="Employee Education"/>
 
     <one-to-many name="employeeSkill" ref="com.axelor.apps.hr.db.EmployeeSkill"
       mappedBy="employeeHr" title="Employee Skill"/>
@@ -117,6 +101,24 @@
 
     <one-to-many name="employeeRvp" ref="com.axelor.apps.hr.db.EmployeeRvp"
       mappedBy="employeeHr" title="Employee RVP"/>
+
+    <one-to-many name="employeeVisa" ref="com.axelor.apps.hr.db.EmployeeVisa"
+      mappedBy="employeeHr" title="Employee Visa"/>
+
+    <one-to-many name="employeeWorkCard" ref="com.axelor.apps.hr.db.EmployeeWorkCard"
+      mappedBy="employeeHr" title="Employee Work Card"/>
+
+    <one-to-many name="employeeMigrationCard"
+      ref="com.axelor.apps.hr.db.EmployeeMigrationCard" mappedBy="employeeHr"
+      title="Employee Migration Card"/>
+
+    <one-to-many name="employeeLanguageCert"
+      ref="com.axelor.apps.hr.db.EmployeeLanguageCert" mappedBy="employeeHr"
+      title="Language Certificate"/>
+
+    <one-to-many name="employeeMilitaryService"
+      ref="com.axelor.apps.hr.db.EmployeeMilitaryService" mappedBy="employeeHr"
+      title="Military Service"/>
 
 
 

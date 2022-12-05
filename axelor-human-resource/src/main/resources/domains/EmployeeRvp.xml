@@ -7,8 +7,8 @@
 
   <entity name="EmployeeRvp" cacheable="true">
 
-    <many-to-one name="rvpMetaFile" title="File"
-      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <many-to-one name="empRvpFile" title="File" ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <integer name="rvpType" title="Type" selection="hr.employee.rvp.type.select"/>
     <date name="startDate" title="Validity period start date"/>
     <date name="expirationDate" title="Expiration date"/>
     <date name="effectiveDate" title="Effective date"/>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-military-service-grid" title="Military Service"
+    model="com.axelor.apps.hr.db.EmployeeMilitaryService">
+
+    <field name="empMilitaryServiceFile"/>
+    <field name="city" title="city"/>
+    <field name="registrationNumber" title="Registration Number"/>
+    <field name="examWasConducted" title="Exam Was Conducted"/>
+    <field name="dateOfIssue" title="Date of issue"/>
+    <field name="expirationDate" title="Expiration date "/>
+  </grid>
+
+  <form name="hr-employee-military-service-form" title="Military Service"
+    model="com.axelor.apps.hr.db.EmployeeMilitaryService" width="large" onNew="">
+    <panel name="militaryService" showTitle="true" title="Military Service" required="true">
+      <field name="empMilitaryServiceFile" colSpan="6" canNew="true" canEdit="true"
+        canSelect="false"/>
+      <spacer/>
+      <field name="city" title="Serial"/>
+      <field name="registrationNumber" title="Card No"/>
+      <field name="examWasConducted" title="Officer code"/>
+      <field name="dateOfIssue" title="Date of issue"/>
+      <field name="description"/>
+    </panel>
+
+  </form>
+
+</object-views>

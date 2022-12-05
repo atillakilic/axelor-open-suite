@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-lenguage-cert-grid" title="Employee Language"
+    model="com.axelor.apps.hr.db.EmployeeLanguageCert">
+
+    <field name="empLanguageCertFile"/>
+    <field name="city" title="city"/>
+    <field name="registrationNumber" title="Registration Number"/>
+    <field name="examWasConducted" title="Exam Was Conducted"/>
+    <field name="dateOfIssue" title="Date of issue"/>
+    <field name="expirationDate" title="Expiration date "/>
+  </grid>
+
+  <form name="hr-employee-lenguage-cert-form" title="Employee Language"
+    model="com.axelor.apps.hr.db.EmployeeMigrationCard" width="large" onNew="">
+    <panel name="employeeLanguage" showTitle="true" title="Employee Language" required="true">
+      <field name="empLanguageCertFile" colSpan="6" canNew="true" canEdit="true"
+        canSelect="false"/>
+      <spacer/>
+      <field name="city" title="city"/>
+      <field name="registrationNumber" title="Registration Number"/>
+      <field name="examWasConducted" title="Exam Was Conducted"/>
+      <field name="dateOfIssue" title="Date of issue"/>
+      <field name="description"/>
+    </panel>
+
+  </form>
+
+</object-views>

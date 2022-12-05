@@ -15,6 +15,9 @@
       <field name="name" colSpan="3"/>
       <field name="hasExpirationDate" colSpan="3"/>
       <field name="preparationTime" colSpan="3"/>
+      <field name="criticalTime" colSpan="3"/>
+      <field name="remainingDays" colSpan="3"/>
+      <field name="price" colSpan="3"/>
     </panel>
   </form>
 

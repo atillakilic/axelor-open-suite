@@ -5,6 +5,7 @@
 
   <grid name="hr-employee-driving-llicense-grid" title="Driving License"
     model="com.axelor.apps.hr.db.EmployeeDrivingLicense">
+    <field name="empDrivingLicensFile"/>
     <field name="licenseClass" title="Driving license class"/>
     <field name="issueDate" title="date of issue"/>
     <field name="expireDate" title="Expiration date"/>
@@ -13,16 +14,19 @@
   </grid>
 
   <form name="hr-employee-driving-llicense-form" title="Driving License"
+    onNew="action-employee-driving-license-on-new-set-file-type"
     model="com.axelor.apps.hr.db.EmployeeDrivingLicense" width="large">
     <panel name="employeeDrivingLicense" showTitle="true" title="Employee Driving License">
-      <field name="licenseMetaFile" title="Driving License document" canEdit="true"
-        canNew="true" colSpan="12"/>
+      <field name="empDrivingLicensFile" colSpan="6" canNew="true" canEdit="true"
+        canSelect="false"/>
       <field name="licenseClass" title="Driving license class"/>
       <field name="issueDate" title="date of issue"/>
-      <field name="expireDate" title="Expiration date"/>
       <field name="descriptons" title="Descriptons" colSpan="12"/>
-
     </panel>
-
   </form>
+
+  <action-attrs name="action-employee-driving-license-on-new-set-file-type">
+    <attribute name="value" for="fileType"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Drive Licance').fetchOne()"/>
+  </action-attrs>
 </object-views>

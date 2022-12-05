@@ -5,6 +5,7 @@
 
   <grid name="hr-employee-employee-address-info-grid" title="Employee Address"
     model="com.axelor.apps.hr.db.EmployeeAddressInfo">
+    <field name="addressType"/>
     <field name="empMobile" title="Tel No.; Mobile"/>
     <field name="empPhone" title="Tel No; House"/>
     <field name="empEmail" title="E-mail"/>
@@ -22,7 +23,8 @@
   <form name="hr-employee-employee-address-info-form" title="Employee Address"
     model="com.axelor.apps.hr.db.EmployeeAddressInfo" width="large">
     <panel name="workPermitInfo" showTitle="true" title="Address Information">
-      <field name="addressMetaFile" colSpan="12"/>
+      <field name="addressType"/>
+      <spacer/>
       <field colSpan="4" name="empMobile" title="Tel No.; Mobile"/>
       <field colSpan="4" name="empPhone" title="Tel No; House"/>
       <field colSpan="4" name="empEmail" title="E-mail"/>
@@ -36,6 +38,8 @@
       <field colSpan="4" name="empFlat" title="Flat"/>
       <field colSpan="4" name="empZipCode" title="Zip code"/>
       <field colSpan="12" name="empDescription" title="Zip code"/>
+
+      <field name="addressMetaFile" widget="binary-link"/>
 
     </panel>
 

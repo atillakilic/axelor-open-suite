@@ -5,6 +5,8 @@
 
   <grid name="hr-employee-vnj-grid" title="Employee VNJ"
     model="com.axelor.apps.hr.db.EmployeeVnj">
+    <field name="empVnjFile"/>
+    <field name="vnjType"/>
     <field name="decisionNo" title="Decision no"/>
     <field name="decisionDate" title="Decision date"/>
     <field name="expirationDate" title="Expiration date"/>
@@ -14,12 +16,13 @@
   </grid>
 
   <form name="hr-employee-vnj-form" title="Employee VNJ"
-    model="com.axelor.apps.hr.db.EmployeeVnj" width="large">
+    model="com.axelor.apps.hr.db.EmployeeVnj" width="large"
+    onNew="action-employee-vnj-on-new-set-file-type">
     <panel name="employeeVnj" showTitle="true" title="Employee VNJ">
-      <field name="vnjMetaFile" title="File" colSpan="12" canEdit="true" canNew="true"/>
+      <field name="empVnjFile" colSpan="6" canNew="true" canEdit="true" canSelect="false"/>
+      <field name="vnjType"/>
       <field name="decisionNo" title="Decision no"/>
       <field name="decisionDate" title="Decision date"/>
-      <field name="expirationDate" title="Expiration date"/>
       <field name="effectiveDate" title="Effective date"/>
       <field name="serial" title="Serial"/>
       <field name="seriesNo" title="Series No"/>
@@ -27,4 +30,9 @@
     </panel>
 
   </form>
+
+  <action-attrs name="action-employee-vnj-on-new-set-file-type">
+    <attribute name="value" for="fileType"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','VNJ').fetchOne()"/>
+  </action-attrs>
 </object-views>

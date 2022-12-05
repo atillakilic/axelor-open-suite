@@ -237,10 +237,8 @@
   </selection>
 
   <selection name="hr.employee.visa.category.type">
-    <option value="1">Work Permission</option>
-    <option value="2">Tourist</option>
-    <option value="3">Business Visa</option>
-    <option value="4">Other</option>
+    <option value="1">Technical 3 Months</option>
+    <option value="2">Work Visa</option>
   </selection>
 
 
@@ -327,6 +325,21 @@
   <selection name="hr.employee.salary.status">
     <option value="1">Salary Created</option>
     <option value="2">Finance Department</option>
+  </selection>
+
+  <selection name="hr.employee.address.type">
+    <option value="1">Adress Information- Registration(On documents)</option>
+    <option value="2">Adress</option>
+  </selection>
+
+  <selection name="hr.employee.nvj.type.select">
+    <option value="1">VNJ</option>
+    <option value="2">VNJ+VKS</option>
+  </selection>
+
+  <selection name="hr.employee.rvp.type.select">
+    <option value="1">RVP</option>
+    <option value="2">RVP+VKS</option>
   </selection>
 
 </object-views>

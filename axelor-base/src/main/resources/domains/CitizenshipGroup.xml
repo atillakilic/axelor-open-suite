@@ -5,11 +5,8 @@
 
   <module name="base" package="com.axelor.apps.base.db"/>
 
-  <entity name="Citizenship" lang="java">
-    <string name="code" title="Code"/>
+  <entity name="CitizenshipGroup" lang="java">
     <string name="name" title="Name" translatable="true"/>
-    <string name="nameRussian" title="Name Russian"/>
-    <many-to-one name="citizenshipGroup" ref="com.axelor.apps.base.db.CitizenshipGroup"
-      title="Citizenship Group"/>
+    <integer name="groupType" title="Group Type" selection="citizenship.group.selection"/>
   </entity>
 </domain-models>

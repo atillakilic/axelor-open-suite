@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-work-card-grid" title="Employee Work Card"
+    model="com.axelor.apps.hr.db.EmployeeWorkCard">
+    <field colSpan="4" name="workingCardSeriale" title="Working Card Seriale"/>
+    <field colSpan="4" name="workingCardNo" title="Working Card No"/>
+    <field colSpan="4" name="taxNumber" title="Tax number"/>
+    <field colSpan="4" name="workingStatus" title="Working status"/>
+    <field colSpan="4" name="dateOfIssue" title="Date of issue"/>
+    <field colSpan="4" name="expirationDate" title="Expiration date"/>
+    <field colSpan="4" name="issuingAuthority" title="issuing authority"/>
+    <field colSpan="4" name="validityPeriodStartDate" title="Validity period start date"/>
+    <field colSpan="4" name="companyTaxNumber" title="Company tax number"/>
+    <field colSpan="4" name="areaOfValidity" title="Area of validity"/>
+    <field colSpan="4" name="fmsSerial" title="FMS serial"/>
+    <field colSpan="4" name="fmsNo" title="FMS No"/>
+    <field colSpan="4" name="category" title="Company"/>
+
+  </grid>
+
+  <form name="hr-employee-work-card-form" title="Employee work Card"
+    model="com.axelor.apps.hr.db.EmployeeWorkCard" width="large">
+    <panel name="employeeWorkCard" showTitle="true" title="Employee Work Card">
+      <field colSpan="6" name="empWorkCardFile" title="File" canSelect="false" canNew="true"
+        canEdit="true"/>
+      <spacer/>
+      <field colSpan="4" name="workingCardSeriale" title="Working Card Seriale"/>
+      <field colSpan="4" name="workingCardNo" title="Working Card No"/>
+      <field colSpan="4" name="taxNumber" title="Tax number"/>
+      <field colSpan="4" name="workingStatus" title="Working status"/>
+      <field colSpan="4" name="dateOfIssue" title="Date of issue"/>
+      <field colSpan="4" name="issuingAuthority" title="issuing authority"/>
+      <field colSpan="4" name="validityPeriodStartDate" title="Validity period start date"/>
+      <field colSpan="4" name="companyTaxNumber" title="Company tax number"/>
+      <field colSpan="4" name="areaOfValidity" title="Area of validity"/>
+      <field colSpan="4" name="fmsSerial" title="FMS serial"/>
+      <field colSpan="4" name="fmsNo" title="FMS No"/>
+      <field colSpan="4" name="category" title="Category"/>
+      <field name="description"/>
+
+    </panel>
+
+  </form>
+</object-views>

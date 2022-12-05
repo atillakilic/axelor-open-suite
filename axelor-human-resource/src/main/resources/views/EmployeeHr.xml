@@ -15,14 +15,20 @@
   <form name="hr-employee-hr-form" title="Employee HR" model="com.axelor.apps.hr.db.EmployeeHr"
     width="large">
     <panel name="mainPanel">
-      <field name="stepByStepSelect" widget="NavSelect" colSpan="12" showTitle="false"/>
+      <field name="stepByStepSelect" widget="NavSelect" colSpan="6" showTitle="false"/>
+      <button
+        onClick="save,action-employee-hr-create-task-for-new-employee,action-employee-hr-atters-set-isactive-true,save"
+        name="active" colSpan="3" title="Active"
+        prompt="Are you sure you want to make this Employee Active and send notification to HR department?"
+        showIf="!isActive"/>
+      <field name="isActive" readonly="true" colSpan="3"/>
       <field name="picture" colSpan="2" css="center" showTitle="false" widget="Image"/>
       <panel name="contactDetailsPanel" colSpan="10">
         <field name="employeeNationality" colSpan="4"/>
         <field name="empDocStatus" colSpan="4"/>
         <field name="contractNumber" colSpan="4"/>
-        <field name="name" colSpan="4"/>
-        <field name="surname" colSpan="4"/>
+        <field name="name" colSpan="4" required="true" onChange="save"/>
+        <field name="surname" colSpan="4" required="true"/>
         <field name="fatherName" colSpan="4"/>
         <field name="nameCyrillic" colSpan="4"/>
         <field name="surnameCyrillic" colSpan="4"/>
@@ -46,29 +52,11 @@
     </panel>
 
     <!-- Basic info -->
-    <panel name="phoneProSBSPanel" title="Work phones" showIf="stepByStepSelect == 1">
+    <panel name="phoneProSBSPanel" title="Work phones"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null">
       <field name="fixedProPhone" colSpan="4" x-placeholder-number-type="FIXED_LINE"/>
       <field name="mobileProPhone" colSpan="4"/>
       <field name="phoneAtCustomer" colSpan="4"/>
-    </panel>
-
-    <panel name="personalInfoSBSPanel" title="Personal information"
-      showIf="stepByStepSelect == 1">
-      <field name="birthDate" colSpan="4"/>
-      <field name="maritalStatus" colSpan="4"/>
-      <field name="sexSelect" colSpan="4"/>
-      <field name="countryOfBirth" colSpan="4"/>
-      <field name="cityOfBirth" colSpan="4"/>
-      <field name="citizenship" colSpan="4"/>
-      <field name="maritalName" colSpan="4"/>
-      <field name="socialSecurityNumber" colSpan="4" max="15" min="12"/>
-    </panel>
-
-    <panel name="emergencyContactSBSPanel" title="Contact in case of emergency"
-      showIf="stepByStepSelect == 1">
-      <field name="emergencyContact" colSpan="4"/>
-      <field name="emergencyNumber" colSpan="4"/>
-      <field name="emergencyContactRelationship" colSpan="4" title="Relationship"/>
     </panel>
 
     <!-- Contract data -->
@@ -81,47 +69,78 @@
     </panel>
 
     <panel-related field="employeePassport" form-view="hr-employee-passport-form"
-      showIf="stepByStepSelect == 2" grid-view="hr-employee-passport-grid"/>
+      showIf="stepByStepSelect == 1  &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-passport-grid"/>
 
     <panel-related field="employeeWorkPermit" form-view="hr-employee-workpermit-form"
-      showIf="stepByStepSelect == 2" grid-view="hr-employee-workpermit-grid"/>
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-workpermit-grid"/>
 
-    <panel-related field="employeeAddressInfoReg" showIf="stepByStepSelect == 2"
-      form-view="hr-employee-employee-address-info-form"
-      grid-view="hr-employee-employee-address-info-grid"/>
-
-    <panel-related field="employeeAddressInfo" showIf="stepByStepSelect == 2"
+    <panel-related field="employeeAddressInfo"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       form-view="hr-employee-employee-address-info-form"
       grid-view="hr-employee-employee-address-info-grid"/>
 
     <panel-related field="employeeBankDetails"
-      form-view="hr-employee-employee-bank-details-form" showIf="stepByStepSelect == 2"
+      form-view="hr-employee-employee-bank-details-form"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       grid-view="hr-employee-employee-bank-details-grid"/>
 
-    <panel-related field="employeePersonalInfo" showIf="stepByStepSelect == 2"
+    <panel-related field="employeePersonalInfo"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       form-view="hr-employee-personal-info-form" grid-view="hr-employee-personal-info-grid"/>
 
-    <panel-related field="employeeTaxInsurance" showIf="stepByStepSelect == 2"
+    <panel-related field="employeeTaxInsurance"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       form-view="hr-employee-tax-insurance-form" grid-view="hr-employee-tax-insurance-grid"/>
 
-    <panel-related field="employeeBodyMeasurements" showIf="stepByStepSelect == 2"
+    <panel-related field="employeeBodyMeasurements"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       form-view="hr-employee-body-measurements-form" grid-view="hr-employee-body-measurements-grid"/>
 
-    <panel-related field="employeeDrivingLicense" showIf="stepByStepSelect == 2"
+    <panel-related field="employeeDrivingLicense"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       form-view="hr-employee-driving-llicense-form" grid-view="hr-employee-driving-llicense-grid"/>
 
     <panel-related field="employeeEducation" form-view="hr-employee-education-form"
-      showIf="stepByStepSelect == 2" grid-view="hr-employee-education-grid"/>
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null" grid-view="hr-employee-education-grid"/>
 
-    <panel-related field="employeeService" form-view="product-form"
-      domain="self.productTypeSelect = 'service'" showIf="stepByStepSelect == 2"
+    <panel-related field="employeeService" form-view="product-form" canNew="false"
+      domain="self.productTypeSelect = 'service'"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
       grid-view="product-grid"/>
 
     <panel-related field="employeeVnj" form-view="hr-employee-vnj-form"
-      showIf="stepByStepSelect == 2" grid-view="hr-employee-vnj-grid"/>
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-vnj-grid"/>
 
     <panel-related field="employeeRvp" form-view="hr-employee-rvp-form"
-      showIf="stepByStepSelect == 2" grid-view="hr-employee-rvp-grid"/>
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-rvp-grid"/>
+
+    <panel-related field="employeeVisa" form-view="hr-employee-visa-form"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-visa-grid"/>
+
+    <panel-related field="employeeWorkCard" form-view="hr-employee-work-card-form"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-work-card-grid"/>
+
+    <panel-related field="employeeMigrationCard"
+      form-view="hr-employee-migration-card-form"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-migration-card-grid"/>
+
+    <panel-related field="employeeLanguageCert"
+      form-view="hr-employee-lenguage-cert-form"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-lenguage-cert-grid"/>
+
+
+    <panel-related field="employeeMilitaryService"
+      form-view="hr-employee-military-service-form"
+      showIf="stepByStepSelect == 1 &amp;&amp; name != null &amp;&amp; isActive"
+      grid-view="hr-employee-military-service-grid"/>
 
     <panel name="printForms" title="Print Forms" showIf="stepByStepSelect == 4">
       <field name="exampleForm1"/>
@@ -130,4 +149,14 @@
     </panel>
 
   </form>
+
+
+  <action-method name="action-employee-hr-create-task-for-new-employee">
+    <call class="com.axelor.apps.hr.web.EmployeeHrController" method="createTaskNewEmployee"/>
+  </action-method>
+
+  <action-attrs name="action-employee-hr-atters-set-isactive-true">
+    <attribute name="value" for="isActive" expr="eval: true"/>
+  </action-attrs>
+
 </object-views>

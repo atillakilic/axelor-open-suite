@@ -5,6 +5,8 @@
 
   <grid name="hr-employee-rvp-grid" title="Employee VNJ"
     model="com.axelor.apps.hr.db.EmployeeRvp">
+    <field name="empRvpFile"/>
+    <field name="rvpType"/>
     <field name="startDate" title="Validity period start date"/>
     <field name="expirationDate" title="Expiration date"/>
     <field name="effectiveDate" title="Effective date"/>
@@ -14,11 +16,12 @@
   </grid>
 
   <form name="hr-employee-rvp-form" title="Employee RVP"
-    model="com.axelor.apps.hr.db.EmployeeRvp" width="large">
+    onNew="action-employee-rvp-on-new-set-file-type" model="com.axelor.apps.hr.db.EmployeeRvp"
+    width="large">
     <panel name="employeeRvp" showTitle="true" title="Employee RVP">
-      <field name="rvpMetaFile" title="File" colSpan="12" canEdit="true" canNew="true"/>
+      <field name="empRvpFile" colSpan="6" canNew="true" canEdit="true" canSelect="false"/>
+      <field name="rvpType"/>
       <field name="startDate" title="Validity period start date"/>
-      <field name="expirationDate" title="Expiration date"/>
       <field name="effectiveDate" title="Effective date"/>
       <field name="serial" title="Serial"/>
       <field name="seriesNo" title="Series No"/>
@@ -27,4 +30,10 @@
     </panel>
 
   </form>
+
+  <action-attrs name="action-employee-rvp-on-new-set-file-type">
+    <attribute name="value" for="fileType"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','RVP').fetchOne()"/>
+  </action-attrs>
+
 </object-views>

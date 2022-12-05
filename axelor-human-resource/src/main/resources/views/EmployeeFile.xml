@@ -24,24 +24,29 @@
     <field name="remainingDays"/>
     <field name="preparationTime"/>
     <field name="criticalTime"/>
+    <field name="notFollowDoc"/>
     <field name="price" canEdit="true"/>
   </grid>
 
-  <form name="employee-file-form" title="File" model="com.axelor.apps.hr.db.EmployeeFile">
+  <form name="employee-file-form" title="File" model="com.axelor.apps.hr.db.EmployeeFile"
+    onNew="action-employee-file-attrs-on-new-set-file-type,action-employee-file-attrs-on-new-set-records">
     <panel name="mainPanel">
-      <field name="name" colSpan="4"/>
-      <field name="employeeHr" colSpan="4"/>
-      <field name="employee" hidden="true" colSpan="4"/>
-      <field name="fileType" colSpan="3" onChange="action-record-set-expiration-date,save"/>
-      <field name="metaFile" widget="binary-link" colSpan="3"
+      <field name="name" colSpan="4" readonly="true"/>
+      <field name="employeeHr" colSpan="4" readonly="true"/>
+      <field name="employee" hidden="true" colSpan="4" readonly="true"/>
+      <field name="fileType" colSpan="3"
+        onChange="action-record-set-expiration-date,action-employee-file-attrs-on-new-set-records"/>
+      <field name="metaFile" widget="binary-link" colSpan="3" required="true"
         onChange="action-record-set-record-date"/>
       <field name="recordDate" colSpan="3" readonly="true"/>
       <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="3"
+        requiredIf="fileType.hasExpirationDate"
         onChange="action-employee-file-record-calcuate-remain-day"/>
-      <field name="preparationTime" colSpan="3"/>
-      <field name="remainingDays" title="Remaining Days" colSpan="4"/>
-      <field name="criticalTime" colSpan="3"/>
-      <field name="price" colSpan="3"/>
+      <field name="preparationTime" colSpan="3" readonly="true"/>
+      <field name="remainingDays" title="Remaining Days" colSpan="4" readonly="true"/>
+      <field name="criticalTime" colSpan="3" readonly="true"/>
+      <field name="price" colSpan="3" readonly="true"/>
+      <field name="notFollowDoc"/>
       <field name="fileType.hasExpirationDate" hidden="true"/>
     </panel>
   </form>
@@ -85,5 +90,90 @@
   <action-method name="action-employee-file-record-calcuate-remain-day">
     <call class="com.axelor.apps.hr.web.EmployeeFileController" method="calculateRemainingDays"/>
   </action-method>
+
+  <action-attrs name="action-employee-file-attrs-on-new-set-file-type">
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeePassport'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Passport').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeePassport'"
+      expr="eval: _parent?._parent?.name +'-Passport' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeVisa'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Visa').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeVisa'"
+      expr="eval: _parent?._parent?.name +'-Visa' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeWorkCard'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Working Card').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeWorkCard'"
+      expr="eval: _parent?._parent?.name +'-Working Card' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeLanguageCert'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Language certificate').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeLanguageCert'"
+      expr="eval: _parent?._parent?.name +'-Language certificate' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeMilitaryService'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Military Service').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeMilitaryService'"
+      expr="eval: _parent?._parent?.name +'-Military Service' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeMigrationCard'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Migration Card').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeMigrationCard'"
+      expr="eval: _parent?._parent?.name +'-Migration Card' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeVnj'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','VNJ').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeVnj'"
+      expr="eval: _parent?._parent?.name +'-VNJ' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeRvp'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','RVP').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeRvp'"
+      expr="eval: _parent?._parent?.name +'-RVP' "/>
+
+    <attribute name="value" for="fileType"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeDrivingLicense'"
+      expr="eval:__repo__(FileType).all()filter('self.code = ?','Driving Licence').fetchOne()"/>
+
+    <attribute name="value" for="name"
+      if="_parent != null &amp;&amp; _parent._model == 'com.axelor.apps.hr.db.EmployeeDrivingLicense'"
+      expr="eval: _parent?._parent?.name +'-Driving Licence' "/>
+
+    <attribute name="value" for="employeeHr" expr="eval: _parent?._parent"/>
+
+  </action-attrs>
+
+  <action-attrs name="action-employee-file-attrs-on-new-set-records">
+    <attribute name="value" for="preparationTime" expr="eval: fileType?.preparationTime"/>
+    <attribute name="value" for="remainingDays" expr="eval: fileType?.criticalTime"/>
+    <attribute name="value" for="criticalTime" expr="eval: fileType?.remainingDays"/>
+    <attribute name="value" for="price" expr="eval: fileType?.price"/>
+  </action-attrs>
 
 </object-views>

@@ -21,7 +21,7 @@
     <context name="_todayDate" expr="eval: __date__"/>
   </action-view>
 
-  <menuitem name="employee-hr-all" parent="hr-root-emp-mgt" title="Eemployees"
+  <menuitem name="employee-hr-all" parent="hr-root-emp-mgt" title="Employees"
     action="employee.hr.all" order="-1"/>
 
   <action-view name="employee.hr.all" title="Employee"
@@ -29,6 +29,30 @@
     <view type="grid" name="hr-employee-hr-grid"/>
     <view type="form" name="hr-employee-hr-form"/>
   </action-view>
+
+
+  <menuitem name="employee-hr-documents-all" parent="hr-root-emp-mgt" title="Emp Documets"
+    order="3"/>
+
+  <menuitem name="employee-hr-documents-passport-all" parent="employee-hr-documents-all"
+    title="Passport" order="1" action="employee.hr.documents.passport.all"/>
+
+  <action-view name="employee.hr.documents.passport.all" title="Passport"
+    model="com.axelor.apps.hr.db.EmployeePassport">
+    <view type="grid" name="hr-employee-passport-grid"/>
+    <view type="form" name="hr-employee-passport-form"/>
+  </action-view>
+
+  <menuitem name="employee-hr-documents-vnj-all" parent="employee-hr-documents-all"
+    title="Vnj" order="1" action="employee.hr.documents.vnj.all"/>
+
+  <action-view name="employee.hr.documents.vnj.all" title="VNJ"
+    model="com.axelor.apps.hr.db.EmployeeVnj">
+    <view type="grid" name="hr-employee-vnj-grid"/>
+    <view type="form" name="hr-employee-vnj-form"/>
+  </action-view>
+
+
 
   <menuitem name="all-employment-contract" parent="hr-root-emp-mgt"
     title="Employment Contracts" action="employment.contracts.all"/>

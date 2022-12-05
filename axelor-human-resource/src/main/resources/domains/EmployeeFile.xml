@@ -19,6 +19,7 @@
     <integer name="criticalTime" title="Critical Time"/>
     <integer name="remainingDays" title="Remaining Days"/>
     <decimal name="price" title="Price"/>
+    <boolean name="notFollowDoc" title="Do not follow this document"/>
   </entity>
 
 </domain-models>

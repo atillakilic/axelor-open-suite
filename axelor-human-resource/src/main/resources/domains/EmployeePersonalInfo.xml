@@ -21,6 +21,25 @@
     <string name="emergencyRelationship" title="Emergency Relationship"/>
     <string name="descriptons" title="Descriptons"/>
 
+    <!-- Body Magerment -->
+
+    <string name="shoesSize" title="Shoes size"/>
+    <string name="pantsSize" title="Pants size"/>
+    <string name="coatSize" title="Coat Size"/>
+    <string name="height" title="Height"/>
+    <string name="weight" title="Weight"/>
+    <string name="bodyType" title="Body Type" selection="hr.employee.body.type"/>
+    <string name="descriptonsBodyMrg" title="Descriptons"/>
+
+    <!-- Body Edu -->
+
+    <string name="graduateSchoolLevel" title="Graduate school level"
+      selection="hr.employee.hr.education.level"/>
+    <string name="graduateSchoolName" title="Graduate school name"/>
+    <string name="score" title="Score"/>
+    <string name="descriptonsBodyEdu" title="Descriptons"/>
+
+
     <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
       title="Employee"/>
 

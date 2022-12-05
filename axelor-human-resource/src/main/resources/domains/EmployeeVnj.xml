@@ -7,8 +7,8 @@
 
   <entity name="EmployeeVnj" cacheable="true">
 
-    <many-to-one name="vnjMetaFile" title="File"
-      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <many-to-one name="empVnjFile" title="File" ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <integer name="vnjType" title="Type" selection="hr.employee.nvj.type.select"/>
     <string name="decisionNo" title="Decision no"/>
     <date name="decisionDate" title="Decision date"/>
     <date name="expirationDate" title="Expiration date"/>

@@ -8,8 +8,8 @@
   <entity name="EmployeeAddressInfo" cacheable="true">
 
     <!-- Address details -->
-    <many-to-one name="addressMetaFile" title="File"
-      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <many-to-one name="addressMetaFile" title="File" ref="com.axelor.meta.db.MetaFile"/>
+    <integer name="addressType" title="Address Type" selection="hr.employee.address.type"/>
     <string name="empMobile" title="Tel No.; Mobile"/>
     <string name="empPhone" title="Tel No; House"/>
     <string name="empEmail" title="E-mail"/>
@@ -23,9 +23,6 @@
     <string name="empFlat" title="Flat"/>
     <string name="empZipCode" title="Zip code"/>
     <string name="empDescription" title="Descriptons"/>
-
-    <many-to-one name="employeeHrAddReg" ref="com.axelor.apps.hr.db.EmployeeHr"
-      title="EmployeeHrAddReg"/>
 
     <many-to-one name="employeeHrAdd" ref="com.axelor.apps.hr.db.EmployeeHr"
       title="EmployeeHrAdd"/>

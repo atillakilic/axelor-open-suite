@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeWorkCard" cacheable="true">
+
+    <many-to-one name="empWorkCardFile" title="File"
+      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <string name="workingCardSeriale" title="Working Card Seriale"/>
+    <string name="workingCardNo" title="Working Card No"/>
+    <string name="taxNumber" title="Tax number"/>
+    <string name="workingStatus" title="Working status"/>
+    <date name="dateOfIssue" title="Date of issue"/>
+    <date name="expirationDate" title="Expiration date"/>
+    <string name="issuingAuthority" title="issuing authority"/>
+    <date name="validityPeriodStartDate" title="Validity period start date"/>
+    <string name="companyTaxNumber" title="Company tax number"/>
+    <string name="areaOfValidity" title="Area of validity"/>
+    <string name="fmsSerial" title="FMS serial"/>
+    <string name="fmsNo" title="FMS No"/>
+    <string name="category" title="category"/>
+    <string name="description" title="Description"/>
+
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
+
+  </entity>
+
+</domain-models>
+

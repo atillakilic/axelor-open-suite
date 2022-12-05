@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-visa-grid" title="Employee Visa"
+    model="com.axelor.apps.hr.db.EmployeeVisa">
+
+    <field name="empVisaFile"/>
+    <field name="visaType" colSpan="4"/>
+    <field name="visaEmpCategory" colSpan="4"/>
+    <field name="visaNo" colSpan="4"/>
+    <field name="visaDateOfIssue" colSpan="4"/>
+    <field name="visaDateOfExpiry" colSpan="4"/>
+    <field name="visaDays" colSpan="4"/>
+    <field name="visaId" colSpan="4"/>
+    <field name="visaReasonForTravel" colSpan="4"/>
+    <field name="visaCompany" colSpan="4"/>
+    <field name="descriptons" colSpan="4"/>
+    <field name="employeeHr"/>
+  </grid>
+
+  <form name="hr-employee-visa-form" title="Employee Visa"
+    model="com.axelor.apps.hr.db.EmployeeVisa" width="large" onNew="">
+    <panel name="visaInfo" showTitle="true" title="Visa Info" required="true">
+      <field name="empVisaFile" colSpan="6" canNew="true" canEdit="true" canSelect="false"/>
+      <spacer/>
+      <field name="visaType" colSpan="4"/>
+      <field name="visaEmpCategory" colSpan="4"/>
+      <field name="visaNo" colSpan="4"/>
+      <field name="visaDateOfIssue" colSpan="4"/>
+      <field name="visaDays" colSpan="4"/>
+      <field name="visaId" colSpan="4"/>
+      <field name="visaReasonForTravel" colSpan="4"/>
+      <field name="visaCompany" colSpan="4"/>
+      <field name="descriptons" colSpan="4"/>
+    </panel>
+
+  </form>
+
+</object-views>

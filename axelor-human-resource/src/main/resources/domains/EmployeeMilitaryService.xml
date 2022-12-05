@@ -5,15 +5,17 @@
 
   <module name="human-resource" package="com.axelor.apps.hr.db"/>
 
-  <entity name="EmployeeDrivingLicense" cacheable="true">
+  <entity name="EmployeeMilitaryService" cacheable="true">
 
-    <many-to-one name="empDrivingLicensFile" title="File"
+    <many-to-one name="empMilitaryServiceFile" title="File"
       ref="com.axelor.apps.hr.db.EmployeeFile"/>
-    <string name="licenseClass" title="Driving license class"
-      selection="hr.employee.hr.driving.class"/>
-    <date name="issueDate" title="date of issue"/>
-    <date name="expireDate" title="Expiration date"/>
-    <string name="descriptons" title="Descriptons"/>
+    <string name="city" title="City"/>
+    <string name="registrationNumber" title="Registration number"/>
+    <string name="examWasConducted" title="Exam Was Conducted"/>
+    <date name="dateOfIssue" title="Date of issue"/>
+    <date name="expirationDate" title="Expiration date "/>
+    <string name="description" title="Description"/>
+
 
     <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
       title="Employee"/>

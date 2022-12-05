@@ -7,8 +7,10 @@
 
   <entity name="EmployeeVisa" cacheable="true">
 
-    <many-to-one name="visaMetaFile" title="File" ref="com.axelor.meta.db.MetaFile"/>
-    <integer name="visaCategory" title="Category" selection="hr.employee.visa.category.type"/>
+    <many-to-one name="empVisaFile" title="File"
+      ref="com.axelor.apps.hr.db.EmployeeFile"/>
+    <integer name="visaType" title="Visa Type" selection="hr.employee.visa.category.type"/>
+    <string name="visaEmpCategory" title="Category"/>
     <string name="visaNo" title="Visa No"/>
     <date name="visaDateOfIssue" title="Start Date"/>
     <date name="visaDateOfExpiry" title="Expiration date"/>

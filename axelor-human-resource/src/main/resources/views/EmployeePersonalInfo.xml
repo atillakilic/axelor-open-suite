@@ -32,8 +32,25 @@
       <field name="emergencyPhone" title="Emergency Phone"/>
       <field name="emergencyRelationship" title="Emergency Relationship"/>
       <field name="descriptons" title="Descriptons"/>
-
     </panel>
+
+    <panel name="bodyMeasurements" showTitle="true" title="Body Measurements">
+      <field name="shoesSize" title="Shoes size"/>
+      <field name="pantsSize" title="Pants size"/>
+      <field name="coatSize" title="Coat Size"/>
+      <field name="height" title="Height"/>
+      <field name="weight" title="Weight"/>
+      <field name="bodyType" title="Body Type"/>
+      <field name="descriptonsBodyMrg" title="Descriptons"/>
+    </panel>
+
+    <panel name="education" showTitle="true" title="Eduction">
+      <field name="graduateSchoolLevel" title="Graduate school level"/>
+      <field name="graduateSchoolName" title="Graduate school name"/>
+      <field name="score" title="Score"/>
+      <field name="descriptonsBodyEdu" title="Descriptons"/>
+    </panel>
+
 
   </form>
 </object-views>

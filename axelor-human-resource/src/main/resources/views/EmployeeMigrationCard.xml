@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-migration-card-grid" title="Migration Card"
+    model="com.axelor.apps.hr.db.EmployeeMigrationCard">
+
+    <field name="empMigrationCardFile"/>
+    <field name="Serial" title="Serial"/>
+    <field name="cardNo" title="Card No"/>
+    <field name="officerCode" title="Officer code"/>
+    <field name="dateOfIssue" title="Date of issue"/>
+    <field name="expirationDate" title="Expiration date "/>
+  </grid>
+
+  <form name="hr-employee-migration-card-form" title="Migration Card"
+    model="com.axelor.apps.hr.db.EmployeeMigrationCard" width="large" onNew="">
+    <panel name="migrationCard" showTitle="true" title="Migration Card" required="true">
+      <field name="empMigrationCardFile" colSpan="6" canNew="true" canEdit="true"
+        canSelect="false"/>
+      <spacer/>
+      <field name="Serial" title="Serial"/>
+      <field name="cardNo" title="Card No"/>
+      <field name="officerCode" title="Officer code"/>
+      <field name="dateOfIssue" title="Date of issue"/>
+    </panel>
+
+  </form>
+
+</object-views>
