@@ -531,6 +531,28 @@
           <field name="countryOfOrigin" showIf="usedInDEB"/>
         </panel>
       </panel>
+      <panel name="serviceSetProductPanel" title="Products"
+        hideIf="productTypeSelect != 'serviceSet'">
+        <panel-related name="serviceSetProductListPanel" field="serviceSetProductList"
+          form-view="service-set-product-line-form" grid-view="service-set-product-line-grid"
+          colSpan="12"/>
+      </panel>
+      <panel name="serviceSetDepreciationPanel" title="Depreciation"
+        hideIf="productTypeSelect != 'serviceSet'">
+        <panel-related name="serviceSetDepreciationListPanel"
+          field="serviceSetDepreciationList" form-view="service-set-depreciation-line-form"
+          grid-view="service-set-depreciation-line-grid" colSpan="12"/>
+      </panel>
+      <panel name="serviceSetServicePanel" title="Service"
+        hideIf="productTypeSelect != 'serviceSet'">
+        <panel-related name="serviceSetServiceListPanel" field="serviceSetServiceList"
+          form-view="service-set-service-line-form" grid-view="service-set-service-line-grid"
+          onChange="action-product-method-calculate-total-percentage" colSpan="12"/>
+        <field name="totalPercent" colSpan="2" readonly="true"/>
+      </panel>
+      <panel name="serviceSetReportsPanel" title="Reports"
+        hideIf="productTypeSelect != 'serviceSet'">
+      </panel>
     </panel-tabs>
     <panel name="attrsPanel">
       <field name="attrs" colSpan="12"/>
@@ -978,6 +1000,7 @@
   <action-group name="action-group-product-onsave">
     <action name="action-product-method-check-anomaly"/>
     <action name="action-product-method-set-anomaly"/>
+    <action name="action-product-method-check-total-percentage"/>
   </action-group>
 
   <action-method name="action-product-method-check-anomaly">
@@ -986,6 +1009,14 @@
 
   <action-method name="action-product-method-set-anomaly">
     <call class="com.axelor.apps.base.web.ProductController" method="setPriceListLineAnomaly"/>
+  </action-method>
+
+  <action-method name="action-product-method-calculate-total-percentage">
+    <call class="com.axelor.apps.base.web.ProductController" method="calculateTotalPercentage"/>
+  </action-method>
+
+  <action-method name="action-product-method-check-total-percentage">
+    <call class="com.axelor.apps.base.web.ProductController" method="checkTotalPercentage"/>
   </action-method>
 
 </object-views>

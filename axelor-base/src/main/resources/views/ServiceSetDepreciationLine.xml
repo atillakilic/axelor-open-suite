@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="service-set-depreciation-line-grid" title="ServiceSet Depreciation"
+    model="com.axelor.apps.base.db.ServiceSetDepreciationLine">
+    <field name="serviceSetEquipment"/>
+    <field name="quentity"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="service-set-depreciation-line-form" title="ServiceSet Depreciation"
+    model="com.axelor.apps.base.db.ServiceSetDepreciationLine">
+    <panel name="mainPanel">
+      <field name="serviceSetEquipment" domain="self.productTypeSelect = 'equipment'"/>
+      <field name="quentity"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+</object-views>

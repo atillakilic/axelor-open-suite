@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="service-set-product-line-grid" title="ServiceSet Product"
+    model="com.axelor.apps.base.db.ServiceSetProductLine">
+    <field name="serviceSetproduct" title="Product"/>
+    <field name="quentity"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="service-set-product-line-form" title="ServiceSet Product"
+    model="com.axelor.apps.base.db.ServiceSetProductLine">
+    <panel name="mainPanel">
+      <field name="serviceSetproduct" title="Product"
+        domain="self.productTypeSelect = 'storable'"/>
+      <field name="quentity"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+</object-views>

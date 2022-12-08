@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="service-set-service-line-grid" title="ServiceSet Service"
+    model="com.axelor.apps.base.db.ServiceSetServiceLine">
+    <field name="serviceName"/>
+    <field name="percent"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="service-set-service-line-form" title="ServiceSet Service"
+    model="com.axelor.apps.base.db.ServiceSetServiceLine">
+    <panel name="mainPanel">
+      <field name="serviceName" domain="self.productTypeSelect = 'service'"/>
+      <field name="percent" min="1" max="100"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+</object-views>

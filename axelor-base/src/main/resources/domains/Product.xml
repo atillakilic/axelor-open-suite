@@ -138,6 +138,19 @@
     <one-to-many name="productCompanyList" ref="com.axelor.apps.base.db.ProductCompany"
       title="Products per companies" mappedBy="product"/>
 
+    <one-to-many name="serviceSetProductList"
+      ref="com.axelor.apps.base.db.ServiceSetProductLine" title="Service Set Products"
+      mappedBy="product"/>
+
+    <one-to-many name="serviceSetDepreciationList"
+      ref="com.axelor.apps.base.db.ServiceSetDepreciationLine" title="Service Set Depreciation"
+      mappedBy="product"/>
+
+    <one-to-many name="serviceSetServiceList"
+      ref="com.axelor.apps.base.db.ServiceSetServiceLine" title="Service Set Service"
+      mappedBy="product"/>
+    <decimal name="totalPercent" title="Total Percent"/>
+
     <string name="dtype" insertable="false" updatable="false"/>
 
     <!-- Json field -->

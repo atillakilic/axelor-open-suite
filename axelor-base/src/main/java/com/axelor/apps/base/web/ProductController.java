@@ -19,6 +19,7 @@ package com.axelor.apps.base.web;
 
 import com.axelor.apps.ReportFactory;
 import com.axelor.apps.base.db.Product;
+import com.axelor.apps.base.db.ServiceSetServiceLine;
 import com.axelor.apps.base.db.repo.ProductRepository;
 import com.axelor.apps.base.exceptions.IExceptionMessage;
 import com.axelor.apps.base.report.IReport;
@@ -42,6 +43,7 @@ import com.axelor.rpc.Criteria;
 import com.google.common.base.Joiner;
 import com.google.inject.Singleton;
 import java.lang.invoke.MethodHandles;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -193,5 +195,42 @@ public class ProductController {
       }
     }
     return displayedProductIdList;
+  }
+
+  public void calculateTotalPercentage(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+    Product product = request.getContext().asType(Product.class);
+    List<ServiceSetServiceLine> serviceList = product.getServiceSetServiceList();
+
+    if (serviceList.size() == 0) {
+      response.setValue("totalPercent", 0);
+      return;
+    }
+
+    BigDecimal totalPercent = new BigDecimal(0);
+    for (ServiceSetServiceLine serviceSetService : serviceList) {
+      BigDecimal percent = serviceSetService.getPercent();
+      totalPercent = totalPercent.add(percent);
+    }
+    response.setValue("totalPercent", totalPercent);
+  }
+
+  public void checkTotalPercentage(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+    Product product = request.getContext().asType(Product.class);
+    List<ServiceSetServiceLine> serviceList = product.getServiceSetServiceList();
+
+    if (serviceList == null) {
+      return;
+    }
+
+    if (serviceList.size() != 0) {
+      BigDecimal totalPercentage = product.getTotalPercent();
+      int result = totalPercentage.compareTo(new BigDecimal(100));
+      if (result != 0) {
+        throw new AxelorException(
+            1, "Total percentage of service is " + totalPercentage + "%, It should be 100%");
+      }
+    }
   }
 }

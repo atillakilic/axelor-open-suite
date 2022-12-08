@@ -254,6 +254,22 @@
     <context name="_productTypeSelect" expr="service"/>
   </action-view>
 
+  <menuitem name="product-all-root-product-and-service"
+    parent="referential-root-product-root" title="All Products"
+    action="product.all.root.product.and.service"/>
+
+  <action-view name="product.all.root.product.and.service" title="All Products"
+    model="com.axelor.apps.base.db.Product">
+    <view type="cards" name="product-cards"/>
+    <view type="grid" name="product-grid"/>
+    <view type="form" name="product-form"/>
+    <view-param name="limit" value="39"/>
+    <view-param name="search-filters" value="products-filters"/>
+    <context name="_activeCompany" expr="eval:__user__.activeCompany"/>
+    <context name="_isModel" expr="false"/>
+    <context name="_productTypeSelect" expr="service"/>
+  </action-view>
+
   <menuitem name="product-root-product-model" parent="referential-root-product-root"
     title="Products models" action="product.root.product.model"
     if="__config__.app.getApp('base').getManageProductVariants()"/>
