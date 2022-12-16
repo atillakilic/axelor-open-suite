@@ -256,6 +256,22 @@
     <context name="_fromStock" expr="eval:true"/>
   </action-view>
 
+  <menuitem name="stock-root-all-product-and-service" parent="stock-root"
+    title="All Products" order="38" action="stock.root.all.product.and.service"/>
+
+  <action-view name="stock.root.all.product.and.service" title="All Products"
+    model="com.axelor.apps.base.db.Product">
+    <view type="cards" name="product-cards"/>
+    <view type="grid" name="product-grid"/>
+    <view type="form" name="product-form"/>
+    <view-param name="limit" value="39"/>
+    <view-param name="search-filters" value="products-filters"/>
+    <context name="_activeCompany" expr="eval:__user__.activeCompany"/>
+    <context name="_isModel" expr="false"/>
+    <context name="_productTypeSelect" expr="service"/>
+  </action-view>
+
+
   <menuitem name="stock-root-stock-location" parent="stock-root" title="Stock Locations"
     action="stock.root.stock.location" order="41"/>
 
@@ -436,6 +452,15 @@
     title="Stock Correction Reason" model="com.axelor.apps.stock.db.StockCorrectionReason">
     <view type="grid" name="stock-correction-reason-grid"/>
     <view type="form" name="stock-correction-reason-form"/>
+  </action-view>
+
+  <menuitem name="stock-root-conf-brand" title="Brand" parent="stock-root-conf"
+    action="base.stock.root.conf.brand"/>
+
+  <action-view name="base.stock.root.conf.brand" title="Brand"
+    model="com.axelor.apps.base.db.StockBrand">
+    <view type="grid" name="base-stock-brand-grid"/>
+    <view type="form" name="base-stock-brand-form"/>
   </action-view>
 
 </object-views>

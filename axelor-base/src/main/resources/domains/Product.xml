@@ -151,6 +151,29 @@
       mappedBy="product"/>
     <decimal name="totalPercent" title="Total Percent"/>
 
+    <!-- Equipment type -->
+    <many-to-one name="equipmentBrand" title="Equipment Brand"
+      ref="com.axelor.apps.base.db.StockBrand"/>
+    <boolean name="lifeSpanAvtive" title="Lifespan active"/>
+    <decimal name="lifespanTime" title="Lifespan time"/>
+    <boolean name="maintenancePeriodActive" title="Maintenance Period active"/>
+    <many-to-one name="maintenanceFrequency" title="Frequency"
+      ref="com.axelor.apps.base.db.Frequency"/>
+
+    <one-to-many name="replacementPart"
+      ref="com.axelor.apps.base.db.EquipmentReplacementLine" title="Equipment Replacement"
+      mappedBy="product"/>
+
+    <!-- Consumable type -->
+    <many-to-one name="consumableBrand" title="Equipment Brand"
+      ref="com.axelor.apps.base.db.StockBrand"/>
+
+    <!-- Service type -->
+
+    <one-to-many name="citizenshipRateLine"
+      ref="com.axelor.apps.base.db.ServiceCitizenshipRateLine" title="citizenship Rate"
+      mappedBy="product"/>
+
     <string name="dtype" insertable="false" updatable="false"/>
 
     <!-- Json field -->

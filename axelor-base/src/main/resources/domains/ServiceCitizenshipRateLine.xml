@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="base" package="com.axelor.apps.base.db"/>
+
+  <entity name="ServiceCitizenshipRateLine" lang="java" cacheable="true">
+
+    <many-to-one name="citizenship" ref="com.axelor.apps.base.db.Citizenship"
+      title="Citizenship"/>
+    <decimal name="rate" title="Rate"/>
+    <decimal name="average" title="Average"/>
+    <string name="description" title="Description"/>
+
+    <many-to-one name="product" ref="com.axelor.apps.base.db.Product"/>
+
+  </entity>
+
+</domain-models>

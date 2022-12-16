@@ -36,6 +36,10 @@ public class EmployeeFileController {
       throws AxelorException {
 
     String idsStr = "";
+    if(request.getContext().get("_ids") == null) {
+    	response.setAlert("Please select the grid.");
+    	return;
+    }
     List<Integer> selectedFiels = (List<Integer>) request.getContext().get("_ids");
     idsStr = Joiner.on(",").join(selectedFiels);
 

@@ -553,6 +553,39 @@
       <panel name="serviceSetReportsPanel" title="Reports"
         hideIf="productTypeSelect != 'serviceSet'">
       </panel>
+      <panel name="equipmentInformationPanel" title="Information"
+        hideIf="productTypeSelect != 'equipment'">
+        <field name="equipmentBrand" title="Equipment Brand" canNew="true" colSpan="3"/>
+        <spacer colSpan="9"/>
+        <field name="lifeSpanAvtive" colSpan="3"/>
+        <field name="lifespanTime" showIf="lifeSpanAvtive" colSpan="3"/>
+        <spacer/>
+        <field name="maintenancePeriodActive" colSpan="3"/>
+        <field name="maintenanceFrequency" showIf="maintenancePeriodActive" canNew="true"
+          colSpan="3"/>
+      </panel>
+      <panel name="equipmentReplacementPanel" title="Replacement Part"
+        hideIf="productTypeSelect != 'equipment'">
+        <panel-related name="replacementPartPanel" field="replacementPart"
+          form-view="equipment-replacement-line-form" grid-view="equipment-replacement-line-grid"
+          colSpan="12"/>
+      </panel>
+      <panel name="consumableInfoPanel" title="Information"
+        hideIf="productTypeSelect != 'consumable'">
+        <field name="consumableBrand" title="Consumable Brand" canNew="true" colSpan="3"/>
+      </panel>
+      <panel name="equipmentPurchasePanel" title="Purchase history"
+        hideIf="productTypeSelect != 'equipment'">
+      </panel>
+      <panel name="equipmentConsumablePanel" title="Purchase history"
+        hideIf="productTypeSelect != 'consumable'">
+      </panel>
+      <panel name="serviceCityzenshipRatePanel" title="Citizenship Rate"
+        hideIf="productTypeSelect != 'service'">
+        <panel-related name="serviceCitizenshipPanel" field="citizenshipRateLine"
+          form-view="service-citizenship-rate-form" grid-view="service-citizenship-rate-grid"
+          colSpan="12"/>
+      </panel>
     </panel-tabs>
     <panel name="attrsPanel">
       <field name="attrs" colSpan="12"/>

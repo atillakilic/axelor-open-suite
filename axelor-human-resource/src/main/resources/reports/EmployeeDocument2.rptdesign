@@ -206,7 +206,7 @@ Employee.name as Employee
 
 from hr_employee_file as EmployeeFile
 left outer join base_file_type as FileType on (EmployeeFile.file_type = FileType.id)
-left outer join hr_employee as Employee on (EmployeeFile.employee = Employee.id)
+left outer join hr_employee_hr as Employee on (EmployeeFile.employee_hr = Employee.id)
 @INJECTEDWHERE]]></xml-property>
         </oda-data-set>
     </data-sets>

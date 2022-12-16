@@ -42,11 +42,12 @@
       <field name="expirationDate" showIf="fileType.hasExpirationDate" colSpan="3"
         requiredIf="fileType.hasExpirationDate"
         onChange="action-employee-file-record-calcuate-remain-day"/>
-      <field name="preparationTime" colSpan="3" readonly="true"/>
-      <field name="remainingDays" title="Remaining Days" colSpan="4" readonly="true"/>
-      <field name="criticalTime" colSpan="3" readonly="true"/>
-      <field name="price" colSpan="3" readonly="true"/>
       <field name="notFollowDoc"/>
+      <field name="preparationTime" colSpan="3" readonly="true" hidden="true"/>
+      <field name="remainingDays" title="Remaining Days" colSpan="4" readonly="true"
+        hidden="true"/>
+      <field name="criticalTime" colSpan="3" readonly="true" hidden="true"/>
+      <field name="price" colSpan="3" readonly="true" hidden="true"/>
       <field name="fileType.hasExpirationDate" hidden="true"/>
     </panel>
   </form>

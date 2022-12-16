@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="service-citizenship-rate-grid" title="Citizenship Rate"
+    model="com.axelor.apps.base.db.ServiceCitizenshipRateLine">
+    <field name="citizenship"/>
+    <field name="rate"/>
+    <field name="average"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="service-citizenship-rate-form" title="Citizenship Rate"
+    model="com.axelor.apps.base.db.ServiceCitizenshipRateLine">
+    <panel name="mainPanel">
+      <field name="citizenship" canEdit="false" canNew="false" canSelect="true"/>
+      <field name="rate"/>
+      <field name="average"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+</object-views>

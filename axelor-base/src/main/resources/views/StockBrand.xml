@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="base-stock-brand-grid" title="Brand" model="com.axelor.apps.base.db.StockBrand">
+    <field name="brandName" title="Brand"/>
+    <field name="model" title="Model"/>
+    <field name="sku" title="SKU"/>
+    <field name="mpn" title="MPN"/>
+    <field name="barcode" title="Barcode"/>
+    <field name="description" title="Decription"/>
+  </grid>
+
+  <form name="base-stock-brand-form" title="Brand" model="com.axelor.apps.base.db.StockBrand">
+    <panel name="mainPanel">
+      <field name="brandName" title="Brand"/>
+      <field name="model" title="Model"/>
+      <field name="sku" title="SKU"/>
+      <field name="mpn" title="MPN"/>
+      <field name="barcode" title="Barcode"/>
+      <field name="description" title="Decription"/>
+    </panel>
+  </form>
+
+
+</object-views>

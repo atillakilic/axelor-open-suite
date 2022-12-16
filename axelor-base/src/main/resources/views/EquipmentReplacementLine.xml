@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="equipment-replacement-line-grid" title="Equipment Replacement"
+    model="com.axelor.apps.base.db.EquipmentReplacementLine">
+    <field name="replacementName"/>
+    <field name="quentity"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="equipment-replacement-line-form" title="Equipment Replacement"
+    model="com.axelor.apps.base.db.EquipmentReplacementLine">
+    <panel name="mainPanel">
+      <field name="replacementName" domain="self.productTypeSelect = 'consumable'"/>
+      <field name="quentity" min="1" max="100"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+</object-views>
