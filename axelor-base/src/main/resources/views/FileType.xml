@@ -19,6 +19,13 @@
       <field name="remainingDays" colSpan="3"/>
       <field name="price" colSpan="3"/>
     </panel>
+    <panel-related name="empFilePriseListPanel" field="empFilePriseList"
+      onChange="action-file-type-method-set-document-price,save"
+      form-view="employee-file-prise-list-form" grid-view="employee-file-prise-list-grid"
+      colSpan="12"/>
   </form>
 
+  <action-method name="action-file-type-method-set-document-price">
+    <call class="com.axelor.apps.base.web.FileTypeController" method="setDocumentPrice"/>
+  </action-method>
 </object-views>

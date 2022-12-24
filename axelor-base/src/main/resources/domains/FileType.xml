@@ -13,6 +13,9 @@
     <integer name="criticalTime" title="Critical Time"/>
     <integer name="remainingDays" title="Remaining Days"/>
     <decimal name="price" title="Price"/>
+
+    <one-to-many name="empFilePriseList"
+      ref="com.axelor.apps.base.db.EmployeeFilePriseList" mappedBy="employeeFile" required="true"/>
   </entity>
 
 </domain-models>

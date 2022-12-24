@@ -662,4 +662,9 @@
     <option value="4">Employers Without Visa (Gov. Agreement)</option>
   </selection>
 
+  <selection name="events.planning.type">
+    <option value="1">Employer</option>
+    <option value="2">Department</option>
+  </selection>
+
 </object-views>

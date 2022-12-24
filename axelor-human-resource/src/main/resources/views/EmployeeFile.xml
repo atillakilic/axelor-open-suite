@@ -50,6 +50,7 @@
       <field name="price" colSpan="3" readonly="true" hidden="true"/>
       <field name="fileType.hasExpirationDate" hidden="true"/>
     </panel>
+
   </form>
 
 

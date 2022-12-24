@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <form title="Weekly Planning" name="hr-weekly-planning-form"
+    model="com.axelor.apps.base.db.WeeklyPlanning">
+    <panel name="mainPanel">
+      <field name="name"/>
+      <field name="bonusCoef"/>
+      <field name="leaveCoef"/>
+      <field name="overTimeIgnore"/>
+      <field name="eventType"/>
+      <spacer/>
+      <field name="employee" showIf="eventType == 1"/>
+      <spacer/>
+      <field name="department" showIf="eventType == 2"/>
+    </panel>
+    <panel-related name="weekDaysPanel" field="weekDays" editable="true"
+      grid-view="day-planning-grid" form-view="day-planning-form"/>
+  </form>
+
+</object-views>
+

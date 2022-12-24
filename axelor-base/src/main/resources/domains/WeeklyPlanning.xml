@@ -21,6 +21,8 @@
     <time name="morningTo" title="To"/>
     <time name="afternoonFrom" title="2nd Period From"/>
     <time name="afternoonTo" title="To"/>
+    <time name="nightFrom" title="3nd Period From"/>
+    <time name="nightTo" title="To"/>
     <integer name="sequence" title="Seq."/>
   </entity>
 

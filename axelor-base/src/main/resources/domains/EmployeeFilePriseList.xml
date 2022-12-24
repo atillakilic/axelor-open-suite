@@ -5,12 +5,12 @@
 
   <module name="base" package="com.axelor.apps.base.db"/>
 
-  <entity name="EventsPlanningLine" cacheable="true">
-    <many-to-one name="eventsPlanning" ref="com.axelor.apps.base.db.EventsPlanning"/>
-    <integer name="year" required="true" title="Year"/>
-    <date name="date" column="date_val" required="true" title="Start Date"/>
-    <date name="endDate" required="true" title="End Date"/>
+  <entity name="EmployeeFilePriseList" cacheable="true">
+    <date name="updatedDate" namecolumn="true" title="Updated Date"/>
+    <decimal name="price" title="Price"/>
     <string name="description" title="Description"/>
+
+    <many-to-one name="employeeFile" ref="com.axelor.apps.base.db.FileType"/>
   </entity>
 
 </domain-models>

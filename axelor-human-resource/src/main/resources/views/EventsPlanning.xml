@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <form title="Public holidays planning" name="hr-events-planning-form"
+    model="com.axelor.apps.base.db.EventsPlanning">
+    <panel name="mainPanel">
+      <field name="name"/>
+      <field name="coefficientBonus"/>
+      <field name="eventType"/>
+      <spacer/>
+      <field name="employee" showIf="eventType == 1"/>
+      <spacer/>
+      <field name="department" showIf="eventType == 2"/>
+    </panel>
+    <panel-related name="eventsPlanningLineListPanel" field="eventsPlanningLineList"
+      editable="true" grid-view="events-planning-line-grid" form-view="events-planning-line-form"/>
+  </form>
+
+</object-views>
+

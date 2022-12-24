@@ -194,7 +194,7 @@
   <action-view name="hr.public.holiday.planning.all" title="Public holidays planning"
     model="com.axelor.apps.base.db.EventsPlanning">
     <view type="grid" name="events-planning-grid"/>
-    <view type="form" name="events-planning-form"/>
+    <view type="form" name="hr-events-planning-form"/>
   </action-view>
 
   <menuitem name="weekly-planning-all" parent="plannings-all" title="Weekly planning"
@@ -203,7 +203,7 @@
   <action-view name="hr.weekly.planning.all" title="Weekly Planning"
     model="com.axelor.apps.base.db.WeeklyPlanning">
     <view type="grid" name="weekly-planning-grid"/>
-    <view type="form" name="weekly-planning-form"/>
+    <view type="form" name="hr-weekly-planning-form"/>
   </action-view>
 
   <menuitem name="hr-root-emp-mgt-conf-file-type" parent="hr-root-emp-mgt-conf"

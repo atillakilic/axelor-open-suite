@@ -5,11 +5,12 @@
 
   <module name="base" package="com.axelor.apps.base.db"/>
 
-  <entity name="EventsPlanningLine" cacheable="true">
-    <many-to-one name="eventsPlanning" ref="com.axelor.apps.base.db.EventsPlanning"/>
-    <integer name="year" required="true" title="Year"/>
-    <date name="date" column="date_val" required="true" title="Start Date"/>
-    <date name="endDate" required="true" title="End Date"/>
+  <entity name="WeeklyPlanning" cacheable="true">
+    <integer name="eventType" title="Type" selection="events.planning.type"/>
+    <decimal name="overTimeIgnore" title="Overtime to be ignored"/>
+    <many-to-one name="employee" title="Employee" ref="com.axelor.apps.hr.db.EmployeeHr"/>
+    <many-to-one name="department" title="Department"
+      ref="com.axelor.apps.base.db.CompanyDepartment"/>
     <string name="description" title="Description"/>
   </entity>
 
