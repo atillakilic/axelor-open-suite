@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="saleorder-salary-line-grid" title="SalaryLine" editable="true"
+    model="com.axelor.apps.sale.db.SaleorderSalaryLine">
+    <field name="department" required="true"/>
+    <field name="salarie" onChange="action-attrs-sale-order-salary-line-total-price"/>
+    <field name="tax" onChange="action-attrs-sale-order-salary-line-total-price"/>
+    <field name="documentsCost" onChange="action-attrs-sale-order-salary-line-total-price"/>
+    <field name="piece" onChange="action-attrs-sale-order-salary-line-total-price"/>
+    <field name="totalPrice" readonly="true"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="saleorder-salary-line-form" title="SalaryLine"
+    model="com.axelor.apps.sale.db.SaleorderSalaryLine">
+    <panel name="mailPanel">
+      <field name="department" required="true"/>
+      <field name="salarie" onChange="action-attrs-sale-order-salary-line-total-price"/>
+      <field name="tax" onChange="action-attrs-sale-order-salary-line-total-price"/>
+      <field name="documentsCost" onChange="action-attrs-sale-order-salary-line-total-price"/>
+      <field name="piece" onChange="action-attrs-sale-order-salary-line-total-price"/>
+      <field name="totalPrice" readonly="true"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+  <action-attrs name="action-attrs-sale-order-salary-line-total-price">
+    <attribute for="totalPrice" name="value"
+      expr="eval: (documentsCost + salarie + tax) * piece"/>
+  </action-attrs>
+
+</object-views>

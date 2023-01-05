@@ -38,6 +38,10 @@ import com.axelor.apps.report.engine.ReportSettings;
 import com.axelor.apps.sale.db.Pack;
 import com.axelor.apps.sale.db.SaleOrder;
 import com.axelor.apps.sale.db.SaleOrderLine;
+import com.axelor.apps.sale.db.SaleorderExpenseLine;
+import com.axelor.apps.sale.db.SaleorderOtherCostLine;
+import com.axelor.apps.sale.db.SaleorderProductLine;
+import com.axelor.apps.sale.db.SaleorderSalaryLine;
 import com.axelor.apps.sale.db.repo.PackRepository;
 import com.axelor.apps.sale.db.repo.SaleOrderRepository;
 import com.axelor.apps.sale.exception.IExceptionMessage;
@@ -917,5 +921,85 @@ public class SaleOrderController {
     } catch (Exception e) {
       TraceBackService.trace(response, e);
     }
+  }
+
+  public void calculateTotalExpense(ActionRequest request, ActionResponse response) {
+    SaleOrder saleOrder = request.getContext().asType(SaleOrder.class);
+    List<SaleorderExpenseLine> expenseLines = saleOrder.getSaleorderExpenseLine();
+
+    if (expenseLines.size() == 0) {
+      response.setValue("expenseSubTotal", 0);
+      return;
+    }
+
+    BigDecimal totalValue = new BigDecimal(0);
+    for (SaleorderExpenseLine line : expenseLines) {
+      totalValue = totalValue.add(line.getTotalPrice());
+    }
+    response.setValue("expenseSubTotal", totalValue);
+  }
+
+  public void calculateProductSubTotal(ActionRequest request, ActionResponse response) {
+    SaleOrder saleOrder = request.getContext().asType(SaleOrder.class);
+    List<SaleorderProductLine> productLines = saleOrder.getSaleorderProductLine();
+
+    if (productLines.size() == 0) {
+      response.setValue("productSubTotal", 0);
+      return;
+    }
+
+    BigDecimal totalValue = new BigDecimal(0);
+    for (SaleorderProductLine line : productLines) {
+      totalValue = totalValue.add(line.getTotalPrice());
+    }
+    response.setValue("productSubTotal", totalValue);
+  }
+
+  public void calculateEquipmentSubTotal(ActionRequest request, ActionResponse response) {
+    SaleOrder saleOrder = request.getContext().asType(SaleOrder.class);
+    List<SaleorderProductLine> productLines = saleOrder.getSaleorderEquipmentLine();
+
+    if (productLines.size() == 0) {
+      response.setValue("equipmentSubTotal", 0);
+      return;
+    }
+
+    BigDecimal totalValue = new BigDecimal(0);
+    for (SaleorderProductLine line : productLines) {
+      totalValue = totalValue.add(line.getTotalPrice());
+    }
+    response.setValue("equipmentSubTotal", totalValue);
+  }
+
+  public void calculateSalarySubTotal(ActionRequest request, ActionResponse response) {
+    SaleOrder saleOrder = request.getContext().asType(SaleOrder.class);
+    List<SaleorderSalaryLine> salaryLines = saleOrder.getSaleorderSalaryLine();
+
+    if (salaryLines.size() == 0) {
+      response.setValue("salarySubTotal", 0);
+      return;
+    }
+
+    BigDecimal totalValue = new BigDecimal(0);
+    for (SaleorderSalaryLine line : salaryLines) {
+      totalValue = totalValue.add(line.getTotalPrice());
+    }
+    response.setValue("salarySubTotal", totalValue);
+  }
+
+  public void calculateOtherCostSubTotal(ActionRequest request, ActionResponse response) {
+    SaleOrder saleOrder = request.getContext().asType(SaleOrder.class);
+    List<SaleorderOtherCostLine> otherCostLines = saleOrder.getSaleorderOtherCostLine();
+
+    if (otherCostLines.size() == 0) {
+      response.setValue("otherCostSubTotal", 0);
+      return;
+    }
+
+    BigDecimal totalValue = new BigDecimal(0);
+    for (SaleorderOtherCostLine line : otherCostLines) {
+      totalValue = totalValue.add(line.getTotalPrice());
+    }
+    response.setValue("otherCostSubTotal", totalValue);
   }
 }

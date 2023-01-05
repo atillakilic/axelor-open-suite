@@ -165,6 +165,34 @@
     <many-to-one name="taxNumber" title="Tax number"
       ref="com.axelor.apps.account.db.TaxNumber"/>
 
+    <many-to-one name="projectCategory" ref="com.axelor.apps.project.db.ProjectCategory"
+      title="Project Category"/>
+    <date name="projectStartDate" title="Project Start Date"/>
+    <date name="projectCompletionDate" title="Project Completion Date"/>
+
+    <one-to-many name="saleorderExpenseLine"
+      ref="com.axelor.apps.sale.db.SaleorderExpenseLine" mappedBy="saleOrder" title="ExpenseLine"/>
+    <decimal name="expenseSubTotal" title="Expense Sub Total"/>
+
+    <one-to-many name="saleorderProductLine"
+      ref="com.axelor.apps.sale.db.SaleorderProductLine" mappedBy="saleOrder" title="ProductLine"/>
+    <decimal name="productSubTotal" title="Product Sub Total"/>
+
+    <one-to-many name="saleorderEquipmentLine"
+      ref="com.axelor.apps.sale.db.SaleorderProductLine" mappedBy="saleOrderEqupment"
+      title="EquipmentLine"/>
+    <decimal name="equipmentSubTotal" title="Equipment Sub Total"/>
+
+    <one-to-many name="saleorderSalaryLine"
+      ref="com.axelor.apps.sale.db.SaleorderSalaryLine" mappedBy="saleorderSalary"
+      title="Salary Line"/>
+    <decimal name="salarySubTotal" title="Salary Sub Total"/>
+
+    <one-to-many name="saleorderOtherCostLine"
+      ref="com.axelor.apps.sale.db.SaleorderOtherCostLine" mappedBy="saleorderOtherCost"
+      title="Other Cost"/>
+    <decimal name="otherCostSubTotal" title="OtherCost Sub Total"/>
+
     <unique-constraint columns="saleOrderSeq,company"/>
 
     <finder-method name="findBySaleOrderSeqAndCompany" using="saleOrderSeq,company"/>

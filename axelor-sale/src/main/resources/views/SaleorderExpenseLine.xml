@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="saleorder-expense-line-grid" title="ExpenseLine" editable="true"
+    model="com.axelor.apps.sale.db.SaleorderExpenseLine">
+    <field name="expenseType"/>
+    <field name="period" onChange="action-attrs-sale-order-expense-line-total-price"/>
+    <field name="piece" onChange="action-attrs-sale-order-expense-line-total-price"/>
+    <field name="price" onChange="action-attrs-sale-order-expense-line-total-price"/>
+    <field name="totalPrice"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="saleorder-expense-line-form" title="ExpenseLine"
+    model="com.axelor.apps.sale.db.SaleorderExpenseLine">
+    <panel name="mailPanel">
+      <field name="expenseType" required="true"/>
+      <field name="period" onChange="action-attrs-sale-order-expense-line-total-price"/>
+      <field name="piece" onChange="action-attrs-sale-order-expense-line-total-price"/>
+      <field name="price" onChange="action-attrs-sale-order-expense-line-total-price"/>
+      <field name="totalPrice" readonly="true"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+  <action-attrs name="action-attrs-sale-order-expense-line-total-price">
+    <attribute for="totalPrice" name="value" expr="eval: period * piece * price"/>
+  </action-attrs>
+
+</object-views>

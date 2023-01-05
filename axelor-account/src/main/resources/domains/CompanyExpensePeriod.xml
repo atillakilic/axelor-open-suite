@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="account" package="com.axelor.apps.account.db"/>
+
+  <entity name="CompanyExpensePeriod">
+    <string name="name" title="Name"/>
+    <string name="code" title="Code"/>
+    <decimal name="days" title="Days"/>
+    <decimal name="months" title="Months"/>
+    <decimal name="years" title="Years"/>
+    <decimal name="totalDays" title="Total Days"/>
+  </entity>
+
+</domain-models>

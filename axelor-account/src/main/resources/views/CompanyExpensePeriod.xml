@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="company-expense-period-grid" title="Expense period"
+    model="com.axelor.apps.account.db.CompanyExpensePeriod">
+    <field name="name"/>
+    <field name="code"/>
+    <field name="days"/>
+    <field name="months"/>
+    <field name="years"/>
+    <field name="totalDays"/>
+  </grid>
+
+  <form name="company-expense-period-form" title="Expense period"
+    model="com.axelor.apps.account.db.CompanyExpensePeriod">
+    <panel name="mainPanel">
+      <field name="name"/>
+      <field name="code"/>
+      <field name="days"/>
+      <field name="months"/>
+      <field name="years"/>
+      <field name="totalDays"/>
+    </panel>
+  </form>
+
+
+</object-views>

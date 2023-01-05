@@ -12,7 +12,7 @@
     </extend>
     <extend target="//field[@name='versionNumber']">
       <insert position="after">
-        <field colSpan="3" name="directOrderLocation"
+        <field colSpan="3" name="directOrderLocation" hidden="true"
           onChange="action-sale-order-record-direct-order-location-onchange" widget="boolean-switch"/>
       </insert>
     </extend>

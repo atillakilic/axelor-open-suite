@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="saleorder-other-cost-line-grid" title="OtherCost Line" editable="true"
+    model="com.axelor.apps.sale.db.SaleorderOtherCostLine">
+    <field name="name" required="true"/>
+    <field name="price" onChange="action-attrs-sale-order-other-cost-line-total-price"/>
+    <field name="piece" onChange="action-attrs-sale-order-other-cost-line-total-price"/>
+    <field name="totalPrice" readonly="true"/>
+    <field name="description"/>
+  </grid>
+
+  <form name="saleorder-other-cost-line-form" title="OtherCost Line"
+    model="com.axelor.apps.sale.db.SaleorderOtherCostLine">
+    <panel name="mailPanel">
+      <field name="name" required="true"/>
+      <field name="price" onChange="action-attrs-sale-order-other-cost-line-total-price"/>
+      <field name="piece" onChange="action-attrs-sale-order-other-cost-line-total-price"/>
+      <field name="totalPrice" readonly="true"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+  <action-attrs name="action-attrs-sale-order-other-cost-line-total-price">
+    <attribute for="totalPrice" name="value" expr="eval: piece * price"/>
+  </action-attrs>
+
+</object-views>

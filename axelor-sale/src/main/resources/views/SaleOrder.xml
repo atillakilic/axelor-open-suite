@@ -372,7 +372,7 @@
 					]]></viewer>
         </field>
       </panel>
-      <field name="oneoffSale" colSpan="2"/>
+      <field name="oneoffSale" colSpan="2" hidden="true"/>
       <field name="company.tradingNameSet" hidden="true"/>
       <panel name="generalInfoPanel" colSpan="12">
         <field name="company" readonlyIf="statusSelect == 3 || clientPartner != null"
@@ -392,11 +392,10 @@
         <field name="currency" required="true"
           readonlyIf="saleOrderLineList.length > 0 || statusSelect >= 2" canEdit="false"
           form-view="currency-form" grid-view="currency-grid" colSpan="3"/>
-        <field name="priceList" readonlyIf="saleOrderLineList.length > 0 || statusSelect >= 2"
-          onChange="action-sale-order-record-hide-discount"
-          onSelect="action-sale-order-method-price-list-domain" canEdit="false"
-          form-view="price-list-form" grid-view="price-list-grid" hideIf="company == null"
-          colSpan="3"/>
+        <!-- <field name="priceList" readonlyIf="saleOrderLineList.length > 0 || statusSelect >= 2" onChange="action-sale-order-record-hide-discount"
+          onSelect="action-sale-order-method-price-list-domain" canEdit="false" form-view="price-list-form" grid-view="price-list-grid"
+          hideIf="company == null" colSpan="3"/> -->
+        <spacer colSpan="3"/>
         <field name="clientPartner" required="true" hideIf="company == null"
           readonlyIf="statusSelect > 1"
           onChange="action-sale-order-group-client-partner-change,action-sale-order-record-compute-end-of-validity-date"
@@ -406,6 +405,10 @@
           onChange="action-record-so-contact-partner-change"
           onSelect="action-sale-order-domain-on-contact-partner" domain="self.isContact = true"
           canEdit="false" form-view="partner-contact-form" grid-view="partner-contact-grid"/>
+        <spacer/>
+        <field name="projectCategory" colSpan="3" canNew="true"/>
+        <field name="projectStartDate" colSpan="3"/>
+        <field name="projectCompletionDate" colSpan="3"/>
 
         <field name="invoicedPartner"
           if="__config__.app.getApp('supplychain')?.activatePartnerRelations" required="true"
@@ -422,15 +425,15 @@
 
         <field if="__config__.app.getApp('sale').getManageSaleOrderVersion()"
           name="versionNumber" colSpan="3"/>
-        <field name="taxNumber" colSpan="3" canNew="false" canEdit="false"
+        <field name="taxNumber" colSpan="3" canNew="false" canEdit="false" hidden="true"
           readonlyIf="statusSelect > 1 &amp;&amp; !orderBeingEdited"
           onSelect="action-sale-order-attrs-compute-tax-number-domain"
           onChange="action-sale-order-method-empty-fiscal-position-if-not-compatible,action-sale-order-method-fiscal-position-on-change,action-sale-order-line-change-group"/>
-        <field name="fiscalPosition" colSpan="3" canNew="false" canEdit="false"
+        <field name="fiscalPosition" colSpan="3" canNew="false" canEdit="false" hidden="true"
           readonlyIf="statusSelect > 1 &amp;&amp; !orderBeingEdited"
           onSelect="action-sale-order-supplychain-attrs-fiscal-position-domain"
           onChange="action-sale-order-method-fiscal-position-on-change,action-sale-order-line-change-group"/>
-        <panel name="otherInfoPanel" colSpan="3">
+        <panel name="otherInfoPanel" colSpan="3" hidden="true">
           <field name="inAti" hidden="true"
             readonlyIf="saleOrderLineList.length > 0 || statusSelect &gt;= 2"
             onChange="action-sale-order-attrs-in-ati" widget="boolean-switch"/>
@@ -440,31 +443,7 @@
             colSpan="6" readonly="true" showIf="createdByInterco" name="createdByInterco"/>
         </panel>
       </panel>
-      <panel name="addressPanel" colSpan="12" hideIf="company == null">
-        <panel name="mainInvoicingAddressPanel" stacked="true">
-          <field name="mainInvoicingAddress"
-            hideIf="$readonly() || (statusSelect > 1 &amp;&amp; !orderBeingEdited)" canNew="true"
-            canEdit="false" onChange="action-sale-order-method-address-str"
-            onSelect="action-sale-order-attrs-domain-main-invoicing-address"
-            form-view="address-partner-address-form" grid-view="address-grid"/>
-          <field name="mainInvoicingAddressStr"
-            readonlyIf="statusSelect > 1 &amp;&amp; !orderBeingEdited" height="5">
-            <viewer><![CDATA[{{record.mainInvoicingAddressStr}}]]></viewer>
-          </field>
-        </panel>
-        <panel name="deliveryAddressPanel" stacked="true">
-          <field name="deliveryAddress"
-            hideIf="$readonly() || (statusSelect > 1 &amp;&amp; !orderBeingEdited)" canNew="true"
-            canEdit="false"
-            onChange="action-sale-order-method-address-str,action-sale-order-attrs-set-is-ispm-required"
-            onSelect="action-sale-order-attrs-domain-delivery-address"
-            form-view="address-partner-address-form" grid-view="address-grid"/>
-          <field name="deliveryAddressStr"
-            readonlyIf="statusSelect > 1 &amp;&amp; !orderBeingEdited" height="5">
-            <viewer><![CDATA[{{record.deliveryAddressStr}}]]></viewer>
-          </field>
-        </panel>
-      </panel>
+
       <field name="clientPartner.saleOrderInformation" showTitle="false"
         hideIf="clientPartner == null || clientPartner.saleOrderInformation == null" colSpan="12"
         css="bold red"/>
@@ -479,6 +458,43 @@
           field="saleOrderLineList" form-view="sale-order-line-form"
           grid-view="sale-order-line-grid" orderBy="sequence"
           onChange="action-sale-order-line-change-group" canMove="true" height="30"/>
+
+        <panel-related name="saleorderExpenseLinePanel" title="Expense Line"
+          readonlyIf="clientPartner == null" colSpan="12" field="saleorderExpenseLine"
+          form-view="saleorder-expense-line-form" grid-view="saleorder-expense-line-grid"
+          onChange="action-sale-order-method-calculate-total-expense" height="25"/>
+
+        <field name="expenseSubTotal" colSpan="3" readonly="true"/>
+
+        <panel-related name="saleorderProductLinePanel" title="Product Line"
+          readonlyIf="clientPartner == null" colSpan="12" field="saleorderProductLine"
+          form-view="saleorder-product-line-form" grid-view="saleorder-product-line-grid"
+          onChange="action-sale-order-method-calculate-total-product-price" height="25"/>
+
+        <field name="productSubTotal" colSpan="3" readonly="true"/>
+
+        <panel-related name="saleorderEqipmentLinePanel" title="Equipment Line"
+          readonlyIf="clientPartner == null" colSpan="12" field="saleorderEquipmentLine"
+          form-view="saleorder-product-equipment-line-form"
+          grid-view="saleorder-product-equipment-line-grid"
+          onChange="action-sale-order-method-calculate-total-equipment-price" height="25"/>
+
+        <field name="equipmentSubTotal" colSpan="3" readonly="true"/>
+
+        <panel-related name="saleorderSalaryLinePanel" title="Salary Line"
+          readonlyIf="clientPartner == null" colSpan="12" field="saleorderSalaryLine"
+          form-view="saleorder-salary-line-form" grid-view="saleorder-salary-line-grid"
+          onChange="action-sale-order-method-calculate-total-salary-price" height="25"/>
+
+        <field name="salarySubTotal" colSpan="3" readonly="true"/>
+
+        <panel-related name="saleorderOtherCostLinePanel" title="OtherCost Line"
+          readonlyIf="clientPartner == null" colSpan="12" field="saleorderOtherCostLine"
+          form-view="saleorder-other-cost-line-form" grid-view="saleorder-other-cost-line-grid"
+          onChange="action-sale-order-method-calculate-total-other-cost-price" height="25"/>
+
+        <field name="otherCostSubTotal" colSpan="3" readonly="true"/>
+
         <panel name="descriptionPanel" title="Comment to display" colSpan="12">
           <field name="description" showTitle="false" colSpan="12" widget="Html" x-lite="true"/>
         </panel>
@@ -490,6 +506,33 @@
       </panel>
       <panel if="__config__.app.isApp('supplychain')" if-module="axelor-supplychain"
         name="deliveryInformationPanel" title="Delivery" colSpan="12">
+
+        <panel name="addressPanel" colSpan="12" hideIf="company == null">
+          <panel name="mainInvoicingAddressPanel" stacked="true">
+            <field name="mainInvoicingAddress"
+              hideIf="$readonly() || (statusSelect > 1 &amp;&amp; !orderBeingEdited)" canNew="true"
+              canEdit="false" onChange="action-sale-order-method-address-str"
+              onSelect="action-sale-order-attrs-domain-main-invoicing-address"
+              form-view="address-partner-address-form" grid-view="address-grid"/>
+            <field name="mainInvoicingAddressStr"
+              readonlyIf="statusSelect > 1 &amp;&amp; !orderBeingEdited" height="5">
+              <viewer><![CDATA[{{record.mainInvoicingAddressStr}}]]></viewer>
+            </field>
+          </panel>
+          <panel name="deliveryAddressPanel" stacked="true">
+            <field name="deliveryAddress"
+              hideIf="$readonly() || (statusSelect > 1 &amp;&amp; !orderBeingEdited)" canNew="true"
+              canEdit="false"
+              onChange="action-sale-order-method-address-str,action-sale-order-attrs-set-is-ispm-required"
+              onSelect="action-sale-order-attrs-domain-delivery-address"
+              form-view="address-partner-address-form" grid-view="address-grid"/>
+            <field name="deliveryAddressStr"
+              readonlyIf="statusSelect > 1 &amp;&amp; !orderBeingEdited" height="5">
+              <viewer><![CDATA[{{record.deliveryAddressStr}}]]></viewer>
+            </field>
+          </panel>
+        </panel>
+
         <field name="specificPackage" colSpan="12"/>
         <field name="stockLocation" canEdit="false"
           onSelect="action-sale-order-attrs-set-stock-location-domain"
@@ -2191,5 +2234,28 @@
     <field name="stockLocation"
       expr="eval: tradingName?.shippingDefaultStockLocation != null ? tradingName?.shippingDefaultStockLocation : stockLocation"/>
   </action-record>
+
+  <action-method name="action-sale-order-method-calculate-total-expense">
+    <call method="calculateTotalExpense" class="com.axelor.apps.sale.web.SaleOrderController"/>
+  </action-method>
+
+  <action-method name="action-sale-order-method-calculate-total-product-price">
+    <call method="calculateProductSubTotal"
+      class="com.axelor.apps.sale.web.SaleOrderController"/>
+  </action-method>
+
+  <action-method name="action-sale-order-method-calculate-total-equipment-price">
+    <call method="calculateEquipmentSubTotal"
+      class="com.axelor.apps.sale.web.SaleOrderController"/>
+  </action-method>
+
+  <action-method name="action-sale-order-method-calculate-total-salary-price">
+    <call method="calculateSalarySubTotal" class="com.axelor.apps.sale.web.SaleOrderController"/>
+  </action-method>
+
+  <action-method name="action-sale-order-method-calculate-total-other-cost-price">
+    <call method="calculateOtherCostSubTotal"
+      class="com.axelor.apps.sale.web.SaleOrderController"/>
+  </action-method>
 
 </object-views>

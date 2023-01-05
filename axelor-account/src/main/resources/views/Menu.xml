@@ -857,6 +857,24 @@
     <context name="_xApplicationType" expr="eval: com.axelor.apps.account.db.Invoice"/>
   </action-view>
 
+  <menuitem name="account-conf-company-expense" parent="account-conf"
+    title="Company Expense" action="account.conf.company.expense"/>
+
+  <action-view name="account.conf.company.expense" title="Company Expense"
+    model="com.axelor.apps.account.db.CompanyExpense">
+    <view type="grid" name="company-expense-grid"/>
+    <view type="form" name="company-expense-form"/>
+  </action-view>
+
+  <menuitem name="account-conf-company-expense-period" parent="account-conf"
+    title="Company Expense period" action="account.conf.company.expense.period"/>
+
+  <action-view name="account.conf.company.expense.period" title="Company Expense period"
+    model="com.axelor.apps.account.db.CompanyExpensePeriod">
+    <view type="grid" name="company-expense-period-grid"/>
+    <view type="form" name="company-expense-period-form"/>
+  </action-view>
+
   <!-- FEC Import -->
 
   <menuitem name="fec-import" title="FEC import" parent="account-conf" action="fec.import"/>

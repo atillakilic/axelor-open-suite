@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="sale" package="com.axelor.apps.sale.db"/>
+
+  <entity name="SaleorderSalaryLine" lang="java">
+
+    <many-to-one name="department" ref="com.axelor.apps.base.db.CompanyDepartment"
+      title="Department"/>
+
+    <decimal name="salarie" title="Salaries"/>
+    <decimal name="tax" title="Tax"/>
+    <decimal name="documentsCost" title="Documents Cost"/>
+    <decimal name="piece" title="Piece"/>
+    <decimal name="totalPrice" title="Total Price"/>
+    <string name="description" title="Description"/>
+
+    <many-to-one name="saleorderSalary" ref="com.axelor.apps.sale.db.SaleOrder"
+      title="Sale Order"/>
+
+  </entity>
+
+</domain-models>
