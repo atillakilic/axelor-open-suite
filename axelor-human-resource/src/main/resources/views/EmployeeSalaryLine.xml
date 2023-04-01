@@ -4,27 +4,43 @@
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
 
   <grid name="hr-employee-salary-line-grid" title="Salary Line" editable="true"
+    onNew="action-employee-salary-attrs-set-employee-team"
     model="com.axelor.apps.hr.db.EmployeeSalaryLine">
-    <field name="employee" canEdit="true"/>
+    <field name="employee" canEdit="true"
+      onSelect="action-employee-salary-attrs-set-employee-domain" onChange=""/>
     <field name="totalWorkHours" canEdit="true"/>
     <field name="totalWorkDays" canEdit="true"/>
-    <field name="totalPenaltyOrReward" canEdit="true"/>
-    <field name="newPenaltyOrReward" canEdit="true"/>
+    <field name="totalPenalty" canEdit="true"/>
     <field name="totalSalary" canEdit="true"/>
     <field name="comments" canEdit="true"/>
+    <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+      target="com.axelor.apps.hr.db.EmployerTeam"/>
   </grid>
 
   <form name="hr-employee-salary-line-form" title="Salary Line"
+    onNew="action-employee-salary-attrs-set-employee-team"
     model="com.axelor.apps.hr.db.EmployeeSalaryLine" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
-      <field name="employee"/>
+      <field name="employee" onSelect="action-employee-salary-attrs-set-employee-domain"
+        onChange=""/>
       <field name="totalWorkHours"/>
       <field name="totalWorkDays"/>
-      <field name="totalPenaltyOrReward"/>
-      <field name="newPenaltyOrReward"/>
+      <field name="totalPenalty"/>
       <field name="totalSalary"/>
       <field name="comments"/>
+      <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+        target="com.axelor.apps.hr.db.EmployerTeam"/>
     </panel>
+    <panel-related field="dailyActivity" readonly="true"/>
   </form>
+
+  <action-attrs name="action-employee-salary-attrs-set-employee-team">
+    <attribute name="value" for="_employerTeam" expr="eval: _parent?.employerTeam"/>
+  </action-attrs>
+
+  <action-attrs name="action-employee-salary-attrs-set-employee-domain">
+    <attribute name="domain" for="employee" if="_employerTeam != null"
+      expr="eval: &quot; self.employerTeam = :_employerTeam &quot;"/>
+  </action-attrs>
 
 </object-views>

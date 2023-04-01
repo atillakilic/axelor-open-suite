@@ -14,6 +14,11 @@
     <boolean name="personalExpense" title="Personal expense"/>
     <boolean name="unavailableToUsers" title="Unavailable to users" default="false"/>
 
+    <one-to-many name="expenceTypePriceList"
+      ref="com.axelor.apps.base.db.ExpencesTypePriceList" mappedBy="expenceType"
+      title="Expencetype Prices"/>
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.Project" title="Project"/>
   </entity>
 
 </domain-models>

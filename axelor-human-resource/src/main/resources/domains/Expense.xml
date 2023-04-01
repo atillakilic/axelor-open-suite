@@ -58,6 +58,17 @@
       selection="invoice.payment.status.select" readonly="true" default="0"/>
     <many-to-one name="paymentMove" ref="com.axelor.apps.account.db.Move"/>
 
+    <one-to-many name="expencePriceList" ref="com.axelor.apps.hr.db.ExpensePriceLine"
+      mappedBy="expence" title="Expencetype Prices"/>
+
+    <decimal name="totalExpenceAmount" title="Total Expence Amount"/>
+    <many-to-one name="project" ref="com.axelor.apps.project.db.Project" title="Project"/>
+    <date name="expenseDate" title="Expense date"/>
+    <many-to-one name="expencePeriod" ref="com.axelor.apps.base.db.Period"
+      title="Period"/>
+    <integer name="expenceType" title="Expence Type" selection="hr.expence.type.select"
+      default="1"/>
+
     <string name="fullName" namecolumn="true" readonly="true">
       <![CDATA[
       String fullName = "";

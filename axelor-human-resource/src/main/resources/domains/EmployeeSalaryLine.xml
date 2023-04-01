@@ -12,12 +12,19 @@
     <decimal name="totalWorkDays" title="Total Days" scale="2" precision="20"/>
     <decimal name="totalPenaltyOrReward" title="Total penalty or Reward"/>
     <decimal name="newPenaltyOrReward" title="New penalty or Reward"/>
+    <decimal name="totalPenalty" title="Total penalty"/>
     <decimal name="totalSalary" title="Total Salary"/>
 
     <string name="comments" title="Comments"/>
 
+    <one-to-many name="dailyActivity"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine" mappedBy="salaryLine"
+      title="DailyActivity"/>
+
     <many-to-one name="employeeSalary" ref="com.axelor.apps.hr.db.EmployeeSalary"
       title="Employee Salary"/>
+
+
   </entity>
 
 </domain-models>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-penalty-types-grid" title="Penalty Types"
+    model="com.axelor.apps.hr.db.PenaltyTypes">
+    <field name="name" title="Name"/>
+    <field name="code" title="Code"/>
+  </grid>
+
+  <form name="hr-penalty-types-form" title="Penalty Types"
+    model="com.axelor.apps.hr.db.PenaltyTypes">
+    <panel name="panelPenaltyTypes" showTitle="true" title="Penalty Type">
+      <field name="name" title="Name"/>
+      <field name="code" title="Code"/>
+    </panel>
+
+  </form>
+</object-views>

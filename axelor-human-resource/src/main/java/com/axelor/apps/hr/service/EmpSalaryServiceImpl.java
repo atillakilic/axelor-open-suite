@@ -18,10 +18,11 @@
 package com.axelor.apps.hr.service;
 
 import com.axelor.apps.hr.db.EmployeeDailyActivity;
-import com.axelor.apps.hr.db.EmployeeDailyActivityLine;
+import com.axelor.apps.hr.db.EmployeeDailyActivityNewLine;
 import com.axelor.apps.hr.db.EmployeeHr;
 import com.axelor.apps.hr.db.EmployeeSalary;
 import com.axelor.apps.hr.db.EmployeeSalaryLine;
+import com.axelor.apps.hr.db.repo.EmployeeDailyActivityNewLineRepository;
 import com.axelor.apps.hr.db.repo.EmployeeDailyActivityRepository;
 import com.axelor.apps.hr.db.repo.EmployeeSalaryLineRepository;
 import com.axelor.apps.hr.db.repo.EmployeeSalaryRepository;
@@ -50,11 +51,11 @@ public class EmpSalaryServiceImpl implements EmpSalaryService {
     EmployeeSalary empSalary = new EmployeeSalary();
     List<EmployeeSalaryLine> employeeSalaryLineList = new ArrayList<EmployeeSalaryLine>();
 
+    ////////
     for (EmployeeDailyActivity employeeDailyActivity : employeeDailyActivityList) {
-      List<EmployeeDailyActivityLine> empDailyActivityLineList =
-          employeeDailyActivity.getActivityRecord();
-
-      for (EmployeeDailyActivityLine empDailyActivityLine : empDailyActivityLineList) {
+      List<EmployeeDailyActivityNewLine> empDailyActivityLineList =
+          employeeDailyActivity.getDailyActivityRecord();
+      for (EmployeeDailyActivityNewLine empDailyActivityLine : empDailyActivityLineList) {
         EmployeeHr empHrDailyActivityLine = empDailyActivityLine.getEmployee();
 
         boolean flag = false;
@@ -68,33 +69,45 @@ public class EmpSalaryServiceImpl implements EmpSalaryService {
             break;
           }
         }
-
         if (flag) {
           // found in previous day
           BigDecimal totalHours = employeeSalaryNewLine.getTotalWorkHours();
           BigDecimal totalDays = employeeSalaryNewLine.getTotalWorkDays();
-          BigDecimal penaltyOrReward = employeeSalaryNewLine.getTotalPenaltyOrReward();
+          BigDecimal totalPenalty = employeeSalaryNewLine.getTotalPenalty();
 
           employeeSalaryNewLine.setTotalWorkHours(
               totalHours.add(empDailyActivityLine.getDailyWorkHours()));
           employeeSalaryNewLine.setTotalWorkDays(totalDays.add(new BigDecimal(1)));
-          employeeSalaryNewLine.setTotalPenaltyOrReward(
-              penaltyOrReward.add(empDailyActivityLine.getPenaltyOrReward()));
-
+          employeeSalaryNewLine.setTotalPenalty(
+              totalPenalty.add(empDailyActivityLine.getPenaltyCost()));   
+          
+          empDailyActivityLine.setSalaryLine(employeeSalaryNewLine);
+          Beans.get(EmployeeDailyActivityNewLineRepository.class).save(empDailyActivityLine);
+//          List<EmployeeDailyActivityNewLine> empDailyActOnSalary = employeeSalaryNewLine.getDailyActivity();
+//          empDailyActOnSalary.add(empDailyActivityLine);
+          
+//          employeeSalaryNewLine.setDailyActivity(empDailyActOnSalary);
+          
         } else {
           // not found in previous day Add new salary line
           employeeSalaryNewLine.setEmployee(empDailyActivityLine.getEmployee());
           employeeSalaryNewLine.setTotalWorkHours(empDailyActivityLine.getDailyWorkHours());
           employeeSalaryNewLine.setTotalWorkDays(new BigDecimal(1));
-          employeeSalaryNewLine.setTotalPenaltyOrReward(empDailyActivityLine.getPenaltyOrReward());
-
+          employeeSalaryNewLine.setTotalPenalty(empDailyActivityLine.getPenaltyCost());
+          
+//          List<EmployeeDailyActivityNewLine> empDailyActOnSalary = new ArrayList<EmployeeDailyActivityNewLine>();
+//          empDailyActOnSalary.add(empDailyActivityLine);
+          
+//          employeeSalaryNewLine.setDailyActivity(empDailyActOnSalary);
+          
+          empDailyActivityLine.setSalaryLine(employeeSalaryNewLine);
+          Beans.get(EmployeeDailyActivityNewLineRepository.class).save(empDailyActivityLine);
           employeeSalaryLineList.add(employeeSalaryNewLine);
         }
       }
       employeeDailyActivity.setStatusSelect(3);
       Beans.get(EmployeeDailyActivityRepository.class).save(employeeDailyActivity);
     }
-
     empSalary.setStatusSelect(1);
     empSalary.setCreationDate(LocalDate.now());
     empSalary = Beans.get(EmployeeSalaryRepository.class).save(empSalary);
@@ -102,7 +115,7 @@ public class EmpSalaryServiceImpl implements EmpSalaryService {
     for (EmployeeSalaryLine employeeSalaryLine : employeeSalaryLineList) {
       BigDecimal hourlyRate = employeeSalaryLine.getEmployee().getHourlyRate();
       BigDecimal totalSalary = employeeSalaryLine.getTotalWorkHours().multiply(hourlyRate);
-      totalSalary = totalSalary.add(employeeSalaryLine.getTotalPenaltyOrReward());
+      totalSalary = totalSalary.subtract(employeeSalaryLine.getTotalPenalty());
       employeeSalaryLine.setTotalSalary(totalSalary);
       employeeSalaryLine.setEmployeeSalary(empSalary);
 

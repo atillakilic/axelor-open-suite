@@ -10,12 +10,21 @@
     <integer name="statusSelect" title="ActivityStatus"
       selection="hr.employee.salary.status"/>
     <date name="creationDate" title="Creation Date"/>
+    <integer name="selectActivityType" title="Work Type" default="1"
+      selection="hr.employee.activity.type"/>
+    <many-to-one name="employerTeam" title="Employer Team"
+      ref="com.axelor.apps.hr.db.EmployerTeam"/>
 
     <one-to-many name="employeeSalaryRecord"
       ref="com.axelor.apps.hr.db.EmployeeSalaryLine" mappedBy="employeeSalary"
       title="Employee Salary"/>
 
-
+    <!-- Accounting -->
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"/>
+    <integer name="paymentMethod" title="Payment Method"
+      selection="hr.employee.salary.payment.method"/>
+    <integer name="paymentStatus" title="Payment status"
+      selection="hr.employee.salary.payment.status"/>
   </entity>
 
 </domain-models>

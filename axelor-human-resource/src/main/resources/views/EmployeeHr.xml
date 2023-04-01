@@ -30,13 +30,12 @@
         <field name="name" colSpan="4" required="true" onChange="save"/>
         <field name="surname" colSpan="4" required="true"/>
         <field name="fatherName" colSpan="4"/>
-        <field name="nameCyrillic" colSpan="4"/>
-        <field name="surnameCyrillic" colSpan="4"/>
-        <field name="fatherNameCyrillic" colSpan="4"/>
-        <field name="code" colSpan="3"/>
-        <field name="oneCode" colSpan="3"/>
-        <field name="gender" colSpan="3"/>
-        <field name="archiveNo" colSpan="3"/>
+        <field name="nameCyrillic" colSpan="4" hidden="true"/>
+        <field name="surnameCyrillic" colSpan="4" hidden="true"/>
+        <field name="fatherNameCyrillic" colSpan="4" hidden="true"/>
+        <field name="oneCode" colSpan="4"/>
+        <field name="gender" colSpan="4"/>
+        <field name="employerTeam" colSpan="4"/>
       </panel>
 
       <field name="hireDate" colSpan="4"/>

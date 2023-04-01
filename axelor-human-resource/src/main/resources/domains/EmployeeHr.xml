@@ -30,6 +30,8 @@
     <string name="archiveNo" title="Archive No"/>
     <date name="hireDate" title="Date of Hire"/>
     <date name="hireEndDate" title="End of Hire"/>
+    <many-to-one name="employerTeam" title="Employer Team"
+      ref="com.axelor.apps.hr.db.EmployerTeam"/>
 
 
     <!-- Basic Info -->

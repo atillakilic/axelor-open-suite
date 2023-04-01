@@ -49,12 +49,14 @@ import com.axelor.apps.bankpayment.db.repo.BankOrderRepository;
 import com.axelor.apps.bankpayment.service.bankorder.BankOrderService;
 import com.axelor.apps.base.db.BankDetails;
 import com.axelor.apps.base.db.Company;
+import com.axelor.apps.base.db.ExpencesTypePriceList;
 import com.axelor.apps.base.db.Partner;
 import com.axelor.apps.base.db.Period;
 import com.axelor.apps.base.db.Product;
 import com.axelor.apps.base.db.Sequence;
 import com.axelor.apps.base.db.repo.PeriodRepository;
 import com.axelor.apps.base.db.repo.PriceListLineRepository;
+import com.axelor.apps.base.db.repo.ProductRepository;
 import com.axelor.apps.base.db.repo.YearBaseRepository;
 import com.axelor.apps.base.service.PeriodService;
 import com.axelor.apps.base.service.administration.SequenceService;
@@ -64,9 +66,11 @@ import com.axelor.apps.hr.db.EmployeeAdvanceUsage;
 import com.axelor.apps.hr.db.EmployeeVehicle;
 import com.axelor.apps.hr.db.Expense;
 import com.axelor.apps.hr.db.ExpenseLine;
+import com.axelor.apps.hr.db.ExpensePriceLine;
 import com.axelor.apps.hr.db.HRConfig;
 import com.axelor.apps.hr.db.KilometricAllowParam;
 import com.axelor.apps.hr.db.repo.ExpenseLineRepository;
+import com.axelor.apps.hr.db.repo.ExpensePriceLineRepository;
 import com.axelor.apps.hr.db.repo.ExpenseRepository;
 import com.axelor.apps.hr.exception.IExceptionMessage;
 import com.axelor.apps.hr.service.EmployeeAdvanceService;
@@ -1099,5 +1103,39 @@ public class ExpenseServiceImpl implements ExpenseService {
                 .fetchOne());
       }
     }
+  }
+
+  @Override
+  @Transactional
+  public void generateExpenseLine(Expense expense) {
+    List<Product> expenseTypeList =
+        Beans.get(ProductRepository.class)
+            .all()
+            .filter("self.isModel = false AND self.expense = true AND self.dtype = 'Product'")
+            .fetch();
+    ExpensePriceLineRepository expensePriceLineRepository =
+        Beans.get(ExpensePriceLineRepository.class);
+    Expense expenseObj = Beans.get(ExpenseRepository.class).find(expense.getId());
+    List<ExpensePriceLine> expensePriceLine = new ArrayList<ExpensePriceLine>();
+
+    for (Product expenseType : expenseTypeList) {
+      ExpensePriceLine expensePrice = new ExpensePriceLine();
+      expensePrice.setExpenseProduct(expenseType);
+      List<ExpencesTypePriceList> expencePriceList = expenseType.getExpenceTypePriceList();
+      if (expencePriceList.size() == 0) {
+        expensePrice.setAmount(new BigDecimal(0));
+      }
+      for (ExpencesTypePriceList expencesTypePrice : expencePriceList) {
+        if (expencesTypePrice.getIsActive()) {
+          expensePrice.setAmount(expencesTypePrice.getPrice());
+          break;
+        }
+      }
+      expensePrice.setExpence(expenseObj);
+      expensePrice = expensePriceLineRepository.save(expensePrice);
+      expensePriceLine.add(expensePrice);
+    }
+    // 	expenseObj.setExpencePriceList(expensePriceLine);
+    // 	Beans.get(ExpenseRepository.class).save(expenseObj);
   }
 }

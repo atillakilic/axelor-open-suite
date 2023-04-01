@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="expences-type-price-list-grid" title="ExpencesTypePriceList"
+    model="com.axelor.apps.base.db.ExpencesTypePriceList">
+    <field name="startDate" title="Start Date"/>
+    <field name="endDate" title="End Date"/>
+    <field name="price" title="Price"/>
+    <field name="description" title="Description"/>
+    <field name="isActive" title="Is Active"/>
+  </grid>
+
+  <form name="expences-type-price-list-form" title="ExpencesTypePriceList"
+    model="com.axelor.apps.base.db.ExpencesTypePriceList">
+    <panel name="mainPanel">
+      <field name="startDate" title="Start Date"/>
+      <field name="endDate" title="End Date"/>
+      <field name="price" title="Price"/>
+      <field name="description" title="Description"/>
+      <field name="isActive" title="Is Active"/>
+    </panel>
+  </form>
+
+</object-views>

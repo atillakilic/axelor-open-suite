@@ -9,6 +9,8 @@
 
     <integer name="statusSelect" title="ActivityStatus"
       selection="hr.employee.daily.activity"/>
+    <integer name="selectActivityType" title="Work Type" default="1"
+      selection="hr.employee.activity.type"/>
     <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"/>
     <date name="startDate" title="Start Date"/>
     <date name="toDate" title="To Date"/>
@@ -16,8 +18,15 @@
     <many-to-one name="project" ref="com.axelor.apps.project.db.Project" title="Project"/>
     <string name="description" title="Description"/>
 
+    <many-to-one name="employerTeam" title="Employer Team"
+      ref="com.axelor.apps.hr.db.EmployerTeam"/>
+
     <one-to-many name="activityRecord"
       ref="com.axelor.apps.hr.db.EmployeeDailyActivityLine" mappedBy="employeeDailyActivity"
+      title="Activity Record"/>
+
+    <one-to-many name="dailyActivityRecord"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine" mappedBy="employeeDailyActivity"
       title="Activity Record"/>
 
 

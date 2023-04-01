@@ -10,6 +10,8 @@
     <string name="ref" title="Ref."/>
 
     <many-to-one name="employee" ref="com.axelor.apps.hr.db.Employee" title="Employee"/>
+    <many-to-one name="employeeHr" ref="com.axelor.apps.hr.db.EmployeeHr"
+      title="Employee"/>
     <many-to-one name="payCompany" ref="com.axelor.apps.base.db.Company"
       title="Pay Company" required="true"/>
     <many-to-one name="companyDepartment"

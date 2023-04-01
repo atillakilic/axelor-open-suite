@@ -45,6 +45,7 @@ import com.axelor.apps.base.service.message.MessageServiceBaseImpl;
 import com.axelor.apps.hr.db.Employee;
 import com.axelor.apps.hr.db.Expense;
 import com.axelor.apps.hr.db.ExpenseLine;
+import com.axelor.apps.hr.db.ExpensePriceLine;
 import com.axelor.apps.hr.db.KilometricAllowParam;
 import com.axelor.apps.hr.db.repo.EmployeeRepository;
 import com.axelor.apps.hr.db.repo.ExpenseRepository;
@@ -699,5 +700,31 @@ public class ExpenseController {
     } catch (Exception e) {
       TraceBackService.trace(response, e);
     }
+  }
+
+  public void calculateTotalAmount(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+    Expense expense = request.getContext().asType(Expense.class);
+    BigDecimal totalAmount = new BigDecimal(0);
+    List<ExpensePriceLine> expensePriceLineList = expense.getExpencePriceList();
+    if (expensePriceLineList.size() == 0) {
+      response.setValue("totalExpenceAmount", 00);
+      return;
+    }
+
+    for (ExpensePriceLine expensePriceLine : expensePriceLineList) {
+      totalAmount =
+          totalAmount.add(
+              (expensePriceLine
+                  .getAmount()
+                  .multiply(BigDecimal.valueOf(expensePriceLine.getQuantity()))));
+    }
+    response.setValue("totalExpenceAmount", totalAmount);
+  }
+
+  public void generateExpenseLine(ActionRequest request, ActionResponse response) {
+    Expense expense = request.getContext().asType(Expense.class);
+    Beans.get(ExpenseService.class).generateExpenseLine(expense);
+    response.setReload(true);
   }
 }

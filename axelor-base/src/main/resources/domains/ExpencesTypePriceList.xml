@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="base" package="com.axelor.apps.base.db"/>
+
+  <entity name="ExpencesTypePriceList" lang="java" cacheable="true">
+
+    <date name="startDate" title="Start Date"/>
+    <date name="endDate" title="End Date"/>
+    <decimal name="price" title="Price"/>
+    <string name="description" title="Description"/>
+    <boolean name="isActive" title="Is Active"/>
+    <many-to-one name="expenceType" ref="com.axelor.apps.base.db.Product"/>
+  </entity>
+
+</domain-models>

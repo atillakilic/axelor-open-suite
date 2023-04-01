@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDailyActivityNewLine" cacheable="true">
+
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeHr" title="Emoloyee"/>
+    <decimal name="dailyWorkHoursOnContact" title="Daily work hours On Contract" scale="2"
+      precision="20"/>
+    <decimal name="dailyWorkHours" title="Work hours" scale="2" precision="20"/>
+    <many-to-one name="penaltyType" title="Penalty Type"
+      ref="com.axelor.apps.hr.db.PenaltyTypes"/>
+    <decimal name="penaltyCost" title="Penalty Cost" scale="2" precision="20"/>
+    <decimal name="bonus" title="Bonus" scale="2" precision="20"/>
+    <string name="comments" title="Comments"/>
+    <date name="creationDate" title="Creation Date"/>
+
+    <many-to-one name="employeeDailyActivity"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivity" title="Employee DailyActivity"/>
+
+    <many-to-one name="salaryLine" ref="com.axelor.apps.hr.db.EmployeeSalaryLine"
+      title="Salary Line"/>
+
+  </entity>
+
+</domain-models>
+

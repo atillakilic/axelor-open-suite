@@ -7,7 +7,8 @@
     model="com.axelor.apps.hr.db.EmploymentContract">
     <hilite color="warning"
       if="$moment(endDate).diff(todayDate) &gt;= 0 &amp;&amp; $moment(todayDate).diff(startDate) &gt;= 0"/>
-    <field name="employee"/>
+    <field name="employee" hidden="true"/>
+    <field name="employeeHr"/>
     <field name="contractType"/>
     <field name="startDate"/>
     <field name="endDate"/>
@@ -55,7 +56,7 @@
 					</h3>
 				]]></viewer>
         </field>
-        <field name="employee" canSuggest="false" canNew="false" canEdit="false"
+        <field name="employeeHr" canSuggest="false" canNew="false" canEdit="false"
           canView="false" hideIf="$popup()" requiredIf="!$popup()"/>
         <field name="payCompany" canEdit="false" canSuggest="false"
           onChange="action-employment-contract-paycompany-onchange"/>

@@ -10,7 +10,7 @@
     icon="fa-address-card-o" icon-background="#84429f" order="0"/>
 
   <menuitem name="employee-all" parent="hr-root-emp-mgt" title="List of employees"
-    action="employee.all"/>
+    hidden="true" action="employee.all"/>
 
   <action-view name="employee.all" title="Employee"
     model="com.axelor.apps.hr.db.Employee">
@@ -106,6 +106,24 @@
 
   <menuitem name="hr-root-emp-mgt-conf" parent="hr-root-emp-mgt" title="Configuration"
     icon="fa-cog"/>
+
+  <menuitem name="hr-conf-penalty-type" parent="hr-root-emp-mgt-conf" title="Penalty Type"
+    action="conf.penalty.type"/>
+
+  <action-view name="conf.penalty.type" title="Penalty Type"
+    model="com.axelor.apps.hr.db.PenaltyTypes">
+    <view type="grid" name="hr-penalty-types-grid"/>
+    <view type="form" name="hr-penalty-types-form"/>
+  </action-view>
+
+  <menuitem name="hr-conf-employerteam" parent="hr-root-emp-mgt-conf" title="Employer Team"
+    action="conf.employer.team"/>
+
+  <action-view name="conf.employer.team" title="Employer Team"
+    model="com.axelor.apps.hr.db.EmployerTeam">
+    <view type="grid" name="hr-employer-team-grid"/>
+    <view type="form" name="hr-employer-team-form"/>
+  </action-view>
 
   <menuitem name="hr-conf-product-activity" parent="hr-root-emp-mgt-conf"
     title="Product Activities" action="conf.product.activity"/>
@@ -716,6 +734,19 @@
     <context name="_showLogTime" expr="eval: true"/>
     <context name="_projectIds"
       expr="call:com.axelor.apps.hr.service.timesheet.TimesheetService:getContextProjectIds()"/>
+  </action-view>
+
+  <!-- Account: Payment menu -->
+
+  <menuitem name="account-payment-finance" parent="account-root-payments" title="Finance"
+    order="30"/>
+
+  <menuitem name="account-payment-finance-salary" parent="account-payment-finance"
+    title="Salary" order="30" action="account.payment.finance.salary"/>
+  <action-view name="account.payment.finance.salary" title="Salary"
+    model="com.axelor.apps.hr.db.EmployeeSalary">
+    <view type="grid" name="hr-employee-salary-grid"/>
+    <view type="form" name="hr-employee-salary-finance-form"/>
   </action-view>
 
   <!-- Top Menus -->

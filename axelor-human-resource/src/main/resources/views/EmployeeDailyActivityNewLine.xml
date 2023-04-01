@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-new-line-grid" title="Daily Activity Line"
+    onNew="action-employee-activity-new-line-attrs-set-employee-team" editable="true"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine">
+    <field name="employee" onChange="action-emp-activity-line-attrs-set-emp-hours"
+      onSelect="action-deily-activity-line-attr-set-activity-new-line-domain"/>
+    <field name="dailyWorkHoursOnContact" readonly="true"/>
+    <field name="dailyWorkHours"/>
+    <field name="penaltyType"/>
+    <field name="penaltyCost"/>
+    <field name="comments"/>
+    <field name="creationDate" readonly="false"/>
+    <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+      target="com.axelor.apps.hr.db.EmployerTeam"/>
+  </grid>
+
+  <grid name="hr-employee-daily-activity-manager-new-line-grid" title="Daily Activity Line"
+    onNew="action-employee-activity-new-line-attrs-set-employee-team" editable="true"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine">
+    <field name="employee" onChange="action-emp-activity-line-attrs-set-emp-hours"
+      onSelect="action-deily-activity-line-attr-set-activity-new-line-domain"/>
+    <field name="dailyWorkHoursOnContact" readonly="true"/>
+    <field name="dailyWorkHours"/>
+    <field name="penaltyType"/>
+    <field name="penaltyCost"/>
+    <field name="bonus"/>
+    <field name="comments"/>
+    <field name="creationDate" readonly="true"/>
+    <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+      target="com.axelor.apps.hr.db.EmployerTeam"/>
+  </grid>
+
+
+  <form name="hr-employee-daily-activity-new-line-form" title="Daily Activity Line"
+    onLoad="action-employee-activity-new-line-attrs-set-employee-team"
+    onNew="action-employee-activity-new-line-attrs-set-employee-team"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employee" onChange="action-emp-activity-line-attrs-set-emp-hours"
+        onSelect="action-deily-activity-line-attr-set-activity-new-line-domain"/>
+      <field name="dailyWorkHoursOnContact" readonly="true"/>
+      <field name="dailyWorkHours"/>
+      <field name="penaltyType"/>
+      <field name="penaltyCost"/>
+      <field name="comments"/>
+      <field name="creationDate" readonly="true"/>
+      <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+        target="com.axelor.apps.hr.db.EmployerTeam"/>
+    </panel>
+    <panel readonly="true" title="Related Info">
+      <field name="employeeDailyActivity"/>
+      <field name="salaryLine"/>
+    </panel>
+  </form>
+
+  <form name="hr-employee-daily-activity-manager-new-line-form" title="Daily Activity Line"
+    onLoad="action-employee-activity-new-line-attrs-set-employee-team"
+    onNew="action-employee-activity-new-line-attrs-set-employee-team"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employee" onChange="action-emp-activity-line-attrs-set-emp-hours"
+        onSelect="action-deily-activity-line-attr-set-activity-new-line-domain"/>
+      <field name="dailyWorkHoursOnContact" readonly="true"/>
+      <field name="dailyWorkHours"/>
+      <field name="penaltyType"/>
+      <field name="penaltyCost"/>
+      <field name="bonus"/>
+      <field name="comments"/>
+      <field name="creationDate" readonly="true"/>
+      <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+        target="com.axelor.apps.hr.db.EmployerTeam"/>
+    </panel>
+    <panel readonly="true" title="Related Info">
+      <field name="employeeDailyActivity"/>
+      <field name="salaryLine"/>
+    </panel>
+  </form>
+
+  <action-attrs name="action-emp-activity-line-attrs-set-emp-hours">
+    <attribute name="value" for="dailyWorkHoursOnContact"
+      expr="eval: employee?.dailyWorkHours"/>
+  </action-attrs>
+
+  <action-attrs name="action-employee-activity-new-line-attrs-set-employee-team">
+    <attribute name="value" for="_employerTeam" expr="eval: _parent?.employerTeam"/>
+    <attribute name="value" for="creationDate" expr="eval: __date__"/>
+  </action-attrs>
+
+  <action-attrs name="action-deily-activity-line-attr-set-activity-new-line-domain">
+    <attribute name="domain" for="employee" if="_employerTeam != null"
+      expr="eval: &quot; self.employerTeam = :_employerTeam &quot;"/>
+  </action-attrs>
+
+</object-views>

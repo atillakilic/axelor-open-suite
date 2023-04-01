@@ -39,17 +39,30 @@
       readonlyIf="statusSelect >= 2">
       <field name="statusSelect" widget="NavSelect" colSpan="12" showTitle="false"
         readonly="true"/>
-      <field name="company" title="Company"/>
-      <spacer/>
+      <field name="company" title="Company" colSpan="4"/>
+      <field name="selectActivityType" colSpan="4"
+        onChange="action-emp-daily-activity-attrs-set-employee-team,save"/>
+      <field name="employerTeam" colSpan="4" showIf="selectActivityType == 1"
+        requiredIf="selectActivityType == 1" onChange="save"/>
       <field name="startDate" title="Start Date"/>
       <field name="toDate" title="To Date"/>
       <field name="activityUser" title="User" readonly="true"/>
       <field name="project" title="Project"/>
     </panel>
 
-    <panel-related field="activityRecord" readonlyIf="statusSelect >= 2"
+    <panel-related field="activityRecord" readonlyIf="statusSelect >= 2" hidden="true"
       form-view="hr-employee-daily-activity-line-form"
       grid-view="hr-employee-daily-activity-line-grid" canEdit="true"/>
+
+    <panel showIf="selectActivityType == 1">
+      <spacer colSpan="12"/>
+      <button onClick="save" name="listAllEmp" title="List all empoyee from Team"
+        hidden="true"/>
+    </panel>
+
+    <panel-related field="dailyActivityRecord" readonlyIf="statusSelect >= 2"
+      form-view="hr-employee-daily-activity-new-line-form"
+      grid-view="hr-employee-daily-activity-new-line-grid" canEdit="true"/>
 
     <panel sidebar="true" name="panelSideBar" readonlyIf="statusSelect >= 2">
       <button onClick="action-attrs-hr-employee-daily-activity-send-manager,save"
@@ -66,17 +79,24 @@
       readonlyIf="statusSelect >= 3">
       <field name="statusSelect" widget="NavSelect" colSpan="12" showTitle="false"
         readonly="true"/>
-      <field name="company" title="Company"/>
-      <spacer/>
+      <field name="company" title="Company" colSpan="4"/>
+      <field name="selectActivityType" colSpan="4"
+        onChange="action-emp-daily-activity-attrs-set-employee-team,save"/>
+      <field name="employerTeam" colSpan="4" showIf="selectActivityType == 1"
+        requiredIf="selectActivityType == 1" onChange="save"/>
       <field name="startDate" title="Start Date"/>
       <field name="toDate" title="To Date"/>
       <field name="activityUser" title="User" readonly="true"/>
       <field name="project" title="Project"/>
     </panel>
 
-    <panel-related field="activityRecord" readonlyIf="statusSelect >= 3"
-      form-view="hr-employee-daily-activity-line-hr-manager-form"
+    <panel-related field="activityRecord" readonlyIf="statusSelect >= 3" hidden="true"
+      readonly="true" form-view="hr-employee-daily-activity-line-hr-manager-form"
       grid-view="hr-employee-daily-activity-line-hr-manager-grid" canEdit="true"/>
+
+    <panel-related field="dailyActivityRecord" readonlyIf="statusSelect >= 2"
+      form-view="hr-employee-daily-activity-manager-new-line-form"
+      grid-view="hr-employee-daily-activity-manager-new-line-grid" canEdit="true"/>
 
   </form>
 
@@ -92,9 +112,15 @@
     <attribute name="value" for="statusSelect" expr="eval: 2"/>
   </action-attrs>
 
+  <action-attrs name="action-emp-daily-activity-attrs-set-employee-team">
+    <attribute name="value" for="employerTeam" if="selectActivityType != 1"
+      expr="eval: null"/>
+  </action-attrs>
+
   <action-method name="action-emp-daily-activity-method-calculate-salary">
     <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="calculateSalary"/>
   </action-method>
+
 
 </object-views>

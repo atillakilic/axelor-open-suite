@@ -342,4 +342,18 @@
     <option value="2">RVP+VKS</option>
   </selection>
 
+  <selection name="hr.expence.type.select">
+    <option value="1">Companys Expense</option>
+    <option value="2">Employer Exprence</option>
+  </selection>
+
+  <selection name="hr.employee.activity.type">
+    <option value="1">Team Work</option>
+    <option value="2">Employee Work</option>
+  </selection>
+
+  <selection name="hr.employee.salary.payment.method">
+    <option value="1">Bank</option>
+    <option value="2">Cash</option>
+  </selection>
 </object-views>

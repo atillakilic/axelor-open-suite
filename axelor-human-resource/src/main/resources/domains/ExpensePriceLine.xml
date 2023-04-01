@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="ExpensePriceLine" cacheable="true">
+    <many-to-one name="expenseProduct" ref="com.axelor.apps.base.db.Product"
+      title="Expense Type"/>
+    <integer name="quantity" title="Quantity"/>
+    <decimal name="amount" title="Amount" min="0"/>
+    <string name="comments"/>
+    <many-to-one name="expence" ref="com.axelor.apps.hr.db.Expense" title="Expence"/>
+  </entity>
+
+</domain-models>

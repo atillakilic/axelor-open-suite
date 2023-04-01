@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="expense-line-price-grid" title="Expense lines"
+    model="com.axelor.apps.hr.db.ExpensePriceLine">
+    <field name="expenseProduct" canView="false"
+      onSelect="action-expense-line-attrs-set-product-domain" widget="SuggestBox"
+      form-view="product-expense-form" grid-view="product-expense-grid" width="200"
+      onChange="action-expenseprice-line-method-set-expense-type-amount"/>
+    <field name="quantity" width="200"/>
+    <field name="amount" width="200"/>
+    <field name="comments"/>
+  </grid>
+
+  <form name="expense-line-price-form" title="Expense line"
+    model="com.axelor.apps.hr.db.ExpensePriceLine" onNew="" onSave="" width="large">
+
+    <panel name="mainPanel" title="Main">
+      <field name="expenseProduct" canView="false"
+        onSelect="action-expense-line-attrs-set-product-domain" widget="SuggestBox"
+        form-view="product-expense-form"
+        onChange="action-expenseprice-line-method-set-expense-type-amount"
+        grid-view="product-expense-grid" width="200"/>
+      <field name="quantity"/>
+      <field name="amount"/>
+      <field name="comments"/>
+    </panel>
+  </form>
+
+  <action-method name="action-expenseprice-line-method-set-expense-type-amount">
+    <call class="com.axelor.apps.hr.web.expense.ExpensesPriceLineController"
+      method="setExpenseTypeAmount"/>
+  </action-method>
+
+</object-views>
