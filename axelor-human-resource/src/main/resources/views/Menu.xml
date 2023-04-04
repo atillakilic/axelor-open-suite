@@ -748,6 +748,13 @@
     <view type="grid" name="hr-employee-salary-grid"/>
     <view type="form" name="hr-employee-salary-finance-form"/>
   </action-view>
+  
+  <menuitem name="menu-hr-manager-salary-dashboard" parent="account-payment-finance"
+    title="Dashboard" action="hr.salary.dashboard.view"/>
+
+  <action-view name="hr.salary.dashboard.view" title="Dashboard">
+    <view type="dashboard" name="hr.manager.salary.dashboard"/>
+  </action-view>
 
   <!-- Top Menus -->
 

@@ -73,6 +73,17 @@
         onChange="action-purchase-request-group-company-onchange"/>
       <field name="$product" hidden="true" domain="self.dtype = 'Product'"/>
     </panel>
+    <panel name="characteristicsPanel" title="Characteristics" canCollapse="true">
+      <field name="stockLocation" canEdit="false"
+        domain="self.company = :company and self.typeSelect in (1,2) and self.usableOnPurchaseOrder = true"
+        if-module="axelor-supplychain" colSpan="6" form-view="stock-location-form"
+        grid-view="stock-location-grid" if="__config__.app.isApp('supplychain')"/>
+      <field name="project"/>
+      <field name="requesterUser"/>
+      <field name="validatorUser"/>
+      <field name="supplierUser" domain="self.isSupplier = true" colSpan="6" canEdit="false"
+        hidden="true" form-view="partner-form" grid-view="partner-grid"/>
+    </panel>
     <panel-related field="purchaseRequestLineList"
       form-view="purchase-request-line-form" grid-view="purchase-request-line-grid"/>
     <panel-tabs name="descriptionPanelTab">
@@ -94,17 +105,6 @@
         onClick="action-purchase-request-group-cancel-button" hideIf="statusSelect == 6"/>
       <button name="draftBtn" title="Draft" icon="fa-edit" showIf="statusSelect == 6"
         onClick="action-purchase-request-group-draft-button"/>
-    </panel>
-    <panel sidebar="true" name="characteristicsPanel" title="Characteristics"
-      canCollapse="true">
-      <field name="stockLocation" canEdit="false"
-        domain="self.company = :company and self.typeSelect in (1,2) and self.usableOnPurchaseOrder = true"
-        if-module="axelor-supplychain" colSpan="12" form-view="stock-location-form"
-        grid-view="stock-location-grid" if="__config__.app.isApp('supplychain')"/>
-      <field name="supplierUser" domain="self.isSupplier = true" colSpan="12" canEdit="false"
-        form-view="partner-form" grid-view="partner-grid"/>
-      <field name="requesterUser"/>
-      <field name="validatorUser"/>
     </panel>
     <panel sidebar="true" name="follow-upPanel" title="Follow-up" canCollapse="true"
       showIf="purchaseOrder">

@@ -13,7 +13,7 @@
     <field name="penaltyType"/>
     <field name="penaltyCost"/>
     <field name="comments"/>
-    <field name="creationDate" readonly="false"/>
+    <field name="creationDate" readonly="true"/>
     <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
       target="com.axelor.apps.hr.db.EmployerTeam"/>
   </grid>

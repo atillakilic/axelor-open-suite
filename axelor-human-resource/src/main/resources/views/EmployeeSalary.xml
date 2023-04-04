@@ -65,7 +65,8 @@
         prompt="Are you sure you want to Pay Plan Salary?"/>
       <button onClick="save" name="rejectBtn" title="Reject" css="btn-danger"
         prompt="Are you sure you want to Reject Salary?"/>
-      <button onClick="save,action-employee-salary-method-print-report" name="printBtn" title="Print" css="btn-success"/>
+      <button onClick="save,action-employee-salary-method-print-report" name="printBtn"
+        title="Print" css="btn-success"/>
     </panel>
 
   </form>
@@ -80,7 +81,8 @@
   </action-attrs>
 
   <action-method name="action-employee-salary-method-print-report">
-  	<call class="com.axelor.apps.hr.web.EmployeeSalaryController" method="printEmployeeSalaryReport"/>
+    <call class="com.axelor.apps.hr.web.EmployeeSalaryController"
+      method="printEmployeeSalaryReport"/>
   </action-method>
 
 </object-views>

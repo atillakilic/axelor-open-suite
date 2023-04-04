@@ -23,6 +23,8 @@
     <many-to-one name="validatorUser" title="Validator" ref="com.axelor.auth.db.User"
       readonly="true"/>
 
+    <many-to-one name="project" title="Project" ref="com.axelor.apps.project.db.Project"/>
+
     <unique-constraint columns="purchaseRequestSeq"/>
 
     <extra-code>

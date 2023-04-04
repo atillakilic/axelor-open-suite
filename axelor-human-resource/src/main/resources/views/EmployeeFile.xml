@@ -27,6 +27,31 @@
     <field name="notFollowDoc"/>
     <field name="price" canEdit="true"/>
   </grid>
+  
+  <grid name="employee-file-dashboard-grid" title="Files" model="com.axelor.apps.hr.db.EmployeeFile">
+    <menubar>
+      <menu name="employeeFileReportsMenu" title="Reports" icon="fa-files-o" showTitle="true">
+        <item name="printItem2" title="Doc Report"
+          action="action-emoloyee-file-print-docexpiration-date-report"/>
+      </menu>
+    </menubar>
+    <hilite background="danger"
+      if="$moment(expirationDate).diff(todayDate,'days') &lt;= criticalTime"/>
+    <hilite background="warning"
+      if="$moment(expirationDate).diff(todayDate,'days') &lt;= preparationTime"/>
+    <field name="name"/>
+    <field name="employee" hidden="true"/>
+    <field name="employeeHr"/>
+    <field name="employeeHr.employeeNationality"/>
+    <field name="fileType"/>
+    <field name="metaFile"/>
+    <field name="expirationDate"/>
+    <field name="remainingDays"/>
+    <field name="preparationTime"/>
+    <field name="criticalTime"/>
+    <field name="notFollowDoc"/>
+    <field name="price" canEdit="true"/>
+  </grid>
 
   <form name="employee-file-form" title="File" model="com.axelor.apps.hr.db.EmployeeFile"
     onNew="action-employee-file-attrs-on-new-set-file-type,action-employee-file-attrs-on-new-set-records">

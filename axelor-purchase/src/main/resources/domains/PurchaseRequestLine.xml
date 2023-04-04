@@ -21,6 +21,8 @@
     <decimal name="totalCost" title="Total Cost"/>
     <integer name="deliveryTime" title="Delivery Time (Day)"/>
     <string name="supplier" title="Supplier"/>
+    <many-to-one name="supplierPartner" title="Supplier"
+      ref="com.axelor.apps.base.db.Partner"/>
     <string name="url" title="URL"/>
     <string name="description" title="Note/Description" large="true"/>
 

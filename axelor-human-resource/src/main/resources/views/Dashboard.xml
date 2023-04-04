@@ -19,7 +19,7 @@
     <dashlet action="hr.dashboard.show.employee.expenses" colSpan="12" height="450"
       canSearch="true" if="__config__.app.isApp('expense')"/>
   </dashboard>
-
+  
   <action-view name="hr.dashboard.leave.per.employee" title="Leave Per Employee">
     <view type="chart" name="chart.leave.per.employee"/>
   </action-view>
@@ -72,6 +72,27 @@
     <domain>self.user.id = :userId</domain>
     <context name="userId" expr="eval: __user__.id"/>
   </action-view>
+
+
+	<!-- Salary Dashboard -->
+	
+	    <!-- Dashboard Manager -->
+  <dashboard title="Salary Reportings" name="hr.manager.salary.dashboard">
+	<dashlet action="hr.managers.dashboard.salary.information" height="450" canSearch="true" colSpan="12"/>
+	<dashlet action="hr.managers.dashboard.document.information" height="450" canSearch="true" colSpan="12"/>
+  </dashboard>
+	
+  <action-view name="hr.managers.dashboard.salary.information" title="Monthly Salary Details"
+    model="com.axelor.apps.hr.db.EmployeeSalaryLine">
+    <view type="grid" name="hr-employee-salary-dashboard-line-grid"/>
+    <view type="form" name="hr-employee-salary-line-dashboard-form"/>
+  </action-view>
+  
+  <action-view name="hr.managers.dashboard.document.information" title="Employee Documents"
+    model="com.axelor.apps.hr.db.EmployeeFile">
+    <view type="grid" name="employee-file-dashboard-grid"/>
+  </action-view>
+
 
 
 </object-views>

@@ -79,27 +79,29 @@ public class EmpSalaryServiceImpl implements EmpSalaryService {
               totalHours.add(empDailyActivityLine.getDailyWorkHours()));
           employeeSalaryNewLine.setTotalWorkDays(totalDays.add(new BigDecimal(1)));
           employeeSalaryNewLine.setTotalPenalty(
-              totalPenalty.add(empDailyActivityLine.getPenaltyCost()));   
-          
+              totalPenalty.add(empDailyActivityLine.getPenaltyCost()));
+
           empDailyActivityLine.setSalaryLine(employeeSalaryNewLine);
           Beans.get(EmployeeDailyActivityNewLineRepository.class).save(empDailyActivityLine);
-//          List<EmployeeDailyActivityNewLine> empDailyActOnSalary = employeeSalaryNewLine.getDailyActivity();
-//          empDailyActOnSalary.add(empDailyActivityLine);
-          
-//          employeeSalaryNewLine.setDailyActivity(empDailyActOnSalary);
-          
+          //          List<EmployeeDailyActivityNewLine> empDailyActOnSalary =
+          // employeeSalaryNewLine.getDailyActivity();
+          //          empDailyActOnSalary.add(empDailyActivityLine);
+
+          //          employeeSalaryNewLine.setDailyActivity(empDailyActOnSalary);
+
         } else {
           // not found in previous day Add new salary line
           employeeSalaryNewLine.setEmployee(empDailyActivityLine.getEmployee());
           employeeSalaryNewLine.setTotalWorkHours(empDailyActivityLine.getDailyWorkHours());
           employeeSalaryNewLine.setTotalWorkDays(new BigDecimal(1));
           employeeSalaryNewLine.setTotalPenalty(empDailyActivityLine.getPenaltyCost());
-          
-//          List<EmployeeDailyActivityNewLine> empDailyActOnSalary = new ArrayList<EmployeeDailyActivityNewLine>();
-//          empDailyActOnSalary.add(empDailyActivityLine);
-          
-//          employeeSalaryNewLine.setDailyActivity(empDailyActOnSalary);
-          
+
+          //          List<EmployeeDailyActivityNewLine> empDailyActOnSalary = new
+          // ArrayList<EmployeeDailyActivityNewLine>();
+          //          empDailyActOnSalary.add(empDailyActivityLine);
+
+          //          employeeSalaryNewLine.setDailyActivity(empDailyActOnSalary);
+
           empDailyActivityLine.setSalaryLine(employeeSalaryNewLine);
           Beans.get(EmployeeDailyActivityNewLineRepository.class).save(empDailyActivityLine);
           employeeSalaryLineList.add(employeeSalaryNewLine);

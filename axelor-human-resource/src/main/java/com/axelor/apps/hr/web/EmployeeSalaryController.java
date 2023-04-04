@@ -17,9 +17,6 @@
  */
 package com.axelor.apps.hr.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.axelor.apps.ReportFactory;
 import com.axelor.apps.hr.db.EmployeeSalary;
 import com.axelor.apps.hr.db.EmployeeSalaryLine;
@@ -29,28 +26,29 @@ import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.common.base.Joiner;
 import com.google.inject.Singleton;
+import java.util.ArrayList;
+import java.util.List;
 
 @Singleton
 public class EmployeeSalaryController {
 
   public void printEmployeeSalaryReport(ActionRequest request, ActionResponse response)
       throws AxelorException {
-	  EmployeeSalary employeeSalary = request.getContext().asType(EmployeeSalary.class);
+    EmployeeSalary employeeSalary = request.getContext().asType(EmployeeSalary.class);
 
-	    String idsStr = "";
-	    List<Long> idList = new ArrayList<Long>();
-	    for(EmployeeSalaryLine employeeSalaryLine : employeeSalary.getEmployeeSalaryRecord()) {
-	    	idList.add(employeeSalaryLine.getId()); 
-	    }
-	    idsStr = Joiner.on(",").join(idList);
+    String idsStr = "";
+    List<Long> idList = new ArrayList<Long>();
+    for (EmployeeSalaryLine employeeSalaryLine : employeeSalary.getEmployeeSalaryRecord()) {
+      idList.add(employeeSalaryLine.getId());
+    }
+    idsStr = Joiner.on(",").join(idList);
 
-	    String fileLink =
-	        ReportFactory.createReport("EmployeeSalary2.rptdesign", "Salary Report")
-	            .addParam("ids", idsStr)
-	            .generate()
-	            .getFileLink();
+    String fileLink =
+        ReportFactory.createReport("EmployeeSalary2.rptdesign", "Salary Report")
+            .addParam("ids", idsStr)
+            .generate()
+            .getFileLink();
 
-	    response.setView(ActionView.define("Salary Report").add("html", fileLink).map());
-	  
+    response.setView(ActionView.define("Salary Report").add("html", fileLink).map());
   }
 }
