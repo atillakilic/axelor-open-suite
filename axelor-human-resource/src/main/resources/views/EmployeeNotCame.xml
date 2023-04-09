@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-not-came-grid" title="Employee Not Came"
+    model="com.axelor.apps.hr.db.EmployeeNotCame">
+    <field name="company"/>
+    <field name="creationDate"/>
+  </grid>
+
+  <form name="hr-employee-not-came-form" title="Employee Not Came"
+    model="com.axelor.apps.hr.db.EmployeeNotCame" width="mid">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="company"/>
+      <field name="creationDate"/>
+    </panel>
+    <panel-related field="employeeNotCameLine"
+      form-view="hr-employee-not-came-line-form" grid-view="hr-employee-not-came-line-grid"/>
+  </form>
+
+
+</object-views>

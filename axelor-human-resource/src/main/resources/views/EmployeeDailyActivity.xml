@@ -11,8 +11,10 @@
     <field name="company" title="Company"/>
     <field name="startDate" title="Start Date"/>
     <field name="toDate" title="To Date"/>
+    <field name="statusShiftType" title="Shift"/>
     <field name="activityUser" title="User"/>
     <field name="project" title="Project"/>
+    <field name="statusShiftType" title="Shift"/>
   </grid>
 
   <grid name="hr-employee-daily-activity-hr-manger-grid" title="Daily Activity"
@@ -30,6 +32,7 @@
     <field name="toDate" title="To Date"/>
     <field name="activityUser" title="User"/>
     <field name="project" title="Project"/>
+    <field name="statusShiftType" title="Shift"/>
   </grid>
 
   <form name="hr-employee-daily-activity-form" title="Daily Activity"
@@ -48,6 +51,7 @@
       <field name="toDate" title="To Date"/>
       <field name="activityUser" title="User" readonly="true"/>
       <field name="project" title="Project"/>
+      <field name="statusShiftType" title="Shift"/>
     </panel>
 
     <panel-related field="activityRecord" readonlyIf="statusSelect >= 2" hidden="true"
@@ -88,6 +92,7 @@
       <field name="toDate" title="To Date"/>
       <field name="activityUser" title="User" readonly="true"/>
       <field name="project" title="Project"/>
+      <field name="statusShiftType" title="Shift"/>
     </panel>
 
     <panel-related field="activityRecord" readonlyIf="statusSelect >= 3" hidden="true"

@@ -33,6 +33,21 @@
       target="com.axelor.apps.project.db.Project" hidden="true"/>
   </grid>
 
+  <grid name="hr-employee-daily-activity-line-hr-manager-dashboard-grid"
+    title="Daily Activity Line" model="com.axelor.apps.hr.db.EmployeeDailyActivityLine">
+    <field name="employee" canEdit="true"
+      onChange="action-deily-activity-line-set-employee-work-hour"/>
+    <field name="project" canEdit="true"
+      onSelect="action-deily-activity-line-attr-set-parent-project,action-deily-activity-line-attr-set-project-domain"/>
+    <field name="dailyWorkHours" canEdit="true"/>
+    <field name="quantity" canEdit="true"/>
+    <field name="productOrService" canEdit="true"/>
+    <field name="penaltyOrReward" canEdit="true"/>
+    <field name="comments" canEdit="true"/>
+    <field name="_parentProject" title="Project" type="many-to-one"
+      target="com.axelor.apps.project.db.Project" hidden="true"/>
+  </grid>
+
   <form name="hr-employee-daily-activity-line-form" title="Daily Activity Line"
     onLoad="action-deily-activity-line-attr-set-parent-project"
     onNew="action-deily-activity-line-attr-set-parent-project"

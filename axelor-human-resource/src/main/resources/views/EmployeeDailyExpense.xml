@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-expense-grid" title="Expense"
+    model="com.axelor.apps.hr.db.EmployeeDailyExpense">
+    <field name="company"/>
+    <field name="project"/>
+    <field name="creationate"/>
+    <field name="totalCash"/>
+    <field name="totalBank"/>
+    <field name="total"/>
+  </grid>
+
+  <form name="hr-employee-expense-form" title="Expense"
+    model="com.axelor.apps.hr.db.EmployeeDailyExpense" width="mid">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="company" colSpan="4"/>
+      <field name="project" colSpan="4"/>
+      <field name="creationate" colSpan="4"/>
+      <field name="totalCash" colSpan="4" readonly="true"/>
+      <field name="totalBank" colSpan="4" readonly="true"/>
+      <field name="total" colSpan="4" readonly="true"/>
+    </panel>
+
+    <panel-related field="expenseLine" grid-view="hr-employee-expense-line-grid"
+      form-view="hr-employee-expense-line-form"
+      onChange="save,action-employee-daily-expense-method-calculate-total,save" canEdit="true"/>
+
+  </form>
+
+  <action-method name="action-employee-daily-expense-method-calculate-total">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyExpenseController"
+      method="calculateExpense"/>
+  </action-method>
+
+</object-views>

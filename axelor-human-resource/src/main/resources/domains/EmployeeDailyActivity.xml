@@ -16,6 +16,8 @@
     <date name="toDate" title="To Date"/>
     <many-to-one name="activityUser" ref="com.axelor.auth.db.User" title="User"/>
     <many-to-one name="project" ref="com.axelor.apps.project.db.Project" title="Project"/>
+    <integer name="statusShiftType" title="Shift"
+      selection="hr.employee.daily.activity.shift.selection"/>
     <string name="description" title="Description"/>
 
     <many-to-one name="employerTeam" title="Employer Team"

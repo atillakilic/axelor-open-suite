@@ -356,4 +356,10 @@
     <option value="1">Bank</option>
     <option value="2">Cash</option>
   </selection>
+
+  <selection name="hr.employee.daily.activity.shift.selection">
+    <option value="1">Day</option>
+    <option value="2">Night</option>
+  </selection>
+
 </object-views>

@@ -27,8 +27,9 @@
     <field name="notFollowDoc"/>
     <field name="price" canEdit="true"/>
   </grid>
-  
-  <grid name="employee-file-dashboard-grid" title="Files" model="com.axelor.apps.hr.db.EmployeeFile">
+
+  <grid name="employee-file-dashboard-grid" title="Files"
+    model="com.axelor.apps.hr.db.EmployeeFile">
     <menubar>
       <menu name="employeeFileReportsMenu" title="Reports" icon="fa-files-o" showTitle="true">
         <item name="printItem2" title="Doc Report"

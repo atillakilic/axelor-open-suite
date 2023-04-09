@@ -34,6 +34,22 @@
       target="com.axelor.apps.hr.db.EmployerTeam"/>
   </grid>
 
+  <grid name="hr-employee-daily-activity-manager-new-line-dashboard-grid"
+    title="Daily Activity Line" onNew="action-employee-activity-new-line-attrs-set-employee-team"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine">
+    <field name="employee" onChange="action-emp-activity-line-attrs-set-emp-hours"
+      onSelect="action-deily-activity-line-attr-set-activity-new-line-domain"/>
+    <field name="dailyWorkHoursOnContact" readonly="true"/>
+    <field name="dailyWorkHours"/>
+    <field name="penaltyType"/>
+    <field name="penaltyCost"/>
+    <field name="bonus"/>
+    <field name="comments"/>
+    <field name="creationDate" readonly="true"/>
+    <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
+      target="com.axelor.apps.hr.db.EmployerTeam"/>
+  </grid>
+
 
   <form name="hr-employee-daily-activity-new-line-form" title="Daily Activity Line"
     onLoad="action-employee-activity-new-line-attrs-set-employee-team"

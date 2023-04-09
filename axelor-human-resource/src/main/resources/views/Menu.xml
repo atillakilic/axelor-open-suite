@@ -370,6 +370,26 @@
     <view name="hr-employee-salary-form" type="form"/>
   </action-view>
 
+  <menuitem name="hr-root-hr-employee-not-came" order="15"
+    parent="hr-root-hr-daily-activity" title="Employee Not Come"
+    action="hr.employee.hr.employee.not.come"/>
+
+  <action-view name="hr.employee.hr.employee.not.come"
+    model="com.axelor.apps.hr.db.EmployeeNotCame" title="Employee Not Come">
+    <view name="hr-employee-not-came-grid" type="grid"/>
+    <view name="hr-employee-not-came-form" type="form"/>
+  </action-view>
+
+  <menuitem name="hr-root-hr-employee-not-came-reason" order="20"
+    parent="hr-root-hr-daily-activity" title="Employee Not Come Reason"
+    action="hr.employee.hr.employee.not.come.reason"/>
+
+  <action-view name="hr.employee.hr.employee.not.come.reason"
+    model="com.axelor.apps.hr.db.EmployeeNotCameReason" title="Employee Not Come Reason">
+    <view name="hr-employee-not-came-reason-grid" type="grid"/>
+    <view name="hr-employee-not-came-reason-form" type="form"/>
+  </action-view>
+
   <!-- Leave App -->
   <menuitem name="leave-request-root" parent="hr-root" if="__config__.app.isApp('leave')"
     icon="fa-plane" icon-background="#84429f" title="Leave Requests" order="5"/>
@@ -742,18 +762,51 @@
     order="30"/>
 
   <menuitem name="account-payment-finance-salary" parent="account-payment-finance"
-    title="Salary" order="30" action="account.payment.finance.salary"/>
+    title="Salary" order="5" action="account.payment.finance.salary"/>
+
   <action-view name="account.payment.finance.salary" title="Salary"
     model="com.axelor.apps.hr.db.EmployeeSalary">
     <view type="grid" name="hr-employee-salary-grid"/>
     <view type="form" name="hr-employee-salary-finance-form"/>
   </action-view>
-  
-  <menuitem name="menu-hr-manager-salary-dashboard" parent="account-payment-finance"
-    title="Dashboard" action="hr.salary.dashboard.view"/>
+
+  <menuitem name="account-payment-finance-expense" parent="account-payment-finance"
+    title="Expense" order="10" action="account.payment.finance.expense"/>
+
+  <action-view name="account.payment.finance.expense" title="Expense"
+    model="com.axelor.apps.hr.db.EmployeeDailyExpense">
+    <view type="grid" name="hr-employee-expense-grid"/>
+    <view type="form" name="hr-employee-expense-form"/>
+  </action-view>
+
+  <menuitem name="account-payment-finance-expense-type" parent="account-payment-finance"
+    title="Expense Type" order="15" action="account.payment.finance.expense.type"/>
+
+  <action-view name="account.payment.finance.expense.type" title="Expense Type"
+    model="com.axelor.apps.hr.db.EmployeeDailyExpenseType">
+    <view type="grid" name="hr-employee-expense-type-grid"/>
+    <view type="form" name="hr-employee-expense-type-form"/>
+  </action-view>
+
+  <menuitem name="menu-hr-manager-salary-dashboard-root" parent="account-payment-finance"
+    order="20" title="Dashboard" action="hr.salary.dashboard.view"/>
+
+  <menuitem name="menu-hr-manager-salary-dashboard"
+    parent="menu-hr-manager-salary-dashboard-root" title="Dashboard"
+    action="hr.salary.dashboard.view"/>
 
   <action-view name="hr.salary.dashboard.view" title="Dashboard">
     <view type="dashboard" name="hr.manager.salary.dashboard"/>
+  </action-view>
+
+  <menuitem name="menu-hr-manager-daily-activity-dashboard"
+    parent="menu-hr-manager-salary-dashboard-root" title="Daily activity"
+    action="hr.daily.activity.dashboard.view"/>
+
+  <action-view name="hr.daily.activity.dashboard.view" title="Daily Activity"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityNewLine">
+    <view type="grid" name="hr-employee-daily-activity-manager-new-line-dashboard-grid"/>
+    <view type="form" name="hr-employee-daily-activity-manager-new-line-form"/>
   </action-view>
 
   <!-- Top Menus -->

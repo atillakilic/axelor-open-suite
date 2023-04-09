@@ -16,9 +16,9 @@
     <field name="_employerTeam" title="Employee Team" type="many-to-one" hidden="true"
       target="com.axelor.apps.hr.db.EmployerTeam"/>
   </grid>
-  
-   <grid name="hr-employee-salary-dashboard-line-grid" title="Salary Line" canDelete="false" canEdit="false" canNew="false"
-    onNew="action-employee-salary-attrs-set-employee-team"
+
+  <grid name="hr-employee-salary-dashboard-line-grid" title="Salary Line" canDelete="false"
+    canEdit="false" canNew="false" onNew="action-employee-salary-attrs-set-employee-team"
     model="com.axelor.apps.hr.db.EmployeeSalaryLine">
     <hilite color="danger" if="totalPenalty > 0"/>
     <field name="employee" canEdit="true"
@@ -27,7 +27,7 @@
     <field name="totalWorkDays" canEdit="true"/>
     <field name="totalPenalty" canEdit="true"/>
     <field name="totalSalary" canEdit="true"/>
-    <field name="createdOn" />
+    <field name="createdOn"/>
   </grid>
 
   <form name="hr-employee-salary-line-form" title="Salary Line"
@@ -46,10 +46,10 @@
     </panel>
     <panel-related field="dailyActivity" readonly="true"/>
   </form>
-  
-    <form name="hr-employee-salary-line-dashboard-form" title="Salary Line"
-    onNew="action-employee-salary-attrs-set-employee-team" readonlyIf="true" canDelete="false" canEdit="false" canNew="false"
-    model="com.axelor.apps.hr.db.EmployeeSalaryLine" width="large">
+
+  <form name="hr-employee-salary-line-dashboard-form" title="Salary Line"
+    onNew="action-employee-salary-attrs-set-employee-team" readonlyIf="true" canDelete="false"
+    canEdit="false" canNew="false" model="com.axelor.apps.hr.db.EmployeeSalaryLine" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
       <field name="employee" onSelect="action-employee-salary-attrs-set-employee-domain"
         onChange=""/>
