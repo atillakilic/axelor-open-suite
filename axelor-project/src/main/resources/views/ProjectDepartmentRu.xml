@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="project-department-ru-grid" title="Project Department"
+    model="com.axelor.apps.project.db.ProjectDepartmentRu" orderBy="name">
+    <field name="name"/>
+    <field name="code"/>
+    <field name="parentProjectDepartment" title="Project Department"/>
+    <field name="isActive"/>
+    <field name="notes"/>
+  </grid>
+
+  <form name="project-department-ru-form" title="Project Department"
+    model="com.axelor.apps.project.db.ProjectDepartmentRu" onSave="">
+    <panel name="informationPanel">
+      <field name="name"/>
+      <field name="code"/>
+      <field name="isActive"/>
+      <field name="notes"/>
+      <field name="parentProjectDepartment" title="Project Department" hidden="true"/>
+    </panel>
+
+    <panel-related name="projectDepartmentList" title="Project Department"
+      colSpan="12" field="projectDepartmentList" form-view="project-department-ru-form"
+      grid-view="project-department-ru-grid"/>
+
+  </form>
+
+</object-views>

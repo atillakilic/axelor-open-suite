@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="project-ru-grid" title="Projects" model="com.axelor.apps.project.db.ProjectRu"
+    orderBy="name">
+    <field name="name"/>
+    <field name="parentProject"/>
+    <field name="clientPartner"/>
+    <field name="company"/>
+    <field name="currency"/>
+  </grid>
+
+  <form name="project-ru-form" title="Project" model="com.axelor.apps.project.db.ProjectRu"
+    onSave="">
+    <panel name="informationPanel">
+      <field name="name"/>
+      <spacer/>
+      <spacer colSpan="12"/>
+      <field name="company" colSpan="3"/>
+      <field name="clientPartner" colSpan="3"/>
+      <field name="contactPartner" colSpan="3"/>
+      <field name="currency" colSpan="3"/>
+      <spacer colSpan="12"/>
+    </panel>
+
+    <panel name="informationPanel" sidebar="true">
+      <field name="businessProject" widget="boolean-switch"/>
+      <field name="parentProject"/>
+    </panel>
+
+    <panel-tabs name="mainPanelTab" title="Project Area">
+      <panel name="projectAreaRoot" title="Project Area">
+        <panel-related name="projectArea" title="Project Area" colSpan="12"
+          field="projectArea" form-view="project-area-ru-form" grid-view="project-area-ru-grid"/>
+        <panel-dashlet name="projectAreaTreeDashletPanel" title="Project Area Tree"
+          colSpan="12" action="action-view-show-project-area-ru-tree"/>
+      </panel>
+      <panel name="projectDepartmentRoot" title="Project Department">
+        <panel-related name="projectDepartment" title="Project Department"
+          colSpan="12" field="projectDepartment" form-view="project-department-ru-form"
+          grid-view="project-department-ru-grid"/>
+        <panel-dashlet name="projectDepartmentTreeDashletPanel"
+          title="Project Department Tree" colSpan="12"
+          action="action-view-show-project-department-ru-tree"/>
+      </panel>
+
+      <panel name="projectTeamRoot" title="Team">
+        <panel-related name="projectTeam" title="Project Team" colSpan="12"
+          field="projectTeam" form-view="project-team-ru-form" grid-view="project-team-ru-grid"/>
+      </panel>
+
+      <panel name="projectWorkerRoot" title="Worker">
+        <panel-related name="projectWorker" title="Project Worker" colSpan="12"
+          readonly="true" field="projectWorker" form-view="project-worker-ru-form"
+          grid-view="project-worker-ru-grid"/>
+      </panel>
+
+      <panel name="projectValidatorRoot" title="Validator">
+        <panel-related name="projectValidator" title="Project Validator" colSpan="12"
+          field="projectValidator" form-view="project-validator-ru-form"
+          grid-view="project-validator-ru-grid"/>
+      </panel>
+
+      <panel name="projectLocationRoot" title="Location">
+        <panel-related name="projectLocation" title="Project Location" colSpan="12"
+          field="projectLocation" form-view="project-location-ru-form"
+          grid-view="project-location-ru-grid"/>
+      </panel>
+
+      <panel name="projectBankAccountRoot" title="Bank Account">
+        <panel-related name="bankAccountRu" title="Bank Account" colSpan="12"
+          canNew="false" canSelect="true" canEdit="false" field="bankAccountRu"
+          form-view="bank-account-ru-form" grid-view="bank-account-ru-grid"/>
+      </panel>
+
+      <panel name="projectCashAccountRoot" title="Cash Account">
+        <panel-related name="cashAccountRu" title="Cash Account" colSpan="12"
+          canNew="false" canSelect="true" canEdit="false" field="cashAccountRu"
+          form-view="cash-account-ru-grid" grid-view="cash-account-ru-grid"/>
+      </panel>
+
+
+    </panel-tabs>
+
+  </form>
+
+
+  <action-view name="action-view-show-project-area-ru-tree" title="Project Area Tree"
+    model="com.axelor.apps.project.db.ProjectAreaRu">
+    <view type="tree" name="project-area-ru-task-tree"/>
+    <view type="form" name=""/>
+    <context name="_id" expr="eval: id"/>
+  </action-view>
+
+  <tree name="project-area-ru-task-tree" title="Project Area Tree">
+
+    <column name="name" type="string"/>
+    <column name="code" type="string"/>
+    <column name="parentProjectArea" type="reference"/>
+
+    <node model="com.axelor.apps.project.db.ProjectAreaRu" domain="self.projectRu.id = :_id"
+      onClick="" orderBy="">
+      <field name="name" as="name"/>
+      <field name="code" as="code"/>
+      <field name="parentProjectArea" as="parentProjectArea"/>
+    </node>
+
+    <node model="com.axelor.apps.project.db.ProjectAreaRu" parent="parentProjectArea"
+      draggable="true" onClick="" orderBy="">
+      <field name="name" as="name"/>
+      <field name="code" as="code"/>
+      <field name="parentProjectArea" as="parentProjectArea"/>
+    </node>
+  </tree>
+
+  <action-view name="action-view-show-project-department-ru-tree"
+    title="Project Department Tree" model="com.axelor.apps.project.db.ProjectDepartmentRu">
+    <view type="tree" name="project-department-ru-tree"/>
+    <view type="form" name=""/>
+    <context name="_id" expr="eval: id"/>
+  </action-view>
+
+  <tree name="project-department-ru-tree" title="Project Department Tree">
+
+    <column name="name" type="string"/>
+    <column name="code" type="string"/>
+    <column name="parentProjectDepartment" type="reference"/>
+
+    <node model="com.axelor.apps.project.db.ProjectDepartmentRu"
+      domain="self.projectRu.id = :_id" onClick="" orderBy="">
+      <field name="name" as="name"/>
+      <field name="code" as="code"/>
+      <field name="parentProjectDepartment" as="parentProjectDepartment"/>
+    </node>
+
+    <node model="com.axelor.apps.project.db.ProjectDepartmentRu"
+      parent="parentProjectDepartment" draggable="true" onClick="" orderBy="">
+      <field name="name" as="name"/>
+      <field name="code" as="code"/>
+      <field name="parentProjectDepartment" as="parentProjectDepartment"/>
+    </node>
+  </tree>
+
+</object-views>

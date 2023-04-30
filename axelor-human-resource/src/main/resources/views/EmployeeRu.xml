@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="employee-ru-grid" title="Employee" model="com.axelor.apps.hr.db.EmployeeRu"
+    orderBy="">
+    <field name="name"/>
+    <field name="surname"/>
+    <field name="fatherName"/>
+    <field name="email"/>
+    <field name="mobilePhone"/>
+    <field name="phone"/>
+    <field name="birthDate"/>
+  </grid>
+
+  <form name="employee-ru-form" title="Employee" model="com.axelor.apps.hr.db.EmployeeRu"
+    width="large">
+    <panel name="mainPanel">
+      <field name="stepByStepSelect" widget="NavSelect" colSpan="12" showTitle="false"/>
+      <field name="picture" colSpan="2" css="center" showTitle="false" widget="Image"/>
+      <panel name="contactDetailsPanel" colSpan="10">
+        <field name="name" colSpan="4"/>
+        <field name="surname" colSpan="4"/>
+        <field name="fatherName" colSpan="4"/>
+        <field name="email" colSpan="4"/>
+        <field name="mobilePhone" colSpan="4" widget="phone" x-initial-country="RU"/>
+        <field name="phone" colSpan="4" widget="phone" x-initial-country="RU"/>
+      </panel>
+
+      <panel showIf="stepByStepSelect == 1" colSpan="12">
+        <field name="birthDate" colSpan="4"/>
+        <field name="maritalStatus" colSpan="4"/>
+        <field name="sexSelect" colSpan="4"/>
+
+        <field name="citizenship" colSpan="4"/>
+        <field name="maritalName" colSpan="4"/>
+        <field name="entegrationCode" colSpan="4"/>
+
+        <field name="emergencyContact" colSpan="4"/>
+        <field name="emergencyNumber" colSpan="4" widget="phone" x-initial-country="RU"/>
+        <field name="emergencyContactRelationship" colSpan="4"/>
+
+        <spacer colSpan="12"/>
+        <field name="project" colSpan="4"/>
+        <field name="projectTeam" colSpan="4"/>
+        <field name="projectDepartment" colSpan="4"/>
+        <field name="paymentStatus" colSpan="6" canNew="true" canSelect="true"/>
+        <field name="technicalStatus" colSpan="6" canNew="true" canSelect="true"/>
+      </panel>
+    </panel>
+
+    <panel colSpan="12">
+      <panel-related name="employeeContractPanel" field="employeeContract"
+        colSpan="12" form-view="employee-contract-status-ru-form"
+        grid-view="employee-contract-status-ru-grid" showIf="stepByStepSelect == 2"/>
+    </panel>
+  </form>
+
+</object-views>

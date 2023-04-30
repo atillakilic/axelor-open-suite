@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="employee-payment-status-ru-grid" title="Payment status"
+    model="com.axelor.apps.hr.db.EmpPaymentStatus" orderBy="">
+    <field name="name"/>
+    <field name="code"/>
+  </grid>
+
+  <form name="employee-payment-status-ru-form" title="Payment Status"
+    model="com.axelor.apps.hr.db.EmpPaymentStatus" width="large">
+    <panel name="mainPanel">
+      <field name="name"/>
+      <field name="code"/>
+    </panel>
+  </form>
+
+</object-views>

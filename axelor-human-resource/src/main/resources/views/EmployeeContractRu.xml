@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="employee-contract-status-ru-grid" title="Employee Contract"
+    model="com.axelor.apps.hr.db.EmployeeContractRu" orderBy="">
+    <field name="name"/>
+    <field name="employeeRu"/>
+
+    <field name="payCompany"/>
+    <field name="status"/>
+  </grid>
+
+  <form name="employee-contract-status-ru-form" title="Employee Contract"
+    model="com.axelor.apps.hr.db.EmployeeContractRu" width="large">
+
+    <toolbar>
+      <button name="printContract" title="Print COntract" icon="fa-print" onClick="save"/>
+    </toolbar>
+
+    <panel name="statusPanel" title="Status" colSpan="12">
+      <field name="status" colSpan="12" widget="NavSelect" canEdit="true" showTitle="false"/>
+    </panel>
+    <panel name="mainPanel" colSpan="12">
+      <field name="name"/>
+      <spacer colSpan="6"/>
+      <field name="employeeRu" required="true"/>
+      <field name="payCompany"/>
+    </panel>
+    <panel name="mainPanel" colSpan="12" title="Contract Information">
+      <field name="dailyWorkHours" colSpan="3"/>
+      <field name="minDailyWorkHours" colSpan="3"/>
+      <field name="overworkFee" colSpan="3"/>
+      <field name="monthlyLeave" colSpan="3"/>
+    </panel>
+
+    <panel>
+      <spacer colSpan="12"/>
+      <panel-related name="employeeSalaryPanel" field="employeeSalary" colSpan="12"
+        canEdit="true" form-view="employee-salary-status-ru-form"
+        grid-view="employee-salary-status-ru-grid"/>
+      <spacer colSpan="12"/>
+    </panel>
+
+    <panel name="mainPanel" colSpan="12" title="Contract End">
+      <field name="endDate" colSpan="6"/>
+      <spacer colSpan="6"/>
+      <field name="endOfContractReason" colSpan="6" canEdit="true" canNew="true"/>
+      <field name="endContractDetails" colSpan="6"/>
+    </panel>
+
+  </form>
+
+</object-views>

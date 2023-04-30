@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="project" package="com.axelor.apps.project.db"/>
+  <entity name="ProjectRu">
+    <string name="name"/>
+    <many-to-one name="clientPartner" ref="com.axelor.apps.base.db.Partner"
+      title="Customer"/>
+    <many-to-one name="contactPartner" ref="com.axelor.apps.base.db.Partner"
+      title="Customer Contact"/>
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company" required="true"
+      title="Company"/>
+    <many-to-one name="currency" ref="com.axelor.apps.base.db.Currency" title="Currency"
+      massUpdate="true"/>
+    <many-to-one name="address" ref="com.axelor.apps.base.db.Address"
+      title="Main/Invoicing address"/>
+    <many-to-one name="parentProject" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Parent project"/>
+    <boolean name="businessProject" title="Business project"/>
+
+    <one-to-many name="projectArea" ref="com.axelor.apps.project.db.ProjectAreaRu"
+      title="Project Area" mappedBy="projectRu"/>
+
+    <one-to-many name="projectDepartment"
+      ref="com.axelor.apps.project.db.ProjectDepartmentRu" title="Project Department"
+      mappedBy="projectRu"/>
+
+    <one-to-many name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team" mappedBy="projectRu"/>
+
+    <one-to-many name="projectWorker" ref="com.axelor.apps.project.db.ProjectWorkerRu"
+      title="Project Worker" mappedBy="projectRu"/>
+
+    <one-to-many name="projectValidator"
+      ref="com.axelor.apps.project.db.ProjectValidatorRu" title="Project Validator"
+      mappedBy="projectRu"/>
+
+    <one-to-many name="projectLocation"
+      ref="com.axelor.apps.project.db.ProjectLocaltionRu" title="Project Location"
+      mappedBy="projectRu"/>
+
+    <many-to-many name="bankAccountRu" ref="com.axelor.apps.base.db.BankAccountRu"
+      title="Bank accounts"/>
+
+    <many-to-many name="cashAccountRu" ref="com.axelor.apps.base.db.CashAccountRu"
+      title="Cash accounts"/>
+
+  </entity>
+</domain-models>

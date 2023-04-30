@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="base" package="com.axelor.apps.base.db"/>
+
+  <entity name="CashAccountRu" lang="java">
+
+    <string name="ownerName" title="Owner name" max="255"/>
+    <string name="lable" title="Lable"/>
+    <many-to-one name="currency" ref="com.axelor.apps.base.db.Currency" title="Currency"
+      massUpdate="true"/>
+    <string name="code" title="Code"/>
+    <string name="note" title="Notes"/>
+
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"
+      massUpdate="true"/>
+  </entity>
+
+</domain-models>

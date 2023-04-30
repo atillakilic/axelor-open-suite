@@ -20,6 +20,33 @@
     <view-param name="search-filters" value="employee-filters"/>
   </action-view>
 
+  <menuitem name="employee-ru-all" parent="hr-root-emp-mgt" title="Employees"
+    action="employee.ru.all"/>
+
+  <action-view name="employee.ru.all" title="Employee"
+    model="com.axelor.apps.hr.db.EmployeeRu">
+    <view type="grid" name="employee-ru-grid"/>
+    <view type="form" name="employee-ru-form"/>
+  </action-view>
+
+  <menuitem name="employee-contract-ru-all" parent="hr-root-emp-mgt"
+    title="Employee Contract" action="employee.contract.ru.all"/>
+
+  <action-view name="employee.contract.ru.all" title="Employee Contract"
+    model="com.axelor.apps.hr.db.EmployeeContractRu">
+    <view type="grid" name="employee-contract-status-ru-grid"/>
+    <view type="form" name="employee-contract-status-ru-form"/>
+  </action-view>
+
+  <menuitem name="employee-salary-ru-all" parent="hr-root-emp-mgt" title="Employee Salary"
+    action="employee.salary.ru.all"/>
+
+  <action-view name="employee.salary.ru.all" title="Employee Salary"
+    model="com.axelor.apps.hr.db.EmployeeSalaryRu">
+    <view type="grid" name="employee-salary-status-ru-grid"/>
+    <view type="form" name="employee-salary-status-ru-form"/>
+  </action-view>
+
   <menuitem name="all-employment-contract" parent="hr-root-emp-mgt"
     title="Employment Contracts" action="employment.contracts.all"/>
 
@@ -72,6 +99,24 @@
 
   <menuitem name="hr-root-emp-mgt-conf" parent="hr-root-emp-mgt" title="Configuration"
     icon="fa-cog"/>
+
+  <menuitem name="hr-conf-emp-payment-status-ru" parent="hr-root-emp-mgt-conf"
+    title="Payment Status" action="hr.conf.emp.payment.status.ru"/>
+
+  <action-view name="hr.conf.emp.payment.status.ru" title="Payment Status"
+    model="com.axelor.apps.hr.db.EmpPaymentStatus">
+    <view type="grid" name="employee-payment-status-ru-grid"/>
+    <view type="form" name="employee-payment-status-ru-form"/>
+  </action-view>
+
+  <menuitem name="hr-conf-emp-technical-status-ru" parent="hr-root-emp-mgt-conf"
+    title="Technical Status" action="hr.conf.emp.technical.status.ru"/>
+
+  <action-view name="hr.conf.emp.technical.status.ru" title="Technical Status"
+    model="com.axelor.apps.hr.db.EmpTechnicalStatus">
+    <view type="grid" name="employee-technical-status-ru-grid"/>
+    <view type="form" name="employee-technical-status-ru-form"/>
+  </action-view>
 
   <menuitem name="hr-conf-product-activity" parent="hr-root-emp-mgt-conf"
     title="Product Activities" action="conf.product.activity"/>

@@ -226,4 +226,9 @@
     <option value="600">HR Batch</option>
   </selection>
 
+  <selection name="employee.salary.type.ru.select">
+    <option value="1">Monthly</option>
+    <option value="2">Hourly</option>
+  </selection>
+
 </object-views>

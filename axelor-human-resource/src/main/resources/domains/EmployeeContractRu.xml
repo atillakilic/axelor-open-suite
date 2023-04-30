@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeContractRu" cacheable="true">
+
+    <string name="name" title="Name"/>
+    <integer name="status" title="Status" selection="hr.employment.contract.status"/>
+    <many-to-one name="employeeRu" ref="com.axelor.apps.hr.db.EmployeeRu"
+      title="Employee"/>
+    <many-to-one name="payCompany" ref="com.axelor.apps.base.db.Company"
+      title="Pay Company"/>
+    <date name="dateOfHire" title="Date of Hire"/>
+    <decimal name="dailyWorkHours" title="Daily work hours"/>
+    <decimal name="minDailyWorkHours" title="Min Daily work hours"/>
+    <decimal name="overworkFee" title="Overwork Fee (%)"/>
+    <decimal name="monthlyLeave" title="Monthly leave (Days)"/>
+
+    <date name="endDate" title="End date"/>
+    <many-to-one name="endOfContractReason"
+      ref="com.axelor.apps.hr.db.EndOfContractReason" title="End of contract reason"/>
+    <string name="endContractDetails" title="Details"/>
+
+    <one-to-many name="employeeSalary" ref="com.axelor.apps.hr.db.EmployeeSalaryRu"
+      title="Employee Salary" mappedBy="employeeContract"/>
+
+  </entity>
+
+</domain-models>

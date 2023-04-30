@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="bank-account-ru-grid" title="Bank Account"
+    model="com.axelor.apps.base.db.BankAccountRu">
+    <field name="ownerName"/>
+    <field name="lable"/>
+    <field name="code"/>
+    <field name="currency"/>
+  </grid>
+
+  <form name="bank-account-ru-form" title="Bank Account"
+    model="com.axelor.apps.base.db.BankAccountRu">
+    <panel name="mainPanel">
+      <field name="ownerName"/>
+      <field name="lable"/>
+      <field name="code"/>
+      <field name="currency"/>
+      <field name="note" widget="html" colSpan="12"/>
+    </panel>
+  </form>
+
+</object-views>

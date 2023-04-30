@@ -115,12 +115,22 @@
         <field name="taxNumberList" colSpan="12" canSelect="true" canNew="false"
           canEdit="false" domain="self.company.id = :id" if="__config__.app.isApp('account')"/>
       </panel>
-      <panel name="bankDetailsPanel" title="Bank details">
+      <panel name="bankDetailsPanel" title="Bank details" hidden="true">
         <field name="defaultBankDetails"
           onSelect="action-company-attrs-default-bank-details-domain" form-view="bank-details-form"
           grid-view="bank-details-grid"/>
         <panel-related name="bankDetailsListPanel" field="bankDetailsList"
           showTitle="false" colSpan="12" form-view="bank-details-form" grid-view="bank-details-grid"/>
+      </panel>
+      <panel name="bankAccountRuPanel" title="Bank Account">
+        <panel-related name="bankAccountRuPanel" field="bankAccountRu"
+          showTitle="false" colSpan="12" form-view="bank-account-ru-form"
+          grid-view="bank-account-ru-grid"/>
+      </panel>
+      <panel name="cashAccountRuPanel" title="Cash Accounts">
+        <panel-related name="cashAccountRuPanel" field="cashAccountRu"
+          showTitle="false" colSpan="12" form-view="cash-account-ru-form"
+          grid-view="cash-account-ru-grid"/>
       </panel>
       <panel name="orderBloquedMessagePanel" title="Order Bloqued Message"
         if-module="axelor-sale" if="__config__.app.isApp('sale')">

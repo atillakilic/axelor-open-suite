@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <menuitem name="menu-project-ru-root" order="-103" title="Project" icon="fa-tasks" if=""
+    icon-background="#3f6bb9"/>
+
+  <menuitem name="project-root-ru" parent="menu-project-ru-root" title="Projects"
+    action="project.root.project.ru" order="5"/>
+
+  <action-view name="project.root.project.ru" title="Project"
+    model="com.axelor.apps.project.db.ProjectRu">
+    <view type="grid" name="project-ru-grid"/>
+    <view type="form" name="project-ru-form"/>
+  </action-view>
+
+  <menuitem name="project-root-area-ru" parent="menu-project-ru-root" title="Project Area"
+    action="project.root.project.area.ru" order="10"/>
+
+  <action-view name="project.root.project.area.ru" title="Project Area"
+    model="com.axelor.apps.project.db.ProjectAreaRu">
+    <view type="grid" name="project-area-ru-grid"/>
+    <view type="form" name="project-area-ru-form"/>
+  </action-view>
+
+  <menuitem name="project-root-department-ru" parent="menu-project-ru-root"
+    title="Project Department" action="project.root.project.department.ru" order="15"/>
+
+  <action-view name="project.root.project.department.ru" title="Project Department"
+    model="com.axelor.apps.project.db.ProjectDepartmentRu">
+    <view type="grid" name="project-department-ru-grid"/>
+    <view type="form" name="project-department-ru-form"/>
+  </action-view>
+
+  <menuitem name="project-root-team-ru" parent="menu-project-ru-root" title="Project Team"
+    action="project.root.project.team.ru" order="20"/>
+
+  <action-view name="project.root.project.team.ru" title="Project Team"
+    model="com.axelor.apps.project.db.ProjectTeamRu">
+    <view type="grid" name="project-team-ru-grid"/>
+    <view type="form" name="project-team-ru-team"/>
+  </action-view>
+
+  <menuitem name="project-root-worker-ru" parent="menu-project-ru-root" title="Worker"
+    action="project.root.project.worker.ru" order="25"/>
+
+  <action-view name="project.root.project.worker.ru" title="Worker"
+    model="com.axelor.apps.project.db.ProjectWorkerRu">
+    <view type="grid" name="project-worker-ru-grid"/>
+    <view type="form" name="project-worker-ru-form"/>
+  </action-view>
+
+  <menuitem name="project-root-validator-ru" parent="menu-project-ru-root"
+    title="Validator" action="project.root.project.validator.ru" order="30"/>
+
+  <action-view name="project.root.project.validator.ru" title="Validator"
+    model="com.axelor.apps.project.db.ProjectValidatorRu">
+    <view type="grid" name="project-validator-ru-grid"/>
+    <view type="form" name="project-validator-ru-form"/>
+  </action-view>
+
+  <menuitem name="project-root-location-ru" parent="menu-project-ru-root" title="Location"
+    action="project.root.project.location.ru" order="35"/>
+
+  <action-view name="project.root.project.location.ru" title="Location"
+    model="com.axelor.apps.project.db.ProjectLocaltionRu">
+    <view type="grid" name="project-location-ru-grid"/>
+    <view type="form" name="project-location-ru-form"/>
+  </action-view>
+
+</object-views>

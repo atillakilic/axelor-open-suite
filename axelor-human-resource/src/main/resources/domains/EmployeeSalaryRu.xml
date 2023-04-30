@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeSalaryRu" cacheable="true">
+
+    <date name="dateOfStart" title="Date"/>
+
+    <integer name="salaryType" title="Salary Type"
+      selection="employee.salary.type.ru.select"/>
+    <decimal name="fixSalary" title="Fix Salary"/>
+    <decimal name="hourlyRate" title="Hourly Rate"/>
+
+    <decimal name="one" title="01"/>
+    <decimal name="two" title="02"/>
+    <decimal name="three" title="03"/>
+    <decimal name="four" title="04"/>
+    <decimal name="five" title="05"/>
+    <decimal name="six" title="06"/>
+    <decimal name="seven" title="07"/>
+    <decimal name="eight" title="08"/>
+    <decimal name="nine" title="09"/>
+    <decimal name="ten" title="10"/>
+    <decimal name="eleven" title="11"/>
+    <decimal name="twelve" title="12"/>
+    <decimal name="thriteen" title="13"/>
+    <decimal name="fourteen" title="14"/>
+    <decimal name="fifteen" title="15"/>
+    <decimal name="sixteen" title="16"/>
+    <decimal name="seventeen" title="17"/>
+    <decimal name="eighteen" title="18"/>
+    <decimal name="nineteen" title="19"/>
+    <decimal name="twenty" title="20"/>
+    <decimal name="twentyOne" title="21"/>
+    <decimal name="twentyTwo" title="22"/>
+    <decimal name="twentyThree" title="23"/>
+    <decimal name="twentyFour" title="24"/>
+    <decimal name="twentyFive" title="25"/>
+    <decimal name="twentySix" title="26"/>
+    <decimal name="twentySeven" title="27"/>
+    <decimal name="twentyEight" title="28"/>
+    <decimal name="twentyNine" title="29"/>
+    <decimal name="thirty" title="30"/>
+    <decimal name="thirtyOne" title="31"/>
+
+    <decimal name="totalSalary" title="Total Salary"/>
+
+    <many-to-one name="employeeRu" title="Employee"
+      ref="com.axelor.apps.hr.db.EmployeeRu"/>
+
+    <many-to-one name="employeeContract" title="Employee Contract"
+      ref="com.axelor.apps.hr.db.EmployeeContractRu"/>
+
+  </entity>
+
+</domain-models>

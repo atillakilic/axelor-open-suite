@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="project" package="com.axelor.apps.project.db"/>
+  <entity name="ProjectAreaRu">
+    <string name="name" title="Name"/>
+    <string name="code" title="Code"/>
+    <boolean name="isActive" title="Active"/>
+    <string name="notes" title="Notes"/>
+
+    <many-to-one name="projectRu" title="Project"
+      ref="com.axelor.apps.project.db.ProjectRu"/>
+
+    <many-to-one name="parentProjectArea" title="Project Area"
+      ref="com.axelor.apps.project.db.ProjectAreaRu"/>
+    <one-to-many name="projectAreaList" ref="com.axelor.apps.project.db.ProjectAreaRu"
+      mappedBy="parentProjectArea"/>
+  </entity>
+</domain-models>

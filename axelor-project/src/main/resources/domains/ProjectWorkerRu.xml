@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="project" package="com.axelor.apps.project.db"/>
+  <entity name="ProjectWorkerRu">
+    <string name="name" title="Name"/>
+    <decimal name="salary" title="Salary"/>
+    <decimal name="workingDay" title="Working Day"/>
+    <decimal name="totalWorkingDay" title="Total Working Days"/>
+    <many-to-one name="departmentRu" title="Department"
+      ref="com.axelor.apps.project.db.ProjectDepartmentRu"/>
+
+    <many-to-one name="projectRu" title="Project"
+      ref="com.axelor.apps.project.db.ProjectRu"/>
+
+  </entity>
+</domain-models>

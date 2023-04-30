@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeRu" cacheable="true">
+
+    <integer name="stepByStepSelect" title="Step by step"
+      selection="hr.employee.form.step.by.step.select" default="1"/>
+
+    <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+    <string name="name" title="Name"/>
+    <string name="surname" title="Surname"/>
+    <string name="fatherName" title="Fathername"/>
+
+    <string name="email" title="Email"/>
+    <string name="mobilePhone" title="Mobile Phone"/>
+    <string name="phone" title="Phone"/>
+
+    <date name="birthDate" title="Birth date"/>
+    <string name="maritalStatus" title="Marital status"
+      selection="hr.employee.marital.status"/>
+    <string name="sexSelect" title="Sex" selection="employee.hr.sex.select"/>
+
+    <many-to-one name="citizenship" title="Citizenship"
+      ref="com.axelor.apps.base.db.Citizenship"/>
+    <string name="maritalName" title="Marital name"/>
+    <string name="entegrationCode" title="Entegration Code"/>
+
+    <string name="emergencyContact" title="Emergency contact"/>
+    <string name="emergencyNumber" title="Phone"/>
+    <string name="emergencyContactRelationship" title="Emergency contact relationship"/>
+
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <many-to-one name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team"/>
+    <many-to-one name="projectDepartment"
+      ref="com.axelor.apps.project.db.ProjectDepartmentRu" title="Department"/>
+    <many-to-one name="paymentStatus" ref="com.axelor.apps.hr.db.EmpTechnicalStatus"
+      title="Payment Status"/>
+    <many-to-one name="technicalStatus" ref="com.axelor.apps.hr.db.EmpPaymentStatus"
+      title="Technical Status"/>
+
+
+    <one-to-many name="employeeContract" ref="com.axelor.apps.hr.db.EmployeeContractRu"
+      title="Employee Contract" mappedBy="employeeRu"/>
+
+  </entity>
+
+</domain-models>

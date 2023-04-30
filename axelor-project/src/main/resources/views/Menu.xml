@@ -6,6 +6,14 @@
   <menuitem name="menu-project-root" order="-103" title="Projects" icon="fa-tasks"
     if="__config__.app.isApp('project')" icon-background="#3f6bb9"/>
 
+  <menuitem name="project-ru-folder" parent="menu-project-root" title="Projects"
+    action="project.project.ru" order="2"/>
+  <action-view name="project.project.ru" title="Project"
+    model="com.axelor.apps.project.db.ProjectRu">
+    <view type="grid" name="project-ru-grid"/>
+    <view type="form" name="project-ru-form"/>
+  </action-view>
+
   <menuitem name="project-folder" parent="menu-project-root" title="Project Folder"
     action="project.folder" order="5"/>
   <action-view name="project.folder" title="Project Folder"
