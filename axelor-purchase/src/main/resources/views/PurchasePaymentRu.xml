@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid model="com.axelor.apps.purchase.db.PurchasePaymentRu" title="Purchase Payment"
+    name="purchase-request-payment-ru-grid">
+    <field name="paymentMethod"/>
+    <field name="bankAccount"/>
+    <field name="cashAccount"/>
+    <field name="amount"/>
+    <field name="reciptNumber"/>
+    <field name="description"/>
+  </grid>
+
+  <form model="com.axelor.apps.purchase.db.PurchasePaymentRu" title="Purchase Payment"
+    name="purchase-request-payment-ru-form">
+    <panel name="mainPanel">
+      <field name="paymentMethod"/>
+      <field name="bankAccount"/>
+      <field name="cashAccount"/>
+      <field name="amount"/>
+      <field name="reciptNumber"/>
+      <field name="description"/>
+    </panel>
+  </form>
+
+</object-views>

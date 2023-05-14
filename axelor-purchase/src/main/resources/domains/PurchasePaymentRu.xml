@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="purchase" package="com.axelor.apps.purchase.db"/>
+
+  <entity name="PurchasePaymentRu" lang="java" cacheable="true">
+
+    <integer name="paymentMethod" title="Payment Method"
+      selection="purchase.payment.method.ru.select"/>
+
+    <many-to-one name="bankAccount" title="Bank Account"
+      ref="com.axelor.apps.base.db.BankAccountRu"/>
+
+    <many-to-one name="cashAccount" title="Cash Account"
+      ref="com.axelor.apps.base.db.CashAccountRu"/>
+
+    <decimal name="amount" title="Amount"/>
+
+    <string name="reciptNumber" title="Recipt Number" namecolumn="true"/>
+
+    <string name="description" title="Description"/>
+
+  </entity>
+
+</domain-models>

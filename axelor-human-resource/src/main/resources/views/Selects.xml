@@ -231,4 +231,21 @@
     <option value="2">Hourly</option>
   </selection>
 
+  <selection name="hr.employee.request.type.priority.status">
+    <option value="1">Urgent</option>
+    <option value="2">Normal</option>
+    <option value="3">Standard</option>
+    <option value="4">Low</option>
+  </selection>
+
+  <selection name="hr.employee.request.type.status">
+    <option value="1">Active</option>
+    <option value="2">Inacvtive</option>
+  </selection>
+
+  <selection name="hr.employee.request.status.select">
+    <option value="1">HR Officer</option>
+    <option value="2">HR Manager</option>
+  </selection>
+
 </object-views>

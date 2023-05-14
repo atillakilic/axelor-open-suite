@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="AdvanceRequestRu" cacheable="true">
+
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"/>
+    <date name="requstDate" title="Date"/>
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <integer name="statusSelect" title="Status"
+      selection="hr.employee.request.status.select"/>
+
+    <one-to-many name="advanceRequestLine"
+      ref="com.axelor.apps.hr.db.AdvanceRequestLineRu" title="Advance Request Line"
+      mappedBy="advanceRequest"/>
+
+  </entity>
+
+</domain-models>

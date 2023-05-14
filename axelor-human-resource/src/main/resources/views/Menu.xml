@@ -10,7 +10,7 @@
     icon="fa-address-card-o" icon-background="#84429f" order="0"/>
 
   <menuitem name="employee-all" parent="hr-root-emp-mgt" title="List of employees"
-    action="employee.all"/>
+    hidden="true" action="employee.all"/>
 
   <action-view name="employee.all" title="Employee"
     model="com.axelor.apps.hr.db.Employee">
@@ -47,7 +47,16 @@
     <view type="form" name="employee-salary-status-ru-form"/>
   </action-view>
 
-  <menuitem name="all-employment-contract" parent="hr-root-emp-mgt"
+  <menuitem name="employee--advance-request-ru-all" parent="hr-root-emp-mgt"
+    title="Advance Request" action="employee.advance.request.ru.all"/>
+
+  <action-view name="employee.advance.request.ru.all" title="Advance Request"
+    model="com.axelor.apps.hr.db.AdvanceRequestRu">
+    <view type="grid" name="employee-advance-request-ru-grid"/>
+    <view type="form" name="employee-advance-request-ru-form"/>
+  </action-view>
+
+  <menuitem name="all-employment-contract" parent="hr-root-emp-mgt" hidden="true"
     title="Employment Contracts" action="employment.contracts.all"/>
 
   <action-view name="employment.contracts.all" title="Employment Contracts"
@@ -478,6 +487,15 @@
 
   <menuitem name="expense-root-conf" parent="expense-root" title="Configuration"
     icon="fa-cog"/>
+
+  <menuitem name="conf-expense-emp-advance-request-type" parent="expense-root-conf"
+    title="Advance Request types" action="conf.expense.emp.advance.request.type.ru"/>
+
+  <action-view name="conf.expense.emp.advance.request.type.ru"
+    title="Advance Request types" model="com.axelor.apps.hr.db.AdvanceRequestTypeRu">
+    <view type="grid" name="employee-advance-req-type-ru-grid"/>
+    <view type="form" name="employee-advance-req-type-ru-form"/>
+  </action-view>
 
   <menuitem name="conf-expense-type" parent="expense-root-conf" title="Expense Type"
     action="conf.expense.type"/>

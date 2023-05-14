@@ -17,38 +17,56 @@
  */
 package com.axelor.apps.hr.web;
 
-import java.math.BigDecimal;
-
 import com.axelor.apps.hr.db.EmployeeSalaryRu;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
+import java.math.BigDecimal;
 
 @Singleton
 public class EmployeeSalaryController {
 
-	public void calculateSalary(ActionRequest request, ActionResponse response) {
-		EmployeeSalaryRu employeeSalaryRu = request.getContext().asType(EmployeeSalaryRu.class);
-		BigDecimal totalSalary = new BigDecimal(0);
-		BigDecimal hourlyRate = employeeSalaryRu.getHourlyRate();
-		BigDecimal totalWorkHour = new BigDecimal(0);
+  public void calculateSalary(ActionRequest request, ActionResponse response) {
+    EmployeeSalaryRu employeeSalaryRu = request.getContext().asType(EmployeeSalaryRu.class);
+    BigDecimal totalSalary = new BigDecimal(0);
+    BigDecimal hourlyRate = employeeSalaryRu.getHourlyRate();
+    BigDecimal totalWorkHour = new BigDecimal(0);
 
-		totalWorkHour = totalWorkHour.add(employeeSalaryRu.getOne()).add(employeeSalaryRu.getTwo())
-				.add(employeeSalaryRu.getThree()).add(employeeSalaryRu.getFour()).add(employeeSalaryRu.getFive())
-				.add(employeeSalaryRu.getSix()).add(employeeSalaryRu.getSeven()).add(employeeSalaryRu.getEight())
-				.add(employeeSalaryRu.getNine()).add(employeeSalaryRu.getTen()).add(employeeSalaryRu.getEleven())
-				.add(employeeSalaryRu.getTwelve()).add(employeeSalaryRu.getThriteen())
-				.add(employeeSalaryRu.getFourteen()).add(employeeSalaryRu.getFifteen())
-				.add(employeeSalaryRu.getSixteen()).add(employeeSalaryRu.getSeventeen())
-				.add(employeeSalaryRu.getEighteen()).add(employeeSalaryRu.getNineteen())
-				.add(employeeSalaryRu.getTwenty()).add(employeeSalaryRu.getTwentyOne())
-				.add(employeeSalaryRu.getTwentyTwo()).add(employeeSalaryRu.getTwentyThree())
-				.add(employeeSalaryRu.getTwentyFour()).add(employeeSalaryRu.getTwentyFive())
-				.add(employeeSalaryRu.getTwentySix()).add(employeeSalaryRu.getTwentySeven())
-				.add(employeeSalaryRu.getTwentyEight()).add(employeeSalaryRu.getTwentyNine())
-				.add(employeeSalaryRu.getThirty()).add(employeeSalaryRu.getThirtyOne());
+    totalWorkHour =
+        totalWorkHour
+            .add(employeeSalaryRu.getOne())
+            .add(employeeSalaryRu.getTwo())
+            .add(employeeSalaryRu.getThree())
+            .add(employeeSalaryRu.getFour())
+            .add(employeeSalaryRu.getFive())
+            .add(employeeSalaryRu.getSix())
+            .add(employeeSalaryRu.getSeven())
+            .add(employeeSalaryRu.getEight())
+            .add(employeeSalaryRu.getNine())
+            .add(employeeSalaryRu.getTen())
+            .add(employeeSalaryRu.getEleven())
+            .add(employeeSalaryRu.getTwelve())
+            .add(employeeSalaryRu.getThriteen())
+            .add(employeeSalaryRu.getFourteen())
+            .add(employeeSalaryRu.getFifteen())
+            .add(employeeSalaryRu.getSixteen())
+            .add(employeeSalaryRu.getSeventeen())
+            .add(employeeSalaryRu.getEighteen())
+            .add(employeeSalaryRu.getNineteen())
+            .add(employeeSalaryRu.getTwenty())
+            .add(employeeSalaryRu.getTwentyOne())
+            .add(employeeSalaryRu.getTwentyTwo())
+            .add(employeeSalaryRu.getTwentyThree())
+            .add(employeeSalaryRu.getTwentyFour())
+            .add(employeeSalaryRu.getTwentyFive())
+            .add(employeeSalaryRu.getTwentySix())
+            .add(employeeSalaryRu.getTwentySeven())
+            .add(employeeSalaryRu.getTwentyEight())
+            .add(employeeSalaryRu.getTwentyNine())
+            .add(employeeSalaryRu.getThirty())
+            .add(employeeSalaryRu.getThirtyOne());
 
-		totalSalary = hourlyRate.multiply(totalWorkHour);
-		response.setValue("totalSalary", totalSalary);
-	}
+    totalSalary = hourlyRate.multiply(totalWorkHour);
+    response.setValue("totalSalary", totalSalary);
+  }
 }

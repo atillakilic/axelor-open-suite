@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="employee-advance-req-type-ru-grid" title="Advance Req Type"
+    model="com.axelor.apps.hr.db.AdvanceRequestTypeRu" orderBy="">
+    <field name="company"/>
+    <field name="name"/>
+    <field name="code"/>
+    <field name="priorutyStatus"/>
+    <field name="status"/>
+  </grid>
+
+  <form name="employee-advance-req-type-ru-form" title="Advance Req Type"
+    model="com.axelor.apps.hr.db.AdvanceRequestTypeRu" width="large">
+
+    <panel name="mainPanel" colSpan="12">
+      <field name="company"/>
+      <spacer/>
+      <field name="name"/>
+      <field name="code"/>
+      <field name="priorutyStatus"/>
+      <field name="status"/>
+    </panel>
+
+  </form>
+
+</object-views>

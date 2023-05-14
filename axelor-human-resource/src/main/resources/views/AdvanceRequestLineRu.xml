@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="employee-advance-request-line-ru-grid" title="Advance Request Line"
+    model="com.axelor.apps.hr.db.AdvanceRequestLineRu" orderBy="">
+    <field name="employee"/>
+    <field name="reason"/>
+    <field name="priority"/>
+    <field name="requestTotal"/>
+    <field name="deserveTotal"/>
+  </grid>
+
+  <form name="employee-advance-request-line-ru-form" title="Advance Request Line"
+    model="com.axelor.apps.hr.db.AdvanceRequestLineRu" width="large">
+
+    <panel name="mainPanel" colSpan="12">
+      <field name="employee"/>
+      <field name="reason"/>
+      <field name="priority"/>
+      <field name="requestTotal"/>
+      <field name="deserveTotal"/>
+    </panel>
+  </form>
+
+  <grid name="employee-advance-request-line-manager-ru-grid" title="Advance Request Line"
+    model="com.axelor.apps.hr.db.AdvanceRequestLineRu" orderBy="">
+    <field name="employee"/>
+    <field name="reason"/>
+    <field name="priority"/>
+    <field name="requestTotal"/>
+    <field name="deserveTotal"/>
+    <field name="confirmCheckbox"/>
+  </grid>
+
+  <form name="employee-advance-request-line-manager-ru-form" title="Advance Request Line"
+    model="com.axelor.apps.hr.db.AdvanceRequestLineRu" width="large">
+
+    <panel name="mainPanel" colSpan="12">
+      <field name="employee"/>
+      <field name="reason"/>
+      <field name="priority"/>
+      <field name="requestTotal"/>
+      <field name="deserveTotal"/>
+      <field name="confirmCheckbox"/>
+    </panel>
+  </form>
+
+
+</object-views>

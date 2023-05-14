@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid model="com.axelor.apps.purchase.db.RequestSupplierListRu" title="Supplier Quote"
+    onNew="action-request-supplier-list-attrs-on-new" editable="true"
+    name="purchase-request-supplier-line-list-ru-grid">
+    <hilite background="success" if="offerSupplier"/>
+    <field name="supplierUser" required="true"/>
+    <field name="quantity"
+      onChange="action-request-supplier-list-attrs-calculate-total-supplier-cost,save"/>
+    <field name="unitPrice"
+      onChange="action-request-supplier-list-attrs-calculate-total-supplier-cost,save"/>
+    <field name="deliveryTime"/>
+    <field name="deliveryCost"
+      onChange="action-request-supplier-list-attrs-calculate-total-supplier-cost,save"/>
+    <field name="totalCost"/>
+    <field name="offerSupplier"/>
+    <field name="purchaseRequestRu" hidden="true"/>
+  </grid>
+
+  <form model="com.axelor.apps.purchase.db.RequestSupplierListRu" title="Supplier Quote"
+    onNew="action-request-supplier-list-attrs-on-new"
+    name="purchase-request-supplier-line-list-ru-form">
+    <panel name="mainPanel">
+      <field name="supplierUser" required="true"/>
+      <field name="quantity"
+        onChange="action-request-supplier-list-attrs-calculate-total-supplier-cost,save"/>
+      <field name="unitPrice"
+        onChange="action-request-supplier-list-attrs-calculate-total-supplier-cost,save"/>
+      <field name="deliveryTime"/>
+      <field name="deliveryCost"
+        onChange="action-request-supplier-list-attrs-calculate-total-supplier-cost,save"/>
+      <field name="totalCost"/>
+      <field name="offerSupplier" widget="boolean-switch"/>
+      <field name="description"/>
+      <field name="purchaseRequestRu" hidden="true"/>
+    </panel>
+  </form>
+
+  <action-attrs name="action-request-supplier-list-attrs-on-new">
+    <attribute name="value" for="quantity" expr="eval: _parent?.quantity"/>
+    <attribute name="value" for="purchaseRequestRu"
+      expr="eval: _parent?.purchaseRequestRu"/>
+  </action-attrs>
+
+  <action-attrs name="action-request-supplier-list-attrs-calculate-total-supplier-cost">
+    <attribute name="value" for="totalCost"
+      expr="eval: (quantity*unitPrice) + deliveryCost"/>
+  </action-attrs>
+
+</object-views>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="purchase-request-validator-ru-draf-grid" title="Purchase request Validator"
+    editable="true" model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu">
+    <field name="userValidator"/>
+    <field name="comments"/>
+  </grid>
+
+  <grid name="purchase-request-validator-ru-grid" title="Purchase request Validator"
+    editable="true" model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu">
+    <field name="userValidator"/>
+    <field name="confirm"/>
+    <field name="comments"/>
+  </grid>
+
+
+  <form name="purchase-request-validator-ru-draf-form" title="Purchase request Validator"
+    model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu" width="large">
+    <panel name="mainPanel">
+      <field name="userValidator"/>
+      <field name="comments"/>
+    </panel>
+  </form>
+
+  <form name="purchase-request-validator-ru-form" title="Purchase request Validator"
+    model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu" width="large">
+    <panel name="mainPanel">
+      <field name="userValidator"/>
+      <field name="confirm"/>
+      <field name="comments"/>
+    </panel>
+  </form>
+
+</object-views>

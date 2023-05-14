@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="AdvanceRequestLineRu" cacheable="true">
+
+    <many-to-one name="employee" ref="com.axelor.apps.base.db.Company" title="Employee"/>
+    <string name="reason" title="Reason"/>
+    <integer name="priority" title="Priority"
+      selection="hr.employee.request.type.priority.status"/>
+    <decimal name="requestTotal" title="Request Total"/>
+    <decimal name="deserveTotal" title="Deserve Total"/>
+    <boolean name="confirmCheckbox" title="Confirm Checkbox"/>
+
+    <many-to-one name="advanceRequest" ref="com.axelor.apps.hr.db.AdvanceRequestRu"
+      title="Advance Request"/>
+
+  </entity>
+
+</domain-models>

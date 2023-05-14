@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+    title="Purchase Request Lines" name="purchase-request-line-ru-grid">
+    <hilite background="success" if="isPaymentDone"/>
+    <field name="product"/>
+    <field name="specialty"/>
+    <field name="quantity" x-scale="2"/>
+    <field name="unit"/>
+    <field name="requesterUser"/>
+    <field name="purpose"/>
+    <field name="stockLocation"/>
+    <field name="totalSupplier" readonly="true"/>
+    <field name="totalCost"/>
+    <field name="paymentInfo"/>
+    <field name="isPaymentDone" hidden="true"/>
+  </grid>
+
+  <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
+    onLoad="action-purchase-request-line-attrs-on-load"
+    onNew="action-purchase-request-line-attrs-on-load" name="purchase-request-line-ru-form">
+    <panel name="mainPanel" readonlyIf="isPaymentDone">
+      <field name="newProduct" widget="boolean-switch" colSpan="2"/>
+      <spacer/>
+      <field name="product" colSpan="6" form-view="product-form" grid-view="product-grid"
+        required="true"/>
+      <field name="specialty"/>
+      <field name="unit" colSpan="6"/>
+      <field name="quantity" colSpan="6" x-scale="2" required="true"/>
+      <field name="requesterUser"/>
+      <field name="purpose"/>
+      <field name="stockLocation"/>
+      <spacer/>
+      <field name="totalSupplier" readonly="true"/>
+      <field name="totalCost" readonly="true"/>
+      <field name="paymentInfo" form-view="purchase-request-payment-ru-form"
+        grid-view="purchase-request-payment-ru-grid" canSelect="true" canNew="true" canEdit="true"/>
+      <spacer/>
+      <button name="payBtn" title="Pay" icon="fa-check" css="btn-primary"
+        onClick="save,action-purchase-request-payment-validate-clear-payment,action-purchase-request-payment-attrs-clear,save"/>
+      <field name="isPaymentDone" readonly="true" showIf="isPaymentDone"/>
+    </panel>
+    <panel-related field="supplierLineList" readonlyIf="isPaymentDone" showIf="id != null"
+      onChange="action-purchase-request-line-group-on-change-suppier-line"
+      form-view="purchase-request-supplier-line-list-ru-form"
+      grid-view="purchase-request-supplier-line-list-ru-grid"/>
+      <panel readonly="true" hidden="true">
+      	<field name="purchaseRequestRu" hidden="false"/>
+      </panel>
+  </form>
+
+  <action-attrs name="action-purchase-request-line-attrs-on-load">
+    <attribute name="hidden" for="supplierLineList" expr="eval: true"
+      if="_parent.statusSelect == 1"/>
+    <attribute name="hidden" for="totalSupplier" expr="eval: true"
+      if="_parent.statusSelect == 1"/>
+    <attribute name="hidden" for="totalCost" expr="eval: true"
+      if="_parent.statusSelect == 1"/>
+    <attribute name="hidden" for="paymentInfo" expr="eval: true"
+      if="_parent.statusSelect &lt; 5"/>
+    <attribute name="hidden" for="payBtn" expr="eval: true"
+      if="_parent.statusSelect &lt; 5"/>
+  </action-attrs>
+
+  <action-group name="action-purchase-request-line-group-on-change-suppier-line">
+    <action name="action-purchase-request-line-method-calculate-total-supplier-size"/>
+    <action name="action-purchase-request-line-method-validate-supplier-offer"/>
+    <action name="action-purchase-request-line-method-calculate-total-cost"/>
+    <action name="save"/>
+  </action-group>
+
+  <action-method
+    name="action-purchase-request-line-method-calculate-total-supplier-size">
+    <call class="com.axelor.apps.purchase.web.PurchaseOrderLineRuController"
+      method="calculateTotalSupplier"/>
+  </action-method>
+
+  <action-method name="action-purchase-request-line-method-validate-supplier-offer">
+    <call class="com.axelor.apps.purchase.web.PurchaseOrderLineRuController"
+      method="validateOffer"/>
+  </action-method>
+
+  <action-method name="action-purchase-request-line-method-calculate-total-cost">
+    <call class="com.axelor.apps.purchase.web.PurchaseOrderLineRuController"
+      method="calculateTotal"/>
+  </action-method>
+
+  <action-validate name="action-purchase-request-payment-validate-clear-payment">
+    <error message="Please add payment Info." if="paymentInfo == null"/>
+  </action-validate>
+
+  <action-attrs name="action-purchase-request-payment-attrs-clear">
+    <attribute name="value" for="isPaymentDone" expr="eval: true" if="paymentInfo != null"/>
+  </action-attrs>
+  
+</object-views>

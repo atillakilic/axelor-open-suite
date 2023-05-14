@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="purchase" package="com.axelor.apps.purchase.db"/>
+
+  <entity name="RequestSupplierListRu" lang="java">
+
+    <many-to-one name="supplierUser" ref="com.axelor.apps.base.db.Partner"
+      title="Supplier"/>
+    <decimal name="quantity" title="Quantity" min="0"/>
+    <decimal name="unitPrice" title="Unit price" min="0"/>
+    <decimal name="deliveryTime" title="Delivery time" min="0"/>
+    <decimal name="deliveryCost" title="Delivery cost" min="0"/>
+    <decimal name="totalCost" title="Total cost" min="0"/>
+    <boolean name="offerSupplier" title="Offer"/>
+    <string name="description" title="Decription"/>
+
+    <many-to-one name="purchaseRequestLineRu"
+      ref="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"/>
+
+    <many-to-one name="purchaseRequestRu"
+      ref="com.axelor.apps.purchase.db.PurchaseRequestRu" title="Purchase Request"/>
+
+  </entity>
+
+</domain-models>

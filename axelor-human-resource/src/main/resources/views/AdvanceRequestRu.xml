@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="employee-advance-request-ru-grid" title="Advance Request"
+    model="com.axelor.apps.hr.db.AdvanceRequestRu" orderBy="">
+    <field name="company"/>
+    <field name="project"/>
+    <field name="requstDate"/>
+    <field name="statusSelect"/>
+  </grid>
+
+  <form name="employee-advance-request-ru-form" title="Advance Request"
+    model="com.axelor.apps.hr.db.AdvanceRequestRu" width="large">
+    <panel name="statusPanel" title="Status" colSpan="12">
+      <field name="statusSelect" colSpan="12" widget="NavSelect" canEdit="true"
+        showTitle="false"/>
+    </panel>
+    <panel name="mainPanel" colSpan="12">
+      <field name="company"/>
+      <field name="project"/>
+      <field name="requstDate"/>
+    </panel>
+    <panel-related name="advanceRequestLine" field="advanceRequestLine" colSpan="12"
+      hideIf="statusSelect == 2" form-view="employee-advance-request-line-ru-form"
+      grid-view="employee-advance-request-line-ru-grid"/>
+
+    <panel-related name="advanceRequestLine" field="advanceRequestLine" colSpan="12"
+      showIf="statusSelect == 2" form-view="employee-advance-request-line-manger-ru-form"
+      grid-view="employee-advance-request-line-manager-ru-grid"/>
+
+  </form>
+
+</object-views>

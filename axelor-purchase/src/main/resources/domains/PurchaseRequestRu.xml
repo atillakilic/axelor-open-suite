@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="purchase" package="com.axelor.apps.purchase.db"/>
+
+  <entity name="PurchaseRequestRu" lang="java" cacheable="true">
+
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"/>
+
+    <integer name="statusSelect" title="Status"
+      selection="purchase.request.status.ru.select" default="1"/>
+    <string name="purchaseRequestSeq" title="Ref."/>
+
+    <one-to-many ref="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+      name="purchaseRequestLineList" title="Purchase Request Lines" mappedBy="purchaseRequestRu"/>
+
+    <string name="description" title="Description" large="true"/>
+
+    <many-to-one name="projectRu" title="Project"
+      ref="com.axelor.apps.project.db.ProjectRu"/>
+
+    <many-to-one name="fileUpload" title="Upload Files"
+      ref="com.axelor.meta.db.MetaFile"/>
+    <one-to-many name="validatores" title="Validators"
+      ref="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu" mappedBy="purchaseRequestRu"/>
+    <date name="requestDate" title="Request Date"/>
+    <date name="purchaseRequestDate" title="Purchase Request Date"/>
+    <string name="purchaseRequestNumber" title="Purchase Request Number"/>
+
+    <decimal name="totalCost" title="Total Cost"/>
+    <!-- Internal purches request -->
+
+    <unique-constraint columns="purchaseRequestSeq"/>
+  </entity>
+
+</domain-models>

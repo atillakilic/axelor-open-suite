@@ -7,24 +7,21 @@
     model="com.axelor.apps.hr.db.EmployeeContractRu" orderBy="">
     <field name="name"/>
     <field name="employeeRu"/>
-
+    <field name="dateOfHire"/>
+    <field name="endDate"/>
+    <field name="endOfContractReason"/>
     <field name="payCompany"/>
-    <field name="status"/>
   </grid>
 
   <form name="employee-contract-status-ru-form" title="Employee Contract"
     model="com.axelor.apps.hr.db.EmployeeContractRu" width="large">
-
-    <toolbar>
-      <button name="printContract" title="Print COntract" icon="fa-print" onClick="save"/>
-    </toolbar>
 
     <panel name="statusPanel" title="Status" colSpan="12">
       <field name="status" colSpan="12" widget="NavSelect" canEdit="true" showTitle="false"/>
     </panel>
     <panel name="mainPanel" colSpan="12">
       <field name="name"/>
-      <spacer colSpan="6"/>
+      <field name="dateOfHire"/>
       <field name="employeeRu" required="true"/>
       <field name="payCompany"/>
     </panel>

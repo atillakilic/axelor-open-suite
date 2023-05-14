@@ -29,6 +29,17 @@
     <option value="6">Canceled</option>
   </selection>
 
+  <selection name="purchase.request.status.ru.select">
+    <option value="1">Draft</option>
+    <option value="2">Requested</option>
+    <option value="3">Accepted and Order</option>
+    <option value="4">Order Confirm</option>
+    <option value="5">Payment Process</option>
+    <option value="6">Paid</option>
+    <option value="7">Refused</option>
+    <option value="8">Canceled</option>
+  </selection>
+
   <selection name="base.blocking.select" id="purchase.blocking.select">
     <option value="6">Purchase blocking</option>
   </selection>
@@ -41,6 +52,11 @@
 
   <selection name="abc.analysis.type.select" id="purchase.abc.analysis.type.select">
     <option value="com.axelor.apps.purchase.service.ABCAnalysisServicePurchaseImpl">Purchase</option>
+  </selection>
+
+  <selection name="purchase.payment.method.ru.select">
+    <option value="1">Bank</option>
+    <option value="2">Cash</option>
   </selection>
 
 </object-views>

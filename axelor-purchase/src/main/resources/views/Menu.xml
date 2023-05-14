@@ -7,6 +7,15 @@
   <menuitem name="sc-root-purchase" title="Purchases" order="-105"
     if="__config__.app.isApp('purchase')" icon="fa-shopping-cart" icon-background="#b6473f"/>
 
+  <menuitem name="sc-root-purchase-request-ru" parent="sc-root-purchase" order="-100"
+    title="Purchase Request Ru" action="sc.root.purchase.request.ru"/>
+
+  <action-view name="sc.root.purchase.request.ru" title="Purchase Request Ru"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <view type="grid" name="purchase-request-ru-grid"/>
+    <view type="form" name="purchase-request-ru-form"/>
+  </action-view>
+
   <menuitem name="sc-root-purchase-suppliers" parent="sc-root-purchase" order="5"
     title="Suppliers" action="sc.root.purchase.suppliers"/>
 

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="purchase-request-ru-grid" title="Purchase request"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <field name="company"/>
+    <field name="projectRu"/>
+    <field name="purchaseRequestSeq" title="Request Code"/>
+    <field name="createdOn"/>
+    <field name="createdBy"/>
+    <field name="statusSelect"/>
+  </grid>
+
+  <form name="purchase-request-ru-form" title="Purchase request"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu" width="large">
+
+    <menubar>
+      <menu name="saleOrderToolsMenu" title="Report">
+        <item name="printRequestFormItem" title="Print Request Form"
+          action="save,action-purchase-request-ru-print-request-form"/>
+          <item name="printSupplierRequestFormItem" title="Print Supplier Quote"
+          action="save,action-purchase-request-ru-print-supplier-quote-form"/>
+      </menu>
+    </menubar>
+
+    <panel name="statusSelectPanel" colSpan="12">
+      <field name="statusSelect" readonly="false" colSpan="12" widget="nav-select"
+        showTitle="false"/>
+      <field name="purchaseRequestSeq" title="Request Code" readonlyIf="statusSelect > 1"/>
+    </panel>
+    <panel name="mainPanel" readonlyIf="statusSelect > 1">
+      <field name="company" form-view="company-form" grid-view="company-grid" canEdit="false"
+        colSpan="4"/>
+      <field name="projectRu" form-view="" grid-view="" canEdit="false" colSpan="4"/>
+      <field name="requestDate" colSpan="4"/>
+    </panel>
+    <panel>
+      <field name="purchaseRequestNumber" colSpan="4" showIf="statusSelect > 1"
+        readonlyIf="statusSelect > 2"/>
+      <field name="purchaseRequestDate" colSpan="4" showIf="statusSelect > 2" readonly="true"/>
+    </panel>
+
+    <panel hideIf="statusSelect == 1" readonlyIf="statusSelect &gt; 3">
+      <spacer colSpan="12"/>
+      <field name="fileUpload" widget="binary-link"/>
+    </panel>
+    <panel-related field="validatores" readonlyIf="statusSelect &gt; 3"
+      form-view="purchase-request-validator-ru-draf-form" showIf="statusSelect == 1"
+      grid-view="purchase-request-validator-ru-draf-grid"/>
+    <panel-related field="validatores" form-view="purchase-request-validator-ru-form"
+      readonlyIf="fileUpload == null || statusSelect &gt; 3" hideIf="statusSelect == 1"
+      grid-view="purchase-request-validator-ru-grid"/>
+
+    <panel-related field="purchaseRequestLineList"
+      form-view="purchase-request-line-ru-form" grid-view="purchase-request-line-ru-grid"
+      onChange="action-purchase-request-method-calculate-total,save"/>
+
+    <panel-tabs name="descriptionPanelTab">
+      <panel name="descriptionPanel" title="Description">
+        <field name="description" colSpan="12" widget="html" showTitle="false"/>
+      </panel>
+    </panel-tabs>
+
+    <panel name="detailPanel" sidebar="true">
+      <button name="sendRequestBtn" title="Send Request" icon="fa-check"
+        showIf="statusSelect == 1"
+        onClick="save,action-purchase-request-attrs-set-status-select-two,save"/>
+      <button name="acceptBtn" title="Accepted and Send Order" icon="fa-check"
+        onClick="save,action-purchase-request-ru-action-group-accept-request,save"
+        showIf="statusSelect == 2"/>
+      <button name="sendForOrderBtn" title="Order Confirm" icon="fa-check"
+        onClick="save,action-purchase-request-ru-action-attrs-order-confirm,save"
+        showIf="statusSelect == 3"/>
+      <button name="paymentProcessBtn" title="Send to Payment Process" icon="fa-check"
+        onClick="save,action-purchase-request-ru-action-attrs-send-for-payment-process,save"
+        showIf="statusSelect == 4"/>
+      <button name="paidBtn" title="All Paid" icon="fa-check"
+        onClick="save,action-purchase-request-ru-action-attrs-paid-all,save"
+        showIf="statusSelect == 5"/>
+      <button name="refuseBtn" title="Refuse" icon="fa-times" css="btn-danger" onClick="save"
+        showIf="statusSelect == 2"/>
+      <button name="cancelBtn" title="Cancel" icon="fa-times-circle" css="btn-danger"
+        showIf="statusSelect &lt; 4" onClick="save"/>
+    </panel>
+
+    <panel name="costPanel" sidebar="true">
+      <spacer colSpan="12"/>
+      <field name="totalCost" readonly="true" colSpan="12"/>
+    </panel>
+
+    <panel-mail name="mailPanel">
+      <mail-messages limit="4"/>
+      <mail-followers/>
+    </panel-mail>
+  </form>
+
+  <action-attrs name="action-purchase-request-attrs-set-status-select-two">
+    <attribute name="value" for="statusSelect" expr="eval: 2"/>
+    <attribute name="value" for="requestDate" expr="eval: __date__"/>
+  </action-attrs>
+
+  <action-group name="action-purchase-request-ru-action-group-accept-request">
+    <action name="action-purchase-request-method-check-validator-approved"/>
+    <action name="action-purchase-request-attrs-set-accept-and-order"/>
+    <action name="save"/>
+  </action-group>
+
+  <action-method name="action-purchase-request-method-check-validator-approved">
+    <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
+      method="checkValidatorApproved"/>
+  </action-method>
+
+  <action-attrs name="action-purchase-request-attrs-set-accept-and-order">
+    <attribute name="value" for="statusSelect" expr="eval: 3"/>
+    <attribute name="value" for="purchaseRequestDate" expr="eval: __date__"/>
+  </action-attrs>
+
+  <action-method name="action-purchase-request-method-calculate-total">
+    <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
+      method="calculateTotal"/>
+  </action-method>
+
+  <action-attrs name="action-purchase-request-ru-action-attrs-order-confirm">
+    <attribute name="value" for="statusSelect" expr="eval: 4"/>
+  </action-attrs>
+
+  <action-attrs name="action-purchase-request-ru-action-attrs-send-for-payment-process">
+    <attribute name="value" for="statusSelect" expr="eval: 5"/>
+  </action-attrs>
+
+  <action-attrs name="action-purchase-request-ru-action-attrs-paid-all">
+    <attribute name="value" for="statusSelect" expr="eval: 6"/>
+  </action-attrs>
+
+  <action-method name="action-purchase-request-ru-print-request-form">
+    <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
+      method="printRequestForm"/>
+  </action-method>
+
+  <action-method name="action-purchase-request-ru-print-supplier-quote-form">
+  	<call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
+      method="printSupplierQuoteForm"/>
+  </action-method>
+  
+</object-views>
