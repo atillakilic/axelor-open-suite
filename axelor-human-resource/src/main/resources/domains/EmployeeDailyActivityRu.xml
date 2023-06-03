@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDailyActivityRu" cacheable="true">
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <date name="todayDate" title="Date"/>
+    <integer name="selectActivityType" title="Work Type" default="1"
+      selection="hr.employee.daily.activity"/>
+    <integer name="statusShiftType" title="Shift"
+      selection="hr.employee.daily.activity.shift.selection"/>
+    <many-to-one name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team"/>
+    <string name="description" title="Description"/>
+    <one-to-many name="activityRecord"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu" mappedBy="employeeDailyActivity"
+      title="Activity Record"/>
+
+    <one-to-many name="notCameReason" ref="com.axelor.apps.hr.db.EmployeeNotCameLineRu"
+      mappedBy="employeeDailyActivity" title="Employee Not Came"/>
+
+    <decimal name="totalEmp" title="Total Employee"/>
+    <decimal name="totalworked" title="Total Employee Worked"/>
+    <decimal name="totalEmpNotWorked" title="Total Employee Not Worked"/>
+
+  </entity>
+
+</domain-models>
+

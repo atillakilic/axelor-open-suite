@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeNotCameLineRu" cacheable="true">
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeRu" title="Emoloyee"/>
+    <string name="notCameReason" title="Reason"/>
+    <many-to-one name="workArea" ref="com.axelor.apps.project.db.ProjectAreaRu"
+      title="Project Area"/>
+    <string name="comments" title="Comments"/>
+
+    <many-to-one name="employeeDailyActivity"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityRu"/>
+  </entity>
+
+</domain-models>
+

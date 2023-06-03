@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-ru-grid" title="Daily Activity"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityRu">
+    <field name="todayDate"/>
+    <field name="project"/>
+    <field name="selectActivityType"/>
+    <field name="statusShiftType"/>
+  </grid>
+
+  <form name="hr-employee-daily-activity-ru-form" title="Daily Activity"
+    onNew="action-attrs-hr-employee-daily-activity-on-new"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="todayDate" required="true"/>
+      <field name="project" required="true"/>
+      <field name="selectActivityType" required="true"/>
+      <field name="statusShiftType" required="true" min="1"/>
+    </panel>
+
+    <panel showIf="selectActivityType == 1">
+      <spacer colSpan="12"/>
+      <field name="projectTeam"/>
+      <spacer/>
+      <button name="btnSetEmployee" title="Get Team Employee"
+        onClick="save,action-employee-daily-activity-set-employee,action-employee-daily-activity-calculate-employee-work,save,reload"/>
+    </panel>
+
+    <panel-related field="activityRecord"
+      onChange="action-employee-daily-activity-calculate-employee-work,save"
+      form-view="hr-employee-daily-activity-line-ru-form"
+      grid-view="hr-employee-daily-activity-line-ru-grid" canEdit="true"/>
+
+    <panel-related field="notCameReason" hidden="true"
+      form-view="hr-employee-not-came-line-ru-form" grid-view="hr-employee-not-came-line-ru-grid"
+      canEdit="true"/>
+
+    <panel sidebar="true">
+      <field name="totalEmp" readonly="true"/>
+      <field name="totalworked" readonly="true"/>
+      <field name="totalEmpNotWorked" readonly="true"/>
+    </panel>
+
+  </form>
+
+  <action-attrs name="action-attrs-hr-employee-daily-activity-on-new">
+    <attribute name="value" for="todayDate" expr="eval: __date__"/>
+  </action-attrs>
+
+  <action-method name="action-employee-daily-activity-set-employee">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+      method="setEmployeeAndRate"/>
+  </action-method>
+
+  <action-method name="action-employee-daily-activity-calculate-employee-work">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+      method="calculateEmployeeWork"/>
+  </action-method>
+
+</object-views>

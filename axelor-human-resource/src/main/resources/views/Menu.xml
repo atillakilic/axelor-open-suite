@@ -43,9 +43,29 @@
 
   <action-view name="employee.salary.ru.all" title="Employee Salary"
     model="com.axelor.apps.hr.db.EmployeeSalaryRu">
-    <view type="grid" name="employee-salary-status-ru-grid"/>
-    <view type="form" name="employee-salary-status-ru-form"/>
+    <view type="grid" name="employee-salary-status-report-ru-grid"/>
+    <view type="form" name="employee-salary-status-report-ru-form"/>
   </action-view>
+
+  <menuitem name="employee-daily-activity-ru" parent="hr-root-emp-mgt"
+    title="Daily Activity" action="employee.daily.activity.ru"/>
+
+  <action-view name="employee.daily.activity.ru" title="Daily Activity"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityRu">
+    <view type="grid" name="hr-employee-daily-activity-ru-grid"/>
+    <view type="form" name="hr-employee-daily-activity-ru-form"/>
+  </action-view>
+
+  <menuitem name="employee-dashboard-view-ru" parent="hr-root-emp-mgt" title="Dashboard"
+    action="employee.dashboard.ru"/>
+
+  <action-view name="employee.dashboard.ru" title="Dashboard"
+    model="com.axelor.apps.hr.db.EmployeeDashboardRu">
+    <!-- <view type="grid" name="hr-employee-dashboard-ru-grid"/> -->
+    <view type="form" name="hr-employee-dashboard-ru-form"/>
+  </action-view>
+
+  <!-- ==== -->
 
   <menuitem name="employee--advance-request-ru-all" parent="hr-root-emp-mgt"
     title="Advance Request" action="employee.advance.request.ru.all"/>

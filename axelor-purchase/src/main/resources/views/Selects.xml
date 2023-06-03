@@ -36,8 +36,9 @@
     <option value="4">Order Confirm</option>
     <option value="5">Payment Process</option>
     <option value="6">Paid</option>
-    <option value="7">Refused</option>
-    <option value="8">Canceled</option>
+    <option value="7">Arrived</option>
+    <option value="8">Refused</option>
+    <option value="9">Canceled</option>
   </selection>
 
   <selection name="base.blocking.select" id="purchase.blocking.select">

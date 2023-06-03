@@ -248,4 +248,14 @@
     <option value="2">HR Manager</option>
   </selection>
 
+  <selection name="hr.employee.daily.activity">
+    <option value="1">Team Work</option>
+    <option value="2">Employee Work</option>
+  </selection>
+
+  <selection name="hr.employee.daily.activity.shift.selection">
+    <option value="1">Day</option>
+    <option value="2">Night</option>
+  </selection>
+
 </object-views>

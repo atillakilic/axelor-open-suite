@@ -83,20 +83,38 @@ public class PurchaseRequestRuController {
       TraceBackService.trace(response, e);
     }
   }
-  
+
   public void printSupplierQuoteForm(ActionRequest request, ActionResponse response) {
-	  try {
-	      PurchaseRequestRu purchaseRequest = request.getContext().asType(PurchaseRequestRu.class);
+    try {
+      PurchaseRequestRu purchaseRequest = request.getContext().asType(PurchaseRequestRu.class);
 
-	      String fileLink =
-	          ReportFactory.createReport("SupplierQuote.rptdesign", "Supplier Quote" + "-${date}")
-	              .addParam("id", purchaseRequest.getId())
-	              .generate()
-	              .getFileLink();
+      String fileLink =
+          ReportFactory.createReport("SupplierQuote.rptdesign", "Supplier Quote" + "-${date}")
+              .addParam("id", purchaseRequest.getId())
+              .generate()
+              .getFileLink();
 
-	      response.setView(ActionView.define("Supplier Quote").add("html", fileLink).map());
-	    } catch (Exception e) {
-	      TraceBackService.trace(response, e);
-	    }
+      response.setView(ActionView.define("Supplier Quote").add("html", fileLink).map());
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
+  }
+
+  public void validateArrivalQty(ActionRequest request, ActionResponse response) {
+    try {
+      PurchaseRequestRu purchaseRequest = request.getContext().asType(PurchaseRequestRu.class);
+
+      for (PurchaseRequestLineRu PurchaseRequestLine :
+          purchaseRequest.getPurchaseRequestLineList()) {
+        if (PurchaseRequestLine.getQuantity().compareTo(PurchaseRequestLine.getQuantityArrived())
+            != 0) {
+          response.setError("Please check all the qty is arrived or not.");
+          return;
+        }
+      }
+
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
   }
 }

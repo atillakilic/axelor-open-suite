@@ -23,6 +23,8 @@
     <many-to-one name="paymentInfo" title="Payment Info"
       ref="com.axelor.apps.purchase.db.PurchasePaymentRu"/>
     <boolean name="isPaymentDone" title="Is Payment Done"/>
+    <decimal name="quantityArrived" title="Quantity Arrived" precision="20" scale="10"
+      min="0"/>
 
     <many-to-one name="purchaseRequestRu"
       ref="com.axelor.apps.purchase.db.PurchaseRequestRu" title="Purchase request"/>

@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201706222054</property>
+    <property name="units">cm</property>
+    <method name="beforeFactory"><![CDATA[if(params["HeaderHeight"].value != 0 ) {
+reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty("headerHeight",params["HeaderHeight"].value+"cm");
+}
+if(params["FooterHeight"].value != 0) {
+reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty("footerHeight",params["FooterHeight"].value+"cm");
+}]]></method>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="ids" id="4707">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source1" id="4708">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/alican653</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cm9vdA==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="EmployeeSalary" id="4976">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">empname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">empname</text-property>
+                    <text-property name="heading">empname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">startdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">startdate</text-property>
+                    <text-property name="heading">startdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">salarytype</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">salarytype</text-property>
+                    <text-property name="heading">salarytype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">fixsalary</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">fixsalary</text-property>
+                    <text-property name="heading">fixsalary</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hourlyrate</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">hourlyrate</text-property>
+                    <text-property name="heading">hourlyrate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">one</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">one</text-property>
+                    <text-property name="heading">one</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">two</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">two</text-property>
+                    <text-property name="heading">two</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">three</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">three</text-property>
+                    <text-property name="heading">three</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">four</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">four</text-property>
+                    <text-property name="heading">four</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">five</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">five</text-property>
+                    <text-property name="heading">five</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">six</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">six</text-property>
+                    <text-property name="heading">six</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">seven</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">seven</text-property>
+                    <text-property name="heading">seven</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">eight</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">eight</text-property>
+                    <text-property name="heading">eight</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">nine</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">nine</text-property>
+                    <text-property name="heading">nine</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ten</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ten</text-property>
+                    <text-property name="heading">ten</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">eleven</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">eleven</text-property>
+                    <text-property name="heading">eleven</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twelve</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twelve</text-property>
+                    <text-property name="heading">twelve</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thirteen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">thirteen</text-property>
+                    <text-property name="heading">thirteen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">fourteen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">fourteen</text-property>
+                    <text-property name="heading">fourteen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">fifteen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">fifteen</text-property>
+                    <text-property name="heading">fifteen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sixteen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sixteen</text-property>
+                    <text-property name="heading">sixteen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">seventeen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">seventeen</text-property>
+                    <text-property name="heading">seventeen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">eighteen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">eighteen</text-property>
+                    <text-property name="heading">eighteen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">nineteen</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">nineteen</text-property>
+                    <text-property name="heading">nineteen</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twenty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twenty</text-property>
+                    <text-property name="heading">twenty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentyone</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentyone</text-property>
+                    <text-property name="heading">twentyone</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentytwo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentytwo</text-property>
+                    <text-property name="heading">twentytwo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentythree</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentythree</text-property>
+                    <text-property name="heading">twentythree</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentyfour</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentyfour</text-property>
+                    <text-property name="heading">twentyfour</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentyfiv</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentyfiv</text-property>
+                    <text-property name="heading">twentyfiv</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentysix</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentysix</text-property>
+                    <text-property name="heading">twentysix</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentyseven</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentyseven</text-property>
+                    <text-property name="heading">twentyseven</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentyeight</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentyeight</text-property>
+                    <text-property name="heading">twentyeight</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">twentynine</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">twentynine</text-property>
+                    <text-property name="heading">twentynine</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thirty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">thirty</text-property>
+                    <text-property name="heading">thirty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">thirtyone</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">thirtyone</text-property>
+                    <text-property name="heading">thirtyone</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">totalsal</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">totalsal</text-property>
+                    <text-property name="heading">totalsal</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">empname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">startdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">salarytype</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">fixsalary</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">hourlyrate</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">one</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">two</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">three</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">four</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">five</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">six</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">seven</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">eight</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">nine</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">ten</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">eleven</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">twelve</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">thirteen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">fourteen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">fifteen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">sixteen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">seventeen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">eighteen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">nineteen</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">twenty</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">twentyone</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">twentytwo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">twentythree</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">twentyfour</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">twentyfiv</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">twentysix</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">twentyseven</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">twentyeight</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">twentynine</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">thirty</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">thirtyone</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">38</property>
+                        <property name="name">totalsal</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[this.queryText = this.queryText.replace('@INJECTEDWHERE', "WHERE  EmpSalary.id IN (" + params["ids"].value + ")");]]></method>
+            <property name="dataSource">Data Source1</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">empname</property>
+                    <property name="nativeName">empname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">startdate</property>
+                    <property name="nativeName">startdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">salarytype</property>
+                    <property name="nativeName">salarytype</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">fixsalary</property>
+                    <property name="nativeName">fixsalary</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">hourlyrate</property>
+                    <property name="nativeName">hourlyrate</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">one</property>
+                    <property name="nativeName">one</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">two</property>
+                    <property name="nativeName">two</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">three</property>
+                    <property name="nativeName">three</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">four</property>
+                    <property name="nativeName">four</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">five</property>
+                    <property name="nativeName">five</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">six</property>
+                    <property name="nativeName">six</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">seven</property>
+                    <property name="nativeName">seven</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">eight</property>
+                    <property name="nativeName">eight</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">nine</property>
+                    <property name="nativeName">nine</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">ten</property>
+                    <property name="nativeName">ten</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">eleven</property>
+                    <property name="nativeName">eleven</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">twelve</property>
+                    <property name="nativeName">twelve</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">thirteen</property>
+                    <property name="nativeName">thirteen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">fourteen</property>
+                    <property name="nativeName">fourteen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">fifteen</property>
+                    <property name="nativeName">fifteen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">sixteen</property>
+                    <property name="nativeName">sixteen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">seventeen</property>
+                    <property name="nativeName">seventeen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">eighteen</property>
+                    <property name="nativeName">eighteen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">nineteen</property>
+                    <property name="nativeName">nineteen</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">twenty</property>
+                    <property name="nativeName">twenty</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">twentyone</property>
+                    <property name="nativeName">twentyone</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">twentytwo</property>
+                    <property name="nativeName">twentytwo</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">twentythree</property>
+                    <property name="nativeName">twentythree</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">twentyfour</property>
+                    <property name="nativeName">twentyfour</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">twentyfiv</property>
+                    <property name="nativeName">twentyfiv</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">twentysix</property>
+                    <property name="nativeName">twentysix</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">twentyseven</property>
+                    <property name="nativeName">twentyseven</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">34</property>
+                    <property name="name">twentyeight</property>
+                    <property name="nativeName">twentyeight</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">35</property>
+                    <property name="name">twentynine</property>
+                    <property name="nativeName">twentynine</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">thirty</property>
+                    <property name="nativeName">thirty</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">37</property>
+                    <property name="name">thirtyone</property>
+                    <property name="nativeName">thirtyone</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">38</property>
+                    <property name="name">totalsal</property>
+                    <property name="nativeName">totalsal</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select EmpSalary.id as Id,
+Employee.name as EmpName,
+EmpSalary.date_of_start as StartDate,
+EmpSalary.salary_type as SalaryType,
+EmpSalary.fix_salary as FixSalary,
+EmpSalary.hourly_rate as HourlyRate,
+EmpSalary.one as one,
+EmpSalary.two as Two,
+EmpSalary.three as Three,
+EmpSalary.four as Four,
+EmpSalary.five as Five,
+EmpSalary.six as Six,
+EmpSalary.seven as Seven, 
+EmpSalary.eight as Eight,
+EmpSalary.nine as Nine,
+EmpSalary.ten as Ten,
+EmpSalary.eleven as Eleven,
+EmpSalary.twelve as Twelve,
+EmpSalary.thriteen as Thirteen,
+EmpSalary.fourteen as Fourteen,
+EmpSalary.fifteen as Fifteen,
+EmpSalary.sixteen as Sixteen,
+EmpSalary.seventeen as Seventeen,
+EmpSalary.eighteen as Eighteen,
+EmpSalary.nineteen as Nineteen,
+EmpSalary.twenty as Twenty,
+EmpSalary.twenty_one as TwentyOne, 
+EmpSalary.twenty_two as TwentyTwo,
+EmpSalary.twenty_three as TwentyThree,
+EmpSalary.twenty_four as TwentyFour,
+EmpSalary.twenty_five as TwentyFiv,
+EmpSalary.twenty_six as TwentySix,
+EmpSalary.twenty_seven as TwentySeven,
+EmpSalary.twenty_eight as TwentyEight,
+EmpSalary.twenty_nine as TwentyNine,
+EmpSalary.thirty as Thirty,
+EmpSalary.thirty_one as ThirtyOne,
+EmpSalary.total_salary as TotalSal
+
+
+
+from hr_employee_salary_ru as EmpSalary
+left outer join hr_employee_ru as Employee on (EmpSalary.employee_ru = Employee.id)
+@INJECTEDWHERE
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="DateFormat" id="4862">
+            <structure name="dateTimeFormat">
+                <property name="category">Custom</property>
+                <property name="pattern">dd/MM/yy</property>
+            </structure>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a3</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.47625cm</property>
+            <property name="leftMargin">0.3958333333333333in</property>
+            <property name="rightMargin">0.15625in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">2.4cm</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4710">
+            <column id="4711"/>
+            <column id="4712"/>
+            <column id="4713"/>
+            <row id="4714">
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
+                <cell id="4715">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <label id="4727">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Employee Salary Report</text-property>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <table id="4987">
+            <property name="dataSet">EmployeeSalary</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Id</property>
+                    <expression name="expression" type="javascript">row["id"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">startdate</property>
+                    <text-property name="displayName">startdate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["startdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">salarytype</property>
+                    <text-property name="displayName">salarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["salarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">fixsalary</property>
+                    <text-property name="displayName">fixsalary</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fixsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">hourlyrate</property>
+                    <text-property name="displayName">hourlyrate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hourlyrate"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">one</property>
+                    <text-property name="displayName">one</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["one"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">two</property>
+                    <text-property name="displayName">two</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["two"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">three</property>
+                    <text-property name="displayName">three</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["three"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">four</property>
+                    <text-property name="displayName">four</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["four"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">five</property>
+                    <text-property name="displayName">five</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["five"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Date</property>
+                    <expression name="expression" type="javascript">row["startdate"]</expression>
+                    <property name="dataType">date</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Type</property>
+                    <expression name="expression" type="javascript">row["salarytype"]</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FixSalary</property>
+                    <expression name="expression" type="javascript">row["fixsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Hourly Rate</property>
+                    <expression name="expression" type="javascript">row["hourlyrate"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">empname</property>
+                    <text-property name="displayName">empname</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["empname"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">six</property>
+                    <text-property name="displayName">six</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["six"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">seven</property>
+                    <text-property name="displayName">seven</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["seven"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eight</property>
+                    <text-property name="displayName">eight</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eight"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">nine</property>
+                    <text-property name="displayName">nine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nine"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ten</property>
+                    <text-property name="displayName">ten</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ten"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eleven</property>
+                    <text-property name="displayName">eleven</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eleven"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twelve</property>
+                    <text-property name="displayName">twelve</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twelve"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thirteen</property>
+                    <text-property name="displayName">thirteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">fourteen</property>
+                    <text-property name="displayName">fourteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fourteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">fifteen</property>
+                    <text-property name="displayName">fifteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fifteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">sixteen</property>
+                    <text-property name="displayName">sixteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sixteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">seventeen</property>
+                    <text-property name="displayName">seventeen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["seventeen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eighteen</property>
+                    <text-property name="displayName">eighteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eighteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">nineteen</property>
+                    <text-property name="displayName">nineteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nineteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twenty</property>
+                    <text-property name="displayName">twenty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twenty"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyone</property>
+                    <text-property name="displayName">twentyone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyone"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentytwo</property>
+                    <text-property name="displayName">twentytwo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentytwo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentythree</property>
+                    <text-property name="displayName">twentythree</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentythree"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyfour</property>
+                    <text-property name="displayName">twentyfour</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyfour"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyfiv</property>
+                    <text-property name="displayName">twentyfiv</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyfiv"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentysix</property>
+                    <text-property name="displayName">twentysix</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentysix"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyseven</property>
+                    <text-property name="displayName">twentyseven</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyseven"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyeight</property>
+                    <text-property name="displayName">twentyeight</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyeight"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentynine</property>
+                    <text-property name="displayName">twentynine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentynine"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thirty</property>
+                    <text-property name="displayName">thirty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirty"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thirtyone</property>
+                    <text-property name="displayName">thirtyone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirtyone"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Emp</property>
+                    <expression name="expression" type="javascript">dataSetRow["empname"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">One</property>
+                    <expression name="expression" type="javascript">dataSetRow["one"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Two</property>
+                    <expression name="expression" type="javascript">row["two"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Three</property>
+                    <expression name="expression" type="javascript">row["three"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Four</property>
+                    <expression name="expression" type="javascript">row["four"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Five</property>
+                    <expression name="expression" type="javascript">row["five"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Six</property>
+                    <expression name="expression" type="javascript">row["six"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Seven</property>
+                    <expression name="expression" type="javascript">row["seven"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Eight</property>
+                    <expression name="expression" type="javascript">row["eight"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Nine</property>
+                    <expression name="expression" type="javascript">row["nine"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Ten</property>
+                    <expression name="expression" type="javascript">row["ten"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Eleven</property>
+                    <expression name="expression" type="javascript">row["eleven"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twelve</property>
+                    <expression name="expression" type="javascript">row["twelve"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Thirteen</property>
+                    <expression name="expression" type="javascript">row["thirteen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Fourteen</property>
+                    <expression name="expression" type="javascript">row["fourteen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Fifteen</property>
+                    <expression name="expression" type="javascript">row["fifteen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Sixteen</property>
+                    <expression name="expression" type="javascript">row["sixteen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Seventeen</property>
+                    <expression name="expression" type="javascript">row["seventeen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Eighteen</property>
+                    <expression name="expression" type="javascript">row["eighteen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Nineteen</property>
+                    <expression name="expression" type="javascript">row["nineteen"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twenty</property>
+                    <expression name="expression" type="javascript">row["twenty"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyone</property>
+                    <expression name="expression" type="javascript">row["twentyone"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentytwo</property>
+                    <expression name="expression" type="javascript">row["twentytwo"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentythree</property>
+                    <expression name="expression" type="javascript">row["twentythree"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyfour</property>
+                    <expression name="expression" type="javascript">row["twentyfour"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyfiv</property>
+                    <expression name="expression" type="javascript">row["twentyfiv"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentysix</property>
+                    <expression name="expression" type="javascript">row["twentysix"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyseven</property>
+                    <expression name="expression" type="javascript">row["twentyseven"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyeight</property>
+                    <expression name="expression" type="javascript">row["twentyeight"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentynine</property>
+                    <expression name="expression" type="javascript">row["twentynine"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Thirty</property>
+                    <expression name="expression" type="javascript">row["thirty"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Thirtyone</property>
+                    <expression name="expression" type="javascript">row["thirtyone"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">totalsal</property>
+                    <text-property name="displayName">totalsal</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["totalsal"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TotalSal</property>
+                    <expression name="expression" type="javascript">row["totalsal"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="5106">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5107">
+                <property name="width">2cm</property>
+            </column>
+            <column id="5108">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5109">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5110">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5111"/>
+            <column id="5112"/>
+            <column id="5113"/>
+            <column id="5114"/>
+            <column id="5115"/>
+            <column id="5116"/>
+            <column id="5117"/>
+            <column id="5118"/>
+            <column id="5119"/>
+            <column id="5120"/>
+            <column id="5121"/>
+            <column id="5122"/>
+            <column id="5123"/>
+            <column id="5124"/>
+            <column id="5125"/>
+            <column id="5126"/>
+            <column id="5127"/>
+            <column id="5128"/>
+            <column id="5129"/>
+            <column id="5130"/>
+            <column id="5131"/>
+            <column id="5132"/>
+            <column id="5133"/>
+            <column id="5134"/>
+            <column id="5135"/>
+            <column id="5136"/>
+            <column id="5137"/>
+            <column id="5138"/>
+            <column id="5139"/>
+            <column id="5140"/>
+            <column id="5141"/>
+            <column id="5142">
+                <property name="width">2.5cm</property>
+            </column>
+            <header>
+                <row id="4988">
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <cell id="4990">
+                        <label id="5145">
+                            <text-property name="text">Employee</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4991">
+                        <label id="5146">
+                            <text-property name="text">Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4992">
+                        <label id="5148">
+                            <text-property name="text">Salary Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4993">
+                        <label id="5149">
+                            <text-property name="text">Fix Salary</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4994">
+                        <label id="5150">
+                            <text-property name="text">Hourly Rate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4995">
+                        <label id="5151">
+                            <text-property name="text">01</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4996">
+                        <label id="5152">
+                            <text-property name="text">02</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4997">
+                        <label id="5153">
+                            <text-property name="text">03</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4998">
+                        <label id="5154">
+                            <text-property name="text">04</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4999">
+                        <label id="5160">
+                            <text-property name="text">05</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5000">
+                        <label id="5161">
+                            <text-property name="text">06</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5001">
+                        <label id="5162">
+                            <text-property name="text">07</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5002">
+                        <label id="5165">
+                            <text-property name="text">08</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5003">
+                        <label id="5164">
+                            <text-property name="text">09</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5004">
+                        <label id="5166">
+                            <text-property name="text">10</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5005">
+                        <label id="5167">
+                            <text-property name="text">11</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5006">
+                        <label id="5168">
+                            <text-property name="text">12</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5007">
+                        <label id="5169">
+                            <text-property name="text">13</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5008">
+                        <label id="5170">
+                            <text-property name="text">14</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5009">
+                        <label id="5178">
+                            <text-property name="text">15</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5010">
+                        <label id="5177">
+                            <text-property name="text">16</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5011">
+                        <label id="5174">
+                            <text-property name="text">17</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5012">
+                        <label id="5175">
+                            <text-property name="text">18</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5013">
+                        <label id="5176">
+                            <text-property name="text">19</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5014">
+                        <label id="5179">
+                            <text-property name="text">20</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5015">
+                        <label id="5180">
+                            <text-property name="text">21</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5016">
+                        <label id="5181">
+                            <text-property name="text">22</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5017">
+                        <label id="5182">
+                            <text-property name="text">23</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5018">
+                        <label id="5183">
+                            <text-property name="text">24</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5019">
+                        <label id="5184">
+                            <text-property name="text">25</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5020">
+                        <label id="5185">
+                            <text-property name="text">26</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5021">
+                        <label id="5186">
+                            <text-property name="text">27</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5022">
+                        <label id="5187">
+                            <text-property name="text">28</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5023">
+                        <label id="5189">
+                            <text-property name="text">29</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5024">
+                        <label id="5190">
+                            <text-property name="text">30</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5025">
+                        <label id="5191">
+                            <text-property name="text">31</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5026">
+                        <label id="5192">
+                            <text-property name="text">Total Salary</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="5027">
+                    <property name="fontSize">8pt</property>
+                    <property name="textAlign">center</property>
+                    <cell id="5029">
+                        <data id="5155">
+                            <property name="resultSetColumn">Emp</property>
+                        </data>
+                    </cell>
+                    <cell id="5030">
+                        <data id="5156">
+                            <property name="style">DateFormat</property>
+                            <property name="resultSetColumn">Date</property>
+                        </data>
+                    </cell>
+                    <cell id="5031">
+                        <data id="5157">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["salarytype"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Monthly</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["salarytype"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">2</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Hourly</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Type</property>
+                        </data>
+                    </cell>
+                    <cell id="5032">
+                        <data id="5158">
+                            <property name="resultSetColumn">FixSalary</property>
+                        </data>
+                    </cell>
+                    <cell id="5033">
+                        <data id="5159">
+                            <property name="resultSetColumn">Hourly Rate</property>
+                        </data>
+                    </cell>
+                    <cell id="5034">
+                        <data id="5193">
+                            <property name="resultSetColumn">One</property>
+                        </data>
+                    </cell>
+                    <cell id="5035">
+                        <data id="5194">
+                            <property name="resultSetColumn">Two</property>
+                        </data>
+                    </cell>
+                    <cell id="5036">
+                        <data id="5195">
+                            <property name="resultSetColumn">Three</property>
+                        </data>
+                    </cell>
+                    <cell id="5037">
+                        <data id="5196">
+                            <property name="resultSetColumn">Four</property>
+                        </data>
+                    </cell>
+                    <cell id="5038">
+                        <data id="5197">
+                            <property name="resultSetColumn">Five</property>
+                        </data>
+                    </cell>
+                    <cell id="5039">
+                        <data id="5198">
+                            <property name="resultSetColumn">Six</property>
+                        </data>
+                    </cell>
+                    <cell id="5040">
+                        <data id="5199">
+                            <property name="resultSetColumn">Seven</property>
+                        </data>
+                    </cell>
+                    <cell id="5041">
+                        <data id="5201">
+                            <property name="resultSetColumn">Eight</property>
+                        </data>
+                    </cell>
+                    <cell id="5042">
+                        <data id="5202">
+                            <property name="resultSetColumn">Nine</property>
+                        </data>
+                    </cell>
+                    <cell id="5043">
+                        <data id="5203">
+                            <property name="resultSetColumn">Ten</property>
+                        </data>
+                    </cell>
+                    <cell id="5044">
+                        <data id="5204">
+                            <property name="resultSetColumn">Eleven</property>
+                        </data>
+                    </cell>
+                    <cell id="5045">
+                        <data id="5205">
+                            <property name="resultSetColumn">Twelve</property>
+                        </data>
+                    </cell>
+                    <cell id="5046">
+                        <data id="5206">
+                            <property name="resultSetColumn">Thirteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5047">
+                        <data id="5207">
+                            <property name="resultSetColumn">Fourteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5048">
+                        <data id="5208">
+                            <property name="resultSetColumn">Fifteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5049">
+                        <data id="5209">
+                            <property name="resultSetColumn">Sixteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5050">
+                        <data id="5210">
+                            <property name="resultSetColumn">Seventeen</property>
+                        </data>
+                    </cell>
+                    <cell id="5051">
+                        <data id="5211">
+                            <property name="resultSetColumn">Eighteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5052">
+                        <data id="5213">
+                            <property name="resultSetColumn">Nineteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5053">
+                        <data id="5214">
+                            <property name="resultSetColumn">Twenty</property>
+                        </data>
+                    </cell>
+                    <cell id="5054">
+                        <data id="5215">
+                            <property name="resultSetColumn">Twentyone</property>
+                        </data>
+                    </cell>
+                    <cell id="5055">
+                        <data id="5216">
+                            <property name="resultSetColumn">Twentytwo</property>
+                        </data>
+                    </cell>
+                    <cell id="5056">
+                        <data id="5217">
+                            <property name="resultSetColumn">Twentythree</property>
+                        </data>
+                    </cell>
+                    <cell id="5057">
+                        <data id="5218">
+                            <property name="resultSetColumn">Twentyfour</property>
+                        </data>
+                    </cell>
+                    <cell id="5058">
+                        <data id="5219">
+                            <property name="resultSetColumn">Twentyfiv</property>
+                        </data>
+                    </cell>
+                    <cell id="5059">
+                        <data id="5220">
+                            <property name="resultSetColumn">Twentysix</property>
+                        </data>
+                    </cell>
+                    <cell id="5060">
+                        <data id="5221">
+                            <property name="resultSetColumn">Twentyseven</property>
+                        </data>
+                    </cell>
+                    <cell id="5061">
+                        <data id="5222">
+                            <property name="resultSetColumn">Twentyeight</property>
+                        </data>
+                    </cell>
+                    <cell id="5062">
+                        <data id="5223">
+                            <property name="resultSetColumn">Twentynine</property>
+                        </data>
+                    </cell>
+                    <cell id="5063">
+                        <data id="5224">
+                            <property name="resultSetColumn">Thirty</property>
+                        </data>
+                    </cell>
+                    <cell id="5064">
+                        <data id="5225">
+                            <property name="resultSetColumn">Thirtyone</property>
+                        </data>
+                    </cell>
+                    <cell id="5065">
+                        <data id="5226">
+                            <property name="resultSetColumn">TotalSal</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="5066">
+                    <cell id="5068"/>
+                    <cell id="5069"/>
+                    <cell id="5070"/>
+                    <cell id="5071"/>
+                    <cell id="5072"/>
+                    <cell id="5073"/>
+                    <cell id="5074"/>
+                    <cell id="5075"/>
+                    <cell id="5076"/>
+                    <cell id="5077"/>
+                    <cell id="5078"/>
+                    <cell id="5079"/>
+                    <cell id="5080"/>
+                    <cell id="5081"/>
+                    <cell id="5082"/>
+                    <cell id="5083"/>
+                    <cell id="5084"/>
+                    <cell id="5085"/>
+                    <cell id="5086"/>
+                    <cell id="5087"/>
+                    <cell id="5088"/>
+                    <cell id="5089"/>
+                    <cell id="5090"/>
+                    <cell id="5091"/>
+                    <cell id="5092"/>
+                    <cell id="5093"/>
+                    <cell id="5094"/>
+                    <cell id="5095"/>
+                    <cell id="5096"/>
+                    <cell id="5097"/>
+                    <cell id="5098"/>
+                    <cell id="5099"/>
+                    <cell id="5100"/>
+                    <cell id="5101"/>
+                    <cell id="5102"/>
+                    <cell id="5103"/>
+                    <cell id="5104"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

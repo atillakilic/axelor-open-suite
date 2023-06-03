@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-line-ru-grid" title="Daily Activity Line"
+    onNew="action-employee-daily-activity-line-attrs-set-date" editable="true"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu">
+    <field name="activityDate"/>
+    <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
+    <field name="dailyWorkHoursOnContact"/>
+    <field name="dailyWorkHours"/>
+    <field name="workArea" canNew="true"/>
+    <field name="isAbsence"/>
+    <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
+      grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
+    <field name="penaltyNotCame"/>
+    <field name="penaltyCloths"/>
+    <field name="penaltyWereHouse"/>
+    <field name="penaltyCompany"/>
+    <field name="statusShiftType"/>
+  </grid>
+
+  <form name="hr-employee-daily-activity-line-ru-form" title="Daily Activity Line"
+    onNew="action-employee-daily-activity-line-attrs-set-date"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
+      <field name="activityDate"/>
+      <field name="dailyWorkHoursOnContact"/>
+      <field name="dailyWorkHours"/>
+      <field name="workArea" canNew="true"/>
+      <field name="isAbsence"/>
+      <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
+        grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
+      <field name="penaltyNotCame"/>
+      <field name="penaltyCloths"/>
+      <field name="penaltyWereHouse"/>
+      <field name="penaltyCompany"/>
+      <field name="statusShiftType"/>
+    </panel>
+  </form>
+
+  <action-method name="action-employee-daily-activity-line-on-select-employee">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityLineController"
+      method="setEmployeeRate"/>
+  </action-method>
+
+  <action-attrs name="action-employee-daily-activity-line-attrs-set-date">
+    <attribute name="value" for="activityDate" expr="eval: _parent?.todayDate"/>
+    <attribute name="value" for="statusShiftType" expr="eval: _parent?.statusShiftType"/>
+  </action-attrs>
+
+</object-views>

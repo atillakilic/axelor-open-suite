@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDashboardRu" cacheable="true">
+
+    <date name="employeeCountDate" title="Date select"/>
+
+    <one-to-many name="employeeCountList"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardCountRu" mappedBy="employeeDashboardRu"
+      title="Employee Count"/>
+
+    <!-- EmployeeDashboardWorkShiftRu -->
+
+    <date name="employeeworkShift" title="Date select"/>
+
+    <one-to-many name="employeeWorkShift"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardWorkShiftRu" mappedBy="employeeDashboardRu"
+      title="Employees Shift"/>
+
+    <!-- EmployeeDashboardEmpActivityRu -->
+
+    <date name="employeeActivityFromDate" title="From Date"/>
+    <date name="employeeActivityToDate" title="TO Date"/>
+
+    <one-to-many name="employeeActivity"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardEmpActivityRu" mappedBy="employeeDashboardRu"
+      title="Employees Activity"/>
+
+    <!-- EmployeeDashboardEmpActivityRu -->
+
+    <date name="employeePenaltyFromDate" title="From Date"/>
+    <date name="employeePenaltyToDate" title="TO Date"/>
+
+    <one-to-many name="employeePenalty"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardEmpPenaltyRu" mappedBy="employeeDashboardRu"
+      title="Employees Penalty"/>
+
+  </entity>
+
+</domain-models>

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDailyActivityLineRu" cacheable="true">
+
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeRu" title="Emoloyee"/>
+    <decimal name="dailyWorkHoursOnContact" title="work hours On Contract" scale="2"
+      precision="20"/>
+    <decimal name="dailyWorkHours" title="Work hours" scale="2" precision="20"/>
+    <many-to-one name="workArea" ref="com.axelor.apps.project.db.ProjectAreaRu"
+      title="Project Area"/>
+    <decimal name="penaltyNotCame" title="Penalty NotCame"/>
+    <decimal name="penaltyCloths" title="Penalty Cloths"/>
+    <decimal name="penaltyWereHouse" title="Penalty Werehous"/>
+    <decimal name="penaltyCompany" title="Penalty Company"/>
+    <boolean name="isAbsence" title="Absence"/>
+    <many-to-one name="absenceReason" ref="com.axelor.apps.hr.db.EmployeeNotCameReason"
+      title="Absence Reason"/>
+    <string name="comments" title="Comments"/>
+    <many-to-one name="employeeDailyActivity"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityRu" title="Employee DailyActivity"/>
+
+    <integer name="statusShiftType" title="Shift"
+      selection="hr.employee.daily.activity.shift.selection"/>
+
+    <date name="activityDate" title="Date"/>
+  </entity>
+
+</domain-models>
+

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-dashboard-ru-grid" title="Dashboard"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityRu">
+    <field name="employeeCountDate"/>
+  </grid>
+
+  <form name="hr-employee-dashboard-ru-form" title="Dashboard" canSave="false" canNew="fase"
+    onLoad="action-employee-dashboard-group-on-load-new"
+    onNew="action-employee-dashboard-group-on-load-new"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="employeeCountDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-count"/>
+      <panel-related field="employeeCountList" canNew="false" readonly="true"
+        colSpan="12" form-view="hr-employee-dashboard-count-ru-form"
+        grid-view="hr-employee-dashboard-count-ru-grid" canEdit="false"/>
+    </panel>
+
+    <panel>
+      <spacer colOffset="12"/>
+      <spacer colOffset="12"/>
+      <field name="employeeworkShift" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-show-total-shift-employee"/>
+      <panel-related field="employeeWorkShift" canNew="false" readonly="true"
+        showFrame="true" colSpan="12" form-view="hr-employee-dashboard-work-shift-ru-form"
+        grid-view="hr-employee-dashboard-work-shift-ru-grid" canEdit="false"/>
+    </panel>
+
+    <panel>
+      <spacer colOffset="12"/>
+      <spacer colOffset="12"/>
+      <field name="employeeActivityFromDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-activity"/>
+      <field name="employeeActivityToDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-activity"/>
+      <panel-related field="employeeActivity" canNew="false" readonly="true"
+        colSpan="12" form-view="hr-employee-dashboard-employee-activity-ru-form"
+        grid-view="hr-employee-dashboard-employee-activity-ru-grid" canEdit="false"/>
+    </panel>
+
+    <panel>
+      <spacer colOffset="12"/>
+      <spacer colOffset="12"/>
+      <field name="employeePenaltyFromDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-penalty"/>
+      <field name="employeePenaltyToDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-penalty"/>
+      <panel-related field="employeePenalty" canNew="false" readonly="true"
+        colSpan="12" form-view="hr-employee-dashboard-employee-penalty-ru-form"
+        grid-view="hr-employee-dashboard-employee-penalty-ru-grid" canEdit="false"/>
+    </panel>
+
+  </form>
+
+  <action-group name="action-employee-dashboard-group-on-load-new">
+    <action name="action-employee-dashboard-method-on-load"/> <!-- set dates -->
+    <action name="action-employee-dashboard-method-employee-count"/>
+    <action name="action-employee-dashboard-method-employee-show-total-shift-employee"/>
+    <action name="action-employee-dashboard-method-employee-activity"/>
+    <action name="action-employee-dashboard-method-employee-penalty"/>
+  </action-group>
+
+  <action-method name="action-employee-dashboard-method-on-load">
+    <call class="com.axelor.apps.hr.web.EmployeeDashboardController" method="onLoad"/>
+  </action-method>
+
+  <action-method name="action-employee-dashboard-method-employee-count">
+    <call class="com.axelor.apps.hr.web.EmployeeDashboardController" method="getEmployeeCount"/>
+  </action-method>
+
+  <action-method
+    name="action-employee-dashboard-method-employee-show-total-shift-employee">
+    <call class="com.axelor.apps.hr.web.EmployeeDashboardController"
+      method="showTotalEmployeeShift"/>
+  </action-method>
+
+  <action-method name="action-employee-dashboard-method-employee-activity">
+    <call class="com.axelor.apps.hr.web.EmployeeDashboardController" method="employeeAxtivity"/>
+  </action-method>
+
+  <action-method name="action-employee-dashboard-method-employee-penalty">
+    <call class="com.axelor.apps.hr.web.EmployeeDashboardController" method="employeePenalty"/>
+  </action-method>
+
+</object-views>

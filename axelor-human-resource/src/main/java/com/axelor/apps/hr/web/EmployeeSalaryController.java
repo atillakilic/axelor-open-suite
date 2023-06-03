@@ -17,11 +17,16 @@
  */
 package com.axelor.apps.hr.web;
 
+import com.axelor.apps.ReportFactory;
 import com.axelor.apps.hr.db.EmployeeSalaryRu;
+import com.axelor.exception.service.TraceBackService;
+import com.axelor.meta.schema.actions.ActionView;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
+import com.google.common.base.Joiner;
 import com.google.inject.Singleton;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Singleton
 public class EmployeeSalaryController {
@@ -68,5 +73,27 @@ public class EmployeeSalaryController {
 
     totalSalary = hourlyRate.multiply(totalWorkHour);
     response.setValue("totalSalary", totalSalary);
+  }
+
+  public void printSalary(ActionRequest request, ActionResponse response) {
+    try {
+      String idsStr = "";
+      if (request.getContext().get("_ids") == null) {
+        response.setAlert("Please select the grid.");
+        return;
+      }
+      List<Integer> selectedFiels = (List<Integer>) request.getContext().get("_ids");
+      idsStr = Joiner.on(",").join(selectedFiels);
+      System.err.println(idsStr);
+      String fileLink =
+          ReportFactory.createReport("EmployeeSalary.rptdesign", "SalaryReport" + "-${date}")
+              .addParam("ids", idsStr)
+              .generate()
+              .getFileLink();
+
+      response.setView(ActionView.define("Salary Report").add("html", fileLink).map());
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
   }
 }

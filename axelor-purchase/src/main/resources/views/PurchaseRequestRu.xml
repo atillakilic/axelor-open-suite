@@ -20,7 +20,7 @@
       <menu name="saleOrderToolsMenu" title="Report">
         <item name="printRequestFormItem" title="Print Request Form"
           action="save,action-purchase-request-ru-print-request-form"/>
-          <item name="printSupplierRequestFormItem" title="Print Supplier Quote"
+        <item name="printSupplierRequestFormItem" title="Print Supplier Quote"
           action="save,action-purchase-request-ru-print-supplier-quote-form"/>
       </menu>
     </menubar>
@@ -79,8 +79,12 @@
       <button name="paidBtn" title="All Paid" icon="fa-check"
         onClick="save,action-purchase-request-ru-action-attrs-paid-all,save"
         showIf="statusSelect == 5"/>
-      <button name="refuseBtn" title="Refuse" icon="fa-times" css="btn-danger" onClick="save"
-        showIf="statusSelect == 2"/>
+      <button name="arrivedBtn" title="Order Arrived" icon="fa-check" css="btn-success"
+        prompt="Are you sure all product has arrived?" showIf="statusSelect == 6"
+        onClick="save,action-purchase-request-ru-method-validate-arrival-qty,action-purchase-request-ru-action-attrs-arrival-all,save"/>
+      <button name="refuseBtn" title="Refuse" icon="fa-times" css="btn-danger"
+        prompt="Are you sure want to refuse all product arrival?"
+        onClick="action-purchase-request-ru-action-attrs-refuse-all,save" showIf="statusSelect == 6"/>
       <button name="cancelBtn" title="Cancel" icon="fa-times-circle" css="btn-danger"
         showIf="statusSelect &lt; 4" onClick="save"/>
     </panel>
@@ -134,14 +138,27 @@
     <attribute name="value" for="statusSelect" expr="eval: 6"/>
   </action-attrs>
 
+  <action-attrs name="action-purchase-request-ru-action-attrs-arrival-all">
+    <attribute name="value" for="statusSelect" expr="eval: 7"/>
+  </action-attrs>
+
+  <action-attrs name="action-purchase-request-ru-action-attrs-refuse-all">
+    <attribute name="value" for="statusSelect" expr="eval: 8"/>
+  </action-attrs>
+
   <action-method name="action-purchase-request-ru-print-request-form">
     <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
       method="printRequestForm"/>
   </action-method>
 
   <action-method name="action-purchase-request-ru-print-supplier-quote-form">
-  	<call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
+    <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
       method="printSupplierQuoteForm"/>
   </action-method>
-  
+
+  <action-method name="action-purchase-request-ru-method-validate-arrival-qty">
+    <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
+      method="validateArrivalQty"/>
+  </action-method>
+
 </object-views>

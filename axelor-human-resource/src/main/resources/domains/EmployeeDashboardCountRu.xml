@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDashboardCountRu" cacheable="true">
+
+    <date name="todayDate" title="Date"/>
+    <integer name="statusShiftType" title="Shift"
+      selection="hr.employee.daily.activity.shift.selection"/>
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <many-to-one name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team"/>
+    <decimal name="totalEmp" title="Total Employee"/>
+    <decimal name="totalworked" title="Total Employee Worked"/>
+    <decimal name="totalEmpNotWorked" title="Total Employee Not Worked"/>
+
+
+    <many-to-one name="employeeDashboardRu"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardRu" title="EmployeeDashboardRu"/>
+  </entity>
+
+</domain-models>

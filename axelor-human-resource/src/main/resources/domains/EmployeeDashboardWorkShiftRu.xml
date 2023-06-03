@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDashboardWorkShiftRu" cacheable="true">
+
+    <many-to-one name="workArea" ref="com.axelor.apps.project.db.ProjectAreaRu"
+      title="Project Area"/>
+    <decimal name="totalWorkDay" title="Total Employee in Day"/>
+    <decimal name="totalworkNight" title="Total Employee In Night"/>
+    <decimal name="totalDayNight" title="Total Employee In Day/Night"/>
+
+    <many-to-one name="employeeDashboardRu"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardRu" title="EmployeeDashboardRu"/>
+  </entity>
+
+</domain-models>

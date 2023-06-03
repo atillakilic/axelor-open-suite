@@ -16,6 +16,10 @@
 
   <form name="employee-ru-form" title="Employee" model="com.axelor.apps.hr.db.EmployeeRu"
     width="large">
+    <toolbar>
+      <button name="reportsBtn" title="Emp Salary" icon="fa-print" readonlyIf="!id"
+        onClick="save,action-employee-ru-print-employee-all-salary-report"/>
+    </toolbar>
     <panel name="mainPanel">
       <field name="stepByStepSelect" widget="NavSelect" colSpan="12" showTitle="false"/>
       <field name="picture" colSpan="2" css="center" showTitle="false" widget="Image"/>
@@ -43,8 +47,8 @@
 
         <spacer colSpan="12"/>
         <field name="project" colSpan="4"/>
-        <field name="projectTeam" colSpan="4"/>
-        <field name="projectDepartment" colSpan="4"/>
+        <field name="projectTeam" colSpan="4" canNew="true"/>
+        <field name="projectDepartment" colSpan="4" canNew="true"/>
         <field name="paymentStatus" colSpan="6" canNew="true" canSelect="true"/>
         <field name="technicalStatus" colSpan="6" canNew="true" canSelect="true"/>
       </panel>
@@ -56,5 +60,9 @@
         grid-view="employee-contract-status-ru-grid" showIf="stepByStepSelect == 2"/>
     </panel>
   </form>
+
+  <action-method name="action-employee-ru-print-employee-all-salary-report">
+    <call class="com.axelor.apps.hr.web.EmployeeRuController" method="printEmpSalaryReport"/>
+  </action-method>
 
 </object-views>

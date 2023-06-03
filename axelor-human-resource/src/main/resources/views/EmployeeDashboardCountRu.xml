@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-dashboard-count-ru-grid" title="Employee Count"
+    model="com.axelor.apps.hr.db.EmployeeDashboardCountRu">
+    <field name="todayDate"/>
+    <field name="statusShiftType"/>
+    <field name="project"/>
+    <field name="projectTeam"/>
+    <field name="totalEmp"/>
+    <field name="totalworked"/>
+    <field name="totalEmpNotWorked"/>
+  </grid>
+
+  <form name="hr-employee-dashboard-count-ru-form" title="Employee Count"
+    model="com.axelor.apps.hr.db.EmployeeDashboardCountRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="todayDate"/>
+      <field name="statusShiftType"/>
+      <field name="project"/>
+      <field name="projectTeam"/>
+      <field name="totalEmp"/>
+      <field name="totalworked"/>
+      <field name="totalEmpNotWorked"/>
+    </panel>
+  </form>
+
+</object-views>

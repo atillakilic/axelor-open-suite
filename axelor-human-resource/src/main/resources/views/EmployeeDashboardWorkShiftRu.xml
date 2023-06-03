@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-dashboard-work-shift-ru-grid" title="Employee Work Shift"
+    model="com.axelor.apps.hr.db.EmployeeDashboardWorkShiftRu">
+    <field name="workArea"/>
+    <field name="totalWorkDay"/>
+    <field name="totalworkNight"/>
+    <field name="totalDayNight"/>
+  </grid>
+
+  <form name="hr-employee-dashboard-work-shift-ru-form" title="Employee Work Shift"
+    model="com.axelor.apps.hr.db.EmployeeDashboardWorkShiftRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="workArea"/>
+      <field name="totalWorkDay"/>
+      <field name="totalworkNight"/>
+      <field name="totalDayNight"/>
+    </panel>
+  </form>
+
+</object-views>
