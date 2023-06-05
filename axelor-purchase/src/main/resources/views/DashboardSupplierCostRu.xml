@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="purchase-dashboard-supplier-cost-ru-grid" title="Supplier Cost"
+    model="com.axelor.apps.purchase.db.DashboardSupplierCostRu">
+    <field name="supplierUser"/>
+    <field name="project"/>
+    <field name="totalCost" x-scale="2"/>
+    <field name="paidCash" x-scale="2"/>
+    <field name="paidBank" x-scale="2"/>
+    <field name="notPaid" x-scale="2"/>
+  </grid>
+
+  <form name="purchase-dashboard-supplier-cost-ru-form" title="Supplier Cost"
+    model="com.axelor.apps.purchase.db.DashboardSupplierCostRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="supplierUser"/>
+      <field name="project"/>
+      <field name="totalCost" x-scale="2"/>
+      <field name="paidCash" x-scale="2"/>
+      <field name="paidBank" x-scale="2"/>
+      <field name="notPaid" x-scale="2"/>
+    </panel>
+  </form>
+
+</object-views>

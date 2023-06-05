@@ -8,7 +8,7 @@
     <field name="company"/>
     <field name="projectRu"/>
     <field name="purchaseRequestSeq" title="Request Code"/>
-    <field name="createdOn"/>
+    <field name="requestDate"/>
     <field name="createdBy"/>
     <field name="statusSelect"/>
   </grid>

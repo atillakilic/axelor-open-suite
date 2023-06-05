@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="purchase-dashboard-product-overview-ru-grid" title="Product Overview"
+    model="com.axelor.apps.purchase.db.DashboardProductOverviewRu">
+    <field name="project"/>
+    <field name="product"/>
+    <field name="requestDate"/>
+    <field name="unit"/>
+    <field name="quantity" x-scale="2"/>
+  </grid>
+
+  <form name="purchase-dashboard-product-overview-ru-form" title="Product Overview"
+    model="com.axelor.apps.purchase.db.DashboardProductOverviewRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="project"/>
+      <field name="product"/>
+      <field name="requestDate"/>
+      <field name="unit"/>
+      <field name="quantity" x-scale="2"/>
+    </panel>
+  </form>
+
+</object-views>

@@ -237,27 +237,44 @@ public class EmployeeDashboardController {
       for (EmployeeDashboardEmpPenaltyRu employeeDashboardEmpPenalty : employeePenaltyList) {
         EmployeeRu empAlredyfound = employeeDashboardEmpPenalty.getEmployee();
         if (employeeOnDailyActivity.equals(empAlredyfound)) {
-        	
-        	employeeDashboardEmpPenalty.setTotalPenaltyNotCame(employeeDashboardEmpPenalty.getTotalPenaltyNotCame().add( employeeDailyActivityLine.getPenaltyNotCame()));
-        	employeeDashboardEmpPenalty.setTotalPenaltyCloths(employeeDashboardEmpPenalty.getTotalPenaltyCloths().add(employeeDailyActivityLine.getPenaltyCloths()));
-        	employeeDashboardEmpPenalty.setTotalPenaltyWerehous(employeeDashboardEmpPenalty.getTotalPenaltyWerehous().add(employeeDailyActivityLine.getPenaltyWereHouse()));
-        	employeeDashboardEmpPenalty.setTotalPenaltyCompany(employeeDashboardEmpPenalty.getTotalPenaltyCompany().add(employeeDailyActivityLine.getPenaltyCompany()));
-        	
-        	flagNewEmployee = false;
+
+          employeeDashboardEmpPenalty.setTotalPenaltyNotCame(
+              employeeDashboardEmpPenalty
+                  .getTotalPenaltyNotCame()
+                  .add(employeeDailyActivityLine.getPenaltyNotCame()));
+          employeeDashboardEmpPenalty.setTotalPenaltyCloths(
+              employeeDashboardEmpPenalty
+                  .getTotalPenaltyCloths()
+                  .add(employeeDailyActivityLine.getPenaltyCloths()));
+          employeeDashboardEmpPenalty.setTotalPenaltyWerehous(
+              employeeDashboardEmpPenalty
+                  .getTotalPenaltyWerehous()
+                  .add(employeeDailyActivityLine.getPenaltyWereHouse()));
+          employeeDashboardEmpPenalty.setTotalPenaltyCompany(
+              employeeDashboardEmpPenalty
+                  .getTotalPenaltyCompany()
+                  .add(employeeDailyActivityLine.getPenaltyCompany()));
+
+          flagNewEmployee = false;
         }
       }
 
       if (flagNewEmployee) {
-    	  EmployeeDashboardEmpPenaltyRu employeeDashboradPenalty = new EmployeeDashboardEmpPenaltyRu();
-         
-    	  employeeDashboradPenalty.setEmployee(employeeDailyActivityLine.getEmployee());
+        EmployeeDashboardEmpPenaltyRu employeeDashboradPenalty =
+            new EmployeeDashboardEmpPenaltyRu();
 
-    	  employeeDashboradPenalty.setTotalPenaltyNotCame(employeeDailyActivityLine.getPenaltyNotCame());
-    	  employeeDashboradPenalty.setTotalPenaltyCloths(employeeDailyActivityLine.getPenaltyCloths());
-    	  employeeDashboradPenalty.setTotalPenaltyWerehous(employeeDailyActivityLine.getPenaltyWereHouse());
-    	  employeeDashboradPenalty.setTotalPenaltyCompany(employeeDailyActivityLine.getPenaltyCompany());
+        employeeDashboradPenalty.setEmployee(employeeDailyActivityLine.getEmployee());
 
-    	  employeePenaltyList.add(employeeDashboradPenalty);
+        employeeDashboradPenalty.setTotalPenaltyNotCame(
+            employeeDailyActivityLine.getPenaltyNotCame());
+        employeeDashboradPenalty.setTotalPenaltyCloths(
+            employeeDailyActivityLine.getPenaltyCloths());
+        employeeDashboradPenalty.setTotalPenaltyWerehous(
+            employeeDailyActivityLine.getPenaltyWereHouse());
+        employeeDashboradPenalty.setTotalPenaltyCompany(
+            employeeDailyActivityLine.getPenaltyCompany());
+
+        employeePenaltyList.add(employeeDashboradPenalty);
       }
     }
     response.setValue("employeePenalty", employeePenaltyList);

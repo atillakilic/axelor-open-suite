@@ -16,6 +16,14 @@
     <view type="form" name="purchase-request-ru-form"/>
   </action-view>
 
+  <menuitem name="sc-root-purchase-dashboard-ru" parent="sc-root-purchase" order="-90"
+    title="Dashboard" action="sc.root.purchase.dashboard.ru"/>
+
+  <action-view name="sc.root.purchase.dashboard.ru" title="Dashboard"
+    model="com.axelor.apps.purchase.db.DashboardPurchaseRu">
+    <view type="form" name="purchase-dashboard-ru-form"/>
+  </action-view>
+
   <menuitem name="sc-root-purchase-suppliers" parent="sc-root-purchase" order="5"
     title="Suppliers" action="sc.root.purchase.suppliers"/>
 

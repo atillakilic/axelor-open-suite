@@ -5,7 +5,7 @@
 
   <grid model="com.axelor.apps.purchase.db.PurchasePaymentRu" title="Purchase Payment"
     name="purchase-request-payment-ru-grid">
-    <field name="paymentMethod"/>
+    <field name="paymentMethod" min="1"/>
     <field name="bankAccount"/>
     <field name="cashAccount"/>
     <field name="amount"/>
@@ -16,7 +16,7 @@
   <form model="com.axelor.apps.purchase.db.PurchasePaymentRu" title="Purchase Payment"
     name="purchase-request-payment-ru-form">
     <panel name="mainPanel">
-      <field name="paymentMethod"/>
+      <field name="paymentMethod" min="1"/>
       <field name="bankAccount"/>
       <field name="cashAccount"/>
       <field name="amount"/>

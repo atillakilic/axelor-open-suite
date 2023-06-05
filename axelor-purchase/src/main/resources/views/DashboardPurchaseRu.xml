@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="purchase-dashboard-ru-grid" title="Dashboard"
+    model="com.axelor.apps.purchase.db.DashboardPurchaseRu">
+    <field name="productOverviewFromDate"/>
+    <field name="productOverviewToDate"/>
+  </grid>
+
+  <form name="purchase-dashboard-ru-form" title="Dashboard" canSave="false" canNew="fase"
+    onLoad="action-dashboard-purchase-group-on-load-new"
+    onNew="action-dashboard-purchase-group-on-load-new"
+    model="com.axelor.apps.purchase.db.DashboardPurchaseRu" width="large">
+
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <spacer colOffset="12"/>
+      <field name="productOverviewFromDate" colSpan="3"
+        onChange="action-dashboard-purchase-method-product-overview"/>
+      <field name="productOverviewToDate" colSpan="3"
+        onChange="action-dashboard-purchase-method-product-overview"/>
+      <panel-related field="productOverview" canNew="false" readonly="true"
+        colSpan="12" form-view="purchase-dashboard-product-overview-ru-form"
+        grid-view="purchase-dashboard-product-overview-ru-grid" canEdit="false"/>
+    </panel>
+
+    <panel name="supplierCostPanel" showTitle="false" title="Main Panel">
+      <spacer colOffset="12"/>
+      <spacer colOffset="12"/>
+      <field name="supplierCostFromDate" colSpan="3"
+        onChange="action-dashboard-purchase-method-supplier-cost"/>
+      <field name="supplierCostToDate" colSpan="3"
+        onChange="action-dashboard-purchase-method-supplier-cost"/>
+      <panel-related field="supplierCost" canNew="false" readonly="true" colSpan="12"
+        form-view="purchase-dashboard-supplier-cost-ru-form"
+        grid-view="purchase-dashboard-supplier-cost-ru-grid" canEdit="false"/>
+    </panel>
+    
+    <panel name="supplietrPanel" showTitle="false" title="Main Panel">
+      <spacer colOffset="12"/>
+      <spacer colOffset="12"/>
+      <panel-related field="supplierBalance" canNew="false" readonly="true"
+        colSpan="12" form-view="purchase-dashboard-supplier-balance-ru-form"
+        grid-view="purchase-dashboard-supplier-balance-ru-grid" canEdit="false"/>
+    </panel>
+  </form>
+
+  <action-group name="action-dashboard-purchase-group-on-load-new">
+    <action name="action-dashboard-purchase-method-on-load"/> <!-- set dates -->
+    <action name="action-dashboard-purchase-method-product-overview"/>
+    <action name="action-dashboard-purchase-method-supplier-balance"/>
+    <action name="action-dashboard-purchase-method-supplier-cost"/>
+  </action-group>
+
+  <action-method name="action-dashboard-purchase-method-on-load">
+    <call class="com.axelor.apps.purchase.web.DashboardPurchaseController" method="onLoad"/>
+  </action-method>
+
+  <action-method name="action-dashboard-purchase-method-product-overview">
+    <call class="com.axelor.apps.purchase.web.DashboardPurchaseController"
+      method="productOverview"/>
+  </action-method>
+
+  <action-method name="action-dashboard-purchase-method-supplier-balance">
+    <call class="com.axelor.apps.purchase.web.DashboardPurchaseController"
+      method="supplierBalance"/>
+  </action-method>
+
+  <action-method name="action-dashboard-purchase-method-supplier-cost">
+    <call class="com.axelor.apps.purchase.web.DashboardPurchaseController"
+      method="supplierCost"/>
+  </action-method>
+
+</object-views>

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="purchase" package="com.axelor.apps.purchase.db"/>
+
+  <entity name="DashboardProductOverviewRu" cacheable="true">
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <many-to-one name="product" ref="com.axelor.apps.base.db.Product" title="Product"/>
+    <many-to-one name="unit" ref="com.axelor.apps.base.db.Unit" title="Unit"/>
+    <decimal name="quantity" title="Quantity" precision="20" scale="10" min="0"/>
+    <date name="requestDate" title="Request Date"/>
+
+    <many-to-one name="dashboardPurchaseRu"
+      ref="com.axelor.apps.purchase.db.DashboardPurchaseRu" title="DashboardPurchaseRu"/>
+  </entity>
+
+</domain-models>
