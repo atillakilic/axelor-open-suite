@@ -189,7 +189,7 @@
 					]]>
           </viewer>
         </field>
-        <panel name="socialNetworkPanel" colSpan="12" showIf="fullName != null">
+<!--         <panel name="socialNetworkPanel" colSpan="12" showIf="fullName != null">
           <label name="googleLabel"
             title="&lt;a class='fa fa-google' href='http://www.google.com' target='_blank' /&gt;"
             colSpan="2"/>
@@ -205,7 +205,7 @@
           <label name="youtubeLabel"
             title="&lt;a class='fa fa-youtube' href='http://www.youtube.com' target='_blank' /&gt;"
             colSpan="2"/>
-        </panel>
+        </panel> --> 
       </panel>
       <panel name="generalInfoPanel" colSpan="10">
         <panel name="partnerInfoPanel" colSpan="12">

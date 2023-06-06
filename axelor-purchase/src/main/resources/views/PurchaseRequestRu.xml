@@ -26,7 +26,7 @@
     </menubar>
 
     <panel name="statusSelectPanel" colSpan="12">
-      <field name="statusSelect" readonly="false" colSpan="12" widget="nav-select"
+      <field name="statusSelect" readonly="true" colSpan="12" widget="nav-select"
         showTitle="false"/>
       <field name="purchaseRequestSeq" title="Request Code" readonlyIf="statusSelect > 1"/>
     </panel>
@@ -66,9 +66,9 @@
     <panel name="detailPanel" sidebar="true">
       <button name="sendRequestBtn" title="Send Request" icon="fa-check"
         showIf="statusSelect == 1"
-        onClick="save,action-purchase-request-attrs-set-status-select-two,save"/>
+        onClick="save,action-purchase-request-attrs-set-status-select-two,save,close"/>
       <button name="acceptBtn" title="Accepted and Send Order" icon="fa-check"
-        onClick="save,action-purchase-request-ru-action-group-accept-request,save"
+        onClick="save,action-purchase-request-ru-action-group-accept-request,save,close"
         showIf="statusSelect == 2"/>
       <button name="sendForOrderBtn" title="Order Confirm" icon="fa-check"
         onClick="save,action-purchase-request-ru-action-attrs-order-confirm,save"
@@ -81,10 +81,10 @@
         showIf="statusSelect == 5"/>
       <button name="arrivedBtn" title="Order Arrived" icon="fa-check" css="btn-success"
         prompt="Are you sure all product has arrived?" showIf="statusSelect == 6"
-        onClick="save,action-purchase-request-ru-method-validate-arrival-qty,action-purchase-request-ru-action-attrs-arrival-all,save"/>
+        onClick="save,action-purchase-request-ru-method-validate-arrival-qty,action-purchase-request-ru-action-attrs-arrival-all,save,close"/>
       <button name="refuseBtn" title="Refuse" icon="fa-times" css="btn-danger"
         prompt="Are you sure want to refuse all product arrival?"
-        onClick="action-purchase-request-ru-action-attrs-refuse-all,save" showIf="statusSelect == 6"/>
+        onClick="action-purchase-request-ru-action-attrs-refuse-all,save,close" showIf="statusSelect == 6"/>
       <button name="cancelBtn" title="Cancel" icon="fa-times-circle" css="btn-danger"
         showIf="statusSelect &lt; 4" onClick="save"/>
     </panel>

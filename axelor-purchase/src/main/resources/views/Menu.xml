@@ -8,20 +8,63 @@
     if="__config__.app.isApp('purchase')" icon="fa-shopping-cart" icon-background="#b6473f"/>
 
   <menuitem name="sc-root-purchase-request-ru" parent="sc-root-purchase" order="-100"
-    title="Purchase Request Ru" action="sc.root.purchase.request.ru"/>
-
-  <action-view name="sc.root.purchase.request.ru" title="Purchase Request Ru"
-    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
-    <view type="grid" name="purchase-request-ru-grid"/>
-    <view type="form" name="purchase-request-ru-form"/>
-  </action-view>
-
-  <menuitem name="sc-root-purchase-dashboard-ru" parent="sc-root-purchase" order="-90"
+    title="Purchase Request" />
+    
+  <menuitem name="sc-root-purchase-dashboard-ru" parent="sc-root-purchase-request-ru" order="1"
     title="Dashboard" action="sc.root.purchase.dashboard.ru"/>
 
   <action-view name="sc.root.purchase.dashboard.ru" title="Dashboard"
     model="com.axelor.apps.purchase.db.DashboardPurchaseRu">
     <view type="form" name="purchase-dashboard-ru-form"/>
+  </action-view>
+    
+  <menuitem name="sc-root-purchase-request-ru-create-request" parent="sc-root-purchase-request-ru" order="10"
+    title="Create Purchase Request" action="sc.root.purchase.request.ru"/>  
+
+  <action-view name="sc.root.purchase.request.ru" title="Purchase Request Ru"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <view type="grid" name="purchase-request-ru-grid"/>
+    <view type="form" name="purchase-request-ru-form"/>
+    <domain>self.statusSelect = 1</domain>
+  </action-view>
+  
+  <menuitem name="sc-root-purchase-request-ru-validate-request" parent="sc-root-purchase-request-ru" order="20"
+    title="Validate Request" action="sc.root.purchase.request.ru.validate"/>  
+
+  <action-view name="sc.root.purchase.request.ru.validate" title="Purchase Request Ru"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <view type="grid" name="purchase-request-ru-grid"/>
+    <view type="form" name="purchase-request-ru-form"/>
+    <domain>self.statusSelect = 2</domain>
+  </action-view>
+  
+  <menuitem name="sc-root-purchase-request-ru-validate-order-process" parent="sc-root-purchase-request-ru" order="30"
+    title="Order Process" action="sc.root.purchase.request.ru.order.process"/>  
+
+  <action-view name="sc.root.purchase.request.ru.order.process" title="Purchase Request Ru"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <view type="grid" name="purchase-request-ru-grid"/>
+    <view type="form" name="purchase-request-ru-form"/>
+    <domain>self.statusSelect &gt; 2 AND self.statusSelect &lt; 7</domain>
+  </action-view>
+  
+  <menuitem name="sc-root-purchase-request-ru-validate-order-arrival" parent="sc-root-purchase-request-ru" order="40"
+    title="Order Arrival" action="sc.root.purchase.request.ru.order.arrival"/>  
+
+  <action-view name="sc.root.purchase.request.ru.order.arrival" title="Purchase Request Ru"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <view type="grid" name="purchase-request-ru-grid"/>
+    <view type="form" name="purchase-request-ru-form"/>
+    <domain>self.statusSelect &gt; 6</domain>
+  </action-view>
+  
+  <menuitem name="sc-root-purchase-request-ru-validate-all-purchase-request" parent="sc-root-purchase-request-ru" order="50"
+    title="All Purchase Request" action="sc.root.purchase.request.ru.all.purchase.request"/>  
+
+  <action-view name="sc.root.purchase.request.ru.all.purchase.request" title="Purchase Request Ru"
+    model="com.axelor.apps.purchase.db.PurchaseRequestRu">
+    <view type="grid" name="purchase-request-ru-grid"/>
+    <view type="form" name="purchase-request-ru-form"/>
   </action-view>
 
   <menuitem name="sc-root-purchase-suppliers" parent="sc-root-purchase" order="5"
