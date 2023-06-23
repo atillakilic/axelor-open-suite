@@ -21,7 +21,9 @@ import com.axelor.apps.hr.db.EmployeeContractRu;
 import com.axelor.apps.hr.db.EmployeeDailyActivityLineRu;
 import com.axelor.apps.hr.db.EmployeeDailyActivityRu;
 import com.axelor.apps.hr.db.EmployeeRu;
+import com.axelor.apps.hr.db.EmployeeSalaryRu;
 import com.axelor.apps.hr.db.repo.EmployeeRuRepository;
+import com.axelor.apps.hr.service.employee.EmployeeDailyActivityService;
 import com.axelor.exception.AxelorException;
 import com.axelor.inject.Beans;
 import com.axelor.rpc.ActionRequest;
@@ -62,6 +64,14 @@ public class EmployeeDailyActivityController {
           //          EmployeeDailyActivityLineRu employeeDailyActivityLineRu =
           //
           // Beans.get(EmployeeDailyActivityLineRuRepository.class).save(dailyActivityLineRu);
+          
+          for(EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
+	          	if(employeeSalary.getCurrentlyActive()) {
+	          		dailyActivityLineRu.setSalaryType(employeeSalary.getSalaryType());
+	          		dailyActivityLineRu.setEmployeeActiveSalaryContract(employeeSalary);
+	          	}
+          	}
+          
           employeeDailyActivityLineRuList.add(dailyActivityLineRu);
           break;
         }
@@ -93,5 +103,14 @@ public class EmployeeDailyActivityController {
     response.setValue("totalEmp", totalEmployee);
     response.setValue("totalworked", totalEmployeeWorked);
     response.setValue("totalEmpNotWorked", totalEmployeeNotWorked);
+  }
+  
+  public void updateRecordOnSalary(ActionRequest request, ActionResponse response)
+	      throws AxelorException {
+	  
+    EmployeeDailyActivityRu employeeDailyActivity =
+        request.getContext().asType(EmployeeDailyActivityRu.class);
+    Beans.get(EmployeeDailyActivityService.class).updateRecordOnSalary(employeeDailyActivity);
+
   }
 }

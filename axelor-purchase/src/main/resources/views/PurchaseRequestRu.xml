@@ -84,7 +84,8 @@
         onClick="save,action-purchase-request-ru-method-validate-arrival-qty,action-purchase-request-ru-action-attrs-arrival-all,save,close"/>
       <button name="refuseBtn" title="Refuse" icon="fa-times" css="btn-danger"
         prompt="Are you sure want to refuse all product arrival?"
-        onClick="action-purchase-request-ru-action-attrs-refuse-all,save,close" showIf="statusSelect == 6"/>
+        onClick="action-purchase-request-ru-action-attrs-refuse-all,save,close"
+        showIf="statusSelect == 6"/>
       <button name="cancelBtn" title="Cancel" icon="fa-times-circle" css="btn-danger"
         showIf="statusSelect &lt; 4" onClick="save"/>
     </panel>

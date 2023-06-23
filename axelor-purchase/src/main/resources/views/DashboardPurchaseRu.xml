@@ -36,7 +36,7 @@
         form-view="purchase-dashboard-supplier-cost-ru-form"
         grid-view="purchase-dashboard-supplier-cost-ru-grid" canEdit="false"/>
     </panel>
-    
+
     <panel name="supplietrPanel" showTitle="false" title="Main Panel">
       <spacer colOffset="12"/>
       <spacer colOffset="12"/>

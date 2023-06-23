@@ -14,6 +14,8 @@
     <decimal name="fixSalary" title="Fix Salary"/>
     <decimal name="hourlyRate" title="Hourly Rate"/>
 
+    <boolean name="currentlyActive" title="Currently Active"/>
+
     <decimal name="one" title="01"/>
     <decimal name="two" title="02"/>
     <decimal name="three" title="03"/>
@@ -46,6 +48,50 @@
     <decimal name="thirty" title="30"/>
     <decimal name="thirtyOne" title="31"/>
 
+    <!-- Salary type -->
+    <integer name="oneSalaryType" selection="employee.salary.type.ru.select" title="01"/>
+    <integer name="twoSalaryType" selection="employee.salary.type.ru.select" title="02"/>
+    <integer name="threeSalaryType" selection="employee.salary.type.ru.select" title="03"/>
+    <integer name="fourSalaryType" selection="employee.salary.type.ru.select" title="04"/>
+    <integer name="fiveSalaryType" selection="employee.salary.type.ru.select" title="05"/>
+    <integer name="sixSalaryType" selection="employee.salary.type.ru.select" title="06"/>
+    <integer name="sevenSalaryType" selection="employee.salary.type.ru.select" title="07"/>
+    <integer name="eightSalaryType" selection="employee.salary.type.ru.select" title="08"/>
+    <integer name="nineSalaryType" selection="employee.salary.type.ru.select" title="09"/>
+    <integer name="tenSalaryType" selection="employee.salary.type.ru.select" title="10"/>
+    <integer name="elevenSalaryType" selection="employee.salary.type.ru.select" title="11"/>
+    <integer name="twelveSalaryType" selection="employee.salary.type.ru.select" title="12"/>
+    <integer name="thriteenSalaryType" selection="employee.salary.type.ru.select" title="13"/>
+    <integer name="fourteenSalaryType" selection="employee.salary.type.ru.select" title="14"/>
+    <integer name="fifteenSalaryType" selection="employee.salary.type.ru.select" title="15"/>
+    <integer name="sixteenSalaryType" selection="employee.salary.type.ru.select" title="16"/>
+    <integer name="seventeenSalaryType" selection="employee.salary.type.ru.select"
+      title="17"/>
+    <integer name="eighteenSalaryType" selection="employee.salary.type.ru.select" title="18"/>
+    <integer name="nineteenSalaryType" selection="employee.salary.type.ru.select" title="19"/>
+    <integer name="twentySalaryType" selection="employee.salary.type.ru.select" title="20"/>
+    <integer name="twentyOneSalaryType" selection="employee.salary.type.ru.select"
+      title="21"/>
+    <integer name="twentyTwoSalaryType" selection="employee.salary.type.ru.select"
+      title="22"/>
+    <integer name="twentyThreeSalaryType" selection="employee.salary.type.ru.select"
+      title="23"/>
+    <integer name="twentyFourSalaryType" selection="employee.salary.type.ru.select"
+      title="24"/>
+    <integer name="twentyFiveSalaryType" selection="employee.salary.type.ru.select"
+      title="25"/>
+    <integer name="twentySixSalaryType" selection="employee.salary.type.ru.select"
+      title="26"/>
+    <integer name="twentySevenSalaryType" selection="employee.salary.type.ru.select"
+      title="27"/>
+    <integer name="twentyEightSalaryType" selection="employee.salary.type.ru.select"
+      title="28"/>
+    <integer name="twentyNineSalaryType" selection="employee.salary.type.ru.select"
+      title="29"/>
+    <integer name="thirtySalaryType" selection="employee.salary.type.ru.select" title="30"/>
+    <integer name="thirtyOneSalaryType" selection="employee.salary.type.ru.select"
+      title="31"/>
+
     <decimal name="totalSalary" title="Total Salary"/>
 
     <many-to-one name="employeeRu" title="Employee"
@@ -53,6 +99,10 @@
 
     <many-to-one name="employeeContract" title="Employee Contract"
       ref="com.axelor.apps.hr.db.EmployeeContractRu"/>
+
+    <one-to-many name="dailyActivityLine"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu" title="Employee DailyActivity"
+      mappedBy="employeeActiveSalaryContract"/>
 
   </entity>
 

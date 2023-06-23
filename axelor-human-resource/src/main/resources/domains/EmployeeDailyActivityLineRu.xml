@@ -28,6 +28,10 @@
       selection="hr.employee.daily.activity.shift.selection"/>
 
     <date name="activityDate" title="Date"/>
+    <integer name="salaryType" title="Salary Type"
+      selection="employee.salary.type.ru.select"/>
+    <many-to-one name="employeeActiveSalaryContract" title="Employee Active contract"
+      ref="com.axelor.apps.hr.db.EmployeeSalaryRu"/>
   </entity>
 
 </domain-models>

@@ -15,19 +15,34 @@
     onNew="action-attrs-hr-employee-daily-activity-on-new"
     model="com.axelor.apps.hr.db.EmployeeDailyActivityRu" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
-      <field name="todayDate" required="true"/>
-      <field name="project" required="true"/>
-      <field name="selectActivityType" required="true"/>
-      <field name="statusShiftType" required="true" min="1"/>
+
+      <panel colSpan="8">
+        <field name="todayDate" required="true" colSpan="4"/>
+        <field name="project" required="true" colSpan="4"/>
+        <field name="selectActivityType" required="true" colSpan="4"/>
+
+        <panel colSpan="12">
+          <panel colSpan="4">
+            <field name="statusShiftType" required="true" min="1" colSpan="6"/>
+          </panel>
+          <panel showIf="selectActivityType == 1" colSpan="8">
+            <field name="projectTeam" colSpan="6"/>
+            <button name="btnSetEmployee" title="Get List" colSpan="3"
+              onClick="save,action-employee-daily-activity-set-employee,action-employee-daily-activity-calculate-employee-work,save,reload"/>
+          </panel>
+        </panel>
+
+      </panel>
+
+      <panel colSpan="4">
+        <field name="totalEmp" readonly="true" colSpan="4"/>
+        <field name="totalworked" readonly="true" colSpan="4"/>
+        <field name="totalEmpNotWorked" readonly="true" colSpan="4"/>
+      </panel>
+
     </panel>
 
-    <panel showIf="selectActivityType == 1">
-      <spacer colSpan="12"/>
-      <field name="projectTeam"/>
-      <spacer/>
-      <button name="btnSetEmployee" title="Get Team Employee"
-        onClick="save,action-employee-daily-activity-set-employee,action-employee-daily-activity-calculate-employee-work,save,reload"/>
-    </panel>
+
 
     <panel-related field="activityRecord"
       onChange="action-employee-daily-activity-calculate-employee-work,save"
@@ -38,11 +53,9 @@
       form-view="hr-employee-not-came-line-ru-form" grid-view="hr-employee-not-came-line-ru-grid"
       canEdit="true"/>
 
-    <panel sidebar="true">
-      <field name="totalEmp" readonly="true"/>
-      <field name="totalworked" readonly="true"/>
-      <field name="totalEmpNotWorked" readonly="true"/>
-    </panel>
+	<panel>
+		<button title="Confirm" onClick="save,action-employee-daily-activity-set-daily-activity-data-on-salary" name="confirm" prompt="Are you sure you want to confirm daily activity record? it will not editable once it is confirm." />
+	</panel>
 
   </form>
 
@@ -59,5 +72,11 @@
     <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="calculateEmployeeWork"/>
   </action-method>
+  
+    <action-method name="action-employee-daily-activity-set-daily-activity-data-on-salary">
+       <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+      method="updateRecordOnSalary"/>
+      
+    </action-method>
 
 </object-views>

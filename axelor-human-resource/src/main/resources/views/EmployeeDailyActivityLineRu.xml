@@ -6,11 +6,12 @@
   <grid name="hr-employee-daily-activity-line-ru-grid" title="Daily Activity Line"
     onNew="action-employee-daily-activity-line-attrs-set-date" editable="true"
     model="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu">
-    <field name="activityDate"/>
+    <field name="activityDate" hidden="true"/>
     <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
-    <field name="dailyWorkHoursOnContact"/>
-    <field name="dailyWorkHours"/>
-    <field name="workArea" canNew="true"/>
+    <field name="salaryType"/>
+    <field name="dailyWorkHoursOnContact" hidden="true"/>
+    <field name="dailyWorkHours" readonlyIf="salaryType == 1"/>
+    <field name="workArea" canNew="true" hidden="true"/>
     <field name="isAbsence"/>
     <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
       grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
@@ -18,7 +19,8 @@
     <field name="penaltyCloths"/>
     <field name="penaltyWereHouse"/>
     <field name="penaltyCompany"/>
-    <field name="statusShiftType"/>
+    <field name="employeeActiveSalaryContract" hidden="false"/>
+    <field name="statusShiftType" hidden="true"/>
   </grid>
 
   <form name="hr-employee-daily-activity-line-ru-form" title="Daily Activity Line"
@@ -38,6 +40,8 @@
       <field name="penaltyWereHouse"/>
       <field name="penaltyCompany"/>
       <field name="statusShiftType"/>
+      <field name="salaryType"/>
+      <field name="employeeActiveSalaryContract"/>
     </panel>
   </form>
 

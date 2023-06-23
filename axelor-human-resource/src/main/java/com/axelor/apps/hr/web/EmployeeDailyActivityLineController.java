@@ -17,14 +17,16 @@
  */
 package com.axelor.apps.hr.web;
 
+import java.util.List;
+
 import com.axelor.apps.hr.db.EmployeeContractRu;
 import com.axelor.apps.hr.db.EmployeeDailyActivityLineRu;
 import com.axelor.apps.hr.db.EmployeeRu;
+import com.axelor.apps.hr.db.EmployeeSalaryRu;
 import com.axelor.exception.AxelorException;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
-import java.util.List;
 
 @Singleton
 public class EmployeeDailyActivityLineController {
@@ -40,10 +42,21 @@ public class EmployeeDailyActivityLineController {
     }
 
     List<EmployeeContractRu> contractList = employee.getEmployeeContract();
+    boolean employeeActiveContract = false;
     for (EmployeeContractRu contract : contractList) {
       if (contract.getStatus() == 2) { // contract is active
+    	  employeeActiveContract = true;
         response.setValue("dailyWorkHoursOnContact", contract.getDailyWorkHours());
+        for(EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
+        	if(employeeSalary.getCurrentlyActive()) {
+        		response.setValue("salaryType", employeeSalary.getSalaryType());
+        		response.setValue("employeeActiveSalaryContract", employeeSalary);
+        	}
+        }
       }
+    }
+    if(!employeeActiveContract) {
+    	response.setAlert("Employee des not have any active contract Please add contract on Employee form!");
     }
   }
 }
