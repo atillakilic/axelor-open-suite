@@ -17,71 +17,39 @@
     <field name="currentlyActive" title="Currently Active"/>
     <field name="salaryType" title="Salary Type" onChange=""/>
     <field name="fixSalary" title="Fix Salary" readonlyIf="salaryType != 1" onChange=""/>
-    <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save"/>
+    <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2"/>
 
-    <field name="one" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="01"/>
-    <field name="two" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="02"/>
-    <field name="three" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="03"/>
-    <field name="four" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="04"/>
-    <field name="five" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="05"/>
-    <field name="six" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="06"/>
-    <field name="seven" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="07"/>
-    <field name="eight" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="08"/>
-    <field name="nine" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="09"/>
-    <field name="ten" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="10"/>
-    <field name="eleven" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="11"/>
-    <field name="twelve" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="12"/>
-    <field name="thriteen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="13"/>
-    <field name="fourteen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="14"/>
-    <field name="fifteen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="15"/>
-    <field name="sixteen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="16"/>
-    <field name="seventeen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="17"/>
-    <field name="eighteen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="18"/>
-    <field name="nineteen" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="19"/>
-    <field name="twenty" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="20"/>
-    <field name="twentyOne" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="21"/>
-    <field name="twentyTwo" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="22"/>
-    <field name="twentyThree" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="23"/>
-    <field name="twentyFour" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="24"/>
-    <field name="twentyFive" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="25"/>
-    <field name="twentySix" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="26"/>
-    <field name="twentySeven" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="27"/>
-    <field name="twentyEight" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="28"/>
-    <field name="twentyNine" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="29"/>
-    <field name="thirty" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="30"/>
-    <field name="thirtyOne" width="60" readonlyIf="salaryType != 2" hidden="true"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="31"/>
+    <field name="one" width="60" readonlyIf="salaryType != 2" hidden="true" title="01"/>
+    <field name="two" width="60" readonlyIf="salaryType != 2" hidden="true" title="02"/>
+    <field name="three" width="60" readonlyIf="salaryType != 2" hidden="true" title="03"/>
+    <field name="four" width="60" readonlyIf="salaryType != 2" hidden="true" title="04"/>
+    <field name="five" width="60" readonlyIf="salaryType != 2" hidden="true" title="05"/>
+    <field name="six" width="60" readonlyIf="salaryType != 2" hidden="true" title="06"/>
+    <field name="seven" width="60" readonlyIf="salaryType != 2" hidden="true" title="07"/>
+    <field name="eight" width="60" readonlyIf="salaryType != 2" hidden="true" title="08"/>
+    <field name="nine" width="60" readonlyIf="salaryType != 2" hidden="true" title="09"/>
+    <field name="ten" width="60" readonlyIf="salaryType != 2" hidden="true" title="10"/>
+    <field name="eleven" width="60" readonlyIf="salaryType != 2" hidden="true" title="11"/>
+    <field name="twelve" width="60" readonlyIf="salaryType != 2" hidden="true" title="12"/>
+    <field name="thriteen" width="60" readonlyIf="salaryType != 2" hidden="true" title="13"/>
+    <field name="fourteen" width="60" readonlyIf="salaryType != 2" hidden="true" title="14"/>
+    <field name="fifteen" width="60" readonlyIf="salaryType != 2" hidden="true" title="15"/>
+    <field name="sixteen" width="60" readonlyIf="salaryType != 2" hidden="true" title="16"/>
+    <field name="seventeen" width="60" readonlyIf="salaryType != 2" hidden="true" title="17"/>
+    <field name="eighteen" width="60" readonlyIf="salaryType != 2" hidden="true" title="18"/>
+    <field name="nineteen" width="60" readonlyIf="salaryType != 2" hidden="true" title="19"/>
+    <field name="twenty" width="60" readonlyIf="salaryType != 2" hidden="true" title="20"/>
+    <field name="twentyOne" width="60" readonlyIf="salaryType != 2" hidden="true" title="21"/>
+    <field name="twentyTwo" width="60" readonlyIf="salaryType != 2" hidden="true" title="22"/>
+    <field name="twentyThree" width="60" readonlyIf="salaryType != 2" hidden="true" title="23"/>
+    <field name="twentyFour" width="60" readonlyIf="salaryType != 2" hidden="true" title="24"/>
+    <field name="twentyFive" width="60" readonlyIf="salaryType != 2" hidden="true" title="25"/>
+    <field name="twentySix" width="60" readonlyIf="salaryType != 2" hidden="true" title="26"/>
+    <field name="twentySeven" width="60" readonlyIf="salaryType != 2" hidden="true" title="27"/>
+    <field name="twentyEight" width="60" readonlyIf="salaryType != 2" hidden="true" title="28"/>
+    <field name="twentyNine" width="60" readonlyIf="salaryType != 2" hidden="true" title="29"/>
+    <field name="thirty" width="60" readonlyIf="salaryType != 2" hidden="true" title="30"/>
+    <field name="thirtyOne" width="60" readonlyIf="salaryType != 2" hidden="true" title="31"/>
     <field name="totalSalary" readonlyIf="true" title="Total Salary"/>
   </grid>
 
@@ -95,82 +63,48 @@
         onClick="action-emp-salary-method-print-salary-salary-report"/>
     </toolbar>
 
-    <hilite background="warning" if="salaryType == 1"/>
-
     <field name="employeeRu" title="Employee"/>
     <field name="dateOfStart" title="Date"/>
 
     <field name="salaryType" title="Salary Type" onChange=""/>
     <field name="fixSalary" title="Fix Salary" readonlyIf="salaryType != 1" onChange=""/>
-    <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save"/>
+    <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2"/>
 
-    <field name="one" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="01"/>
-    <field name="two" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="02"/>
-    <field name="three" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="03"/>
-    <field name="four" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="04"/>
-    <field name="five" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="05"/>
-    <field name="six" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="06"/>
-    <field name="seven" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="07"/>
-    <field name="eight" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="08"/>
-    <field name="nine" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="09"/>
-    <field name="ten" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="10"/>
-    <field name="eleven" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="11"/>
-    <field name="twelve" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="12"/>
-    <field name="thriteen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="13"/>
-    <field name="fourteen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="14"/>
-    <field name="fifteen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="15"/>
-    <field name="sixteen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="16"/>
-    <field name="seventeen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="17"/>
-    <field name="eighteen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="18"/>
-    <field name="nineteen" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="19"/>
-    <field name="twenty" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="20"/>
-    <field name="twentyOne" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="21"/>
-    <field name="twentyTwo" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="22"/>
-    <field name="twentyThree" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="23"/>
-    <field name="twentyFour" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="24"/>
-    <field name="twentyFive" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="25"/>
-    <field name="twentySix" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="26"/>
-    <field name="twentySeven" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="27"/>
-    <field name="twentyEight" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="28"/>
-    <field name="twentyNine" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="29"/>
-    <field name="thirty" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="30"/>
-    <field name="thirtyOne" width="60" readonlyIf="salaryType != 2"
-      onChange="action-employee-salary-ru-method-calculate-salary,save" title="31"/>
+    <field name="one" width="60" readonlyIf="salaryType != 2" title="01"/>
+    <field name="two" width="60" readonlyIf="salaryType != 2" title="02"/>
+    <field name="three" width="60" readonlyIf="salaryType != 2" title="03"/>
+    <field name="four" width="60" readonlyIf="salaryType != 2" title="04"/>
+    <field name="five" width="60" readonlyIf="salaryType != 2" title="05"/>
+    <field name="six" width="60" readonlyIf="salaryType != 2" title="06"/>
+    <field name="seven" width="60" readonlyIf="salaryType != 2" title="07"/>
+    <field name="eight" width="60" readonlyIf="salaryType != 2" title="08"/>
+    <field name="nine" width="60" readonlyIf="salaryType != 2" title="09"/>
+    <field name="ten" width="60" readonlyIf="salaryType != 2" title="10"/>
+    <field name="eleven" width="60" readonlyIf="salaryType != 2" title="11"/>
+    <field name="twelve" width="60" readonlyIf="salaryType != 2" title="12"/>
+    <field name="thriteen" width="60" readonlyIf="salaryType != 2" title="13"/>
+    <field name="fourteen" width="60" readonlyIf="salaryType != 2" title="14"/>
+    <field name="fifteen" width="60" readonlyIf="salaryType != 2" title="15"/>
+    <field name="sixteen" width="60" readonlyIf="salaryType != 2" title="16"/>
+    <field name="seventeen" width="60" readonlyIf="salaryType != 2" title="17"/>
+    <field name="eighteen" width="60" readonlyIf="salaryType != 2" title="18"/>
+    <field name="nineteen" width="60" readonlyIf="salaryType != 2" title="19"/>
+    <field name="twenty" width="60" readonlyIf="salaryType != 2" title="20"/>
+    <field name="twentyOne" width="60" readonlyIf="salaryType != 2" title="21"/>
+    <field name="twentyTwo" width="60" readonlyIf="salaryType != 2" title="22"/>
+    <field name="twentyThree" width="60" readonlyIf="salaryType != 2" title="23"/>
+    <field name="twentyFour" width="60" readonlyIf="salaryType != 2" title="24"/>
+    <field name="twentyFive" width="60" readonlyIf="salaryType != 2" title="25"/>
+    <field name="twentySix" width="60" readonlyIf="salaryType != 2" title="26"/>
+    <field name="twentySeven" width="60" readonlyIf="salaryType != 2" title="27"/>
+    <field name="twentyEight" width="60" readonlyIf="salaryType != 2" title="28"/>
+    <field name="twentyNine" width="60" readonlyIf="salaryType != 2" title="29"/>
+    <field name="thirty" width="60" readonlyIf="salaryType != 2" title="30"/>
+    <field name="thirtyOne" width="60" readonlyIf="salaryType != 2" title="31"/>
     <field name="totalSalary" readonlyIf="true" title="Total Salary"/>
   </grid>
 
-  <form name="employee-salary-status-ru-form" title="Employee Salary"
+  <form name="employee-salary-status-ru-form" onLoad="" title="Employee Salary"
     model="com.axelor.apps.hr.db.EmployeeSalaryRu" width="large">
     <panel name="mainPanel" colSpan="12">
       <field name="employeeRu" title="Employee"/>
@@ -178,80 +112,56 @@
       <field name="dateOfStart" title="Date"/>
       <spacer/>
       <field name="salaryType" colSpan="4" title="Salary Type" onChange=""/>
-      <field name="hourlyRate" colSpan="4" title="Hourly Rate"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
+      <field name="hourlyRate" colSpan="4" title="Hourly Rate"/>
       <field name="fixSalary" colSpan="4" title="Fix Salary" onChange=""/>
-      <field name="totalSalary" title="Total Salary" readonly="true"/>
+      <field name="totalSalary" title="Total Salary" readonly="true" colSpan="2"/>
+      <field name="penaltyNotCame" title="Penalty NotCame" readonly="true" colSpan="2"
+        hidden="true"/>
+      <field name="penaltyCloths" title="Penalty Cloths" readonly="true" colSpan="2"
+        hidden="true"/>
+      <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true" colSpan="2"
+        hidden="true"/>
+      <field name="penaltyCompany" title="Penalty Company" readonly="true" colSpan="2"
+        hidden="true"/>
 
       <spacer colSpan="12"/>
     </panel>
 
-    <panel name="dailyHors" title="Daily Work Hour" colSpan="12" readonlyIf="salaryType != 2">
-      <field name="one" colSpan="2" title="01"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="two" colSpan="2" title="02"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="three" colSpan="2" title="03"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="four" colSpan="2" title="04"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="five" colSpan="2" title="05"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="six" colSpan="2" title="06"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="seven" colSpan="2" title="07"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="eight" colSpan="2" title="08"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="nine" colSpan="2" title="09"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="ten" colSpan="2" title="10"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="eleven" colSpan="2" title="11"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twelve" colSpan="2" title="12"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="thriteen" colSpan="2" title="13"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="fourteen" colSpan="2" title="14"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="fifteen" colSpan="2" title="15"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="sixteen" colSpan="2" title="16"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="seventeen" colSpan="2" title="17"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="eighteen" colSpan="2" title="18"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="nineteen" colSpan="2" title="19"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twenty" colSpan="2" title="20"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyOne" colSpan="2" title="21"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyTwo" colSpan="2" title="22"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyThree" colSpan="2" title="23"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyFour" colSpan="2" title="24"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyFive" colSpan="2" title="25"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentySix" colSpan="2" title="26"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentySeven" colSpan="2" title="27"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyEight" colSpan="2" title="28"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="twentyNine" colSpan="2" title="29"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="thirty" colSpan="2" title="30"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-      <field name="thirtyOne" colSpan="2" title="31"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
+    <panel name="dailyHors" title="Daily Work Hour" colSpan="12" readonly="true" hidden="true">
+      <field name="one" colSpan="2" title="01"/>
+      <field name="two" colSpan="2" title="02"/>
+      <field name="three" colSpan="2" title="03"/>
+      <field name="four" colSpan="2" title="04"/>
+      <field name="five" colSpan="2" title="05"/>
+      <field name="six" colSpan="2" title="06"/>
+      <field name="seven" colSpan="2" title="07"/>
+      <field name="eight" colSpan="2" title="08"/>
+      <field name="nine" colSpan="2" title="09"/>
+      <field name="ten" colSpan="2" title="10"/>
+      <field name="eleven" colSpan="2" title="11"/>
+      <field name="twelve" colSpan="2" title="12"/>
+      <field name="thriteen" colSpan="2" title="13"/>
+      <field name="fourteen" colSpan="2" title="14"/>
+      <field name="fifteen" colSpan="2" title="15"/>
+      <field name="sixteen" colSpan="2" title="16"/>
+      <field name="seventeen" colSpan="2" title="17"/>
+      <field name="eighteen" colSpan="2" title="18"/>
+      <field name="nineteen" colSpan="2" title="19"/>
+      <field name="twenty" colSpan="2" title="20"/>
+      <field name="twentyOne" colSpan="2" title="21"/>
+      <field name="twentyTwo" colSpan="2" title="22"/>
+      <field name="twentyThree" colSpan="2" title="23"/>
+      <field name="twentyFour" colSpan="2" title="24"/>
+      <field name="twentyFive" colSpan="2" title="25"/>
+      <field name="twentySix" colSpan="2" title="26"/>
+      <field name="twentySeven" colSpan="2" title="27"/>
+      <field name="twentyEight" colSpan="2" title="28"/>
+      <field name="twentyNine" colSpan="2" title="29"/>
+      <field name="thirty" colSpan="2" title="30"/>
+      <field name="thirtyOne" colSpan="2" title="31"/>
     </panel>
 
-    <panel name="salaryTypePanel" title="Salary Type" colSpan="12">
+    <panel name="salaryTypePanel" title="Salary Type" colSpan="12" readonly="true" hidden="true">
       <field name="oneSalaryType" colSpan="2" title="01"/>
       <field name="twoSalaryType" colSpan="2" title="02"/>
       <field name="threeSalaryType" colSpan="2" title="03"/>
@@ -285,9 +195,10 @@
       <field name="thirtyOneSalaryType" colSpan="2" title="31"/>
     </panel>
 
-	<panel-related name="dailyActivityLinePanel" field="dailyActivityLine" colSpan="12" readonly="true"
-        canEdit="false" form-view="hr-employee-daily-activity-line-ru-form"
-        grid-view="hr-employee-daily-activity-line-ru-grid"/>
+    <panel-related name="dailyActivityLinePanel" field="dailyActivityLine"
+      colSpan="12" readonly="true" canEdit="false"
+      form-view="hr-employee-daily-activity-line-ru-form"
+      grid-view="hr-employee-daily-activity-line-ru-grid"/>
 
   </form>
 
@@ -299,76 +210,44 @@
       <field name="dateOfStart" title="Date"/>
       <spacer/>
       <field name="salaryType" colSpan="4" title="Salary Type" onChange=""/>
-      <field name="hourlyRate" colSpan="4" title="Hourly Rate" readonlyIf="salaryType != 2"
-        onChange="action-employee-salary-ru-method-calculate-salary,save"/>
+      <field name="hourlyRate" colSpan="4" title="Hourly Rate" readonlyIf="salaryType != 2"/>
       <field name="fixSalary" colSpan="4" title="Fix Salary" readonlyIf="salaryType != 1"
         onChange=""/>
       <field name="totalSalary" title="Total Salary" readonly="true"/>
       <spacer colSpan="12"/>
       <panel name="dailyHors" title="Daily Work Hour" colSpan="12"
-        readonlyIf="salaryType != 2">
-        <field name="one" colSpan="2" title="01"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="two" colSpan="2" title="02"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="three" colSpan="2" title="03"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="four" colSpan="2" title="04"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="five" colSpan="2" title="05"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="six" colSpan="2" title="06"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="seven" colSpan="2" title="07"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="eight" colSpan="2" title="08"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="nine" colSpan="2" title="09"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="ten" colSpan="2" title="10"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="eleven" colSpan="2" title="11"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twelve" colSpan="2" title="12"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="thriteen" colSpan="2" title="13"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="fourteen" colSpan="2" title="14"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="fifteen" colSpan="2" title="15"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="sixteen" colSpan="2" title="16"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="seventeen" colSpan="2" title="17"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="eighteen" colSpan="2" title="18"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="nineteen" colSpan="2" title="19"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twenty" colSpan="2" title="20"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyOne" colSpan="2" title="21"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyTwo" colSpan="2" title="22"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyThree" colSpan="2" title="23"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyFour" colSpan="2" title="24"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyFive" colSpan="2" title="25"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentySix" colSpan="2" title="26"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentySeven" colSpan="2" title="27"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyEight" colSpan="2" title="28"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="twentyNine" colSpan="2" title="29"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="thirty" colSpan="2" title="30"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
-        <field name="thirtyOne" colSpan="2" title="31"
-          onChange="action-employee-salary-ru-method-calculate-salary,save"/>
+        readonly="true" hidden="true">
+        <field name="one" colSpan="2" title="01"/>
+        <field name="two" colSpan="2" title="02"/>
+        <field name="three" colSpan="2" title="03"/>
+        <field name="four" colSpan="2" title="04"/>
+        <field name="five" colSpan="2" title="05"/>
+        <field name="six" colSpan="2" title="06"/>
+        <field name="seven" colSpan="2" title="07"/>
+        <field name="eight" colSpan="2" title="08"/>
+        <field name="nine" colSpan="2" title="09"/>
+        <field name="ten" colSpan="2" title="10"/>
+        <field name="eleven" colSpan="2" title="11"/>
+        <field name="twelve" colSpan="2" title="12"/>
+        <field name="thriteen" colSpan="2" title="13"/>
+        <field name="fourteen" colSpan="2" title="14"/>
+        <field name="fifteen" colSpan="2" title="15"/>
+        <field name="sixteen" colSpan="2" title="16"/>
+        <field name="seventeen" colSpan="2" title="17"/>
+        <field name="eighteen" colSpan="2" title="18"/>
+        <field name="nineteen" colSpan="2" title="19"/>
+        <field name="twenty" colSpan="2" title="20"/>
+        <field name="twentyOne" colSpan="2" title="21"/>
+        <field name="twentyTwo" colSpan="2" title="22"/>
+        <field name="twentyThree" colSpan="2" title="23"/>
+        <field name="twentyFour" colSpan="2" title="24"/>
+        <field name="twentyFive" colSpan="2" title="25"/>
+        <field name="twentySix" colSpan="2" title="26"/>
+        <field name="twentySeven" colSpan="2" title="27"/>
+        <field name="twentyEight" colSpan="2" title="28"/>
+        <field name="twentyNine" colSpan="2" title="29"/>
+        <field name="thirty" colSpan="2" title="30"/>
+        <field name="thirtyOne" colSpan="2" title="31"/>
       </panel>
     </panel>
   </form>
@@ -387,6 +266,7 @@
     <attribute name="value" for="totalSalary" expr="eval: fixSalary"/>
   </action-attrs>
 
+  <!-- Salary calculation method -->
   <action-method name="action-employee-salary-ru-method-calculate-salary">
     <call class="com.axelor.apps.hr.web.EmployeeSalaryController" method="calculateSalary"/>
   </action-method>

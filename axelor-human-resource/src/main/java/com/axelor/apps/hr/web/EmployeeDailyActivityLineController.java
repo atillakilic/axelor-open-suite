@@ -17,8 +17,6 @@
  */
 package com.axelor.apps.hr.web;
 
-import java.util.List;
-
 import com.axelor.apps.hr.db.EmployeeContractRu;
 import com.axelor.apps.hr.db.EmployeeDailyActivityLineRu;
 import com.axelor.apps.hr.db.EmployeeRu;
@@ -27,6 +25,8 @@ import com.axelor.exception.AxelorException;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
+import java.time.LocalDate;
+import java.util.List;
 
 @Singleton
 public class EmployeeDailyActivityLineController {
@@ -36,6 +36,7 @@ public class EmployeeDailyActivityLineController {
     EmployeeDailyActivityLineRu employeeDailyActivityLine =
         request.getContext().asType(EmployeeDailyActivityLineRu.class);
     EmployeeRu employee = employeeDailyActivityLine.getEmployee();
+    LocalDate dailyActivityDate = employeeDailyActivityLine.getActivityDate();
 
     if (employee == null) {
       return;
@@ -43,20 +44,53 @@ public class EmployeeDailyActivityLineController {
 
     List<EmployeeContractRu> contractList = employee.getEmployeeContract();
     boolean employeeActiveContract = false;
+    boolean employeeActiveSalary = false;
+    boolean employeeActiveSalaryMonthIsSameDailyActivity = false;
+
     for (EmployeeContractRu contract : contractList) {
       if (contract.getStatus() == 2) { // contract is active
-    	  employeeActiveContract = true;
+        employeeActiveContract = true;
         response.setValue("dailyWorkHoursOnContact", contract.getDailyWorkHours());
-        for(EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
-        	if(employeeSalary.getCurrentlyActive()) {
-        		response.setValue("salaryType", employeeSalary.getSalaryType());
-        		response.setValue("employeeActiveSalaryContract", employeeSalary);
-        	}
+        for (EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
+          if (employeeSalary.getCurrentlyActive()) {
+            employeeActiveSalary = true;
+            LocalDate salaryMonthDate = employeeSalary.getDateOfStart();
+            if (dailyActivityDate.getMonth() == salaryMonthDate.getMonth()) {
+              employeeActiveSalaryMonthIsSameDailyActivity = true;
+              response.setValue("salaryType", employeeSalary.getSalaryType());
+              response.setValue("employeeActiveSalaryContract", employeeSalary);
+              response.setValue("isAlert", false);
+              response.setValue("comments", "");
+            }
+          }
         }
       }
     }
-    if(!employeeActiveContract) {
-    	response.setAlert("Employee des not have any active contract Please add contract on Employee form!");
+    if (!employeeActiveContract) {
+    	response.setValue("isAlert", true);
+      response.setValue(
+          "comments",
+          "Employee does not have any active contract Please add contract on Employee form.");
+      response.setFlash(
+          "Employee does not have any active contract Please add contract on Employee form.");
+      return;
+    }
+
+    if (!employeeActiveSalary) {
+    	response.setValue("isAlert", true);
+      response.setValue("comments", "Employee do not have active Salary on contract.");
+      response.setFlash("Employee do not have active Salary on contract.");
+      return;
+    }
+
+    if (!employeeActiveSalaryMonthIsSameDailyActivity) {
+    	response.setValue("isAlert", true);
+      response.setValue(
+          "comments",
+          "Employee salary month is diffrent then current month, please correct on contract form.");
+      response.setFlash(
+          "Employee salary month is diffrent then current month, please correct on contract form.");
+      return;
     }
   }
 }

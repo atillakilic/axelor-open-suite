@@ -53,9 +53,12 @@
       form-view="hr-employee-not-came-line-ru-form" grid-view="hr-employee-not-came-line-ru-grid"
       canEdit="true"/>
 
-	<panel>
-		<button title="Confirm" onClick="save,action-employee-daily-activity-set-daily-activity-data-on-salary" name="confirm" prompt="Are you sure you want to confirm daily activity record? it will not editable once it is confirm." />
-	</panel>
+    <panel>
+      <button title="Confirm"
+        onClick="save,action-employee-daily-activity-set-daily-activity-data-on-salary"
+        name="confirm"
+        prompt="Are you sure you want to confirm daily activity record? it will not editable once it is confirm."/>
+    </panel>
 
   </form>
 
@@ -72,11 +75,12 @@
     <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="calculateEmployeeWork"/>
   </action-method>
-  
-    <action-method name="action-employee-daily-activity-set-daily-activity-data-on-salary">
-       <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+
+  <action-method
+    name="action-employee-daily-activity-set-daily-activity-data-on-salary">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="updateRecordOnSalary"/>
-      
-    </action-method>
+
+  </action-method>
 
 </object-views>

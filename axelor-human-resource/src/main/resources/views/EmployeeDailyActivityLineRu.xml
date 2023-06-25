@@ -6,6 +6,7 @@
   <grid name="hr-employee-daily-activity-line-ru-grid" title="Daily Activity Line"
     onNew="action-employee-daily-activity-line-attrs-set-date" editable="true"
     model="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu">
+    <hilite if="isAlert" color="danger"/>
     <field name="activityDate" hidden="true"/>
     <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
     <field name="salaryType"/>
@@ -19,8 +20,10 @@
     <field name="penaltyCloths"/>
     <field name="penaltyWereHouse"/>
     <field name="penaltyCompany"/>
-    <field name="employeeActiveSalaryContract" hidden="false"/>
+    <field name="employeeActiveSalaryContract" hidden="true"/>
     <field name="statusShiftType" hidden="true"/>
+    <field name="comments"/>
+    <field name="isAlert" hidden="true"/>
   </grid>
 
   <form name="hr-employee-daily-activity-line-ru-form" title="Daily Activity Line"
@@ -28,10 +31,8 @@
     model="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
       <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
-      <field name="activityDate"/>
-      <field name="dailyWorkHoursOnContact"/>
+      <field name="salaryType"/>
       <field name="dailyWorkHours"/>
-      <field name="workArea" canNew="true"/>
       <field name="isAbsence"/>
       <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
         grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
@@ -39,9 +40,19 @@
       <field name="penaltyCloths"/>
       <field name="penaltyWereHouse"/>
       <field name="penaltyCompany"/>
-      <field name="statusShiftType"/>
-      <field name="salaryType"/>
-      <field name="employeeActiveSalaryContract"/>
+      <field name="comments"/>
+
+      <panel hidden="true">
+        <field name="isAlert"/>
+        <field name="activityDate"/>
+        <field name="dailyWorkHoursOnContact"/>
+        <field name="workArea" canNew="true"/>
+        <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
+          grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
+        <field name="statusShiftType"/>
+        <field name="employeeActiveSalaryContract"/>
+      </panel>
+
     </panel>
   </form>
 

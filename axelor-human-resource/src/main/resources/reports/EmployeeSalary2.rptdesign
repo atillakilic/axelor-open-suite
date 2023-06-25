@@ -276,192 +276,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="heading">thirtyone</text-property>
                 </structure>
                 <structure>
-                    <property name="columnName">onesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">onesalarytype</text-property>
-                    <text-property name="heading">onesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twosalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twosalarytype</text-property>
-                    <text-property name="heading">twosalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">threesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">threesalarytype</text-property>
-                    <text-property name="heading">threesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">foursalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">foursalarytype</text-property>
-                    <text-property name="heading">foursalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">fivesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">fivesalarytype</text-property>
-                    <text-property name="heading">fivesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">sixsalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">sixsalarytype</text-property>
-                    <text-property name="heading">sixsalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">sevensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">sevensalarytype</text-property>
-                    <text-property name="heading">sevensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">eightsalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">eightsalarytype</text-property>
-                    <text-property name="heading">eightsalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">ninesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">ninesalarytype</text-property>
-                    <text-property name="heading">ninesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">tensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">tensalarytype</text-property>
-                    <text-property name="heading">tensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">elevensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">elevensalarytype</text-property>
-                    <text-property name="heading">elevensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twelvesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twelvesalarytype</text-property>
-                    <text-property name="heading">twelvesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">thriteensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">thriteensalarytype</text-property>
-                    <text-property name="heading">thriteensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">fourteensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">fourteensalarytype</text-property>
-                    <text-property name="heading">fourteensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">fifteensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">fifteensalarytype</text-property>
-                    <text-property name="heading">fifteensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">sixteensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">sixteensalarytype</text-property>
-                    <text-property name="heading">sixteensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">seventeensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">seventeensalarytype</text-property>
-                    <text-property name="heading">seventeensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">eighteensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">eighteensalarytype</text-property>
-                    <text-property name="heading">eighteensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">nineteensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">nineteensalarytype</text-property>
-                    <text-property name="heading">nineteensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentysalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentysalarytype</text-property>
-                    <text-property name="heading">twentysalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentyonesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentyonesalarytype</text-property>
-                    <text-property name="heading">twentyonesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentytwosalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentytwosalarytype</text-property>
-                    <text-property name="heading">twentytwosalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentythreesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentythreesalarytype</text-property>
-                    <text-property name="heading">twentythreesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentyfoursalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentyfoursalarytype</text-property>
-                    <text-property name="heading">twentyfoursalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentyfivesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentyfivesalarytype</text-property>
-                    <text-property name="heading">twentyfivesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentysixsalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentysixsalarytype</text-property>
-                    <text-property name="heading">twentysixsalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentysevensalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentysevensalarytype</text-property>
-                    <text-property name="heading">twentysevensalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentyeightsalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentyeightsalarytype</text-property>
-                    <text-property name="heading">twentyeightsalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">twentyninesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">twentyninesalarytype</text-property>
-                    <text-property name="heading">twentyninesalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">thirtysalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">thirtysalarytype</text-property>
-                    <text-property name="heading">thirtysalarytype</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">thirtyonesalarytype</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">thirtyonesalarytype</text-property>
-                    <text-property name="heading">thirtyonesalarytype</text-property>
-                </structure>
-                <structure>
                     <property name="columnName">totalsal</property>
                     <property name="analysis">measure</property>
                     <text-property name="displayName">totalsal</text-property>
@@ -658,161 +472,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     </structure>
                     <structure>
                         <property name="position">38</property>
-                        <property name="name">onesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">39</property>
-                        <property name="name">twosalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">40</property>
-                        <property name="name">threesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">41</property>
-                        <property name="name">foursalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">42</property>
-                        <property name="name">fivesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">43</property>
-                        <property name="name">sixsalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">44</property>
-                        <property name="name">sevensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">45</property>
-                        <property name="name">eightsalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">46</property>
-                        <property name="name">ninesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">47</property>
-                        <property name="name">tensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">48</property>
-                        <property name="name">elevensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">49</property>
-                        <property name="name">twelvesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">50</property>
-                        <property name="name">thriteensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">51</property>
-                        <property name="name">fourteensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">52</property>
-                        <property name="name">fifteensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">53</property>
-                        <property name="name">sixteensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">54</property>
-                        <property name="name">seventeensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">55</property>
-                        <property name="name">eighteensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">56</property>
-                        <property name="name">nineteensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">57</property>
-                        <property name="name">twentysalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">58</property>
-                        <property name="name">twentyonesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">59</property>
-                        <property name="name">twentytwosalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">60</property>
-                        <property name="name">twentythreesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">61</property>
-                        <property name="name">twentyfoursalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">62</property>
-                        <property name="name">twentyfivesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">63</property>
-                        <property name="name">twentysixsalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">64</property>
-                        <property name="name">twentysevensalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">65</property>
-                        <property name="name">twentyeightsalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">66</property>
-                        <property name="name">twentyninesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">67</property>
-                        <property name="name">thirtysalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">68</property>
-                        <property name="name">thirtyonesalarytype</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">69</property>
                         <property name="name">totalsal</property>
                         <property name="dataType">decimal</property>
                     </structure>
@@ -1082,223 +741,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                 </structure>
                 <structure>
                     <property name="position">38</property>
-                    <property name="name">onesalarytype</property>
-                    <property name="nativeName">onesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">39</property>
-                    <property name="name">twosalarytype</property>
-                    <property name="nativeName">twosalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">40</property>
-                    <property name="name">threesalarytype</property>
-                    <property name="nativeName">threesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">41</property>
-                    <property name="name">foursalarytype</property>
-                    <property name="nativeName">foursalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">42</property>
-                    <property name="name">fivesalarytype</property>
-                    <property name="nativeName">fivesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">43</property>
-                    <property name="name">sixsalarytype</property>
-                    <property name="nativeName">sixsalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">44</property>
-                    <property name="name">sevensalarytype</property>
-                    <property name="nativeName">sevensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">45</property>
-                    <property name="name">eightsalarytype</property>
-                    <property name="nativeName">eightsalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">46</property>
-                    <property name="name">ninesalarytype</property>
-                    <property name="nativeName">ninesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">47</property>
-                    <property name="name">tensalarytype</property>
-                    <property name="nativeName">tensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">48</property>
-                    <property name="name">elevensalarytype</property>
-                    <property name="nativeName">elevensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">49</property>
-                    <property name="name">twelvesalarytype</property>
-                    <property name="nativeName">twelvesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">50</property>
-                    <property name="name">thriteensalarytype</property>
-                    <property name="nativeName">thriteensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">51</property>
-                    <property name="name">fourteensalarytype</property>
-                    <property name="nativeName">fourteensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">52</property>
-                    <property name="name">fifteensalarytype</property>
-                    <property name="nativeName">fifteensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">53</property>
-                    <property name="name">sixteensalarytype</property>
-                    <property name="nativeName">sixteensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">54</property>
-                    <property name="name">seventeensalarytype</property>
-                    <property name="nativeName">seventeensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">55</property>
-                    <property name="name">eighteensalarytype</property>
-                    <property name="nativeName">eighteensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">56</property>
-                    <property name="name">nineteensalarytype</property>
-                    <property name="nativeName">nineteensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">57</property>
-                    <property name="name">twentysalarytype</property>
-                    <property name="nativeName">twentysalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">58</property>
-                    <property name="name">twentyonesalarytype</property>
-                    <property name="nativeName">twentyonesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">59</property>
-                    <property name="name">twentytwosalarytype</property>
-                    <property name="nativeName">twentytwosalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">60</property>
-                    <property name="name">twentythreesalarytype</property>
-                    <property name="nativeName">twentythreesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">61</property>
-                    <property name="name">twentyfoursalarytype</property>
-                    <property name="nativeName">twentyfoursalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">62</property>
-                    <property name="name">twentyfivesalarytype</property>
-                    <property name="nativeName">twentyfivesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">63</property>
-                    <property name="name">twentysixsalarytype</property>
-                    <property name="nativeName">twentysixsalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">64</property>
-                    <property name="name">twentysevensalarytype</property>
-                    <property name="nativeName">twentysevensalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">65</property>
-                    <property name="name">twentyeightsalarytype</property>
-                    <property name="nativeName">twentyeightsalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">66</property>
-                    <property name="name">twentyninesalarytype</property>
-                    <property name="nativeName">twentyninesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">67</property>
-                    <property name="name">thirtysalarytype</property>
-                    <property name="nativeName">thirtysalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">68</property>
-                    <property name="name">thirtyonesalarytype</property>
-                    <property name="nativeName">thirtyonesalarytype</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">69</property>
                     <property name="name">totalsal</property>
                     <property name="nativeName">totalsal</property>
                     <property name="dataType">decimal</property>
@@ -1343,36 +785,6 @@ EmpSalary.twenty_nine as TwentyNine,
 EmpSalary.thirty as Thirty,
 EmpSalary.thirty_one as ThirtyOne,
 EmpSalary.one_salary_type as OneSalaryType,
-EmpSalary.two_salary_type as TwoSalaryType,
-EmpSalary.three_salary_type as ThreeSalaryType,
-EmpSalary.four_salary_type as FourSalaryType,
-EmpSalary.five_salary_type as FiveSalaryType,
-EmpSalary.six_salary_type as SixSalaryType,
-EmpSalary.seven_salary_type as SevenSalaryType,
-EmpSalary.eight_salary_type as EightSalaryType,
-EmpSalary.nine_salary_type as NineSalaryType,
-EmpSalary.ten_salary_type as TenSalaryType,
-EmpSalary.eleven_salary_type as ElevenSalaryType,
-EmpSalary.twelve_salary_type as TwelveSalaryType,
-EmpSalary.thriteen_salary_type as ThriteenSalaryType,
-EmpSalary.fourteen_salary_type as FourteenSalaryType,
-EmpSalary.fifteen_salary_type as FifteenSalaryType,
-EmpSalary.sixteen_salary_type as SixteenSalaryType,
-EmpSalary.seventeen_salary_type as SeventeenSalaryType,
-EmpSalary.eighteen_salary_type as EighteenSalaryType,
-EmpSalary.nineteen_salary_type as NineteenSalaryType,
-EmpSalary.twenty_salary_type as TwentySalaryType,
-EmpSalary.twenty_one_salary_type as TwentyOneSalaryType,
-EmpSalary.twenty_two_salary_type as TwentyTwoSalaryType,
-EmpSalary.twenty_three_salary_type as TwentyThreeSalaryType,
-EmpSalary.twenty_four_salary_type as TwentyFourSalaryType,
-EmpSalary.twenty_five_salary_type as TwentyFiveSalaryType,
-EmpSalary.twenty_six_salary_type as TwentySixSalaryType,
-EmpSalary.twenty_seven_salary_type as TwentySevenSalaryType,
-EmpSalary.twenty_eight_salary_type as TwentyEightSalaryType,
-EmpSalary.twenty_nine_salary_type as TwentyNineSalaryType,
-EmpSalary.thirty_salary_type as ThirtySalaryType,
-EmpSalary.thirty_one_salary_type as ThirtyOneSalaryType,
 
 
 EmpSalary.total_salary as TotalSal
@@ -1754,311 +1166,187 @@ left outer join hr_employee_ru as Employee on (EmpSalary.employee_ru = Employee.
                 </structure>
                 <structure>
                     <property name="name">One</property>
-                    <expression name="expression" type="javascript">if(row["onesalarytype"]==1){
- -1;
-}else{
-dataSetRow["one"];
-}</expression>
+                    <expression name="expression" type="javascript">dataSetRow["one"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Two</property>
-                    <expression name="expression" type="javascript">if(row["twosalarytype"]==1){
- -1;
-}else{
-row["two"]
-}</expression>
+                    <expression name="expression" type="javascript">row["two"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Three</property>
-                    <expression name="expression" type="javascript">if(row["threesalarytype"]==1){
- -1;
-}else{
-row["three"]
-}</expression>
+                    <expression name="expression" type="javascript">row["three"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Four</property>
-                    <expression name="expression" type="javascript">if(row["foursalarytype"]==1){
- -1;
-}else{
-row["four"]
-}</expression>
+                    <expression name="expression" type="javascript">row["four"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Five</property>
-                    <expression name="expression" type="javascript">if(row["fivesalarytype"]==1){
- -1;
-}else{
-row["five"]
-}</expression>
+                    <expression name="expression" type="javascript">row["five"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Six</property>
-                    <expression name="expression" type="javascript">if(row["sixsalarytype"]==1){
- -1;
-}else{
-row["six"]
-}</expression>
+                    <expression name="expression" type="javascript">row["six"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Seven</property>
-                    <expression name="expression" type="javascript">if(row["sevensalarytype"]==1){
- -1;
-}else{
-row["seven"]
-}</expression>
+                    <expression name="expression" type="javascript">row["seven"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Eight</property>
-                    <expression name="expression" type="javascript">if(row["eightsalarytype"]==1){
- -1;
-}else{
-row["eight"]
-}</expression>
+                    <expression name="expression" type="javascript">row["eight"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Nine</property>
-                    <expression name="expression" type="javascript">if(row["ninesalarytype"]==1){
- -1;
-}else{
-row["nine"]
-}</expression>
+                    <expression name="expression" type="javascript">row["nine"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Ten</property>
-                    <expression name="expression" type="javascript">if(row["tensalarytype"]==1){
- -1;
-}else{
-row["ten"]
-}</expression>
+                    <expression name="expression" type="javascript">row["ten"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Eleven</property>
-                    <expression name="expression" type="javascript">if(row["elevensalarytype"]==1){
- -1;
-}else{
-row["eleven"]
-}</expression>
+                    <expression name="expression" type="javascript">row["eleven"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twelve</property>
-                    <expression name="expression" type="javascript">if(row["twelvesalarytype"]==1){
- -1;
-}else{
-row["twelve"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twelve"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Thirteen</property>
-                    <expression name="expression" type="javascript">if(row["thriteensalarytype"]==1){
- -1;
-}else{
-row["thirteen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["thirteen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Fourteen</property>
-                    <expression name="expression" type="javascript">if(row["fourteensalarytype"]==1){
- -1;
-}else{
-row["fourteen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["fourteen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Fifteen</property>
-                    <expression name="expression" type="javascript">if(row["fifteensalarytype"]==1){
- -1;
-}else{
-row["fifteen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["fifteen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Sixteen</property>
-                    <expression name="expression" type="javascript">if(row["sixteensalarytype"]==1){
- -1;
-}else{
-row["sixteen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["sixteen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Seventeen</property>
-                    <expression name="expression" type="javascript">if(row["seventeensalarytype"]==1){
- -1;
-}else{
-row["seventeen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["seventeen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Eighteen</property>
-                    <expression name="expression" type="javascript">if(row["eighteensalarytype"]==1){
- -1;
-}else{
-row["eighteen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["eighteen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Nineteen</property>
-                    <expression name="expression" type="javascript">if(row["nineteensalarytype"]==1){
- -1;
-}else{
-row["nineteen"]
-}</expression>
+                    <expression name="expression" type="javascript">row["nineteen"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twenty</property>
-                    <expression name="expression" type="javascript">if(row["twentysalarytype"]==1){
- -1;
-}else{
-row["twenty"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twenty"]</expression>
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentyone</property>
-                    <expression name="expression" type="javascript">if(row["twentyonesalarytype"]==1){
- -1;
-}else{
-row["twentyone"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentyone"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentytwo</property>
-                    <expression name="expression" type="javascript">if(row["twentytwosalarytype"]==1){
- -1;
-}else{
-row["twentytwo"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentytwo"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentythree</property>
-                    <expression name="expression" type="javascript">if(row["twentythreesalarytype"]==1){
- -1;
-}else{
-row["twentythree"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentythree"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentyfour</property>
-                    <expression name="expression" type="javascript">if(row["twentyfoursalarytype"]==1){
- -1;
-}else{
-row["twentyfour"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentyfour"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentyfiv</property>
-                    <expression name="expression" type="javascript">if(row["twentyfivesalarytype"]==1){
- -1;
-}else{
-row["twentyfiv"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentyfiv"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentysix</property>
-                    <expression name="expression" type="javascript">if(row["twentysixsalarytype"]==1){
- -1;
-}else{
-row["twentysix"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentysix"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentyseven</property>
-                    <expression name="expression" type="javascript">if(row["twentysevensalarytype"]==1){
- -1;
-}else{
-row["twentyseven"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentyseven"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentyeight</property>
-                    <expression name="expression" type="javascript">if(row["twentyeightsalarytype"]==1){
- -1;
-}else{
-row["twentyeight"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentyeight"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Twentynine</property>
-                    <expression name="expression" type="javascript">if(row["twentyninesalarytype"]==1){
- -1;
-}else{
-row["twentynine"]
-}</expression>
+                    <expression name="expression" type="javascript">row["twentynine"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Thirty</property>
-                    <expression name="expression" type="javascript">if(row["thirtysalarytype"]==1){
- -1;
-}else{
-row["thirty"]
-}</expression>
+                    <expression name="expression" type="javascript">row["thirty"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Thirtyone</property>
-                    <expression name="expression" type="javascript">if(row["thirtyonesalarytype"]==1){
- -1;
-}else{
-row["thirtyone"]
-}</expression>
+                    <expression name="expression" type="javascript">row["thirtyone"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
@@ -2073,192 +1361,6 @@ row["thirtyone"]
                     <expression name="expression" type="javascript">row["totalsal"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">onesalarytype</property>
-                    <text-property name="displayName">onesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["onesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">fivesalarytype</property>
-                    <text-property name="displayName">fivesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["fivesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twosalarytype</property>
-                    <text-property name="displayName">twosalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twosalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">threesalarytype</property>
-                    <text-property name="displayName">threesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["threesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">foursalarytype</property>
-                    <text-property name="displayName">foursalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["foursalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">sixsalarytype</property>
-                    <text-property name="displayName">sixsalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["sixsalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">sevensalarytype</property>
-                    <text-property name="displayName">sevensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["sevensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">eightsalarytype</property>
-                    <text-property name="displayName">eightsalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["eightsalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">ninesalarytype</property>
-                    <text-property name="displayName">ninesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["ninesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">tensalarytype</property>
-                    <text-property name="displayName">tensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["tensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">elevensalarytype</property>
-                    <text-property name="displayName">elevensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["elevensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twelvesalarytype</property>
-                    <text-property name="displayName">twelvesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twelvesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">thriteensalarytype</property>
-                    <text-property name="displayName">thriteensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["thriteensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">fourteensalarytype</property>
-                    <text-property name="displayName">fourteensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["fourteensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">fifteensalarytype</property>
-                    <text-property name="displayName">fifteensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["fifteensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">sixteensalarytype</property>
-                    <text-property name="displayName">sixteensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["sixteensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">seventeensalarytype</property>
-                    <text-property name="displayName">seventeensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["seventeensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">eighteensalarytype</property>
-                    <text-property name="displayName">eighteensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["eighteensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">nineteensalarytype</property>
-                    <text-property name="displayName">nineteensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["nineteensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentysalarytype</property>
-                    <text-property name="displayName">twentysalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentysalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentyonesalarytype</property>
-                    <text-property name="displayName">twentyonesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentyonesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentytwosalarytype</property>
-                    <text-property name="displayName">twentytwosalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentytwosalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentythreesalarytype</property>
-                    <text-property name="displayName">twentythreesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentythreesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentyfoursalarytype</property>
-                    <text-property name="displayName">twentyfoursalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentyfoursalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentyfivesalarytype</property>
-                    <text-property name="displayName">twentyfivesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentyfivesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentysixsalarytype</property>
-                    <text-property name="displayName">twentysixsalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentysixsalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentysevensalarytype</property>
-                    <text-property name="displayName">twentysevensalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentysevensalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentyeightsalarytype</property>
-                    <text-property name="displayName">twentyeightsalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentyeightsalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">twentyninesalarytype</property>
-                    <text-property name="displayName">twentyninesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["twentyninesalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">thirtysalarytype</property>
-                    <text-property name="displayName">thirtysalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["thirtysalarytype"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">thirtyonesalarytype</property>
-                    <text-property name="displayName">thirtyonesalarytype</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["thirtyonesalarytype"]</expression>
-                    <property name="dataType">integer</property>
                 </structure>
             </list-property>
             <column id="5106">
@@ -2609,776 +1711,156 @@ row["thirtyone"]
                     </cell>
                     <cell id="5034">
                         <data id="5193">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["One"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["One"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">One</property>
                         </data>
                     </cell>
                     <cell id="5035">
                         <data id="5194">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Two"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Two"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Two</property>
                         </data>
                     </cell>
                     <cell id="5036">
                         <data id="5195">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Three"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Three"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Three</property>
                         </data>
                     </cell>
                     <cell id="5037">
                         <data id="5196">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Four"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Four"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Four</property>
                         </data>
                     </cell>
                     <cell id="5038">
                         <data id="5197">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Five"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Five"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Five</property>
                         </data>
                     </cell>
                     <cell id="5039">
                         <data id="5198">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Six"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Six"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Six</property>
                         </data>
                     </cell>
                     <cell id="5040">
                         <data id="5199">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Seven"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Seven"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Seven</property>
                         </data>
                     </cell>
                     <cell id="5041">
                         <data id="5201">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Eight"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Eight"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Eight</property>
                         </data>
                     </cell>
                     <cell id="5042">
                         <data id="5202">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Nine"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Nine"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Nine</property>
                         </data>
                     </cell>
                     <cell id="5043">
                         <data id="5203">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Ten"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Ten"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Ten</property>
                         </data>
                     </cell>
                     <cell id="5044">
                         <data id="5204">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Eleven"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Eleven"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Eleven</property>
                         </data>
                     </cell>
                     <cell id="5045">
                         <data id="5205">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twelve"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twelve"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twelve</property>
                         </data>
                     </cell>
                     <cell id="5046">
                         <data id="5206">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Thirteen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Thirteen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Thirteen</property>
                         </data>
                     </cell>
                     <cell id="5047">
                         <data id="5207">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Fourteen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Fourteen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Fourteen</property>
                         </data>
                     </cell>
                     <cell id="5048">
                         <data id="5208">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Fifteen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Fifteen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Fifteen</property>
                         </data>
                     </cell>
                     <cell id="5049">
                         <data id="5209">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Sixteen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Sixteen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Sixteen</property>
                         </data>
                     </cell>
                     <cell id="5050">
                         <data id="5210">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Seventeen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Seventeen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Seventeen</property>
                         </data>
                     </cell>
                     <cell id="5051">
                         <data id="5211">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Eighteen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Eighteen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Eighteen</property>
                         </data>
                     </cell>
                     <cell id="5052">
                         <data id="5213">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Nineteen"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Nineteen"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Nineteen</property>
                         </data>
                     </cell>
                     <cell id="5053">
                         <data id="5214">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twenty"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twenty"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twenty</property>
                         </data>
                     </cell>
                     <cell id="5054">
                         <data id="5215">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentyone"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentyone"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentyone</property>
                         </data>
                     </cell>
                     <cell id="5055">
                         <data id="5216">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentytwo"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentytwo"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentytwo</property>
                         </data>
                     </cell>
                     <cell id="5056">
                         <data id="5217">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentythree"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentythree"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentythree</property>
                         </data>
                     </cell>
                     <cell id="5057">
                         <data id="5218">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentyfour"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentyfour"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentyfour</property>
                         </data>
                     </cell>
                     <cell id="5058">
                         <data id="5219">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentyfiv"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentyfiv"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentyfiv</property>
                         </data>
                     </cell>
                     <cell id="5059">
                         <data id="5220">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentysix"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentysix"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentysix</property>
                         </data>
                     </cell>
                     <cell id="5060">
                         <data id="5221">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentyseven"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentyseven"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentyseven</property>
                         </data>
                     </cell>
                     <cell id="5061">
                         <data id="5222">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentyeight"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentyeight"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentyeight</property>
                         </data>
                     </cell>
                     <cell id="5062">
                         <data id="5223">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Twentynine"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Twentynine"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Twentynine</property>
                         </data>
                     </cell>
                     <cell id="5063">
                         <data id="5224">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Thirty"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Thirty"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Thirty</property>
                         </data>
                     </cell>
                     <cell id="5064">
                         <data id="5225">
-                            <list-property name="highlightRules">
-                                <structure>
-                                    <property name="operator">eq</property>
-                                    <property name="backgroundColor">#58595B</property>
-                                    <expression name="testExpr" type="javascript">row["Thirtyone"]</expression>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                </structure>
-                            </list-property>
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["Thirtyone"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">-1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">X</text-property>
-                                </structure>
-                            </list-property>
                             <property name="resultSetColumn">Thirtyone</property>
                         </data>
                     </cell>

@@ -18,6 +18,7 @@
     <decimal name="penaltyWereHouse" title="Penalty Werehous"/>
     <decimal name="penaltyCompany" title="Penalty Company"/>
     <boolean name="isAbsence" title="Absence"/>
+    <boolean name="isAlert" title="Is Alert"/>
     <many-to-one name="absenceReason" ref="com.axelor.apps.hr.db.EmployeeNotCameReason"
       title="Absence Reason"/>
     <string name="comments" title="Comments"/>
@@ -32,6 +33,7 @@
       selection="employee.salary.type.ru.select"/>
     <many-to-one name="employeeActiveSalaryContract" title="Employee Active contract"
       ref="com.axelor.apps.hr.db.EmployeeSalaryRu"/>
+
   </entity>
 
 </domain-models>

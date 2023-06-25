@@ -31,6 +31,7 @@ import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
 import com.google.inject.persist.Transactional;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +53,11 @@ public class EmployeeDailyActivityController {
     List<EmployeeDailyActivityLineRu> employeeDailyActivityLineRuList =
         new ArrayList<EmployeeDailyActivityLineRu>();
     for (EmployeeRu employee : employeeList) {
+
       List<EmployeeContractRu> contractList = employee.getEmployeeContract();
+      boolean employeeActiveSalary = false;
+      boolean employeeActiveSalaryMonthIsSameDailyActivity = false;
+
       for (EmployeeContractRu contract : contractList) {
         if (contract.getStatus() == 2) { // contract is active
           EmployeeDailyActivityLineRu dailyActivityLineRu = new EmployeeDailyActivityLineRu();
@@ -64,14 +69,31 @@ public class EmployeeDailyActivityController {
           //          EmployeeDailyActivityLineRu employeeDailyActivityLineRu =
           //
           // Beans.get(EmployeeDailyActivityLineRuRepository.class).save(dailyActivityLineRu);
+
+          for (EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
+            if (employeeSalary.getCurrentlyActive()) {
+            	employeeActiveSalary = true;
+            	LocalDate salaryMonthDate = employeeSalary.getDateOfStart();
+            	if (employeeDailyActivity.getTodayDate().getMonth() == salaryMonthDate.getMonth()) {
+            		employeeActiveSalaryMonthIsSameDailyActivity = true;
+            		dailyActivityLineRu.setSalaryType(employeeSalary.getSalaryType());
+                    dailyActivityLineRu.setEmployeeActiveSalaryContract(employeeSalary);
+                    dailyActivityLineRu.setComments("");
+                    dailyActivityLineRu.setIsAlert(false);
+            	}
+            }
+          }
           
-          for(EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
-	          	if(employeeSalary.getCurrentlyActive()) {
-	          		dailyActivityLineRu.setSalaryType(employeeSalary.getSalaryType());
-	          		dailyActivityLineRu.setEmployeeActiveSalaryContract(employeeSalary);
-	          	}
-          	}
-          
+          if (!employeeActiveSalary) {
+          	dailyActivityLineRu.setComments("Employee do not have active Salary on contract.");
+          	dailyActivityLineRu.setIsAlert(true);
+          }
+
+          if (!employeeActiveSalaryMonthIsSameDailyActivity) {
+        	dailyActivityLineRu.setComments("Employee salary month is diffrent then current month, please correct on contract form.");
+        	dailyActivityLineRu.setIsAlert(true);
+          }
+
           employeeDailyActivityLineRuList.add(dailyActivityLineRu);
           break;
         }
@@ -104,13 +126,12 @@ public class EmployeeDailyActivityController {
     response.setValue("totalworked", totalEmployeeWorked);
     response.setValue("totalEmpNotWorked", totalEmployeeNotWorked);
   }
-  
+
   public void updateRecordOnSalary(ActionRequest request, ActionResponse response)
-	      throws AxelorException {
-	  
+      throws AxelorException {
+
     EmployeeDailyActivityRu employeeDailyActivity =
         request.getContext().asType(EmployeeDailyActivityRu.class);
     Beans.get(EmployeeDailyActivityService.class).updateRecordOnSalary(employeeDailyActivity);
-
   }
 }

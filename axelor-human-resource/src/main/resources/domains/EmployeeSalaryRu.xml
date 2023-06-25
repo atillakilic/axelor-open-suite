@@ -94,6 +94,11 @@
 
     <decimal name="totalSalary" title="Total Salary"/>
 
+    <decimal name="penaltyNotCame" title="Penalty NotCame"/>
+    <decimal name="penaltyCloths" title="Penalty Cloths"/>
+    <decimal name="penaltyWereHouse" title="Penalty Werehous"/>
+    <decimal name="penaltyCompany" title="Penalty Company"/>
+
     <many-to-one name="employeeRu" title="Employee"
       ref="com.axelor.apps.hr.db.EmployeeRu"/>
 

@@ -19,7 +19,10 @@ package com.axelor.apps.hr.web;
 
 import com.axelor.apps.ReportFactory;
 import com.axelor.apps.hr.db.EmployeeSalaryRu;
+import com.axelor.apps.hr.service.employee.EmployeeSalaryService;
+import com.axelor.exception.AxelorException;
 import com.axelor.exception.service.TraceBackService;
+import com.axelor.inject.Beans;
 import com.axelor.meta.schema.actions.ActionView;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
@@ -31,47 +34,11 @@ import java.util.List;
 @Singleton
 public class EmployeeSalaryController {
 
-  public void calculateSalary(ActionRequest request, ActionResponse response) {
+  public void calculateSalary(ActionRequest request, ActionResponse response)
+      throws AxelorException {
     EmployeeSalaryRu employeeSalaryRu = request.getContext().asType(EmployeeSalaryRu.class);
-    BigDecimal totalSalary = new BigDecimal(0);
-    BigDecimal hourlyRate = employeeSalaryRu.getHourlyRate();
-    BigDecimal totalWorkHour = new BigDecimal(0);
-
-    totalWorkHour =
-        totalWorkHour
-            .add(employeeSalaryRu.getOne())
-            .add(employeeSalaryRu.getTwo())
-            .add(employeeSalaryRu.getThree())
-            .add(employeeSalaryRu.getFour())
-            .add(employeeSalaryRu.getFive())
-            .add(employeeSalaryRu.getSix())
-            .add(employeeSalaryRu.getSeven())
-            .add(employeeSalaryRu.getEight())
-            .add(employeeSalaryRu.getNine())
-            .add(employeeSalaryRu.getTen())
-            .add(employeeSalaryRu.getEleven())
-            .add(employeeSalaryRu.getTwelve())
-            .add(employeeSalaryRu.getThriteen())
-            .add(employeeSalaryRu.getFourteen())
-            .add(employeeSalaryRu.getFifteen())
-            .add(employeeSalaryRu.getSixteen())
-            .add(employeeSalaryRu.getSeventeen())
-            .add(employeeSalaryRu.getEighteen())
-            .add(employeeSalaryRu.getNineteen())
-            .add(employeeSalaryRu.getTwenty())
-            .add(employeeSalaryRu.getTwentyOne())
-            .add(employeeSalaryRu.getTwentyTwo())
-            .add(employeeSalaryRu.getTwentyThree())
-            .add(employeeSalaryRu.getTwentyFour())
-            .add(employeeSalaryRu.getTwentyFive())
-            .add(employeeSalaryRu.getTwentySix())
-            .add(employeeSalaryRu.getTwentySeven())
-            .add(employeeSalaryRu.getTwentyEight())
-            .add(employeeSalaryRu.getTwentyNine())
-            .add(employeeSalaryRu.getThirty())
-            .add(employeeSalaryRu.getThirtyOne());
-
-    totalSalary = hourlyRate.multiply(totalWorkHour);
+    BigDecimal totalSalary =
+        Beans.get(EmployeeSalaryService.class).calculateMonthlySalary(employeeSalaryRu);
     response.setValue("totalSalary", totalSalary);
   }
 
