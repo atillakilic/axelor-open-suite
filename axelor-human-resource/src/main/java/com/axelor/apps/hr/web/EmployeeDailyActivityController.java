@@ -72,26 +72,27 @@ public class EmployeeDailyActivityController {
 
           for (EmployeeSalaryRu employeeSalary : contract.getEmployeeSalary()) {
             if (employeeSalary.getCurrentlyActive()) {
-            	employeeActiveSalary = true;
-            	LocalDate salaryMonthDate = employeeSalary.getDateOfStart();
-            	if (employeeDailyActivity.getTodayDate().getMonth() == salaryMonthDate.getMonth()) {
-            		employeeActiveSalaryMonthIsSameDailyActivity = true;
-            		dailyActivityLineRu.setSalaryType(employeeSalary.getSalaryType());
-                    dailyActivityLineRu.setEmployeeActiveSalaryContract(employeeSalary);
-                    dailyActivityLineRu.setComments("");
-                    dailyActivityLineRu.setIsAlert(false);
-            	}
+              employeeActiveSalary = true;
+              LocalDate salaryMonthDate = employeeSalary.getDateOfStart();
+              if (employeeDailyActivity.getTodayDate().getMonth() == salaryMonthDate.getMonth()) {
+                employeeActiveSalaryMonthIsSameDailyActivity = true;
+                dailyActivityLineRu.setSalaryType(employeeSalary.getSalaryType());
+                dailyActivityLineRu.setEmployeeActiveSalaryContract(employeeSalary);
+                dailyActivityLineRu.setComments("");
+                dailyActivityLineRu.setIsAlert(false);
+              }
             }
           }
-          
+
           if (!employeeActiveSalary) {
-          	dailyActivityLineRu.setComments("Employee do not have active Salary on contract.");
-          	dailyActivityLineRu.setIsAlert(true);
+            dailyActivityLineRu.setComments("Employee do not have active Salary on contract.");
+            dailyActivityLineRu.setIsAlert(true);
           }
 
           if (!employeeActiveSalaryMonthIsSameDailyActivity) {
-        	dailyActivityLineRu.setComments("Employee salary month is diffrent then current month, please correct on contract form.");
-        	dailyActivityLineRu.setIsAlert(true);
+            dailyActivityLineRu.setComments(
+                "Employee salary month is diffrent then current month, please correct on contract form.");
+            dailyActivityLineRu.setIsAlert(true);
           }
 
           employeeDailyActivityLineRuList.add(dailyActivityLineRu);

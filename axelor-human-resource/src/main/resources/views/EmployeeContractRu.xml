@@ -38,6 +38,11 @@
         canEdit="true" form-view="employee-salary-status-ru-form"
         grid-view="employee-salary-status-ru-grid"/>
       <spacer colSpan="12"/>
+
+      <panel-related name="employeeExpencesPanel" field="employeeExpences"
+        colSpan="12" canEdit="true" form-view="hr-employee-expences-line-ru-form"
+        grid-view="hr-employee-expences-line-ru-grid"/>
+
     </panel>
 
     <panel name="mainPanel" colSpan="12" title="Contract End">

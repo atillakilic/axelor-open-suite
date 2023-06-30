@@ -129,6 +129,15 @@
   <menuitem name="hr-root-emp-mgt-conf" parent="hr-root-emp-mgt" title="Configuration"
     icon="fa-cog"/>
 
+  <menuitem name="hr-conf-emp-expences-type-ru" parent="hr-root-emp-mgt-conf"
+    title="Expences Type" action="hr.conf.emp.expences.type.ru"/>
+
+  <action-view name="hr.conf.emp.expences.type.ru" title="Expences Type"
+    model="com.axelor.apps.hr.db.ExpencesTypeRu">
+    <view type="grid" name="hr-employee-expences-type-ru-grid"/>
+    <view type="form" name="hr-employee-expences-type-ru-form"/>
+  </action-view>
+
   <menuitem name="hr-conf-emp-payment-status-ru" parent="hr-root-emp-mgt-conf"
     title="Payment Status" action="hr.conf.emp.payment.status.ru"/>
 

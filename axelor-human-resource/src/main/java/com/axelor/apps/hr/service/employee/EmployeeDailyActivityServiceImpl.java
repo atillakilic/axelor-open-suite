@@ -38,7 +38,6 @@ public class EmployeeDailyActivityServiceImpl implements EmployeeDailyActivitySe
 
     LocalDate dailyDate = dailyActivity.getTodayDate();
     int day = dailyDate.getDayOfMonth();
-    System.err.println(day);
 
     for (EmployeeDailyActivityLineRu activityLine : dailyActivity.getActivityRecord()) {
       if (activityLine.getEmployeeActiveSalaryContract() == null) {
@@ -328,6 +327,22 @@ public class EmployeeDailyActivityServiceImpl implements EmployeeDailyActivitySe
           employeeSalary.setThirtyOneSalaryType(activityLine.getSalaryType());
         }
       }
+
+      BigDecimal penaltyNotCame = new BigDecimal(0);
+      BigDecimal penaltyCloths = new BigDecimal(0);
+      BigDecimal penaltyWereHouse = new BigDecimal(0);
+      BigDecimal penaltyCompany = new BigDecimal(0);
+
+      for (EmployeeDailyActivityLineRu dailyActivityLine : employeeSalary.getDailyActivityLine()) {
+        penaltyNotCame = penaltyNotCame.add(dailyActivityLine.getPenaltyNotCame());
+        penaltyCloths = penaltyCloths.add(dailyActivityLine.getPenaltyCloths());
+        penaltyWereHouse = penaltyWereHouse.add(dailyActivityLine.getPenaltyWereHouse());
+        penaltyCompany = penaltyCompany.add(dailyActivityLine.getPenaltyCompany());
+      }
+      employeeSalary.setPenaltyNotCame(penaltyNotCame);
+      employeeSalary.setPenaltyCloths(penaltyCloths);
+      employeeSalary.setPenaltyWereHouse(penaltyWereHouse);
+      employeeSalary.setPenaltyCompany(penaltyCompany);
 
       BigDecimal totalSalary =
           Beans.get(EmployeeSalaryService.class).calculateMonthlySalary(employeeSalary);

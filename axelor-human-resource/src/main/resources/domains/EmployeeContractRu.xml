@@ -27,6 +27,9 @@
     <one-to-many name="employeeSalary" ref="com.axelor.apps.hr.db.EmployeeSalaryRu"
       title="Employee Salary" mappedBy="employeeContract"/>
 
+    <one-to-many name="employeeExpences" ref="com.axelor.apps.hr.db.ExpencesLineRu"
+      title="Employee Expences" mappedBy="employeeContract"/>
+
   </entity>
 
 </domain-models>

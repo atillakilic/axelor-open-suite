@@ -462,6 +462,30 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="heading">thirtyonesalarytype</text-property>
                 </structure>
                 <structure>
+                    <property name="columnName">penaltycloths</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">penaltycloths</text-property>
+                    <text-property name="heading">penaltycloths</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">penaltycompany</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">penaltycompany</text-property>
+                    <text-property name="heading">penaltycompany</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">penaltynotcame</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">penaltynotcame</text-property>
+                    <text-property name="heading">penaltynotcame</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">penaltywerehouse</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">penaltywerehouse</text-property>
+                    <text-property name="heading">penaltywerehouse</text-property>
+                </structure>
+                <structure>
                     <property name="columnName">totalsal</property>
                     <property name="analysis">measure</property>
                     <text-property name="displayName">totalsal</text-property>
@@ -813,6 +837,26 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     </structure>
                     <structure>
                         <property name="position">69</property>
+                        <property name="name">penaltycloths</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">70</property>
+                        <property name="name">penaltycompany</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">71</property>
+                        <property name="name">penaltynotcame</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">72</property>
+                        <property name="name">penaltywerehouse</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">73</property>
                         <property name="name">totalsal</property>
                         <property name="dataType">decimal</property>
                     </structure>
@@ -1299,6 +1343,34 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                 </structure>
                 <structure>
                     <property name="position">69</property>
+                    <property name="name">penaltycloths</property>
+                    <property name="nativeName">penaltycloths</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">70</property>
+                    <property name="name">penaltycompany</property>
+                    <property name="nativeName">penaltycompany</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">71</property>
+                    <property name="name">penaltynotcame</property>
+                    <property name="nativeName">penaltynotcame</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">72</property>
+                    <property name="name">penaltywerehouse</property>
+                    <property name="nativeName">penaltywerehouse</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">73</property>
                     <property name="name">totalsal</property>
                     <property name="nativeName">totalsal</property>
                     <property name="dataType">decimal</property>
@@ -1373,7 +1445,10 @@ EmpSalary.twenty_eight_salary_type as TwentyEightSalaryType,
 EmpSalary.twenty_nine_salary_type as TwentyNineSalaryType,
 EmpSalary.thirty_salary_type as ThirtySalaryType,
 EmpSalary.thirty_one_salary_type as ThirtyOneSalaryType,
-
+EmpSalary.penalty_cloths as PenaltyCloths,
+EmpSalary.penalty_company as PenaltyCompany,
+EmpSalary.penalty_not_came as PenaltyNotCame,
+EmpSalary.penalty_were_house as PenaltyWereHouse,
 
 EmpSalary.total_salary as TotalSal
 
@@ -2260,6 +2335,54 @@ row["thirtyone"]
                     <expression name="expression" type="javascript">dataSetRow["thirtyonesalarytype"]</expression>
                     <property name="dataType">integer</property>
                 </structure>
+                <structure>
+                    <property name="name">penaltycloths</property>
+                    <text-property name="displayName">penaltycloths</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltycloths"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltycompany</property>
+                    <text-property name="displayName">penaltycompany</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltycompany"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltynotcame</property>
+                    <text-property name="displayName">penaltynotcame</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltynotcame"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltywerehouse</property>
+                    <text-property name="displayName">penaltywerehouse</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltywerehouse"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">PenaltyNotCame</property>
+                    <expression name="expression" type="javascript">row["penaltynotcame"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PenaltyCloth</property>
+                    <expression name="expression" type="javascript">row["penaltycloths"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PenaltyCompany</property>
+                    <expression name="expression" type="javascript">row["penaltycompany"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Penaltywherehous</property>
+                    <expression name="expression" type="javascript">row["penaltywerehouse"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <column id="5106">
                 <property name="width">2.5cm</property>
@@ -2308,9 +2431,6 @@ row["thirtyone"]
             <column id="5140"/>
             <column id="5141"/>
             <column id="5142">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5230">
                 <property name="width">2.5cm</property>
             </column>
             <column id="5234">
@@ -2518,13 +2638,6 @@ row["thirtyone"]
                     <cell id="5026">
                         <label id="5192">
                             <text-property name="text">Total Salary</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5227">
-                        <property name="borderLeftStyle">solid</property>
-                        <property name="borderLeftWidth">thin</property>
-                        <label id="5243">
-                            <text-property name="text">Total Days</text-property>
                         </label>
                     </cell>
                     <cell id="5231">
@@ -3387,15 +3500,219 @@ row["thirtyone"]
                             <property name="resultSetColumn">TotalSal</property>
                         </data>
                     </cell>
-                    <cell id="5228">
-                        <property name="borderLeftStyle">solid</property>
-                        <property name="borderLeftWidth">thin</property>
-                    </cell>
                     <cell id="5232"/>
-                    <cell id="5236"/>
-                    <cell id="5240"/>
-                    <cell id="5248"/>
-                    <cell id="5252"/>
+                    <cell id="5236">
+                        <data id="5263">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">PenaltyNotCame</property>
+                        </data>
+                    </cell>
+                    <cell id="5240">
+                        <data id="5264">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">PenaltyCloth</property>
+                        </data>
+                    </cell>
+                    <cell id="5248">
+                        <data id="5265">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">PenaltyCompany</property>
+                        </data>
+                    </cell>
+                    <cell id="5252">
+                        <data id="5266">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">Penaltywherehous</property>
+                        </data>
+                    </cell>
                     <cell id="5256"/>
                 </row>
             </detail>
@@ -3438,7 +3755,6 @@ row["thirtyone"]
                     <cell id="5102"/>
                     <cell id="5103"/>
                     <cell id="5104"/>
-                    <cell id="5229"/>
                     <cell id="5233"/>
                     <cell id="5237"/>
                     <cell id="5241"/>

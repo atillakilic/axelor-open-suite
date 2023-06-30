@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="ExpencesTypeRu" cacheable="true">
+
+    <many-to-one name="expencesCategory" title="Expences Category"
+      ref="com.axelor.apps.hr.db.ExpencesCaterogyRu"/>
+    <string name="name" title="Name"/>
+    <string name="code" title="Code"/>
+    <date name="expencesTypeDate" title="Date"/>
+    <decimal name="frequency" title="Frequency"/>
+    <decimal name="price" title="Price"/>
+
+  </entity>
+
+</domain-models>
+

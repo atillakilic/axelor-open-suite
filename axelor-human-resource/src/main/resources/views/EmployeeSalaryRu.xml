@@ -115,14 +115,10 @@
       <field name="hourlyRate" colSpan="4" title="Hourly Rate"/>
       <field name="fixSalary" colSpan="4" title="Fix Salary" onChange=""/>
       <field name="totalSalary" title="Total Salary" readonly="true" colSpan="2"/>
-      <field name="penaltyNotCame" title="Penalty NotCame" readonly="true" colSpan="2"
-        hidden="true"/>
-      <field name="penaltyCloths" title="Penalty Cloths" readonly="true" colSpan="2"
-        hidden="true"/>
-      <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true" colSpan="2"
-        hidden="true"/>
-      <field name="penaltyCompany" title="Penalty Company" readonly="true" colSpan="2"
-        hidden="true"/>
+      <field name="penaltyNotCame" title="Penalty NotCame" readonly="true" colSpan="2"/>
+      <field name="penaltyCloths" title="Penalty Cloths" readonly="true" colSpan="2"/>
+      <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true" colSpan="2"/>
+      <field name="penaltyCompany" title="Penalty Company" readonly="true" colSpan="2"/>
 
       <spacer colSpan="12"/>
     </panel>
@@ -161,7 +157,8 @@
       <field name="thirtyOne" colSpan="2" title="31"/>
     </panel>
 
-    <panel name="salaryTypePanel" title="Salary Type" colSpan="12" readonly="true" hidden="true">
+    <panel name="salaryTypePanel" title="Salary Type" colSpan="12" readonly="true"
+      hidden="true">
       <field name="oneSalaryType" colSpan="2" title="01"/>
       <field name="twoSalaryType" colSpan="2" title="02"/>
       <field name="threeSalaryType" colSpan="2" title="03"/>
@@ -215,8 +212,8 @@
         onChange=""/>
       <field name="totalSalary" title="Total Salary" readonly="true"/>
       <spacer colSpan="12"/>
-      <panel name="dailyHors" title="Daily Work Hour" colSpan="12"
-        readonly="true" hidden="true">
+      <panel name="dailyHors" title="Daily Work Hour" colSpan="12" readonly="true"
+        hidden="true">
         <field name="one" colSpan="2" title="01"/>
         <field name="two" colSpan="2" title="02"/>
         <field name="three" colSpan="2" title="03"/>

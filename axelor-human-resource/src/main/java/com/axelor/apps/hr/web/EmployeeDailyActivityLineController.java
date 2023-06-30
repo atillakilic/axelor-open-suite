@@ -67,7 +67,7 @@ public class EmployeeDailyActivityLineController {
       }
     }
     if (!employeeActiveContract) {
-    	response.setValue("isAlert", true);
+      response.setValue("isAlert", true);
       response.setValue(
           "comments",
           "Employee does not have any active contract Please add contract on Employee form.");
@@ -77,14 +77,14 @@ public class EmployeeDailyActivityLineController {
     }
 
     if (!employeeActiveSalary) {
-    	response.setValue("isAlert", true);
+      response.setValue("isAlert", true);
       response.setValue("comments", "Employee do not have active Salary on contract.");
       response.setFlash("Employee do not have active Salary on contract.");
       return;
     }
 
     if (!employeeActiveSalaryMonthIsSameDailyActivity) {
-    	response.setValue("isAlert", true);
+      response.setValue("isAlert", true);
       response.setValue(
           "comments",
           "Employee salary month is diffrent then current month, please correct on contract form.");

@@ -17,10 +17,15 @@
  */
 package com.axelor.apps.hr.service.employee;
 
-import com.axelor.apps.hr.db.EmployeeSalaryRu;
-import com.axelor.exception.AxelorException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
+import org.apache.xalan.xsltc.compiler.sym;
+
+import com.axelor.apps.hr.db.EmployeeContractRu;
+import com.axelor.apps.hr.db.EmployeeSalaryRu;
+import com.axelor.apps.hr.db.ExpencesLineRu;
+import com.axelor.exception.AxelorException;
 
 public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
 
@@ -28,7 +33,6 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
   public BigDecimal calculateMonthlySalary(EmployeeSalaryRu employeeSalary) throws AxelorException {
     BigDecimal totalSalary = new BigDecimal(0);
     BigDecimal fixSalary = employeeSalary.getFixSalary();
-    System.err.println(fixSalary);
     BigDecimal dalityFixSalary = fixSalary.divide(new BigDecimal(30), RoundingMode.HALF_UP);
 
     BigDecimal hourlyRate = employeeSalary.getHourlyRate();
@@ -219,6 +223,26 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
       totalSalary = totalSalary.add(employeeSalary.getThirtyOne().multiply(hourlyRate));
     }
 
+    totalSalary = totalSalary.subtract(employeeSalary.getPenaltyCloths());
+    totalSalary = totalSalary.subtract(employeeSalary.getPenaltyCompany());
+    totalSalary = totalSalary.subtract(employeeSalary.getPenaltyNotCame());
+    totalSalary = totalSalary.subtract(employeeSalary.getPenaltyWereHouse());
+
+    EmployeeContractRu employeeContractRu = employeeSalary.getEmployeeContract();
+    
+    BigDecimal totalExpense = new BigDecimal(0);
+    
+    for(ExpencesLineRu expencesLine :employeeContractRu.getEmployeeExpences()) {
+    	if(expencesLine.getIsActive()) {
+    		if(expencesLine.getExpencesType() != null){
+    			BigDecimal percent = expencesLine.getPayFromCompanyPercent();
+        		BigDecimal amount =  expencesLine.getExpencesType().getPrice();
+        		totalExpense = totalExpense.add((amount).multiply(percent).divide(new BigDecimal(100),RoundingMode.HALF_UP));
+    		}
+    	}
+    }
+    totalSalary = totalSalary.add(totalExpense);
+    
     return totalSalary;
   }
 }

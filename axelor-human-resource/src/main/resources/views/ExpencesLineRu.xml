@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-expences-line-ru-grid" title="Expences Line"
+    model="com.axelor.apps.hr.db.ExpencesLineRu">
+    <field name="expencesCategory"/>
+    <field name="expencesType"/>
+    <field name="isActive"/>
+    <field name="expencesDate"/>
+    <field name="payFromCompanyPercent"/>
+  </grid>
+
+  <form name="hr-employee-expences-line-ru-form" title="Expences Line"
+    model="com.axelor.apps.hr.db.ExpencesLineRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="expencesCategory"/>
+      <field name="expencesType"/>
+      <field name="isActive"/>
+      <field name="expencesDate"/>
+      <field name="payFromCompanyPercent"/>
+    </panel>
+  </form>
+
+</object-views>
