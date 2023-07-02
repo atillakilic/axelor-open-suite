@@ -8,6 +8,8 @@
   <entity name="EmployeeNotCameReason" cacheable="true">
     <string name="name" title="Name"/>
     <string name="code" title="Code"/>
+    <boolean name="monthlyLeave" title="Monthly Leave"/>
+    <boolean name="excused" title="Excused"/>
   </entity>
 
 </domain-models>

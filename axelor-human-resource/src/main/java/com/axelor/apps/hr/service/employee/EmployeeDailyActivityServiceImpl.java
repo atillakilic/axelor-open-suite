@@ -44,7 +44,15 @@ public class EmployeeDailyActivityServiceImpl implements EmployeeDailyActivitySe
         continue;
       }
       if (activityLine.getIsAbsence()) {
-        continue;
+        if (activityLine.getSalaryType() == 1) {
+          if (activityLine.getAbsenceReason() != null) {
+            if (!activityLine.getAbsenceReason().getExcused()) {
+              continue;
+            }
+          } else {
+            continue;
+          }
+        }
       }
 
       EmployeeSalaryRu employeeSalary = activityLine.getEmployeeActiveSalaryContract();

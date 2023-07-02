@@ -7,6 +7,8 @@
     model="com.axelor.apps.hr.db.EmployeeNotCameReason">
     <field name="name"/>
     <field name="code"/>
+    <field name="monthlyLeave"/>
+    <field name="excused"/>
   </grid>
 
   <form name="hr-employee-not-came-reason-form" title="Not Came Reason"
@@ -14,6 +16,8 @@
     <panel name="mainPanel" showTitle="false" title="Main Panel">
       <field name="name"/>
       <field name="code"/>
+      <field name="monthlyLeave"/>
+      <field name="excused"/>
     </panel>
 
   </form>

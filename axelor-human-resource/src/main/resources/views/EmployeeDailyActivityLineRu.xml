@@ -13,9 +13,10 @@
     <field name="dailyWorkHoursOnContact" hidden="true"/>
     <field name="dailyWorkHours" readonlyIf="salaryType == 1"/>
     <field name="workArea" canNew="true" hidden="true"/>
-    <field name="isAbsence"/>
+    <field name="isAbsence"
+      onChange="action-employee-daily-activity-line-attrs-set-work-hour-zero-on-true"/>
     <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
-      grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
+      canEdit="true" grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
     <field name="penaltyNotCame"/>
     <field name="penaltyCloths"/>
     <field name="penaltyWereHouse"/>
@@ -33,9 +34,10 @@
       <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
       <field name="salaryType"/>
       <field name="dailyWorkHours"/>
-      <field name="isAbsence"/>
+      <field name="isAbsence"
+        onChange="action-employee-daily-activity-line-attrs-set-work-hour-zero-on-true"/>
       <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
-        grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
+        grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false" canEdit="true"/>
       <field name="penaltyNotCame"/>
       <field name="penaltyCloths"/>
       <field name="penaltyWereHouse"/>
@@ -64,6 +66,11 @@
   <action-attrs name="action-employee-daily-activity-line-attrs-set-date">
     <attribute name="value" for="activityDate" expr="eval: _parent?.todayDate"/>
     <attribute name="value" for="statusShiftType" expr="eval: _parent?.statusShiftType"/>
+  </action-attrs>
+
+  <action-attrs
+    name="action-employee-daily-activity-line-attrs-set-work-hour-zero-on-true">
+    <attribute name="value" for="dailyWorkHours" expr="eval: 0" if="isAbsence"/>
   </action-attrs>
 
 </object-views>
