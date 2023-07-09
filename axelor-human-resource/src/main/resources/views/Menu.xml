@@ -47,6 +47,15 @@
     <view type="form" name="employee-salary-status-report-ru-form"/>
   </action-view>
 
+  <menuitem name="employee-salary-payment-ru-all" parent="hr-root-emp-mgt"
+    title="Salary Payment" action="employee.salary.payment.ru"/>
+
+  <action-view name="employee.salary.payment.ru" title="Salary Payment"
+    model="com.axelor.apps.hr.db.EmployeeSalaryPaymentRu">
+    <view type="grid" name="hr-employee-employee-salary-payment-ru-grid"/>
+    <view type="form" name="hr-employee-employee-salary-payment-ru-form"/>
+  </action-view>
+
   <menuitem name="employee-daily-activity-ru" parent="hr-root-emp-mgt"
     title="Daily Activity" action="employee.daily.activity.ru"/>
 
@@ -136,6 +145,15 @@
     model="com.axelor.apps.hr.db.ExpencesTypeRu">
     <view type="grid" name="hr-employee-expences-type-ru-grid"/>
     <view type="form" name="hr-employee-expences-type-ru-form"/>
+  </action-view>
+
+  <menuitem name="hr-conf-emp-expences-category-ru" parent="hr-root-emp-mgt-conf"
+    title="Expences Category" action="hr.conf.emp.expences.category.ru"/>
+
+  <action-view name="hr.conf.emp.expences.category.ru" title="Expences Category"
+    model="com.axelor.apps.hr.db.ExpencesCaterogyRu">
+    <view type="grid" name="hr-employee-expences-caterogy-ru-grid"/>
+    <view type="form" name="hr-employee-expences-caterogy-ru-form"/>
   </action-view>
 
   <menuitem name="hr-conf-emp-payment-status-ru" parent="hr-root-emp-mgt-conf"

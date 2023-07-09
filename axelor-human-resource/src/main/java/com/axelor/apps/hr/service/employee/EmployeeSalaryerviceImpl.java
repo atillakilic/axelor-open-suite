@@ -225,6 +225,8 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyNotCame());
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyWereHouse());
 
+    System.err.println(totalSalary);
+
     EmployeeContractRu employeeContractRu = employeeSalary.getEmployeeContract();
 
     BigDecimal totalExpense = new BigDecimal(0);

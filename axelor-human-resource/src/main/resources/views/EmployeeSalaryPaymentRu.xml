@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-employee-salary-payment-ru-grid" title="Employee SalaryPayment"
+    model="com.axelor.apps.hr.db.EmployeeSalaryPaymentRu">
+    <field name="startDate"/>
+    <field name="endDate"/>
+    <field name="project"/>
+    <field name="selectActivityType"/>
+  </grid>
+
+  <form name="hr-employee-employee-salary-payment-ru-form" title="Employee SalaryPayment"
+    onNew="action-employee-salary-payment-method-set-dates"
+    model="com.axelor.apps.hr.db.EmployeeSalaryPaymentRu" width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="startDate" colSpan="4"/>
+      <field name="endDate" colSpan="4"/>
+      <field name="project" colSpan="4"/>
+      <field name="selectActivityType" colSpan="4"/>
+      <field name="projectTeam" colSpan="4" showIf="selectActivityType == 1"/>
+      <field name="employee" colSpan="4" showIf="selectActivityType == 2"/>
+      <button name="getSalaryList" title="Get Salary List" colSpan="3"
+        onClick="save,action-employee-salary-payment-method-getsalary-list,save"/>
+      <spacer colSpan="9"/>
+      <field name="selectPayMethod" colSpan="4"/>
+      <field name="bankAccount" colSpan="4" showIf="selectPayMethod == 1"/>
+      <field name="cashAccount" colSpan="4" showIf="selectPayMethod == 2"/>
+    </panel>
+
+    <panel-related field="employeeSalaryPayment"
+      form-view="employee-salary-payment-ru-form" grid-view="employee-salary-payment-ru-grid"/>
+
+    <panel>
+      <button name="payAllSalary" title="Pay All Salary" colSpan="3"
+        prompt="Do you want to pay all salary?"
+        onClick="save,action-employee-salary-payment-method-pay-salary,save,reload"/>
+    </panel>
+
+  </form>
+
+  <action-method name="action-employee-salary-payment-method-getsalary-list">
+    <call class="com.axelor.apps.hr.web.EmployeeSalaryPaymentRuController"
+      method="getSalaryList"/>
+  </action-method>
+
+  <action-method name="action-employee-salary-payment-method-set-dates">
+    <call class="com.axelor.apps.hr.web.EmployeeSalaryPaymentRuController" method="setDates"/>
+  </action-method>
+
+  <action-method name="action-employee-salary-payment-method-pay-salary">
+    <call class="com.axelor.apps.hr.web.EmployeeSalaryPaymentRuController" method="paySalary"/>
+  </action-method>
+
+</object-views>

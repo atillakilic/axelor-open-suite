@@ -42,8 +42,6 @@
 
     </panel>
 
-
-
     <panel-related field="activityRecord"
       onChange="action-employee-daily-activity-calculate-employee-work,save"
       form-view="hr-employee-daily-activity-line-ru-form"

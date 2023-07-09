@@ -104,6 +104,44 @@
     <field name="totalSalary" readonlyIf="true" title="Total Salary"/>
   </grid>
 
+  <grid name="employee-salary-payment-ru-grid" title="Employee Salary" editable="false"
+    model="com.axelor.apps.hr.db.EmployeeSalaryRu" orderBy="dateOfStart">
+
+    <hilite if="salaryStatus == 3" color="green"/>
+
+    <field name="employeeRu" title="Employee" readonly="true"/>
+    <field name="dateOfStart" title="Date" readonly="true"/>
+    <field name="currentlyActive" title="Currently Active" readonly="true"/>
+    <field name="penaltyNotCame" title="Penalty NotCame" readonly="true"/>
+    <field name="penaltyCloths" title="Penalty Cloths" readonly="true"/>
+    <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true"/>
+    <field name="penaltyCompany" title="Penalty Company" readonly="true"/>
+    <field name="totalSalary" title="Total Salary" readonly="true"/>
+    <field name="totalPaidSalary" readonly="true"/>
+    <field name="lastPayAmount"/>
+    <field name="salaryStatus" readonly="true"/>
+
+  </grid>
+
+  <form name="employee-salary-payment-ru-form" title="Employee Salary"
+    model="com.axelor.apps.hr.db.EmployeeSalaryRu">
+    <panel>
+      <field name="employeeRu" title="Employee" readonly="true"/>
+      <field name="dateOfStart" title="Date" readonly="true"/>
+      <field name="currentlyActive" title="Currently Active" readonly="true"/>
+      <field name="penaltyNotCame" title="Penalty NotCame" readonly="true"/>
+      <field name="penaltyCloths" title="Penalty Cloths" readonly="true"/>
+      <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true"/>
+      <field name="penaltyCompany" title="Penalty Company" readonly="true"/>
+      <field name="totalSalary" title="Total Salary" readonly="true"/>
+      <field name="totalPaidSalary" readonly="true"/>
+      <field name="lastPayAmount"/>
+      <field name="salaryStatus" readonly="true"/>
+    </panel>
+
+
+  </form>
+
   <form name="employee-salary-status-ru-form" onLoad="" title="Employee Salary"
     model="com.axelor.apps.hr.db.EmployeeSalaryRu" width="large">
     <panel name="mainPanel" colSpan="12">

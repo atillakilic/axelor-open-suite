@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeSalaryPaymentRu" cacheable="true">
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <date name="startDate" title="Start Date"/>
+    <date name="endDate" title="End Date"/>
+
+    <integer name="selectActivityType" title="Work Type" default="1"
+      selection="hr.employee.daily.activity"/>
+    <integer name="selectPayMethod" title="Payment Method"
+      selection="hr.employee.salary.payment.payment.method"/>
+    <many-to-one ref="com.axelor.apps.base.db.BankAccountRu" name="bankAccount"
+      title="Bank Account"/>
+    <many-to-one ref="com.axelor.apps.base.db.CashAccountRu" name="cashAccount"
+      title="Cash Account"/>
+
+    <many-to-one name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team"/>
+
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeRu" title="Worker"/>
+
+
+    <decimal name="totalActiveEmp" title="Total Active Employee"/>
+    <decimal name="totalPassiveEmp" title="Total Passive Employee"/>
+    <decimal name="totalActiveEmpAmount" title="Total Active Employee Amount"/>
+    <decimal name="totalPassiveEmpAmount" title="Total Passive Employee Amount"/>
+
+    <many-to-many ref="com.axelor.apps.hr.db.EmployeeSalaryRu"
+      name="employeeSalaryPayment" title="Employee Salary Payment"/>
+
+  </entity>
+
+</domain-models>
+

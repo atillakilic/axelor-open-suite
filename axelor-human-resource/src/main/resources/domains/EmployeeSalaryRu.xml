@@ -16,6 +16,11 @@
 
     <boolean name="currentlyActive" title="Currently Active"/>
 
+    <integer name="salaryStatus" selection="employee.salary.payment.status.ru.select"
+      title="Salary Status"/>
+    <decimal name="totalPaidSalary" title="Total Paid"/>
+    <decimal name="lastPayAmount" title="Pay Amount"/>
+
     <decimal name="one" title="01"/>
     <decimal name="two" title="02"/>
     <decimal name="three" title="03"/>

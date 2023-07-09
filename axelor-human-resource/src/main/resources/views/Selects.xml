@@ -258,4 +258,15 @@
     <option value="2">Night</option>
   </selection>
 
+  <selection name="employee.salary.payment.status.ru.select">
+    <option value="1">Not Paid</option>
+    <option value="2">half Paid</option>
+    <option value="3">Paid</option>
+  </selection>
+
+  <selection name="hr.employee.salary.payment.payment.method">
+    <option value="1">Bank Account</option>
+    <option value="2">Cash Account</option>
+  </selection>
+
 </object-views>
