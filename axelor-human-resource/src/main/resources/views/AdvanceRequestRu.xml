@@ -12,24 +12,56 @@
   </grid>
 
   <form name="employee-advance-request-ru-form" title="Advance Request"
+    onNew="action-method-employee-advance-request-on-new-set-status"
     model="com.axelor.apps.hr.db.AdvanceRequestRu" width="large">
-    <panel name="statusPanel" title="Status" colSpan="12">
-      <field name="statusSelect" colSpan="12" widget="NavSelect" canEdit="true"
-        showTitle="false"/>
-    </panel>
-    <panel name="mainPanel" colSpan="12">
-      <field name="company"/>
-      <field name="project"/>
-      <field name="requstDate"/>
-    </panel>
-    <panel-related name="advanceRequestLine" field="advanceRequestLine" colSpan="12"
-      hideIf="statusSelect == 2" form-view="employee-advance-request-line-ru-form"
-      grid-view="employee-advance-request-line-ru-grid"/>
+    <panel name="mainPanel" readonlyIf="statusSelect == 3">
+      <panel name="statusPanel" title="Status" colSpan="12" readonly="true">
+        <field name="statusSelect" colSpan="12" widget="NavSelect" canEdit="true"
+          showTitle="false"/>
+      </panel>
+      <panel name="mainPanel" colSpan="12">
+        <field name="company"/>
+        <field name="project"/>
+        <field name="requstDate"/>
+      </panel>
+      <panel-related name="advanceRequestLine" field="advanceRequestLine" colSpan="12"
+        hideIf="statusSelect == 2" form-view="employee-advance-request-line-ru-form"
+        grid-view="employee-advance-request-line-ru-grid"/>
 
-    <panel-related name="advanceRequestLine" field="advanceRequestLine" colSpan="12"
-      showIf="statusSelect == 2" form-view="employee-advance-request-line-manger-ru-form"
-      grid-view="employee-advance-request-line-manager-ru-grid"/>
+      <panel-related name="advanceRequestLineHrManager" field="advanceRequestLine"
+        colSpan="12" canEdit="true" showIf="statusSelect == 2"
+        form-view="employee-advance-request-line-manager-ru-form"
+        grid-view="employee-advance-request-line-manager-ru-grid"/>
+    </panel>
+    <panel name="advanceRequestLineHrManagerConfirm" readonlyIf="statusSelect == 3"
+      sidebar="true">
+      <button
+        onClick="save,action-method-employee-advance-request-confirm-request,action-method-employee-advance-request-set-status-confirm,save"
+        name="confirmRequestBtn" title="Confirm request" showIf="statusSelect == 2"
+        prompt="ARe you sure you want to confirm advance payment?"/>
 
+      <button
+        onClick="action-method-employee-advance-request-set-status-sent-hr-manager,save"
+        name="sendManagerBtn" title="Send to HR Manager" showIf="statusSelect == 1"/>
+    </panel>
   </form>
+
+  <action-method name="action-method-employee-advance-request-confirm-request">
+    <call class="com.axelor.apps.hr.web.EmployeeAdvancePaymentController"
+      method="confirmRequest"/>
+  </action-method>
+
+  <action-attrs name="action-method-employee-advance-request-set-status-confirm">
+    <attribute name="value" for="statusSelect" expr="eval: 3"/>
+  </action-attrs>
+
+  <action-attrs
+    name="action-method-employee-advance-request-set-status-sent-hr-manager">
+    <attribute name="value" for="statusSelect" expr="eval: 2"/>
+  </action-attrs>
+
+  <action-attrs name="action-method-employee-advance-request-on-new-set-status">
+    <attribute name="value" for="statusSelect" expr="eval: 1"/>
+  </action-attrs>
 
 </object-views>

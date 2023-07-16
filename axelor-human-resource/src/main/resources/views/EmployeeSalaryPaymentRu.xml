@@ -9,33 +9,49 @@
     <field name="endDate"/>
     <field name="project"/>
     <field name="selectActivityType"/>
+    <field name="isConfirm"/>
   </grid>
 
   <form name="hr-employee-employee-salary-payment-ru-form" title="Employee SalaryPayment"
     onNew="action-employee-salary-payment-method-set-dates"
     model="com.axelor.apps.hr.db.EmployeeSalaryPaymentRu" width="large">
-    <panel name="mainPanel" showTitle="false" title="Main Panel">
-      <field name="startDate" colSpan="4"/>
-      <field name="endDate" colSpan="4"/>
-      <field name="project" colSpan="4"/>
-      <field name="selectActivityType" colSpan="4"/>
-      <field name="projectTeam" colSpan="4" showIf="selectActivityType == 1"/>
-      <field name="employee" colSpan="4" showIf="selectActivityType == 2"/>
-      <button name="getSalaryList" title="Get Salary List" colSpan="3"
-        onClick="save,action-employee-salary-payment-method-getsalary-list,save"/>
-      <spacer colSpan="9"/>
-      <field name="selectPayMethod" colSpan="4"/>
-      <field name="bankAccount" colSpan="4" showIf="selectPayMethod == 1"/>
-      <field name="cashAccount" colSpan="4" showIf="selectPayMethod == 2"/>
+    <toolbar>
+      <button name="printSalaryPaymentReport" title="Print Report"
+        onClick="save,action-emp-salary-method-print-salary-payment-report"/>
+    </toolbar>
+    <panel colSpan="12" readonlyIf="isConfirm">
+      <panel name="mainPanel" showTitle="false" title="Main Panel" colSpan="8">
+        <field name="startDate" colSpan="4"/>
+        <field name="endDate" colSpan="4"/>
+        <field name="project" colSpan="4"/>
+        <field name="selectActivityType" colSpan="4"/>
+        <field name="projectTeam" colSpan="4" showIf="selectActivityType == 1"/>
+        <field name="employee" colSpan="4" showIf="selectActivityType == 2"/>
+        <button name="getSalaryList" title="Get Salary List" colSpan="3"
+          onClick="save,action-employee-salary-payment-method-getsalary-list,save"/>
+        <spacer colSpan="9"/>
+        <field name="selectPayMethod" colSpan="4"/>
+        <field name="bankAccount" colSpan="4" showIf="selectPayMethod == 1"/>
+        <field name="cashAccount" colSpan="4" showIf="selectPayMethod == 2"/>
+      </panel>
+
+      <panel colSpan="4" hidden="true">
+        <field name="totalActiveEmp" colSpan="6"/>
+        <field name="totalPassiveEmp" colSpan="6"/>
+        <field name="totalActiveEmpAmount" colSpan="6"/>
+        <field name="totalPassiveEmpAmount" colSpan="6"/>
+      </panel>
     </panel>
 
-    <panel-related field="employeeSalaryPayment"
+
+    <panel-related field="employeeSalaryPayment" readonlyIf="isConfirm"
       form-view="employee-salary-payment-ru-form" grid-view="employee-salary-payment-ru-grid"/>
 
-    <panel>
+    <panel readonlyIf="isConfirm">
       <button name="payAllSalary" title="Pay All Salary" colSpan="3"
         prompt="Do you want to pay all salary?"
-        onClick="save,action-employee-salary-payment-method-pay-salary,save,reload"/>
+        onClick="save,action-employee-salary-payment-method-pay-salary,action-attrs-emp-salary-payment-set-confirm,save,reload"/>
+      <field name="isConfirm" readonly="true"/>
     </panel>
 
   </form>
@@ -52,5 +68,14 @@
   <action-method name="action-employee-salary-payment-method-pay-salary">
     <call class="com.axelor.apps.hr.web.EmployeeSalaryPaymentRuController" method="paySalary"/>
   </action-method>
+
+  <action-method name="action-emp-salary-method-print-salary-payment-report">
+    <call class="com.axelor.apps.hr.web.EmployeeSalaryPaymentRuController"
+      method="printSalaryPaymentReport"/>
+  </action-method>
+
+  <action-attrs name="action-attrs-emp-salary-payment-set-confirm">
+    <attribute name="value" for="isConfirm" expr="eval: true"/>
+  </action-attrs>
 
 </object-views>

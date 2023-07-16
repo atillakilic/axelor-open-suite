@@ -28,6 +28,7 @@
     <decimal name="totalworked" title="Total Employee Worked"/>
     <decimal name="totalEmpNotWorked" title="Total Employee Not Worked"/>
 
+    <boolean name="isConfirm" title="Is Confirm"/>
   </entity>
 
 </domain-models>

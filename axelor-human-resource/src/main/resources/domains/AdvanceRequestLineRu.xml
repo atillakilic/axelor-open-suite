@@ -7,7 +7,7 @@
 
   <entity name="AdvanceRequestLineRu" cacheable="true">
 
-    <many-to-one name="employee" ref="com.axelor.apps.base.db.Company" title="Employee"/>
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeRu" title="Employee"/>
     <string name="reason" title="Reason"/>
     <integer name="priority" title="Priority"
       selection="hr.employee.request.type.priority.status"/>
@@ -17,6 +17,9 @@
 
     <many-to-one name="advanceRequest" ref="com.axelor.apps.hr.db.AdvanceRequestRu"
       title="Advance Request"/>
+
+    <many-to-one ref="com.axelor.apps.hr.db.EmployeeSalaryRu" name="empSalaryMonth"
+      title="Emp Salary Month"/>
 
   </entity>
 

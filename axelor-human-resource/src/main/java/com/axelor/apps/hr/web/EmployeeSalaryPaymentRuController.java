@@ -17,13 +17,16 @@
  */
 package com.axelor.apps.hr.web;
 
+import com.axelor.apps.ReportFactory;
 import com.axelor.apps.hr.db.EmployeeRu;
 import com.axelor.apps.hr.db.EmployeeSalaryPaymentRu;
 import com.axelor.apps.hr.db.EmployeeSalaryRu;
 import com.axelor.apps.hr.db.repo.EmployeeRuRepository;
 import com.axelor.apps.hr.db.repo.EmployeeSalaryRuRepository;
 import com.axelor.apps.project.db.ProjectTeamRu;
+import com.axelor.exception.service.TraceBackService;
 import com.axelor.inject.Beans;
+import com.axelor.meta.schema.actions.ActionView;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.common.base.Joiner;
@@ -125,7 +128,39 @@ public class EmployeeSalaryPaymentRuController {
       } else {
         employeeSalaryRu.setSalaryStatus(3);
       }
+
+      if (salaryPayment.getSelectPayMethod() == 1) {
+        employeeSalaryRu.setPaymentMethod("Bank");
+      }
+      if (salaryPayment.getSelectPayMethod() == 2) {
+        employeeSalaryRu.setPaymentMethod("Cash");
+      }
     }
     response.setValue("employeeSalaryPayment", employeeSalaryRuList);
+  }
+
+  public void printSalaryPaymentReport(ActionRequest request, ActionResponse response) {
+    EmployeeSalaryPaymentRu salaryPayment =
+        request.getContext().asType(EmployeeSalaryPaymentRu.class);
+    String idsStr = "";
+    List<Integer> selectedFiels = new ArrayList<Integer>();
+    for (EmployeeSalaryRu employeeSalaryRu : salaryPayment.getEmployeeSalaryPayment()) {
+      selectedFiels.add(employeeSalaryRu.getId().intValue());
+    }
+
+    idsStr = Joiner.on(",").join(selectedFiels);
+    System.err.println(idsStr);
+    try {
+      String fileLink =
+          ReportFactory.createReport("EmployeeSalaryPayment.rptdesign", "SalaryReport" + "-${date}")
+              .addParam("id", salaryPayment.getId().toString())
+              .addParam("ids", idsStr)
+              .generate()
+              .getFileLink();
+
+      response.setView(ActionView.define("Salary Report").add("html", fileLink).map());
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
   }
 }

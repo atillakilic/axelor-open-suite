@@ -6,7 +6,8 @@
   <grid name="hr-employee-not-came-reason-grid" title="Not Came Reason"
     model="com.axelor.apps.hr.db.EmployeeNotCameReason">
     <field name="name"/>
-    <field name="code"/>
+    <field name="code" required="true" max="1"
+      onChange="action-employee-not-came-reason-validation-code,action-employee-not-came-reason-remove-code"/>
     <field name="monthlyLeave"/>
     <field name="excused"/>
   </grid>
@@ -15,12 +16,21 @@
     model="com.axelor.apps.hr.db.EmployeeNotCameReason" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
       <field name="name"/>
-      <field name="code"/>
+      <field name="code" required="true" max="1"
+        onChange="action-employee-not-came-reason-validation-code,action-employee-not-came-reason-remove-code"/>
       <field name="monthlyLeave"/>
       <field name="excused"/>
     </panel>
 
   </form>
 
+  <action-validate name="action-employee-not-came-reason-validation-code"
+    model="com.axelor.apps.hr.db.EmployeeNotCameReason">
+    <alert message="Please do not enter X" if="code == 'x' || code == 'X'"/>
+  </action-validate>
+
+  <action-attrs name="action-employee-not-came-reason-remove-code">
+    <attribute name="value" for="code" expr="eval: ''" if="code == 'x' || code == 'X'"/>
+  </action-attrs>
 
 </object-views>

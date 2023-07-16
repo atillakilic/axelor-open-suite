@@ -246,6 +246,7 @@
   <selection name="hr.employee.request.status.select">
     <option value="1">HR Officer</option>
     <option value="2">HR Manager</option>
+    <option value="3">Confirm</option>
   </selection>
 
   <selection name="hr.employee.daily.activity">

@@ -12,12 +12,16 @@
         onClick="action-emp-salary-method-print-salary-salary-report"/>
     </toolbar>
 
-    <field name="employeeRu" title="Employee"/>
-    <field name="dateOfStart" title="Date"/>
+    <field name="employeeRu" title="Employee" required="true"
+      onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
+    <field name="dateOfStart" title="Date" required="true"
+      onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
     <field name="currentlyActive" title="Currently Active"/>
     <field name="salaryType" title="Salary Type" onChange=""/>
     <field name="fixSalary" title="Fix Salary" readonlyIf="salaryType != 1" onChange=""/>
     <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2"/>
+
+    <field name="salaryInfo" hidden="true"/>
 
     <field name="one" width="60" readonlyIf="salaryType != 2" hidden="true" title="01"/>
     <field name="two" width="60" readonlyIf="salaryType != 2" hidden="true" title="02"/>
@@ -63,12 +67,16 @@
         onClick="action-emp-salary-method-print-salary-salary-report"/>
     </toolbar>
 
-    <field name="employeeRu" title="Employee"/>
-    <field name="dateOfStart" title="Date"/>
+    <field name="employeeRu" title="Employee" required="true"
+      onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
+    <field name="dateOfStart" title="Date" required="true"
+      onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
 
     <field name="salaryType" title="Salary Type" onChange=""/>
     <field name="fixSalary" title="Fix Salary" readonlyIf="salaryType != 1" onChange=""/>
     <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2"/>
+
+    <field name="salaryInfo" hidden="true"/>
 
     <field name="one" width="60" readonlyIf="salaryType != 2" title="01"/>
     <field name="two" width="60" readonlyIf="salaryType != 2" title="02"/>
@@ -109,30 +117,34 @@
 
     <hilite if="salaryStatus == 3" color="green"/>
 
-    <field name="employeeRu" title="Employee" readonly="true"/>
-    <field name="dateOfStart" title="Date" readonly="true"/>
+    <field name="employeeRu" title="Employee" readonly="true" required="true"/>
+    <field name="dateOfStart" title="Date" readonly="true" required="true"/>
     <field name="currentlyActive" title="Currently Active" readonly="true"/>
     <field name="penaltyNotCame" title="Penalty NotCame" readonly="true"/>
     <field name="penaltyCloths" title="Penalty Cloths" readonly="true"/>
     <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true"/>
     <field name="penaltyCompany" title="Penalty Company" readonly="true"/>
+    <field name="totalExpence" title="Expense" readonly="true"/>
     <field name="totalSalary" title="Total Salary" readonly="true"/>
+    <field name="totalAdvancePay" readonly="true"/>
     <field name="totalPaidSalary" readonly="true"/>
     <field name="lastPayAmount"/>
     <field name="salaryStatus" readonly="true"/>
-
+    <field name="salaryInfo" hidden="true"/>
   </grid>
 
   <form name="employee-salary-payment-ru-form" title="Employee Salary"
     model="com.axelor.apps.hr.db.EmployeeSalaryRu">
     <panel>
-      <field name="employeeRu" title="Employee" readonly="true"/>
-      <field name="dateOfStart" title="Date" readonly="true"/>
+      <field name="employeeRu" title="Employee" readonly="true" required="true"/>
+      <field name="salaryInfo" readonly="true"/>
+      <field name="dateOfStart" title="Date" readonly="true" required="true"/>
       <field name="currentlyActive" title="Currently Active" readonly="true"/>
       <field name="penaltyNotCame" title="Penalty NotCame" readonly="true"/>
       <field name="penaltyCloths" title="Penalty Cloths" readonly="true"/>
       <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true"/>
       <field name="penaltyCompany" title="Penalty Company" readonly="true"/>
+      <field name="totalExpence" title="Expense" readonly="true"/>
       <field name="totalSalary" title="Total Salary" readonly="true"/>
       <field name="totalPaidSalary" readonly="true"/>
       <field name="lastPayAmount"/>
@@ -145,19 +157,26 @@
   <form name="employee-salary-status-ru-form" onLoad="" title="Employee Salary"
     model="com.axelor.apps.hr.db.EmployeeSalaryRu" width="large">
     <panel name="mainPanel" colSpan="12">
-      <field name="employeeRu" title="Employee"/>
+      <field name="employeeRu" title="Employee" required="true"
+        onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
+      <field name="salaryInfo" readonly="true"/>
+      <field name="dateOfStart" title="Date" required="true"
+        onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
       <spacer/>
-      <field name="dateOfStart" title="Date"/>
-      <spacer/>
-      <field name="salaryType" colSpan="4" title="Salary Type" onChange=""/>
-      <field name="hourlyRate" colSpan="4" title="Hourly Rate"/>
-      <field name="fixSalary" colSpan="4" title="Fix Salary" onChange=""/>
-      <field name="totalSalary" title="Total Salary" readonly="true" colSpan="2"/>
-      <field name="penaltyNotCame" title="Penalty NotCame" readonly="true" colSpan="2"/>
-      <field name="penaltyCloths" title="Penalty Cloths" readonly="true" colSpan="2"/>
-      <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true" colSpan="2"/>
-      <field name="penaltyCompany" title="Penalty Company" readonly="true" colSpan="2"/>
-
+      <field name="salaryType" colSpan="3" title="Salary Type" onChange=""/>
+      <field name="hourlyRate" colSpan="3" title="Hourly Rate"/>
+      <field name="fixSalary" colSpan="3" title="Fix Salary" onChange=""/>
+      <spacer colSpan="3"/>
+      <field name="penaltyNotCame" title="Penalty NotCame" readonly="true" colSpan="3"/>
+      <field name="penaltyCloths" title="Penalty Cloths" readonly="true" colSpan="3"/>
+      <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true" colSpan="3"/>
+      <field name="penaltyCompany" title="Penalty Company" readonly="true" colSpan="3"/>
+      <field name="totalAdvancePay" readonly="true" colSpan="3"/>
+      <field name="totalExpence" readonly="true" colSpan="3"/>
+      <field name="totalSalary" title="Total Salary" readonly="true" colSpan="3"/>
+      <field name="totalPaidSalary" readonly="true" colSpan="3"/>
+      <field name="salaryStatus" readonly="true" colSpan="3"/>
+      <field name="paymentMethod" readonly="true" colSpan="3"/>
       <spacer colSpan="12"/>
     </panel>
 
@@ -235,20 +254,28 @@
       form-view="hr-employee-daily-activity-line-ru-form"
       grid-view="hr-employee-daily-activity-line-ru-grid"/>
 
+    <panel-related name="advancePaymentPanel" field="advancePayment" colSpan="12"
+      readonly="true" canEdit="false" form-view="employee-advance-request-line-manager-ru-form"
+      grid-view="employee-advance-request-line-manager-ru-grid"/>
+
   </form>
 
   <form name="employee-salary-status-report-ru-form" title="Employee Salary" canDelete="false"
     canEdit="false" canNew="false" model="com.axelor.apps.hr.db.EmployeeSalaryRu" width="large">
     <panel name="mainPanel" colSpan="12">
-      <field name="employeeRu" title="Employee"/>
-      <spacer/>
-      <field name="dateOfStart" title="Date"/>
+      <field name="employeeRu" title="Employee" required="true"
+        onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
+      <field name="salaryInfo" readonly="true"/>
+      <field name="dateOfStart" title="Date" required="true"
+        onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
       <spacer/>
       <field name="salaryType" colSpan="4" title="Salary Type" onChange=""/>
       <field name="hourlyRate" colSpan="4" title="Hourly Rate" readonlyIf="salaryType != 2"/>
       <field name="fixSalary" colSpan="4" title="Fix Salary" readonlyIf="salaryType != 1"
         onChange=""/>
       <field name="totalSalary" title="Total Salary" readonly="true"/>
+      <field name="totalAdvancePay" readonly="true" colSpan="4"/>
+      <field name="totalExpence" readonly="true" colSpan="4"/>
       <spacer colSpan="12"/>
       <panel name="dailyHors" title="Daily Work Hour" colSpan="12" readonly="true"
         hidden="true">
@@ -308,6 +335,12 @@
 
   <action-method name="action-emp-salary-method-print-salary-salary-report">
     <call class="com.axelor.apps.hr.web.EmployeeSalaryController" method="printSalary"/>
+  </action-method>
+
+  <action-method
+    name="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column">
+    <call class="com.axelor.apps.hr.web.EmployeeSalaryController"
+      method="setSalaryInfoNamecolumn"/>
   </action-method>
 
 </object-views>

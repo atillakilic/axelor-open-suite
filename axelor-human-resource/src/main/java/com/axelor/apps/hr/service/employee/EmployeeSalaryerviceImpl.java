@@ -20,13 +20,19 @@ package com.axelor.apps.hr.service.employee;
 import com.axelor.apps.hr.db.EmployeeContractRu;
 import com.axelor.apps.hr.db.EmployeeSalaryRu;
 import com.axelor.apps.hr.db.ExpencesLineRu;
+import com.axelor.apps.hr.db.repo.EmployeeSalaryRuRepository;
 import com.axelor.exception.AxelorException;
+import com.axelor.inject.Beans;
+import com.google.inject.persist.Transactional;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
 
+  EmployeeSalaryRuRepository employeeSalaryRepo = Beans.get(EmployeeSalaryRuRepository.class);
+
   @Override
+  @Transactional
   public BigDecimal calculateMonthlySalary(EmployeeSalaryRu employeeSalary) throws AxelorException {
     BigDecimal totalSalary = new BigDecimal(0);
     BigDecimal fixSalary = employeeSalary.getFixSalary();
@@ -224,8 +230,7 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyCompany());
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyNotCame());
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyWereHouse());
-
-    System.err.println(totalSalary);
+    totalSalary = totalSalary.subtract(employeeSalary.getTotalAdvancePay());
 
     EmployeeContractRu employeeContractRu = employeeSalary.getEmployeeContract();
 
@@ -242,6 +247,9 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
         }
       }
     }
+
+    employeeSalary.setTotalExpence(totalExpense);
+    employeeSalaryRepo.save(employeeSalary);
     totalSalary = totalSalary.add(totalExpense);
 
     return totalSalary;

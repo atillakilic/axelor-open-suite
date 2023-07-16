@@ -9,13 +9,14 @@
     <field name="project"/>
     <field name="selectActivityType"/>
     <field name="statusShiftType"/>
+    <field name="isConfirm"/>
   </grid>
 
   <form name="hr-employee-daily-activity-ru-form" title="Daily Activity"
     onNew="action-attrs-hr-employee-daily-activity-on-new"
     model="com.axelor.apps.hr.db.EmployeeDailyActivityRu" width="large">
-    <panel name="mainPanel" showTitle="false" title="Main Panel">
 
+    <panel name="mainPanel" showTitle="false" title="Main Panel" readonlyIf="isConfirm">
       <panel colSpan="8">
         <field name="todayDate" required="true" colSpan="4"/>
         <field name="project" required="true" colSpan="4"/>
@@ -52,10 +53,11 @@
       canEdit="true"/>
 
     <panel>
-      <button title="Confirm"
-        onClick="save,action-employee-daily-activity-set-daily-activity-data-on-salary"
-        name="confirm"
+      <button title="Confirm" readonlyIf="isConfirm"
+        onClick="save,action-employee-daily-activity-set-daily-activity-data-on-salary,action-attrs-employee-daily-activity-set-daily-activity-confirm,save"
+        name="confirmBtn" colSpan="4"
         prompt="Are you sure you want to confirm daily activity record? it will not editable once it is confirm."/>
+      <field name="isConfirm" readonly="true" colSpan="4"/>
     </panel>
 
   </form>
@@ -78,7 +80,10 @@
     name="action-employee-daily-activity-set-daily-activity-data-on-salary">
     <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="updateRecordOnSalary"/>
-
   </action-method>
+
+  <action-attrs name="action-attrs-employee-daily-activity-set-daily-activity-confirm">
+    <attribute name="value" for="isConfirm" expr="eval: true"/>
+  </action-attrs>
 
 </object-views>

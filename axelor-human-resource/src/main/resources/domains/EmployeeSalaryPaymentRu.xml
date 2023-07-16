@@ -34,7 +34,7 @@
 
     <many-to-many ref="com.axelor.apps.hr.db.EmployeeSalaryRu"
       name="employeeSalaryPayment" title="Employee Salary Payment"/>
-
+    <boolean name="isConfirm"/>
   </entity>
 
 </domain-models>

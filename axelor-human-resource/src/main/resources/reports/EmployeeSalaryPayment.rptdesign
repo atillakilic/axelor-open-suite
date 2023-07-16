@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
     <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201706222054</property>
-    <list-property name="propertyBindings">
-        <structure>
-            <property name="name">queryText</property>
-            <property name="id">4976</property>
-        </structure>
-        <structure>
-            <property name="name">queryTimeOut</property>
-            <property name="id">4976</property>
-        </structure>
-        <structure>
-            <property name="name">rowFetchSize</property>
-            <property name="id">4976</property>
-        </structure>
-    </list-property>
     <property name="units">cm</property>
     <method name="beforeFactory"><![CDATA[if(params["HeaderHeight"].value != 0 ) {
 reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty("headerHeight",params["HeaderHeight"].value+"cm");
@@ -34,6 +20,17 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
             <list-property name="selectionList"/>
             <property name="paramType">simple</property>
             <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="id" id="5283">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
             <property name="controlType">text-box</property>
             <structure name="format">
                 <property name="category">Unformatted</property>
@@ -78,18 +75,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <property name="analysis">dimension</property>
                     <text-property name="displayName">empname</text-property>
                     <text-property name="heading">empname</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">empsurname</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">empsurname</text-property>
-                    <text-property name="heading">empsurname</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">empfathername</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">empfathername</text-property>
-                    <text-property name="heading">empfathername</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">startdate</property>
@@ -512,58 +497,16 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="heading">penaltywerehouse</text-property>
                 </structure>
                 <structure>
-                    <property name="columnName">salarystatus</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">salarystatus</text-property>
-                    <text-property name="heading">salarystatus</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">empstatus</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">empstatus</text-property>
-                    <text-property name="heading">empstatus</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">paidsalary</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">paidsalary</text-property>
-                    <text-property name="heading">paidsalary</text-property>
-                </structure>
-                <structure>
                     <property name="columnName">totalsal</property>
                     <property name="analysis">measure</property>
                     <text-property name="displayName">totalsal</text-property>
                     <text-property name="heading">totalsal</text-property>
                 </structure>
                 <structure>
-                    <property name="columnName">totaladvancepay</property>
+                    <property name="columnName">paidsalary</property>
                     <property name="analysis">measure</property>
-                    <text-property name="displayName">totaladvancepay</text-property>
-                    <text-property name="heading">totaladvancepay</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">totalexpence</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">totalexpence</text-property>
-                    <text-property name="heading">totalexpence</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">paymentmethod</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">paymentmethod</text-property>
-                    <text-property name="heading">paymentmethod</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">depname</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">depname</text-property>
-                    <text-property name="heading">depname</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">enddate</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">enddate</text-property>
-                    <text-property name="heading">enddate</text-property>
+                    <text-property name="displayName">paidsalary</text-property>
+                    <text-property name="heading">paidsalary</text-property>
                 </structure>
             </list-property>
             <list-property name="parameters"/>
@@ -581,408 +524,363 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     </structure>
                     <structure>
                         <property name="position">3</property>
-                        <property name="name">empsurname</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">4</property>
-                        <property name="name">empfathername</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">5</property>
                         <property name="name">startdate</property>
                         <property name="dataType">date</property>
                     </structure>
                     <structure>
-                        <property name="position">6</property>
+                        <property name="position">4</property>
                         <property name="name">salarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">7</property>
+                        <property name="position">5</property>
                         <property name="name">fixsalary</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">8</property>
+                        <property name="position">6</property>
                         <property name="name">hourlyrate</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">9</property>
+                        <property name="position">7</property>
                         <property name="name">one</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">10</property>
+                        <property name="position">8</property>
                         <property name="name">two</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">11</property>
+                        <property name="position">9</property>
                         <property name="name">three</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">12</property>
+                        <property name="position">10</property>
                         <property name="name">four</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">13</property>
+                        <property name="position">11</property>
                         <property name="name">five</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">14</property>
+                        <property name="position">12</property>
                         <property name="name">six</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">15</property>
+                        <property name="position">13</property>
                         <property name="name">seven</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">16</property>
+                        <property name="position">14</property>
                         <property name="name">eight</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">17</property>
+                        <property name="position">15</property>
                         <property name="name">nine</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">18</property>
+                        <property name="position">16</property>
                         <property name="name">ten</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">19</property>
+                        <property name="position">17</property>
                         <property name="name">eleven</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">20</property>
+                        <property name="position">18</property>
                         <property name="name">twelve</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">21</property>
+                        <property name="position">19</property>
                         <property name="name">thirteen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">22</property>
+                        <property name="position">20</property>
                         <property name="name">fourteen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">23</property>
+                        <property name="position">21</property>
                         <property name="name">fifteen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">24</property>
+                        <property name="position">22</property>
                         <property name="name">sixteen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">25</property>
+                        <property name="position">23</property>
                         <property name="name">seventeen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">26</property>
+                        <property name="position">24</property>
                         <property name="name">eighteen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">27</property>
+                        <property name="position">25</property>
                         <property name="name">nineteen</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">28</property>
+                        <property name="position">26</property>
                         <property name="name">twenty</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">29</property>
+                        <property name="position">27</property>
                         <property name="name">twentyone</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">30</property>
+                        <property name="position">28</property>
                         <property name="name">twentytwo</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">31</property>
+                        <property name="position">29</property>
                         <property name="name">twentythree</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">32</property>
+                        <property name="position">30</property>
                         <property name="name">twentyfour</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">33</property>
+                        <property name="position">31</property>
                         <property name="name">twentyfiv</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">34</property>
+                        <property name="position">32</property>
                         <property name="name">twentysix</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">35</property>
+                        <property name="position">33</property>
                         <property name="name">twentyseven</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">36</property>
+                        <property name="position">34</property>
                         <property name="name">twentyeight</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">37</property>
+                        <property name="position">35</property>
                         <property name="name">twentynine</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">38</property>
+                        <property name="position">36</property>
                         <property name="name">thirty</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">39</property>
+                        <property name="position">37</property>
                         <property name="name">thirtyone</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">40</property>
+                        <property name="position">38</property>
                         <property name="name">onesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">41</property>
+                        <property name="position">39</property>
                         <property name="name">twosalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">42</property>
+                        <property name="position">40</property>
                         <property name="name">threesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">43</property>
+                        <property name="position">41</property>
                         <property name="name">foursalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">44</property>
+                        <property name="position">42</property>
                         <property name="name">fivesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">45</property>
+                        <property name="position">43</property>
                         <property name="name">sixsalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">46</property>
+                        <property name="position">44</property>
                         <property name="name">sevensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">47</property>
+                        <property name="position">45</property>
                         <property name="name">eightsalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">48</property>
+                        <property name="position">46</property>
                         <property name="name">ninesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">49</property>
+                        <property name="position">47</property>
                         <property name="name">tensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">50</property>
+                        <property name="position">48</property>
                         <property name="name">elevensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">51</property>
+                        <property name="position">49</property>
                         <property name="name">twelvesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">52</property>
+                        <property name="position">50</property>
                         <property name="name">thriteensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">53</property>
+                        <property name="position">51</property>
                         <property name="name">fourteensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">54</property>
+                        <property name="position">52</property>
                         <property name="name">fifteensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">55</property>
+                        <property name="position">53</property>
                         <property name="name">sixteensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">56</property>
+                        <property name="position">54</property>
                         <property name="name">seventeensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">57</property>
+                        <property name="position">55</property>
                         <property name="name">eighteensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">58</property>
+                        <property name="position">56</property>
                         <property name="name">nineteensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">59</property>
+                        <property name="position">57</property>
                         <property name="name">twentysalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">60</property>
+                        <property name="position">58</property>
                         <property name="name">twentyonesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">61</property>
+                        <property name="position">59</property>
                         <property name="name">twentytwosalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">62</property>
+                        <property name="position">60</property>
                         <property name="name">twentythreesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">63</property>
+                        <property name="position">61</property>
                         <property name="name">twentyfoursalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">64</property>
+                        <property name="position">62</property>
                         <property name="name">twentyfivesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">65</property>
+                        <property name="position">63</property>
                         <property name="name">twentysixsalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">66</property>
+                        <property name="position">64</property>
                         <property name="name">twentysevensalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">67</property>
+                        <property name="position">65</property>
                         <property name="name">twentyeightsalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">68</property>
+                        <property name="position">66</property>
                         <property name="name">twentyninesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">69</property>
+                        <property name="position">67</property>
                         <property name="name">thirtysalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">70</property>
+                        <property name="position">68</property>
                         <property name="name">thirtyonesalarytype</property>
                         <property name="dataType">integer</property>
                     </structure>
                     <structure>
-                        <property name="position">71</property>
+                        <property name="position">69</property>
                         <property name="name">penaltycloths</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">72</property>
+                        <property name="position">70</property>
                         <property name="name">penaltycompany</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">73</property>
+                        <property name="position">71</property>
                         <property name="name">penaltynotcame</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">74</property>
+                        <property name="position">72</property>
                         <property name="name">penaltywerehouse</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">75</property>
-                        <property name="name">salarystatus</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">76</property>
-                        <property name="name">empstatus</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">77</property>
-                        <property name="name">paidsalary</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">78</property>
+                        <property name="position">73</property>
                         <property name="name">totalsal</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
-                        <property name="position">79</property>
-                        <property name="name">totaladvancepay</property>
+                        <property name="position">74</property>
+                        <property name="name">paidsalary</property>
                         <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">80</property>
-                        <property name="name">totalexpence</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">81</property>
-                        <property name="name">paymentmethod</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">82</property>
-                        <property name="name">depname</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">83</property>
-                        <property name="name">enddate</property>
-                        <property name="dataType">date</property>
                     </structure>
                 </list-property>
             </structure>
@@ -1005,576 +903,511 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                 </structure>
                 <structure>
                     <property name="position">3</property>
-                    <property name="name">empsurname</property>
-                    <property name="nativeName">empsurname</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">4</property>
-                    <property name="name">empfathername</property>
-                    <property name="nativeName">empfathername</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">5</property>
                     <property name="name">startdate</property>
                     <property name="nativeName">startdate</property>
                     <property name="dataType">date</property>
                     <property name="nativeDataType">91</property>
                 </structure>
                 <structure>
-                    <property name="position">6</property>
+                    <property name="position">4</property>
                     <property name="name">salarytype</property>
                     <property name="nativeName">salarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">7</property>
+                    <property name="position">5</property>
                     <property name="name">fixsalary</property>
                     <property name="nativeName">fixsalary</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">8</property>
+                    <property name="position">6</property>
                     <property name="name">hourlyrate</property>
                     <property name="nativeName">hourlyrate</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">9</property>
+                    <property name="position">7</property>
                     <property name="name">one</property>
                     <property name="nativeName">one</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">10</property>
+                    <property name="position">8</property>
                     <property name="name">two</property>
                     <property name="nativeName">two</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">11</property>
+                    <property name="position">9</property>
                     <property name="name">three</property>
                     <property name="nativeName">three</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">12</property>
+                    <property name="position">10</property>
                     <property name="name">four</property>
                     <property name="nativeName">four</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">13</property>
+                    <property name="position">11</property>
                     <property name="name">five</property>
                     <property name="nativeName">five</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">14</property>
+                    <property name="position">12</property>
                     <property name="name">six</property>
                     <property name="nativeName">six</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">15</property>
+                    <property name="position">13</property>
                     <property name="name">seven</property>
                     <property name="nativeName">seven</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">16</property>
+                    <property name="position">14</property>
                     <property name="name">eight</property>
                     <property name="nativeName">eight</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">17</property>
+                    <property name="position">15</property>
                     <property name="name">nine</property>
                     <property name="nativeName">nine</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">18</property>
+                    <property name="position">16</property>
                     <property name="name">ten</property>
                     <property name="nativeName">ten</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">19</property>
+                    <property name="position">17</property>
                     <property name="name">eleven</property>
                     <property name="nativeName">eleven</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">20</property>
+                    <property name="position">18</property>
                     <property name="name">twelve</property>
                     <property name="nativeName">twelve</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">21</property>
+                    <property name="position">19</property>
                     <property name="name">thirteen</property>
                     <property name="nativeName">thirteen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">22</property>
+                    <property name="position">20</property>
                     <property name="name">fourteen</property>
                     <property name="nativeName">fourteen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">23</property>
+                    <property name="position">21</property>
                     <property name="name">fifteen</property>
                     <property name="nativeName">fifteen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">24</property>
+                    <property name="position">22</property>
                     <property name="name">sixteen</property>
                     <property name="nativeName">sixteen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">25</property>
+                    <property name="position">23</property>
                     <property name="name">seventeen</property>
                     <property name="nativeName">seventeen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">26</property>
+                    <property name="position">24</property>
                     <property name="name">eighteen</property>
                     <property name="nativeName">eighteen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">27</property>
+                    <property name="position">25</property>
                     <property name="name">nineteen</property>
                     <property name="nativeName">nineteen</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">28</property>
+                    <property name="position">26</property>
                     <property name="name">twenty</property>
                     <property name="nativeName">twenty</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">29</property>
+                    <property name="position">27</property>
                     <property name="name">twentyone</property>
                     <property name="nativeName">twentyone</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">30</property>
+                    <property name="position">28</property>
                     <property name="name">twentytwo</property>
                     <property name="nativeName">twentytwo</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">31</property>
+                    <property name="position">29</property>
                     <property name="name">twentythree</property>
                     <property name="nativeName">twentythree</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">32</property>
+                    <property name="position">30</property>
                     <property name="name">twentyfour</property>
                     <property name="nativeName">twentyfour</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">33</property>
+                    <property name="position">31</property>
                     <property name="name">twentyfiv</property>
                     <property name="nativeName">twentyfiv</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">34</property>
+                    <property name="position">32</property>
                     <property name="name">twentysix</property>
                     <property name="nativeName">twentysix</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">35</property>
+                    <property name="position">33</property>
                     <property name="name">twentyseven</property>
                     <property name="nativeName">twentyseven</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">36</property>
+                    <property name="position">34</property>
                     <property name="name">twentyeight</property>
                     <property name="nativeName">twentyeight</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">37</property>
+                    <property name="position">35</property>
                     <property name="name">twentynine</property>
                     <property name="nativeName">twentynine</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">38</property>
+                    <property name="position">36</property>
                     <property name="name">thirty</property>
                     <property name="nativeName">thirty</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">39</property>
+                    <property name="position">37</property>
                     <property name="name">thirtyone</property>
                     <property name="nativeName">thirtyone</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">40</property>
+                    <property name="position">38</property>
                     <property name="name">onesalarytype</property>
                     <property name="nativeName">onesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">41</property>
+                    <property name="position">39</property>
                     <property name="name">twosalarytype</property>
                     <property name="nativeName">twosalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">42</property>
+                    <property name="position">40</property>
                     <property name="name">threesalarytype</property>
                     <property name="nativeName">threesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">43</property>
+                    <property name="position">41</property>
                     <property name="name">foursalarytype</property>
                     <property name="nativeName">foursalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">44</property>
+                    <property name="position">42</property>
                     <property name="name">fivesalarytype</property>
                     <property name="nativeName">fivesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">45</property>
+                    <property name="position">43</property>
                     <property name="name">sixsalarytype</property>
                     <property name="nativeName">sixsalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">46</property>
+                    <property name="position">44</property>
                     <property name="name">sevensalarytype</property>
                     <property name="nativeName">sevensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">47</property>
+                    <property name="position">45</property>
                     <property name="name">eightsalarytype</property>
                     <property name="nativeName">eightsalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">48</property>
+                    <property name="position">46</property>
                     <property name="name">ninesalarytype</property>
                     <property name="nativeName">ninesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">49</property>
+                    <property name="position">47</property>
                     <property name="name">tensalarytype</property>
                     <property name="nativeName">tensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">50</property>
+                    <property name="position">48</property>
                     <property name="name">elevensalarytype</property>
                     <property name="nativeName">elevensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">51</property>
+                    <property name="position">49</property>
                     <property name="name">twelvesalarytype</property>
                     <property name="nativeName">twelvesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">52</property>
+                    <property name="position">50</property>
                     <property name="name">thriteensalarytype</property>
                     <property name="nativeName">thriteensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">53</property>
+                    <property name="position">51</property>
                     <property name="name">fourteensalarytype</property>
                     <property name="nativeName">fourteensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">54</property>
+                    <property name="position">52</property>
                     <property name="name">fifteensalarytype</property>
                     <property name="nativeName">fifteensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">55</property>
+                    <property name="position">53</property>
                     <property name="name">sixteensalarytype</property>
                     <property name="nativeName">sixteensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">56</property>
+                    <property name="position">54</property>
                     <property name="name">seventeensalarytype</property>
                     <property name="nativeName">seventeensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">57</property>
+                    <property name="position">55</property>
                     <property name="name">eighteensalarytype</property>
                     <property name="nativeName">eighteensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">58</property>
+                    <property name="position">56</property>
                     <property name="name">nineteensalarytype</property>
                     <property name="nativeName">nineteensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">59</property>
+                    <property name="position">57</property>
                     <property name="name">twentysalarytype</property>
                     <property name="nativeName">twentysalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">60</property>
+                    <property name="position">58</property>
                     <property name="name">twentyonesalarytype</property>
                     <property name="nativeName">twentyonesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">61</property>
+                    <property name="position">59</property>
                     <property name="name">twentytwosalarytype</property>
                     <property name="nativeName">twentytwosalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">62</property>
+                    <property name="position">60</property>
                     <property name="name">twentythreesalarytype</property>
                     <property name="nativeName">twentythreesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">63</property>
+                    <property name="position">61</property>
                     <property name="name">twentyfoursalarytype</property>
                     <property name="nativeName">twentyfoursalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">64</property>
+                    <property name="position">62</property>
                     <property name="name">twentyfivesalarytype</property>
                     <property name="nativeName">twentyfivesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">65</property>
+                    <property name="position">63</property>
                     <property name="name">twentysixsalarytype</property>
                     <property name="nativeName">twentysixsalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">66</property>
+                    <property name="position">64</property>
                     <property name="name">twentysevensalarytype</property>
                     <property name="nativeName">twentysevensalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">67</property>
+                    <property name="position">65</property>
                     <property name="name">twentyeightsalarytype</property>
                     <property name="nativeName">twentyeightsalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">68</property>
+                    <property name="position">66</property>
                     <property name="name">twentyninesalarytype</property>
                     <property name="nativeName">twentyninesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">69</property>
+                    <property name="position">67</property>
                     <property name="name">thirtysalarytype</property>
                     <property name="nativeName">thirtysalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">70</property>
+                    <property name="position">68</property>
                     <property name="name">thirtyonesalarytype</property>
                     <property name="nativeName">thirtyonesalarytype</property>
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
                 <structure>
-                    <property name="position">71</property>
+                    <property name="position">69</property>
                     <property name="name">penaltycloths</property>
                     <property name="nativeName">penaltycloths</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">72</property>
+                    <property name="position">70</property>
                     <property name="name">penaltycompany</property>
                     <property name="nativeName">penaltycompany</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">73</property>
+                    <property name="position">71</property>
                     <property name="name">penaltynotcame</property>
                     <property name="nativeName">penaltynotcame</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">74</property>
+                    <property name="position">72</property>
                     <property name="name">penaltywerehouse</property>
                     <property name="nativeName">penaltywerehouse</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">75</property>
-                    <property name="name">salarystatus</property>
-                    <property name="nativeName">salarystatus</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">4</property>
-                </structure>
-                <structure>
-                    <property name="position">76</property>
-                    <property name="name">empstatus</property>
-                    <property name="nativeName">empstatus</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">-7</property>
-                </structure>
-                <structure>
-                    <property name="position">77</property>
-                    <property name="name">paidsalary</property>
-                    <property name="nativeName">paidsalary</property>
-                    <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
-                </structure>
-                <structure>
-                    <property name="position">78</property>
+                    <property name="position">73</property>
                     <property name="name">totalsal</property>
                     <property name="nativeName">totalsal</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">79</property>
-                    <property name="name">totaladvancepay</property>
-                    <property name="nativeName">totaladvancepay</property>
+                    <property name="position">74</property>
+                    <property name="name">paidsalary</property>
+                    <property name="nativeName">paidsalary</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
-                </structure>
-                <structure>
-                    <property name="position">80</property>
-                    <property name="name">totalexpence</property>
-                    <property name="nativeName">totalexpence</property>
-                    <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
-                </structure>
-                <structure>
-                    <property name="position">81</property>
-                    <property name="name">paymentmethod</property>
-                    <property name="nativeName">paymentmethod</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">82</property>
-                    <property name="name">depname</property>
-                    <property name="nativeName">depname</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">83</property>
-                    <property name="name">enddate</property>
-                    <property name="nativeName">enddate</property>
-                    <property name="dataType">date</property>
-                    <property name="nativeDataType">91</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select EmpSalary.id as Id,
 Employee.name as EmpName,
-Employee.surname as EmpSurname,
-Employee.father_name as EmpFatherName,
 EmpSalary.date_of_start as StartDate,
 EmpSalary.salary_type as SalaryType,
 EmpSalary.fix_salary as FixSalary,
@@ -1645,23 +1478,228 @@ EmpSalary.penalty_cloths as PenaltyCloths,
 EmpSalary.penalty_company as PenaltyCompany,
 EmpSalary.penalty_not_came as PenaltyNotCame,
 EmpSalary.penalty_were_house as PenaltyWereHouse,
-EmpSalary.salary_status as SalaryStatus,
-EmpSalary.currently_active as EmpStatus,
-EmpSalary.total_paid_salary as PaidSalary,
 EmpSalary.total_salary as TotalSal,
-EmpSalary.total_advance_pay as TotalAdvancePay,
-EmpSalary.total_expence as TotalExpence,
-EmpSalary.payment_method as PaymentMethod,
-EmployeeDepart.name as DepName,
-EmployeeContract.end_date as EndDate
-
+EmpSalary.total_paid_salary as PaidSalary
 
 from hr_employee_salary_ru as EmpSalary
 left outer join hr_employee_ru as Employee on (EmpSalary.employee_ru = Employee.id)
-left outer join project_project_department_ru as EmployeeDepart on (Employee.project_department = EmployeeDepart.id)
-left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employee_contract = EmployeeContract.id)
-@INJECTEDWHERE
+@INJECTEDWHERE]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="EmployeeSalaryPayment" id="5284">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">startdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">startdate</text-property>
+                    <text-property name="heading">startdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">enddate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">enddate</text-property>
+                    <text-property name="heading">enddate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">worktype</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">worktype</text-property>
+                    <text-property name="heading">worktype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">paymethod</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">paymethod</text-property>
+                    <text-property name="heading">paymethod</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">projectname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">projectname</text-property>
+                    <text-property name="heading">projectname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">projectteam</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">projectteam</text-property>
+                    <text-property name="heading">projectteam</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">empname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">empname</text-property>
+                    <text-property name="heading">empname</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">startdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">enddate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">worktype</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">paymethod</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">projectname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">projectteam</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">empname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[this.queryText = this.queryText.replace('@INJECTEDWHERE', "WHERE  EmpSalary.id IN (" + params["ids"].value + ")");]]></method>
+            <property name="dataSource">Data Source1</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">startdate</property>
+                    <property name="nativeName">startdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">enddate</property>
+                    <property name="nativeName">enddate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">worktype</property>
+                    <property name="nativeName">worktype</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">paymethod</property>
+                    <property name="nativeName">paymethod</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">projectname</property>
+                    <property name="nativeName">projectname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">projectteam</property>
+                    <property name="nativeName">projectteam</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">empname</property>
+                    <property name="nativeName">empname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select EmpSalaryPayment.id as Id,
+EmpSalaryPayment.start_date as StartDate,
+EmpSalaryPayment.end_date as EndDate,
+EmpSalaryPayment.select_activity_type as WorkType,
+EmpSalaryPayment.select_pay_method as Paymethod,
+ProjectRu.name as ProjectName,
+ProjectTeamRu.name as ProjectTeam,
+EmployeeRu.name as EmpName
 
+
+
+from hr_employee_salary_payment_ru as EmpSalaryPayment
+left outer join project_project_ru as ProjectRu on (EmpSalaryPayment.project = ProjectRu.id)
+left outer join project_project_team_ru as ProjectTeamRu on (EmpSalaryPayment.project_team = ProjectTeamRu.id)
+left outer join hr_employee_ru as EmployeeRu on (EmpSalaryPayment.employee = EmployeeRu.id)
+where EmpSalaryPayment.id = ?
 ]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
@@ -1745,7 +1783,7 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
             <property name="leftMargin">0.3958333333333333in</property>
             <property name="rightMargin">0.15625in</property>
             <property name="height">297mm</property>
-            <property name="width">700mm</property>
+            <property name="width">620mm</property>
             <property name="headerHeight">0in</property>
             <property name="footerHeight">2.4cm</property>
         </simple-master-page>
@@ -1765,13 +1803,281 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
                         <property name="fontSize">12pt</property>
                         <property name="fontWeight">bold</property>
                         <property name="textAlign">center</property>
-                        <text-property name="text">Employee Salary Report</text-property>
+                        <text-property name="text">Employee Salary Payment Report</text-property>
                     </label>
                 </cell>
             </row>
         </grid>
-        <table id="4987">
+        <grid id="5267">
             <property name="marginTop">10pt</property>
+            <column id="5268"/>
+            <column id="5269"/>
+            <column id="5270"/>
+            <row id="5271">
+                <cell id="5272"/>
+                <cell id="5273"/>
+                <cell id="5274"/>
+            </row>
+            <row id="5275">
+                <cell id="5276">
+                    <grid id="5285">
+                        <property name="marginTop">10pt</property>
+                        <property name="marginLeft">20pt</property>
+                        <property name="dataSet">EmployeeSalaryPayment</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">id</property>
+                                <text-property name="displayName">id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">startdate</property>
+                                <text-property name="displayName">startdate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["startdate"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">StartDate</property>
+                                <expression name="expression" type="javascript">dataSetRow["startdate"]</expression>
+                                <property name="dataType">date</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">worktype</property>
+                                <text-property name="displayName">worktype</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["worktype"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">paymethod</property>
+                                <text-property name="displayName">paymethod</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["paymethod"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">projectname</property>
+                                <text-property name="displayName">projectname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["projectname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">projectteam</property>
+                                <text-property name="displayName">projectteam</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["projectteam"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">empname</property>
+                                <text-property name="displayName">empname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["empname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">enddate</property>
+                                <text-property name="displayName">enddate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["enddate"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">End Date</property>
+                                <expression name="expression" type="javascript">dataSetRow["enddate"]</expression>
+                                <property name="dataType">date</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">project</property>
+                                <expression name="expression" type="javascript">dataSetRow["projectname"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">work type</property>
+                                <expression name="expression" type="javascript">dataSetRow["worktype"]</expression>
+                                <property name="dataType">integer</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">team</property>
+                                <expression name="expression" type="javascript">dataSetRow["projectteam"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Employee</property>
+                                <expression name="expression" type="javascript">dataSetRow["empname"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="5286"/>
+                        <column id="5287"/>
+                        <column id="5288"/>
+                        <row id="5289">
+                            <cell id="5290"/>
+                            <cell id="5291"/>
+                            <cell id="5292"/>
+                        </row>
+                        <row id="5293">
+                            <cell id="5294">
+                                <label id="5295">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Start Date</text-property>
+                                </label>
+                                <data id="5296">
+                                    <property name="style">DateFormat</property>
+                                    <property name="fontSize">9pt</property>
+                                    <property name="resultSetColumn">StartDate</property>
+                                </data>
+                                <label id="5297">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="marginTop">10pt</property>
+                                    <text-property name="text">Work Type</text-property>
+                                </label>
+                                <data id="5298">
+                                    <list-property name="mapRules">
+                                        <structure>
+                                            <expression name="testExpr" type="javascript">row["work type"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">1</value>
+                                            </simple-property-list>
+                                            <text-property name="display">Team Work</text-property>
+                                        </structure>
+                                        <structure>
+                                            <expression name="testExpr" type="javascript">row["work type"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">2</value>
+                                            </simple-property-list>
+                                            <text-property name="display">Employee Work</text-property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">work type</property>
+                                </data>
+                            </cell>
+                            <cell id="5299">
+                                <label id="5300">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">End Date</text-property>
+                                </label>
+                                <data id="5301">
+                                    <property name="backgroundAttachment">scroll</property>
+                                    <property name="backgroundPositionX">0%</property>
+                                    <property name="backgroundPositionY">0%</property>
+                                    <property name="backgroundRepeat">repeat</property>
+                                    <property name="fontFamily">sans-serif</property>
+                                    <property name="fontSize">9pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="fontStyle">normal</property>
+                                    <property name="fontVariant">normal</property>
+                                    <property name="color">black</property>
+                                    <property name="textLineThrough">none</property>
+                                    <property name="textOverline">none</property>
+                                    <property name="textUnderline">none</property>
+                                    <property name="borderBottomColor">black</property>
+                                    <property name="borderBottomStyle">none</property>
+                                    <property name="borderBottomWidth">medium</property>
+                                    <property name="borderLeftColor">black</property>
+                                    <property name="borderLeftStyle">none</property>
+                                    <property name="borderLeftWidth">medium</property>
+                                    <property name="borderRightColor">black</property>
+                                    <property name="borderRightStyle">none</property>
+                                    <property name="borderRightWidth">medium</property>
+                                    <property name="borderTopColor">black</property>
+                                    <property name="borderTopStyle">none</property>
+                                    <property name="borderTopWidth">medium</property>
+                                    <property name="marginTop">0pt</property>
+                                    <property name="marginLeft">0pt</property>
+                                    <property name="marginBottom">0pt</property>
+                                    <property name="marginRight">0pt</property>
+                                    <property name="paddingTop">1pt</property>
+                                    <property name="paddingLeft">1pt</property>
+                                    <property name="paddingBottom">1pt</property>
+                                    <property name="paddingRight">1pt</property>
+                                    <structure name="dateTimeFormat">
+                                        <property name="category">Custom</property>
+                                        <property name="pattern">dd/MM/yy</property>
+                                    </structure>
+                                    <property name="letterSpacing">normal</property>
+                                    <property name="lineHeight">normal</property>
+                                    <property name="orphans">2</property>
+                                    <property name="textTransform">none</property>
+                                    <property name="whiteSpace">normal</property>
+                                    <property name="widows">2</property>
+                                    <property name="wordSpacing">normal</property>
+                                    <property name="display">block</property>
+                                    <property name="pageBreakAfter">auto</property>
+                                    <property name="pageBreakBefore">auto</property>
+                                    <property name="pageBreakInside">auto</property>
+                                    <property name="showIfBlank">false</property>
+                                    <property name="canShrink">false</property>
+                                    <property name="overflow">hidden</property>
+                                    <property name="resultSetColumn">End Date</property>
+                                </data>
+                                <label id="5302">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="marginTop">10pt</property>
+                                    <text-property name="text">Team Work	</text-property>
+                                </label>
+                                <data id="5303">
+                                    <list-property name="mapRules">
+                                        <structure>
+                                            <expression name="testExpr" type="javascript">row["worktype"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">2</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">team</property>
+                                </data>
+                            </cell>
+                            <cell id="5304">
+                                <label id="5305">
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">Project</text-property>
+                                </label>
+                                <data id="5306">
+                                    <property name="resultSetColumn">project</property>
+                                </data>
+                                <label id="5307">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="marginTop">10pt</property>
+                                    <text-property name="text">Employee</text-property>
+                                </label>
+                                <data id="5308">
+                                    <list-property name="mapRules">
+                                        <structure>
+                                            <expression name="testExpr" type="javascript">row["worktype"]</expression>
+                                            <property name="operator">eq</property>
+                                            <simple-property-list name="value1">
+                                                <value type="javascript">1</value>
+                                            </simple-property-list>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Employee</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="5309">
+                            <cell id="5310"/>
+                            <cell id="5311"/>
+                            <cell id="5312"/>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="5277"/>
+                <cell id="5278"/>
+            </row>
+            <row id="5279">
+                <cell id="5280"/>
+                <cell id="5281"/>
+                <cell id="5282"/>
+            </row>
+        </grid>
+        <table id="4987">
+            <property name="marginTop">20pt</property>
             <property name="dataSet">EmployeeSalary</property>
             <list-property name="boundDataColumns">
                 <structure>
@@ -2028,16 +2334,7 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
                 </structure>
                 <structure>
                     <property name="name">Emp</property>
-                    <expression name="expression" type="javascript">str = ""
-if(row["empsurname"] != null){
-str = row["empsurname"];
-}
-if(row["empname"] != null){
-str = str + " " + row["empname"];
-}
-if(row["empfathername"] != null){
-str = str + " " + row["empfathername"];
-}</expression>
+                    <expression name="expression" type="javascript">dataSetRow["empname"]</expression>
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
@@ -2598,124 +2895,22 @@ row["thirtyone"]
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
-                    <property name="name">empsurname</property>
-                    <text-property name="displayName">empsurname</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["empsurname"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">empfathername</property>
-                    <text-property name="displayName">empfathername</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["empfathername"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">salarystatus</property>
-                    <text-property name="displayName">salarystatus</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["salarystatus"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">empstatus</property>
-                    <text-property name="displayName">empstatus</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["empstatus"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
                     <property name="name">paidsalary</property>
                     <text-property name="displayName">paidsalary</text-property>
                     <expression name="expression" type="javascript">dataSetRow["paidsalary"]</expression>
                     <property name="dataType">decimal</property>
                 </structure>
                 <structure>
-                    <property name="name">depname</property>
-                    <text-property name="displayName">depname</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["depname"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">PayStatus</property>
-                    <expression name="expression" type="javascript">row["salarystatus"]</expression>
-                    <property name="dataType">integer</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">EmpStatus</property>
-                    <expression name="expression" type="javascript">row["empstatus"]</expression>
-                    <property name="dataType">boolean</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">DepNameposition</property>
-                    <expression name="expression" type="javascript">row["depname"]</expression>
-                    <property name="dataType">string</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">totaladvancepay</property>
-                    <text-property name="displayName">totaladvancepay</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["totaladvancepay"]</expression>
+                    <property name="name">paid Salary</property>
+                    <expression name="expression" type="javascript">row["paidsalary"]</expression>
                     <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="name">Advance</property>
-                    <expression name="expression" type="javascript">row["totaladvancepay"]</expression>
-                    <property name="dataType">decimal</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">enddate</property>
-                    <text-property name="displayName">enddate</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["enddate"]</expression>
-                    <property name="dataType">date</property>
-                </structure>
-                <structure>
-                    <property name="name">EndDate</property>
-                    <expression name="expression" type="javascript">row["enddate"]</expression>
-                    <property name="dataType">date</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">totalexpence</property>
-                    <text-property name="displayName">totalexpence</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["totalexpence"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="name">TotalExpense</property>
-                    <expression name="expression" type="javascript">row["totalexpence"]</expression>
-                    <property name="dataType">decimal</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">paymentmethod</property>
-                    <text-property name="displayName">paymentmethod</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["paymentmethod"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">PayType</property>
-                    <expression name="expression" type="javascript">row["paymentmethod"]</expression>
-                    <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
             </list-property>
-            <column id="5274">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5270">
-                <property name="width">1.5cm</property>
-            </column>
             <column id="5106">
                 <property name="width">2.5cm</property>
             </column>
-            <column id="5280">
-                <property name="width">2.5cm</property>
-            </column>
             <column id="5107">
-                <property name="width">2cm</property>
-            </column>
-            <column id="5285">
                 <property name="width">2cm</property>
             </column>
             <column id="5108">
@@ -2761,9 +2956,6 @@ row["thirtyone"]
             <column id="5142">
                 <property name="width">2.5cm</property>
             </column>
-            <column id="5622">
-                <property name="width">2.5cm</property>
-            </column>
             <column id="5234">
                 <property name="width">2.5cm</property>
             </column>
@@ -2779,9 +2971,6 @@ row["thirtyone"]
             <column id="5254">
                 <property name="width">2.5cm</property>
             </column>
-            <column id="5628">
-                <property name="width">2.5cm</property>
-            </column>
             <column id="5258">
                 <property name="width">2.5cm</property>
             </column>
@@ -2789,34 +2978,14 @@ row["thirtyone"]
                 <row id="4988">
                     <property name="fontSize">10pt</property>
                     <property name="fontWeight">bold</property>
-                    <cell id="5271">
-                        <label id="5275">
-                            <text-property name="text">Pay Status</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5267">
-                        <label id="5276">
-                            <text-property name="text">Status</text-property>
-                        </label>
-                    </cell>
                     <cell id="4990">
                         <label id="5145">
                             <text-property name="text">Employee</text-property>
                         </label>
                     </cell>
-                    <cell id="5277">
-                        <label id="5281">
-                            <text-property name="text">Position</text-property>
-                        </label>
-                    </cell>
                     <cell id="4991">
                         <label id="5146">
                             <text-property name="text">Date</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5282">
-                        <label id="5286">
-                            <text-property name="text">End Date</text-property>
                         </label>
                     </cell>
                     <cell id="4992">
@@ -2994,14 +3163,9 @@ row["thirtyone"]
                             <text-property name="text">Total Salary</text-property>
                         </label>
                     </cell>
-                    <cell id="5619">
-                        <label id="5623">
-                            <text-property name="text">Total Expense</text-property>
-                        </label>
-                    </cell>
                     <cell id="5231">
                         <label id="5244">
-                            <text-property name="text">Total Advance</text-property>
+                            <text-property name="text">Total Paid</text-property>
                         </label>
                     </cell>
                     <cell id="5235">
@@ -3024,14 +3188,9 @@ row["thirtyone"]
                             <text-property name="text">Penalty Wherehouse</text-property>
                         </label>
                     </cell>
-                    <cell id="5625">
-                        <label id="5629">
-                            <text-property name="text">Payment Type</text-property>
-                        </label>
-                    </cell>
                     <cell id="5255">
                         <label id="5261">
-                            <text-property name="text">Signature</text-property>
+                            <text-property name="text"></text-property>
                         </label>
                     </cell>
                 </row>
@@ -3040,125 +3199,15 @@ row["thirtyone"]
                 <row id="5027">
                     <property name="fontSize">9pt</property>
                     <property name="textAlign">center</property>
-                    <cell id="5272">
-                        <data id="5614">
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">0</value>
-                                    </simple-property-list>
-                                    <text-property name="display">NotPaid</text-property>
-                                </structure>
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">1</value>
-                                    </simple-property-list>
-                                    <text-property name="display">Half Paid</text-property>
-                                </structure>
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
-                                    <property name="operator">eq</property>
-                                    <simple-property-list name="value1">
-                                        <value type="javascript">2</value>
-                                    </simple-property-list>
-                                    <text-property name="display">Paid</text-property>
-                                </structure>
-                            </list-property>
-                            <property name="resultSetColumn">PayStatus</property>
-                        </data>
-                    </cell>
-                    <cell id="5268">
-                        <data id="5615">
-                            <list-property name="mapRules">
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
-                                    <property name="operator">is-true</property>
-                                    <text-property name="display">Active</text-property>
-                                </structure>
-                                <structure>
-                                    <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
-                                    <property name="operator">is-false</property>
-                                    <text-property name="display">DeActive</text-property>
-                                </structure>
-                            </list-property>
-                            <property name="resultSetColumn">EmpStatus</property>
-                        </data>
-                    </cell>
                     <cell id="5029">
                         <data id="5155">
                             <property name="resultSetColumn">Emp</property>
-                        </data>
-                    </cell>
-                    <cell id="5278">
-                        <data id="5616">
-                            <property name="resultSetColumn">DepNameposition</property>
                         </data>
                     </cell>
                     <cell id="5030">
                         <data id="5156">
                             <property name="style">DateFormat</property>
                             <property name="resultSetColumn">Date</property>
-                        </data>
-                    </cell>
-                    <cell id="5283">
-                        <data id="5618">
-                            <property name="backgroundAttachment">scroll</property>
-                            <property name="backgroundPositionX">0%</property>
-                            <property name="backgroundPositionY">0%</property>
-                            <property name="backgroundRepeat">repeat</property>
-                            <property name="fontFamily">sans-serif</property>
-                            <property name="fontSize">9pt</property>
-                            <property name="fontWeight">normal</property>
-                            <property name="fontStyle">normal</property>
-                            <property name="fontVariant">normal</property>
-                            <property name="color">black</property>
-                            <property name="textLineThrough">none</property>
-                            <property name="textOverline">none</property>
-                            <property name="textUnderline">none</property>
-                            <property name="borderBottomColor">black</property>
-                            <property name="borderBottomStyle">none</property>
-                            <property name="borderBottomWidth">medium</property>
-                            <property name="borderLeftColor">black</property>
-                            <property name="borderLeftStyle">none</property>
-                            <property name="borderLeftWidth">medium</property>
-                            <property name="borderRightColor">black</property>
-                            <property name="borderRightStyle">none</property>
-                            <property name="borderRightWidth">medium</property>
-                            <property name="borderTopColor">black</property>
-                            <property name="borderTopStyle">none</property>
-                            <property name="borderTopWidth">medium</property>
-                            <property name="marginTop">0pt</property>
-                            <property name="marginLeft">0pt</property>
-                            <property name="marginBottom">0pt</property>
-                            <property name="marginRight">0pt</property>
-                            <property name="paddingTop">1pt</property>
-                            <property name="paddingLeft">1pt</property>
-                            <property name="paddingBottom">1pt</property>
-                            <property name="paddingRight">1pt</property>
-                            <structure name="dateTimeFormat">
-                                <property name="category">Custom</property>
-                                <property name="pattern">dd/MM/yy</property>
-                            </structure>
-                            <property name="textAlign">center</property>
-                            <property name="letterSpacing">normal</property>
-                            <property name="lineHeight">normal</property>
-                            <property name="orphans">2</property>
-                            <property name="textTransform">none</property>
-                            <property name="whiteSpace">normal</property>
-                            <property name="widows">2</property>
-                            <property name="wordSpacing">normal</property>
-                            <property name="display">block</property>
-                            <property name="pageBreakAfter">auto</property>
-                            <property name="pageBreakBefore">auto</property>
-                            <property name="pageBreakInside">auto</property>
-                            <property name="showIfBlank">false</property>
-                            <property name="canShrink">false</property>
-                            <property name="overflow">hidden</property>
-                            <property name="resultSetColumn">EndDate</property>
                         </data>
                     </cell>
                     <cell id="5031">
@@ -3974,14 +4023,57 @@ row["thirtyone"]
                             <property name="resultSetColumn">TotalSal</property>
                         </data>
                     </cell>
-                    <cell id="5620">
-                        <data id="5624">
-                            <property name="resultSetColumn">TotalExpense</property>
-                        </data>
-                    </cell>
                     <cell id="5232">
-                        <data id="5617">
-                            <property name="resultSetColumn">Advance</property>
+                        <data id="5314">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">paid Salary</property>
                         </data>
                     </cell>
                     <cell id="5236">
@@ -4196,22 +4288,13 @@ row["thirtyone"]
                             <property name="resultSetColumn">Penaltywherehous</property>
                         </data>
                     </cell>
-                    <cell id="5626">
-                        <data id="5630">
-                            <property name="resultSetColumn">PayType</property>
-                        </data>
-                    </cell>
                     <cell id="5256"/>
                 </row>
             </detail>
             <footer>
                 <row id="5066">
-                    <cell id="5273"/>
-                    <cell id="5269"/>
                     <cell id="5068"/>
-                    <cell id="5279"/>
                     <cell id="5069"/>
-                    <cell id="5284"/>
                     <cell id="5070"/>
                     <cell id="5071"/>
                     <cell id="5072"/>
@@ -4247,13 +4330,11 @@ row["thirtyone"]
                     <cell id="5102"/>
                     <cell id="5103"/>
                     <cell id="5104"/>
-                    <cell id="5621"/>
                     <cell id="5233"/>
                     <cell id="5237"/>
                     <cell id="5241"/>
                     <cell id="5249"/>
                     <cell id="5253"/>
-                    <cell id="5627"/>
                     <cell id="5257"/>
                 </row>
             </footer>

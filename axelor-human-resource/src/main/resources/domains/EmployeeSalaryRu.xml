@@ -7,6 +7,8 @@
 
   <entity name="EmployeeSalaryRu" cacheable="true">
 
+    <string name="salaryInfo" title="Salary Info" namecolumn="true"/>
+
     <date name="dateOfStart" title="Date"/>
 
     <integer name="salaryType" title="Salary Type"
@@ -18,6 +20,7 @@
 
     <integer name="salaryStatus" selection="employee.salary.payment.status.ru.select"
       title="Salary Status"/>
+    <string name="paymentMethod" title="Payment Method"/>
     <decimal name="totalPaidSalary" title="Total Paid"/>
     <decimal name="lastPayAmount" title="Pay Amount"/>
 
@@ -98,6 +101,8 @@
       title="31"/>
 
     <decimal name="totalSalary" title="Total Salary"/>
+    <decimal name="totalAdvancePay" title="Total Advance Pay"/>
+    <decimal name="totalExpence" title="Total Expence"/>
 
     <decimal name="penaltyNotCame" title="Penalty NotCame"/>
     <decimal name="penaltyCloths" title="Penalty Cloths"/>
@@ -114,6 +119,8 @@
       ref="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu" title="Employee DailyActivity"
       mappedBy="employeeActiveSalaryContract"/>
 
+    <one-to-many ref="com.axelor.apps.hr.db.AdvanceRequestLineRu" name="advancePayment"
+      title="EMployee Advance Payment" mappedBy="empSalaryMonth"/>
   </entity>
 
 </domain-models>

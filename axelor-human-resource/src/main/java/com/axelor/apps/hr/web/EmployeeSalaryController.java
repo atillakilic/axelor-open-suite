@@ -63,4 +63,26 @@ public class EmployeeSalaryController {
       TraceBackService.trace(response, e);
     }
   }
+
+  public void setSalaryInfoNamecolumn(ActionRequest request, ActionResponse response) {
+    try {
+      EmployeeSalaryRu employeeSalaryRu = request.getContext().asType(EmployeeSalaryRu.class);
+
+      if (employeeSalaryRu.getEmployeeRu() == null) {
+        response.setValue("salaryInfo", "hello");
+        return;
+      }
+
+      if (employeeSalaryRu.getDateOfStart() == null) {
+        response.setValue("salaryInfo", "hello");
+        return;
+      }
+
+      String date = employeeSalaryRu.getDateOfStart().toString();
+      String employeeName = employeeSalaryRu.getEmployeeRu().getName();
+      response.setValue("salaryInfo", employeeName + "_" + date);
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
+  }
 }

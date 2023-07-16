@@ -536,34 +536,10 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="heading">totalsal</text-property>
                 </structure>
                 <structure>
-                    <property name="columnName">totaladvancepay</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">totaladvancepay</text-property>
-                    <text-property name="heading">totaladvancepay</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">totalexpence</property>
-                    <property name="analysis">measure</property>
-                    <text-property name="displayName">totalexpence</text-property>
-                    <text-property name="heading">totalexpence</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">paymentmethod</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">paymentmethod</text-property>
-                    <text-property name="heading">paymentmethod</text-property>
-                </structure>
-                <structure>
                     <property name="columnName">depname</property>
                     <property name="analysis">dimension</property>
                     <text-property name="displayName">depname</text-property>
                     <text-property name="heading">depname</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">enddate</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">enddate</text-property>
-                    <text-property name="heading">enddate</text-property>
                 </structure>
             </list-property>
             <list-property name="parameters"/>
@@ -961,28 +937,8 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     </structure>
                     <structure>
                         <property name="position">79</property>
-                        <property name="name">totaladvancepay</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">80</property>
-                        <property name="name">totalexpence</property>
-                        <property name="dataType">decimal</property>
-                    </structure>
-                    <structure>
-                        <property name="position">81</property>
-                        <property name="name">paymentmethod</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">82</property>
                         <property name="name">depname</property>
                         <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">83</property>
-                        <property name="name">enddate</property>
-                        <property name="dataType">date</property>
                     </structure>
                 </list-property>
             </structure>
@@ -1537,38 +1493,10 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                 </structure>
                 <structure>
                     <property name="position">79</property>
-                    <property name="name">totaladvancepay</property>
-                    <property name="nativeName">totaladvancepay</property>
-                    <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
-                </structure>
-                <structure>
-                    <property name="position">80</property>
-                    <property name="name">totalexpence</property>
-                    <property name="nativeName">totalexpence</property>
-                    <property name="dataType">decimal</property>
-                    <property name="nativeDataType">2</property>
-                </structure>
-                <structure>
-                    <property name="position">81</property>
-                    <property name="name">paymentmethod</property>
-                    <property name="nativeName">paymentmethod</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">82</property>
                     <property name="name">depname</property>
                     <property name="nativeName">depname</property>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">83</property>
-                    <property name="name">enddate</property>
-                    <property name="nativeName">enddate</property>
-                    <property name="dataType">date</property>
-                    <property name="nativeDataType">91</property>
                 </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select EmpSalary.id as Id,
@@ -1649,19 +1577,14 @@ EmpSalary.salary_status as SalaryStatus,
 EmpSalary.currently_active as EmpStatus,
 EmpSalary.total_paid_salary as PaidSalary,
 EmpSalary.total_salary as TotalSal,
-EmpSalary.total_advance_pay as TotalAdvancePay,
-EmpSalary.total_expence as TotalExpence,
-EmpSalary.payment_method as PaymentMethod,
-EmployeeDepart.name as DepName,
-EmployeeContract.end_date as EndDate
+EmployeeDepart.name as DepName
+
 
 
 from hr_employee_salary_ru as EmpSalary
 left outer join hr_employee_ru as Employee on (EmpSalary.employee_ru = Employee.id)
 left outer join project_project_department_ru as EmployeeDepart on (Employee.project_department = EmployeeDepart.id)
-left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employee_contract = EmployeeContract.id)
 @INJECTEDWHERE
-
 ]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
@@ -1745,7 +1668,7 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
             <property name="leftMargin">0.3958333333333333in</property>
             <property name="rightMargin">0.15625in</property>
             <property name="height">297mm</property>
-            <property name="width">700mm</property>
+            <property name="width">650mm</property>
             <property name="headerHeight">0in</property>
             <property name="footerHeight">2.4cm</property>
         </simple-master-page>
@@ -2651,54 +2574,6 @@ row["thirtyone"]
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
-                <structure>
-                    <property name="name">totaladvancepay</property>
-                    <text-property name="displayName">totaladvancepay</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["totaladvancepay"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="name">Advance</property>
-                    <expression name="expression" type="javascript">row["totaladvancepay"]</expression>
-                    <property name="dataType">decimal</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">enddate</property>
-                    <text-property name="displayName">enddate</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["enddate"]</expression>
-                    <property name="dataType">date</property>
-                </structure>
-                <structure>
-                    <property name="name">EndDate</property>
-                    <expression name="expression" type="javascript">row["enddate"]</expression>
-                    <property name="dataType">date</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">totalexpence</property>
-                    <text-property name="displayName">totalexpence</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["totalexpence"]</expression>
-                    <property name="dataType">decimal</property>
-                </structure>
-                <structure>
-                    <property name="name">TotalExpense</property>
-                    <expression name="expression" type="javascript">row["totalexpence"]</expression>
-                    <property name="dataType">decimal</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">paymentmethod</property>
-                    <text-property name="displayName">paymentmethod</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["paymentmethod"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">PayType</property>
-                    <expression name="expression" type="javascript">row["paymentmethod"]</expression>
-                    <property name="dataType">string</property>
-                    <property name="allowExport">true</property>
-                </structure>
             </list-property>
             <column id="5274">
                 <property name="width">2.5cm</property>
@@ -2761,9 +2636,6 @@ row["thirtyone"]
             <column id="5142">
                 <property name="width">2.5cm</property>
             </column>
-            <column id="5622">
-                <property name="width">2.5cm</property>
-            </column>
             <column id="5234">
                 <property name="width">2.5cm</property>
             </column>
@@ -2777,9 +2649,6 @@ row["thirtyone"]
                 <property name="width">2.5cm</property>
             </column>
             <column id="5254">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5628">
                 <property name="width">2.5cm</property>
             </column>
             <column id="5258">
@@ -2994,11 +2863,6 @@ row["thirtyone"]
                             <text-property name="text">Total Salary</text-property>
                         </label>
                     </cell>
-                    <cell id="5619">
-                        <label id="5623">
-                            <text-property name="text">Total Expense</text-property>
-                        </label>
-                    </cell>
                     <cell id="5231">
                         <label id="5244">
                             <text-property name="text">Total Advance</text-property>
@@ -3022,11 +2886,6 @@ row["thirtyone"]
                     <cell id="5251">
                         <label id="5260">
                             <text-property name="text">Penalty Wherehouse</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5625">
-                        <label id="5629">
-                            <text-property name="text">Payment Type</text-property>
                         </label>
                     </cell>
                     <cell id="5255">
@@ -3104,63 +2963,7 @@ row["thirtyone"]
                             <property name="resultSetColumn">Date</property>
                         </data>
                     </cell>
-                    <cell id="5283">
-                        <data id="5618">
-                            <property name="backgroundAttachment">scroll</property>
-                            <property name="backgroundPositionX">0%</property>
-                            <property name="backgroundPositionY">0%</property>
-                            <property name="backgroundRepeat">repeat</property>
-                            <property name="fontFamily">sans-serif</property>
-                            <property name="fontSize">9pt</property>
-                            <property name="fontWeight">normal</property>
-                            <property name="fontStyle">normal</property>
-                            <property name="fontVariant">normal</property>
-                            <property name="color">black</property>
-                            <property name="textLineThrough">none</property>
-                            <property name="textOverline">none</property>
-                            <property name="textUnderline">none</property>
-                            <property name="borderBottomColor">black</property>
-                            <property name="borderBottomStyle">none</property>
-                            <property name="borderBottomWidth">medium</property>
-                            <property name="borderLeftColor">black</property>
-                            <property name="borderLeftStyle">none</property>
-                            <property name="borderLeftWidth">medium</property>
-                            <property name="borderRightColor">black</property>
-                            <property name="borderRightStyle">none</property>
-                            <property name="borderRightWidth">medium</property>
-                            <property name="borderTopColor">black</property>
-                            <property name="borderTopStyle">none</property>
-                            <property name="borderTopWidth">medium</property>
-                            <property name="marginTop">0pt</property>
-                            <property name="marginLeft">0pt</property>
-                            <property name="marginBottom">0pt</property>
-                            <property name="marginRight">0pt</property>
-                            <property name="paddingTop">1pt</property>
-                            <property name="paddingLeft">1pt</property>
-                            <property name="paddingBottom">1pt</property>
-                            <property name="paddingRight">1pt</property>
-                            <structure name="dateTimeFormat">
-                                <property name="category">Custom</property>
-                                <property name="pattern">dd/MM/yy</property>
-                            </structure>
-                            <property name="textAlign">center</property>
-                            <property name="letterSpacing">normal</property>
-                            <property name="lineHeight">normal</property>
-                            <property name="orphans">2</property>
-                            <property name="textTransform">none</property>
-                            <property name="whiteSpace">normal</property>
-                            <property name="widows">2</property>
-                            <property name="wordSpacing">normal</property>
-                            <property name="display">block</property>
-                            <property name="pageBreakAfter">auto</property>
-                            <property name="pageBreakBefore">auto</property>
-                            <property name="pageBreakInside">auto</property>
-                            <property name="showIfBlank">false</property>
-                            <property name="canShrink">false</property>
-                            <property name="overflow">hidden</property>
-                            <property name="resultSetColumn">EndDate</property>
-                        </data>
-                    </cell>
+                    <cell id="5283"/>
                     <cell id="5031">
                         <data id="5157">
                             <list-property name="mapRules">
@@ -3974,16 +3777,7 @@ row["thirtyone"]
                             <property name="resultSetColumn">TotalSal</property>
                         </data>
                     </cell>
-                    <cell id="5620">
-                        <data id="5624">
-                            <property name="resultSetColumn">TotalExpense</property>
-                        </data>
-                    </cell>
-                    <cell id="5232">
-                        <data id="5617">
-                            <property name="resultSetColumn">Advance</property>
-                        </data>
-                    </cell>
+                    <cell id="5232"/>
                     <cell id="5236">
                         <data id="5263">
                             <property name="backgroundAttachment">scroll</property>
@@ -4196,11 +3990,6 @@ row["thirtyone"]
                             <property name="resultSetColumn">Penaltywherehous</property>
                         </data>
                     </cell>
-                    <cell id="5626">
-                        <data id="5630">
-                            <property name="resultSetColumn">PayType</property>
-                        </data>
-                    </cell>
                     <cell id="5256"/>
                 </row>
             </detail>
@@ -4247,13 +4036,11 @@ row["thirtyone"]
                     <cell id="5102"/>
                     <cell id="5103"/>
                     <cell id="5104"/>
-                    <cell id="5621"/>
                     <cell id="5233"/>
                     <cell id="5237"/>
                     <cell id="5241"/>
                     <cell id="5249"/>
                     <cell id="5253"/>
-                    <cell id="5627"/>
                     <cell id="5257"/>
                 </row>
             </footer>
