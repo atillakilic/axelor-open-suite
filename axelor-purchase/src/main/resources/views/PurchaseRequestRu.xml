@@ -14,6 +14,7 @@
   </grid>
 
   <form name="purchase-request-ru-form" title="Purchase request"
+    onNew="action-purchase-request-ru-attrs-set-default-record"
     model="com.axelor.apps.purchase.db.PurchaseRequestRu" width="large">
 
     <menubar>
@@ -164,5 +165,10 @@
     <call class="com.axelor.apps.purchase.web.PurchaseRequestRuController"
       method="validateArrivalQty"/>
   </action-method>
+
+  <action-attrs name="action-purchase-request-ru-attrs-set-default-record">
+    <attribute name="value" for="requestDate" expr="eval: __date__"/>
+    <attribute name="value" for="company" expr="eval:__repo__(Company).all().fetchOne()"/>
+  </action-attrs>
 
 </object-views>

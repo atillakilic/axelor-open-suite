@@ -100,8 +100,12 @@
     <integer name="thirtyOneSalaryType" selection="employee.salary.type.ru.select"
       title="31"/>
 
+    <decimal name="totalNetSalary" title="Net Salary"/>
     <decimal name="totalSalary" title="Total Salary"/>
     <decimal name="totalAdvancePay" title="Total Advance Pay"/>
+
+    <decimal name="registraExpence" title="Registra Expence"/>
+    <decimal name="patentExpence" title="Patent Expence"/>
     <decimal name="totalExpence" title="Total Expence"/>
 
     <decimal name="penaltyNotCame" title="Penalty NotCame"/>

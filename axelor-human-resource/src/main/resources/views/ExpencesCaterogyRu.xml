@@ -13,10 +13,21 @@
     model="com.axelor.apps.hr.db.ExpencesCaterogyRu" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
       <field name="name"/>
-      <field name="code"/>
+      <field required="true" name="code"
+        onChange="action-expence-category-validation-code,action-expence-category-attrs-remove-code"/>
     </panel>
 
   </form>
 
+  <action-validate name="action-expence-category-validation-code"
+    model="com.axelor.apps.hr.db.ExpencesCaterogyRu">
+    <alert message="Please enter registra or patent in code"
+      if="code != 'registra' &amp;&amp; code != 'Registra' &amp;&amp; code != 'patent' &amp;&amp; code != 'Patent'"/>
+  </action-validate>
+
+  <action-attrs name="action-expence-category-attrs-remove-code">
+    <attribute name="value" for="code" expr="eval: ''"
+      if="code != 'registra' &amp;&amp; code != 'Registra' &amp;&amp; code != 'patent' &amp;&amp; code != 'Patent'"/>
+  </action-attrs>
 
 </object-views>

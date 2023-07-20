@@ -226,10 +226,13 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
       totalSalary = totalSalary.add(employeeSalary.getThirtyOne().multiply(hourlyRate));
     }
 
+    employeeSalary.setTotalNetSalary(totalSalary);
+
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyCloths());
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyCompany());
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyNotCame());
     totalSalary = totalSalary.subtract(employeeSalary.getPenaltyWereHouse());
+
     totalSalary = totalSalary.subtract(employeeSalary.getTotalAdvancePay());
 
     EmployeeContractRu employeeContractRu = employeeSalary.getEmployeeContract();
@@ -241,6 +244,25 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
         if (expencesLine.getExpencesType() != null) {
           BigDecimal percent = expencesLine.getPayFromCompanyPercent();
           BigDecimal amount = expencesLine.getExpencesType().getPrice();
+
+          if (expencesLine.getExpencesCategory() != null) {
+            if (expencesLine
+                .getExpencesCategory()
+                .getCode()
+                .equalsIgnoreCase("registra")) { // registra expense
+              employeeSalary.setRegistraExpence(
+                  (amount).multiply(percent).divide(new BigDecimal(100), RoundingMode.HALF_UP));
+            }
+
+            if (expencesLine
+                .getExpencesCategory()
+                .getCode()
+                .equalsIgnoreCase("patent")) { // patent expense
+              employeeSalary.setPatentExpence(
+                  (amount).multiply(percent).divide(new BigDecimal(100), RoundingMode.HALF_UP));
+            }
+          }
+
           totalExpense =
               totalExpense.add(
                   (amount).multiply(percent).divide(new BigDecimal(100), RoundingMode.HALF_UP));

@@ -1050,7 +1050,8 @@ where PurchaseRequest.id = ?]]></xml-property>
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
-            <property name="type">a4</property>
+            <property name="type">a3</property>
+            <property name="orientation">landscape</property>
             <property name="topMargin">0.47625cm</property>
             <property name="leftMargin">0.3958333333333333in</property>
             <property name="rightMargin">0.15625in</property>
@@ -1590,8 +1591,6 @@ where PurchaseRequest.id = ?]]></xml-property>
                                         </cell>
                                     </row>
                                     <row id="4967">
-                                        <property name="borderBottomStyle">solid</property>
-                                        <property name="borderBottomWidth">thin</property>
                                         <cell id="4968">
                                             <label id="4770">
                                                 <property name="fontWeight">bold</property>
@@ -1770,6 +1769,8 @@ where PurchaseRequest.id = ?]]></xml-property>
                 </cell>
             </row>
             <row id="4722">
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
                 <cell id="4723"/>
                 <cell id="4724"/>
                 <cell id="4725"/>

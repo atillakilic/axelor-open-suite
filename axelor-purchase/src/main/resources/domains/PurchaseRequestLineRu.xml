@@ -13,7 +13,8 @@
     <many-to-one name="requesterUser" title="Requester" ref="com.axelor.auth.db.User"/>
     <string name="specialty" title="Specialty"/>
     <string name="purpose" title="Purpose"/>
-    <string name="stockLocation" title="Stock Location"/>
+    <many-to-one ref="com.axelor.apps.project.db.ProjectLocaltionRu"
+      name="projectStockLocation" title="Project Stock Location"/>
     <string name="description" title="Description"/>
     <integer name="totalSupplier" title="Total Supplier"/>
     <one-to-many ref="com.axelor.apps.purchase.db.RequestSupplierListRu"

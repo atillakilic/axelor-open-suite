@@ -453,7 +453,7 @@ Project.name as ProjectName,
 Product.name as ProductName,
 PurchaseReqLine.specialty as Specialty,
 PurchaseReqLine.quantity as Qty,
-PurchaseReqLine.stock_location as StockLocation,
+Location.name as StockLocation,
 PurchaseReqLine.purpose as Purpose,
 Unit.name as UnitName,
 Requester.name as RequesterName
@@ -466,9 +466,10 @@ left outer join purchase_purchase_request_line_ru as PurchaseReqLine on (Purchas
 left outer join base_product as Product on (PurchaseReqLine.product = Product.id)
 left outer join base_unit as Unit on (PurchaseReqLine.unit = Unit.id)
 left outer join auth_user as Requester on (PurchaseReqLine.requester_user = Requester.id)
+left outer join project_project_localtion_ru as Location on (PurchaseReqLine.project_stock_location = Location.id)
+
 
 where PurchaseRequest.id = ?
-
 ]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
@@ -546,7 +547,8 @@ where PurchaseRequest.id = ?
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
-            <property name="type">a4</property>
+            <property name="type">a3</property>
+            <property name="orientation">landscape</property>
             <property name="topMargin">0.47625cm</property>
             <property name="leftMargin">0.3958333333333333in</property>
             <property name="rightMargin">0.15625in</property>
@@ -567,7 +569,7 @@ where PurchaseRequest.id = ?
                         <property name="fontSize">12pt</property>
                         <property name="fontWeight">bold</property>
                         <property name="textAlign">center</property>
-                        <text-property name="text">Purchase Request</text-property>
+                        <text-property name="text">Запрос на покупку</text-property>
                     </label>
                 </cell>
             </row>
@@ -643,7 +645,7 @@ where PurchaseRequest.id = ?
                                         <cell id="4758">
                                             <label id="4767">
                                                 <property name="fontWeight">bold</property>
-                                                <text-property name="text">Company Name:</text-property>
+                                                <text-property name="text">Компания:</text-property>
                                             </label>
                                         </cell>
                                         <cell id="4759">
@@ -654,7 +656,7 @@ where PurchaseRequest.id = ?
                                         <cell id="4760">
                                             <label id="4769">
                                                 <property name="fontWeight">bold</property>
-                                                <text-property name="text">Request Number:</text-property>
+                                                <text-property name="text">Запрос №:</text-property>
                                             </label>
                                         </cell>
                                         <cell id="4761">
@@ -668,7 +670,7 @@ where PurchaseRequest.id = ?
                                             <label id="4768">
                                                 <property name="fontWeight">bold</property>
                                                 <property name="marginTop">3pt</property>
-                                                <text-property name="text">Project Name:</text-property>
+                                                <text-property name="text">Проект:</text-property>
                                             </label>
                                         </cell>
                                         <cell id="4764">
@@ -681,7 +683,7 @@ where PurchaseRequest.id = ?
                                             <label id="4770">
                                                 <property name="fontWeight">bold</property>
                                                 <property name="marginTop">3pt</property>
-                                                <text-property name="text">Date:</text-property>
+                                                <text-property name="text">дата:</text-property>
                                             </label>
                                         </cell>
                                         <cell id="4766">
@@ -799,14 +801,14 @@ where PurchaseRequest.id = ?
                                     <label id="4855">
                                         <property name="fontWeight">bold</property>
                                         <property name="marginBottom">3pt</property>
-                                        <text-property name="text">Product</text-property>
+                                        <text-property name="text">Продукт</text-property>
                                     </label>
                                 </cell>
                                 <cell id="4793">
                                     <label id="4856">
                                         <property name="fontWeight">bold</property>
                                         <property name="marginBottom">3pt</property>
-                                        <text-property name="text">Specialty</text-property>
+                                        <text-property name="text">Специальность</text-property>
                                     </label>
                                 </cell>
                                 <cell id="4795">
@@ -859,7 +861,7 @@ where PurchaseRequest.id = ?
                                         <property name="showIfBlank">false</property>
                                         <property name="canShrink">false</property>
                                         <property name="overflow">hidden</property>
-                                        <text-property name="text">Quantty</text-property>
+                                        <text-property name="text">Количество</text-property>
                                     </label>
                                 </cell>
                                 <cell id="4797">
@@ -912,7 +914,7 @@ where PurchaseRequest.id = ?
                                         <property name="showIfBlank">false</property>
                                         <property name="canShrink">false</property>
                                         <property name="overflow">hidden</property>
-                                        <text-property name="text">UnitProduct</text-property>
+                                        <text-property name="text">единица</text-property>
                                     </label>
                                 </cell>
                                 <cell id="4799">
@@ -965,7 +967,7 @@ where PurchaseRequest.id = ?
                                         <property name="showIfBlank">false</property>
                                         <property name="canShrink">false</property>
                                         <property name="overflow">hidden</property>
-                                        <text-property name="text">Requester</text-property>
+                                        <text-property name="text">Заказчик</text-property>
                                     </label>
                                 </cell>
                                 <cell id="4801">
@@ -1018,7 +1020,7 @@ where PurchaseRequest.id = ?
                                         <property name="showIfBlank">false</property>
                                         <property name="canShrink">false</property>
                                         <property name="overflow">hidden</property>
-                                        <text-property name="text">purpose</text-property>
+                                        <text-property name="text">Цель</text-property>
                                     </label>
                                 </cell>
                                 <cell id="4803">
@@ -1071,7 +1073,7 @@ where PurchaseRequest.id = ?
                                         <property name="showIfBlank">false</property>
                                         <property name="canShrink">false</property>
                                         <property name="overflow">hidden</property>
-                                        <text-property name="text">locatıon</text-property>
+                                        <text-property name="text">склад</text-property>
                                     </label>
                                 </cell>
                             </row>

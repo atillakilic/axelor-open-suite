@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-company-daily-expences-line-ru-grid" editable="true"
+    title="Company Daily Expences Line" model="com.axelor.apps.hr.db.CompanyDailyExpencesLineRu">
+    <field name="companyExpenceType"/>
+    <field name="quentity"/>
+  </grid>
+
+  <form name="hr-employee-company-daily-expences-line-ru-form"
+    title="Company Daily Expences Line" model="com.axelor.apps.hr.db.CompanyDailyExpencesLineRu"
+    width="large">
+    <panel name="mainPanel" showTitle="false" title="Main Panel">
+      <field name="companyExpenceType"/>
+      <field name="quentity"/>
+    </panel>
+
+  </form>
+
+</object-views>

@@ -138,6 +138,24 @@
   <menuitem name="hr-root-emp-mgt-conf" parent="hr-root-emp-mgt" title="Configuration"
     icon="fa-cog"/>
 
+  <menuitem name="hr-conf-emp-company-expences-type-ru" parent="hr-root-emp-mgt-conf"
+    title="Company Expences Type" action="hr.conf.company.emp.expences.type.ru"/>
+
+  <action-view name="hr.conf.company.emp.expences.type.ru" title="Company Expences Type"
+    model="com.axelor.apps.hr.db.CompanyExpencesTypeRu">
+    <view type="grid" name="hr-employee-company-expences-type-ru-grid"/>
+    <view type="form" name="hr-employee-company-expences-type-ru-form"/>
+  </action-view>
+
+  <menuitem name="hr-conf-emp-company-daily-expences-ru" parent="hr-root-emp-mgt-conf"
+    title="Company Daily Expences" action="hr.conf.company.daily.emp.expences.ru"/>
+
+  <action-view name="hr.conf.company.daily.emp.expences.ru"
+    title="Company Daily Expences" model="com.axelor.apps.hr.db.CompanyDailyExpencesRu">
+    <view type="grid" name="hr-employee-company-daily-expences-ru-grid"/>
+    <view type="form" name="hr-employee-company-daily-expences-ru-form"/>
+  </action-view>
+
   <menuitem name="hr-conf-emp-expences-type-ru" parent="hr-root-emp-mgt-conf"
     title="Expences Type" action="hr.conf.emp.expences.type.ru"/>
 

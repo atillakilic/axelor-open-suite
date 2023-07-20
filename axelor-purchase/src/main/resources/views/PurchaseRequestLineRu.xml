@@ -13,7 +13,7 @@
     <field name="unit"/>
     <field name="requesterUser"/>
     <field name="purpose"/>
-    <field name="stockLocation"/>
+    <field name="projectStockLocation"/>
     <field name="totalSupplier" readonly="true"/>
     <field name="totalCost"/>
     <field name="paymentInfo"/>
@@ -28,13 +28,14 @@
       <field name="newProduct" widget="boolean-switch" colSpan="2"/>
       <spacer/>
       <field name="product" colSpan="6" form-view="product-form" grid-view="product-grid"
-        canNew="true" required="true"/>
+        onChange="action-purchase-request-payment-attrs-set-product-unit" canNew="true"
+        required="true"/>
       <field name="specialty"/>
       <field name="unit" colSpan="6"/>
       <field name="quantity" colSpan="6" x-scale="2" required="true"/>
       <field name="requesterUser"/>
       <field name="purpose"/>
-      <field name="stockLocation"/>
+      <field name="projectStockLocation"/>
       <spacer/>
       <field name="totalSupplier" readonly="true"/>
       <field name="totalCost" readonly="true"/>
@@ -101,6 +102,10 @@
 
   <action-attrs name="action-purchase-request-payment-attrs-clear">
     <attribute name="value" for="isPaymentDone" expr="eval: true" if="paymentInfo != null"/>
+  </action-attrs>
+
+  <action-attrs name="action-purchase-request-payment-attrs-set-product-unit">
+    <attribute name="value" for="unit" expr="eval: product?.unit"/>
   </action-attrs>
 
 </object-views>
