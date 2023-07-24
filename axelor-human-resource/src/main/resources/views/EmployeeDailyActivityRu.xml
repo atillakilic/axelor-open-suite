@@ -20,15 +20,18 @@
       <panel colSpan="8">
         <field name="todayDate" required="true" colSpan="4"/>
         <field name="project" required="true" colSpan="4"/>
-        <field name="selectActivityType" required="true" colSpan="4"/>
+        <field name="selectActivityType" required="true" colSpan="4"
+          onChange="action-attrs-employee-daily-activity-set-employee-work-count"/>
 
         <panel colSpan="12">
           <panel colSpan="4">
             <field name="statusShiftType" required="true" min="1" colSpan="6"/>
           </panel>
-          <panel showIf="selectActivityType == 1" colSpan="8">
-            <field name="projectTeam" colSpan="6"/>
+          <panel required="true" min="1" colSpan="8">
+            <field name="projectTeam" colSpan="6" requiredIf="selectActivityType == 1"
+              showIf="selectActivityType == 1"/>
             <button name="btnSetEmployee" title="Get List" colSpan="3"
+              showIf="selectActivityType == 1 || selectActivityType == 3"
               onClick="save,action-employee-daily-activity-set-employee,action-employee-daily-activity-calculate-employee-work,save,reload"/>
           </panel>
         </panel>
@@ -36,9 +39,19 @@
       </panel>
 
       <panel colSpan="4">
-        <field name="totalEmp" readonly="true" colSpan="4"/>
-        <field name="totalworked" readonly="true" colSpan="4"/>
-        <field name="totalEmpNotWorked" readonly="true" colSpan="4"/>
+        <field name="totalEmp" title="Total Project Employee" readonly="true" colSpan="4"
+          showIf="selectActivityType == 3"/>
+        <field name="totalworked" title="Total Project Employee worked" readonly="true"
+          colSpan="4" showIf="selectActivityType == 3"/>
+        <field name="totalEmpNotWorked" title="Total Project Employee not worked"
+          readonly="true" colSpan="4" showIf="selectActivityType == 3"/>
+
+        <field name="totalEmp" title="Total Team Employee" readonly="true" colSpan="4"
+          showIf="selectActivityType == 1"/>
+        <field name="totalworked" title="Total Team Employee worked" readonly="true"
+          colSpan="4" showIf="selectActivityType == 1"/>
+        <field name="totalEmpNotWorked" title="Total Team Employee not worked" readonly="true"
+          colSpan="4" showIf="selectActivityType == 1"/>
       </panel>
 
     </panel>
@@ -84,6 +97,12 @@
 
   <action-attrs name="action-attrs-employee-daily-activity-set-daily-activity-confirm">
     <attribute name="value" for="isConfirm" expr="eval: true"/>
+  </action-attrs>
+
+  <action-attrs name="action-attrs-employee-daily-activity-set-employee-work-count">
+    <attribute name="value" for="totalEmp" expr="eval: 0"/>
+    <attribute name="value" for="totalworked" expr="eval: 0"/>
+    <attribute name="value" for="totalEmpNotWorked" expr="eval: 0"/>
   </action-attrs>
 
 </object-views>

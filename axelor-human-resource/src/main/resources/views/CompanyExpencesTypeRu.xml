@@ -10,22 +10,29 @@
     <field name="name"/>
     <field name="code"/>
     <field name="expenceStatus"/>
-    <field name="expenseDate"/>
-    <field name="expencePrice"/>
+    <field name="totalPrise"/>
   </grid>
 
   <form name="hr-employee-company-expences-type-ru-form" title="Company Expences Type"
     model="com.axelor.apps.hr.db.CompanyExpencesTypeRu" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
-      <field name="company"/>
-      <field name="project"/>
-      <field name="name"/>
-      <field name="code"/>
-      <field name="expenceStatus"/>
-      <spacer/>
-      <field name="expenseDate"/>
-      <field name="expencePrice"/>
+      <field name="company" colSpan="2"/>
+      <field name="project" colSpan="2"/>
+      <field name="name" colSpan="2"/>
+      <field name="code" colSpan="2"/>
+      <field name="expenceStatus" colSpan="2" widget="boolean-switch"/>
+      <field name="totalPrise" colSpan="2" readonly="true"/>
     </panel>
+
+    <panel-related field="companyExpenceTypeLine" name="companyExpenceTypeLinePanel"
+      onChange="action-company-expense-type-method-calculate-total-price"
+      grid-view="hr-employee-company-expences-type-line-ru-grid"
+      form-view="hr-employee-company-expences-type-line-ru-form"/>
   </form>
+
+  <action-method name="action-company-expense-type-method-calculate-total-price">
+    <call class="com.axelor.apps.hr.web.CompanyExpenceTypeRuController"
+      method="calculateTotalPrise"/>
+  </action-method>
 
 </object-views>

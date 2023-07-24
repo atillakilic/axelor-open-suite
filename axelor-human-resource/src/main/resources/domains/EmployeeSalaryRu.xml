@@ -103,6 +103,9 @@
     <decimal name="totalNetSalary" title="Net Salary"/>
     <decimal name="totalSalary" title="Total Salary"/>
     <decimal name="totalAdvancePay" title="Total Advance Pay"/>
+    <decimal name="registraExp" title="Registra Exp"/>
+    <decimal name="patentExp" title="Patent Exp"/>
+    <decimal name="differentExp" title="Different Exp"/>
 
     <decimal name="registraExpence" title="Registra Expence"/>
     <decimal name="patentExpence" title="Patent Expence"/>

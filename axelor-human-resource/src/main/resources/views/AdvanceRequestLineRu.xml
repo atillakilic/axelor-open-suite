@@ -6,11 +6,12 @@
   <grid name="employee-advance-request-line-ru-grid" title="Advance Request Line"
     model="com.axelor.apps.hr.db.AdvanceRequestLineRu" orderBy="">
     <field name="employee"/>
-    <field name="empSalaryMonth"/>
+    <field name="empSalaryMonth" domain="self.employeeRu = :employee"/>
     <field name="reason"/>
     <field name="priority"/>
     <field name="requestTotal"/>
-    <field name="deserveTotal"/>
+    <field name="deserveTotal" hidden="true"/>
+    <field name="advanceRequestType"/>
   </grid>
 
   <form name="employee-advance-request-line-ru-form" title="Advance Request Line"
@@ -22,18 +23,20 @@
       <field name="reason"/>
       <field name="priority"/>
       <field name="requestTotal"/>
-      <field name="deserveTotal"/>
+      <field name="deserveTotal" hidden="true"/>
+      <field name="advanceRequestType"/>
     </panel>
   </form>
 
   <grid name="employee-advance-request-line-manager-ru-grid" title="Advance Request Line"
     model="com.axelor.apps.hr.db.AdvanceRequestLineRu" orderBy="">
     <field name="employee"/>
-    <field name="empSalaryMonth"/>
+    <field name="empSalaryMonth" domain="self.employeeRu = :employee"/>
     <field name="reason"/>
     <field name="priority"/>
     <field name="requestTotal"/>
-    <field name="deserveTotal"/>
+    <field name="deserveTotal" hidden="true"/>
+    <field name="advanceRequestType"/>
     <field name="confirmCheckbox"/>
   </grid>
 
@@ -42,11 +45,12 @@
 
     <panel name="mainPanel" colSpan="12">
       <field name="employee"/>
-      <field name="empSalaryMonth"/>
+      <field name="empSalaryMonth" domain="self.employeeRu = :employee"/>
       <field name="reason"/>
       <field name="priority"/>
       <field name="requestTotal"/>
-      <field name="deserveTotal"/>
+      <field name="deserveTotal" hidden="true"/>
+      <field name="advanceRequestType"/>
       <field name="confirmCheckbox"/>
     </panel>
   </form>

@@ -8,10 +8,11 @@
     <field name="name"/>
     <field name="surname"/>
     <field name="fatherName"/>
+    <field name="projectTeam"/>
+    <field name="projectDepartment"/>
+    <field name="paymentStatus"/>
+    <field name="technicalStatus"/>
     <field name="email"/>
-    <field name="mobilePhone"/>
-    <field name="phone"/>
-    <field name="birthDate"/>
   </grid>
 
   <form name="employee-ru-form" title="Employee" model="com.axelor.apps.hr.db.EmployeeRu"

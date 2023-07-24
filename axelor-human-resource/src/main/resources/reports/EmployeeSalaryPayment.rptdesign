@@ -545,6 +545,24 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="heading">totaladvancepay</text-property>
                 </structure>
                 <structure>
+                    <property name="columnName">registraexp</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">registraexp</text-property>
+                    <text-property name="heading">registraexp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">patentexp</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">patentexp</text-property>
+                    <text-property name="heading">patentexp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">differentexp</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">differentexp</text-property>
+                    <text-property name="heading">differentexp</text-property>
+                </structure>
+                <structure>
                     <property name="columnName">totalexpence</property>
                     <property name="analysis">measure</property>
                     <text-property name="displayName">totalexpence</text-property>
@@ -986,31 +1004,46 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     </structure>
                     <structure>
                         <property name="position">81</property>
-                        <property name="name">totalexpence</property>
+                        <property name="name">registraexp</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">82</property>
-                        <property name="name">paymentmethod</property>
-                        <property name="dataType">string</property>
+                        <property name="name">patentexp</property>
+                        <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">83</property>
-                        <property name="name">registraexpence</property>
+                        <property name="name">differentexp</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">84</property>
-                        <property name="name">patentexpence</property>
+                        <property name="name">totalexpence</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">85</property>
-                        <property name="name">depname</property>
+                        <property name="name">paymentmethod</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">86</property>
+                        <property name="name">registraexpence</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">87</property>
+                        <property name="name">patentexpence</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">88</property>
+                        <property name="name">depname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">89</property>
                         <property name="name">enddate</property>
                         <property name="dataType">date</property>
                     </structure>
@@ -1581,41 +1614,62 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                 </structure>
                 <structure>
                     <property name="position">81</property>
+                    <property name="name">registraexp</property>
+                    <property name="nativeName">registraexp</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">82</property>
+                    <property name="name">patentexp</property>
+                    <property name="nativeName">patentexp</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">83</property>
+                    <property name="name">differentexp</property>
+                    <property name="nativeName">differentexp</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">84</property>
                     <property name="name">totalexpence</property>
                     <property name="nativeName">totalexpence</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">82</property>
+                    <property name="position">85</property>
                     <property name="name">paymentmethod</property>
                     <property name="nativeName">paymentmethod</property>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
-                    <property name="position">83</property>
+                    <property name="position">86</property>
                     <property name="name">registraexpence</property>
                     <property name="nativeName">registraexpence</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">84</property>
+                    <property name="position">87</property>
                     <property name="name">patentexpence</property>
                     <property name="nativeName">patentexpence</property>
                     <property name="dataType">decimal</property>
                     <property name="nativeDataType">2</property>
                 </structure>
                 <structure>
-                    <property name="position">85</property>
+                    <property name="position">88</property>
                     <property name="name">depname</property>
                     <property name="nativeName">depname</property>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
-                    <property name="position">86</property>
+                    <property name="position">89</property>
                     <property name="name">enddate</property>
                     <property name="nativeName">enddate</property>
                     <property name="dataType">date</property>
@@ -1702,12 +1756,16 @@ EmpSalary.total_paid_salary as PaidSalary,
 EmpSalary.total_salary as TotalSal,
 EmpSalary.total_net_salary as NetSalary,
 EmpSalary.total_advance_pay as TotalAdvancePay,
+EmpSalary.registra_exp as registraExp,
+EmpSalary.patent_exp as patentExp,
+EmpSalary.different_exp as differentExp,
 EmpSalary.total_expence as TotalExpence,
 EmpSalary.payment_method as PaymentMethod,
 EmpSalary.registra_expence as RegistraExpence,
 EmpSalary.patent_expence as PatentExpence,
 EmployeeDepart.name as DepName,
 EmployeeContract.end_date as EndDate
+
 
 from hr_employee_salary_ru as EmpSalary
 left outer join hr_employee_ru as Employee on (EmpSalary.employee_ru = Employee.id)
@@ -2014,7 +2072,7 @@ where EmpSalaryPayment.id = ?
             <property name="leftMargin">0.3958333333333333in</property>
             <property name="rightMargin">0.15625in</property>
             <property name="height">297mm</property>
-            <property name="width">900mm</property>
+            <property name="width">1000mm</property>
             <property name="headerHeight">0in</property>
             <property name="footerHeight">2.4cm</property>
         </simple-master-page>
@@ -3292,125 +3350,167 @@ row["thirtyone"]
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">registraexp</property>
+                    <text-property name="displayName">registraexp</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["registraexp"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">patentexp</property>
+                    <text-property name="displayName">patentexp</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["patentexp"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">differentexp</property>
+                    <text-property name="displayName">differentexp</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["differentexp"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">different</property>
+                    <expression name="expression" type="javascript">row["differentexp"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">RegistraExp</property>
+                    <expression name="expression" type="javascript">row["registraexp"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PatentExp</property>
+                    <expression name="expression" type="javascript">row["patentexp"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">registraexp2</property>
+                    <expression name="expression" type="javascript">row["registraexp"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
-            <column id="5634">
-                <property name="width">0.8cm</property>
-            </column>
-            <column id="6115">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="6116">
-                <property name="width">1.5cm</property>
-            </column>
-            <column id="6117">
-                <property name="width">5cm</property>
-            </column>
-            <column id="6118">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="6119">
-                <property name="width">2cm</property>
-            </column>
-            <column id="6120">
-                <property name="width">2cm</property>
-            </column>
-            <column id="6121">
-                <property name="width">1.5cm</property>
-            </column>
-            <column id="6122">
-                <property name="width">1.5cm</property>
-            </column>
-            <column id="6123">
-                <property name="width">1.5cm</property>
-            </column>
-            <column id="6124"/>
-            <column id="6125"/>
-            <column id="6126"/>
-            <column id="6127"/>
-            <column id="6128"/>
-            <column id="6129"/>
-            <column id="6130"/>
-            <column id="6131"/>
-            <column id="6132"/>
-            <column id="6133"/>
-            <column id="6134"/>
-            <column id="6135"/>
-            <column id="6136"/>
-            <column id="6137"/>
-            <column id="6138"/>
-            <column id="6139"/>
-            <column id="6140"/>
-            <column id="6141"/>
-            <column id="6142"/>
-            <column id="6143"/>
-            <column id="6144"/>
-            <column id="6145"/>
-            <column id="6146"/>
-            <column id="6147"/>
-            <column id="6148"/>
-            <column id="6149"/>
-            <column id="6150"/>
-            <column id="6151"/>
-            <column id="6152"/>
-            <column id="6153"/>
-            <column id="6154"/>
             <column id="6155">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5657">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5661">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5622">
-                <property name="width">2.5cm</property>
+                <property name="width">0.8cm</property>
             </column>
             <column id="6156">
                 <property name="width">2.5cm</property>
             </column>
             <column id="6157">
-                <property name="width">2.5cm</property>
+                <property name="width">1.5cm</property>
             </column>
             <column id="6158">
-                <property name="width">2.5cm</property>
+                <property name="width">5cm</property>
             </column>
             <column id="6159">
                 <property name="width">2.5cm</property>
             </column>
             <column id="6160">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5647">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5628">
-                <property name="width">2.5cm</property>
-            </column>
-            <column id="5653">
-                <property name="width">2.5cm</property>
+                <property name="width">2cm</property>
             </column>
             <column id="6161">
+                <property name="width">2cm</property>
+            </column>
+            <column id="6162">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="6163">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="6164">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="6165"/>
+            <column id="6166"/>
+            <column id="6167"/>
+            <column id="6168"/>
+            <column id="6169"/>
+            <column id="6170"/>
+            <column id="6171"/>
+            <column id="6172"/>
+            <column id="6173"/>
+            <column id="6174"/>
+            <column id="6175"/>
+            <column id="6176"/>
+            <column id="6177"/>
+            <column id="6178"/>
+            <column id="6179"/>
+            <column id="6180"/>
+            <column id="6181"/>
+            <column id="6182"/>
+            <column id="6183"/>
+            <column id="6184"/>
+            <column id="6185"/>
+            <column id="6186"/>
+            <column id="6187"/>
+            <column id="6188"/>
+            <column id="6189"/>
+            <column id="6190"/>
+            <column id="6191"/>
+            <column id="6192"/>
+            <column id="6193"/>
+            <column id="6194"/>
+            <column id="6195"/>
+            <column id="6196">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6197">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6198">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6199">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6200">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6212">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6224">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6201">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6202">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6203">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6204">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6205">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6206">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6207">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6208">
                 <property name="width">2.5cm</property>
             </column>
             <header>
                 <row id="5883">
+                    <property name="fontFamily">monospace</property>
                     <property name="fontSize">10pt</property>
                     <property name="fontWeight">bold</property>
                     <property name="borderBottomStyle">solid</property>
                     <property name="borderBottomWidth">thin</property>
-                    <cell id="5631">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <label id="5635">
-                            <text-property name="text">№</text-property>
-                        </label>
-                    </cell>
                     <cell id="5884">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5885">
-                            <text-property name="text">СТАТУС</text-property>
+                            <text-property name="text">№</text-property>
                         </label>
                     </cell>
                     <cell id="5886">
@@ -3424,310 +3524,331 @@ row["thirtyone"]
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5889">
-                            <text-property name="text">Ф.И.О</text-property>
+                            <text-property name="text">СТАТУС</text-property>
                         </label>
                     </cell>
                     <cell id="5890">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5891">
-                            <text-property name="text">ДОЛЖНОСТЬ</text-property>
+                            <text-property name="text">Ф.И.О</text-property>
                         </label>
                     </cell>
                     <cell id="5892">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5893">
-                            <text-property name="text">ДАТА ПРИЕМА </text-property>
+                            <text-property name="text">ДОЛЖНОСТЬ</text-property>
                         </label>
                     </cell>
                     <cell id="5894">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5895">
-                            <text-property name="text">ДАТА УВОЛЬНЕНИЯ </text-property>
+                            <text-property name="text">ДАТА ПРИЕМА </text-property>
                         </label>
                     </cell>
                     <cell id="5896">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5897">
-                            <text-property name="text">Тип заработной платы</text-property>
+                            <text-property name="text">ДАТА УВОЛЬНЕНИЯ </text-property>
                         </label>
                     </cell>
                     <cell id="5898">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5899">
-                            <text-property name="text">Фиксированная зарплата</text-property>
+                            <text-property name="text">Тип заработной платы</text-property>
                         </label>
                     </cell>
                     <cell id="5900">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5901">
-                            <text-property name="text">Почасовая ставка</text-property>
+                            <text-property name="text">Фиксированная зарплата</text-property>
                         </label>
                     </cell>
                     <cell id="5902">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
                         <label id="5903">
-                            <text-property name="text">01</text-property>
+                            <text-property name="text">Почасовая ставка</text-property>
                         </label>
                     </cell>
                     <cell id="5904">
                         <label id="5905">
-                            <text-property name="text">02</text-property>
+                            <text-property name="text">01</text-property>
                         </label>
                     </cell>
                     <cell id="5906">
                         <label id="5907">
-                            <text-property name="text">03</text-property>
+                            <text-property name="text">02</text-property>
                         </label>
                     </cell>
                     <cell id="5908">
                         <label id="5909">
-                            <text-property name="text">04</text-property>
+                            <text-property name="text">03</text-property>
                         </label>
                     </cell>
                     <cell id="5910">
                         <label id="5911">
-                            <text-property name="text">05</text-property>
+                            <text-property name="text">04</text-property>
                         </label>
                     </cell>
                     <cell id="5912">
                         <label id="5913">
-                            <text-property name="text">06</text-property>
+                            <text-property name="text">05</text-property>
                         </label>
                     </cell>
                     <cell id="5914">
                         <label id="5915">
-                            <text-property name="text">07</text-property>
+                            <text-property name="text">06</text-property>
                         </label>
                     </cell>
                     <cell id="5916">
                         <label id="5917">
-                            <text-property name="text">08</text-property>
+                            <text-property name="text">07</text-property>
                         </label>
                     </cell>
                     <cell id="5918">
                         <label id="5919">
-                            <text-property name="text">09</text-property>
+                            <text-property name="text">08</text-property>
                         </label>
                     </cell>
                     <cell id="5920">
                         <label id="5921">
-                            <text-property name="text">10</text-property>
+                            <text-property name="text">09</text-property>
                         </label>
                     </cell>
                     <cell id="5922">
                         <label id="5923">
-                            <text-property name="text">11</text-property>
+                            <text-property name="text">10</text-property>
                         </label>
                     </cell>
                     <cell id="5924">
                         <label id="5925">
-                            <text-property name="text">12</text-property>
+                            <text-property name="text">11</text-property>
                         </label>
                     </cell>
                     <cell id="5926">
                         <label id="5927">
-                            <text-property name="text">13</text-property>
+                            <text-property name="text">12</text-property>
                         </label>
                     </cell>
                     <cell id="5928">
                         <label id="5929">
-                            <text-property name="text">14</text-property>
+                            <text-property name="text">13</text-property>
                         </label>
                     </cell>
                     <cell id="5930">
                         <label id="5931">
-                            <text-property name="text">15</text-property>
+                            <text-property name="text">14</text-property>
                         </label>
                     </cell>
                     <cell id="5932">
                         <label id="5933">
-                            <text-property name="text">16</text-property>
+                            <text-property name="text">15</text-property>
                         </label>
                     </cell>
                     <cell id="5934">
                         <label id="5935">
-                            <text-property name="text">17</text-property>
+                            <text-property name="text">16</text-property>
                         </label>
                     </cell>
                     <cell id="5936">
                         <label id="5937">
-                            <text-property name="text">18</text-property>
+                            <text-property name="text">17</text-property>
                         </label>
                     </cell>
                     <cell id="5938">
                         <label id="5939">
-                            <text-property name="text">19</text-property>
+                            <text-property name="text">18</text-property>
                         </label>
                     </cell>
                     <cell id="5940">
                         <label id="5941">
-                            <text-property name="text">20</text-property>
+                            <text-property name="text">19</text-property>
                         </label>
                     </cell>
                     <cell id="5942">
                         <label id="5943">
-                            <text-property name="text">21</text-property>
+                            <text-property name="text">20</text-property>
                         </label>
                     </cell>
                     <cell id="5944">
                         <label id="5945">
-                            <text-property name="text">22</text-property>
+                            <text-property name="text">21</text-property>
                         </label>
                     </cell>
                     <cell id="5946">
                         <label id="5947">
-                            <text-property name="text">23</text-property>
+                            <text-property name="text">22</text-property>
                         </label>
                     </cell>
                     <cell id="5948">
                         <label id="5949">
-                            <text-property name="text">24</text-property>
+                            <text-property name="text">23</text-property>
                         </label>
                     </cell>
                     <cell id="5950">
                         <label id="5951">
-                            <text-property name="text">25</text-property>
+                            <text-property name="text">24</text-property>
                         </label>
                     </cell>
                     <cell id="5952">
                         <label id="5953">
-                            <text-property name="text">26</text-property>
+                            <text-property name="text">25</text-property>
                         </label>
                     </cell>
                     <cell id="5954">
                         <label id="5955">
-                            <text-property name="text">27</text-property>
+                            <text-property name="text">26</text-property>
                         </label>
                     </cell>
                     <cell id="5956">
                         <label id="5957">
-                            <text-property name="text">28</text-property>
+                            <text-property name="text">27</text-property>
                         </label>
                     </cell>
                     <cell id="5958">
                         <label id="5959">
-                            <text-property name="text">29</text-property>
+                            <text-property name="text">28</text-property>
                         </label>
                     </cell>
                     <cell id="5960">
                         <label id="5961">
-                            <text-property name="text">30</text-property>
+                            <text-property name="text">29</text-property>
                         </label>
                     </cell>
                     <cell id="5962">
                         <label id="5963">
-                            <text-property name="text">31</text-property>
+                            <text-property name="text">30</text-property>
                         </label>
                     </cell>
                     <cell id="5964">
+                        <label id="5965">
+                            <text-property name="text">31</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5966">
                         <property name="borderLeftStyle">solid</property>
                         <property name="borderLeftWidth">thin</property>
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <label id="5965">
-                            <text-property name="text">СУММА</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5654">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <label id="5662">
-                            <text-property name="text">Registra Exp</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5658">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <label id="5663">
-                            <text-property name="text">Patent Exp</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5619">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <label id="5623">
-                            <text-property name="text">Общий расход</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5966">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
                         <label id="5967">
-                            <text-property name="text">АВАНС </text-property>
+                            <text-property name="text">СУММА</text-property>
                         </label>
                     </cell>
                     <cell id="5968">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5969">
-                            <text-property name="text">ШТРАФ (НЕВЫХОД)</text-property>
+                            <text-property name="text">РЕГИСТРАЦИЯ</text-property>
                         </label>
                     </cell>
                     <cell id="5970">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5971">
-                            <text-property name="text">ШТРАФ (ОДЕЖДА)</text-property>
+                            <text-property name="text">ПАТЕНТА</text-property>
                         </label>
                     </cell>
                     <cell id="5972">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5973">
-                            <text-property name="text">ШТРАФ (ОТ ФИРМЫ)</text-property>
+                            <text-property name="text">Общий расход</text-property>
                         </label>
                     </cell>
                     <cell id="5974">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5975">
-                            <text-property name="text">ШТРАФ (ОТ СКЛАДА)</text-property>
+                            <text-property name="text">АВАНС </text-property>
                         </label>
                     </cell>
-                    <cell id="5644">
+                    <cell id="6209">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <label id="5648">
-                            <text-property name="text">Оплачено</text-property>
+                        <label id="6213">
+                            <text-property name="text">РЕГИСТРАЦИЯ</text-property>
                         </label>
                     </cell>
-                    <cell id="5625">
+                    <cell id="6221">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <label id="5629">
-                            <text-property name="text">Тип платежа</text-property>
-                        </label>
-                    </cell>
-                    <cell id="5650">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <label id="5642">
-                            <text-property name="text">СУММА</text-property>
+                        <label id="6230">
+                            <text-property name="text">ПАТЕНТА</text-property>
                         </label>
                     </cell>
                     <cell id="5976">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
                         <label id="5977">
+                            <text-property name="text">ШТРАФ (НЕВЫХОД)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5978">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5979">
+                            <text-property name="text">ШТРАФ (ОДЕЖДА)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5980">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5981">
+                            <text-property name="text">ШТРАФ (ОТ ФИРМЫ)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5982">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5983">
+                            <text-property name="text">ШТРАФ (ОТ СКЛАДА)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5984">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5985">
+                            <text-property name="text">Оплачено</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5986">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5987">
+                            <text-property name="text">Тип платежа</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5988">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5989">
+                            <text-property name="text">СУММА</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5990">
+                        <label id="5991">
                             <text-property name="text">Подпись</text-property>
                         </label>
                     </cell>
                 </row>
             </header>
             <detail>
-                <row id="5978">
+                <row id="5992">
                     <property name="fontSize">9pt</property>
                     <property name="textAlign">center</property>
-                    <cell id="5632">
-                        <data id="5636">
+                    <cell id="5993">
+                        <data id="5994">
                             <property name="resultSetColumn">Row</property>
                         </data>
                     </cell>
-                    <cell id="5979">
-                        <data id="5614">
+                    <cell id="5995">
+                        <data id="5996">
                             <list-property name="mapRules">
                                 <structure>
                                     <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
@@ -3765,8 +3886,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">PayStatus</property>
                         </data>
                     </cell>
-                    <cell id="5980">
-                        <data id="5615">
+                    <cell id="5997">
+                        <data id="5998">
                             <list-property name="mapRules">
                                 <structure>
                                     <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
@@ -3782,24 +3903,24 @@ row["thirtyone"]
                             <property name="resultSetColumn">EmpStatus</property>
                         </data>
                     </cell>
-                    <cell id="5981">
-                        <data id="5982">
+                    <cell id="5999">
+                        <data id="6000">
                             <property name="resultSetColumn">Emp</property>
                         </data>
                     </cell>
-                    <cell id="5983">
-                        <data id="5616">
+                    <cell id="6001">
+                        <data id="6002">
                             <property name="resultSetColumn">DepNameposition</property>
                         </data>
                     </cell>
-                    <cell id="5984">
-                        <data id="5985">
+                    <cell id="6003">
+                        <data id="6004">
                             <property name="style">DateFormat</property>
                             <property name="resultSetColumn">Date</property>
                         </data>
                     </cell>
-                    <cell id="5986">
-                        <data id="5618">
+                    <cell id="6005">
+                        <data id="6006">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -3855,8 +3976,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">EndDate</property>
                         </data>
                     </cell>
-                    <cell id="5987">
-                        <data id="5988">
+                    <cell id="6007">
+                        <data id="6008">
                             <list-property name="mapRules">
                                 <structure>
                                     <expression name="testExpr" type="javascript">row["salarytype"]</expression>
@@ -3878,18 +3999,18 @@ row["thirtyone"]
                             <property name="resultSetColumn">Type</property>
                         </data>
                     </cell>
-                    <cell id="5989">
-                        <data id="5990">
+                    <cell id="6009">
+                        <data id="6010">
                             <property name="resultSetColumn">FixSalary</property>
                         </data>
                     </cell>
-                    <cell id="5991">
-                        <data id="5992">
+                    <cell id="6011">
+                        <data id="6012">
                             <property name="resultSetColumn">Hourly Rate</property>
                         </data>
                     </cell>
-                    <cell id="5993">
-                        <data id="5994">
+                    <cell id="6013">
+                        <data id="6014">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -3913,8 +4034,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">One</property>
                         </data>
                     </cell>
-                    <cell id="5995">
-                        <data id="5996">
+                    <cell id="6015">
+                        <data id="6016">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -3938,8 +4059,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Two</property>
                         </data>
                     </cell>
-                    <cell id="5997">
-                        <data id="5998">
+                    <cell id="6017">
+                        <data id="6018">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -3963,8 +4084,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Three</property>
                         </data>
                     </cell>
-                    <cell id="5999">
-                        <data id="6000">
+                    <cell id="6019">
+                        <data id="6020">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -3988,8 +4109,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Four</property>
                         </data>
                     </cell>
-                    <cell id="6001">
-                        <data id="6002">
+                    <cell id="6021">
+                        <data id="6022">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4013,8 +4134,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Five</property>
                         </data>
                     </cell>
-                    <cell id="6003">
-                        <data id="6004">
+                    <cell id="6023">
+                        <data id="6024">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4038,8 +4159,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Six</property>
                         </data>
                     </cell>
-                    <cell id="6005">
-                        <data id="6006">
+                    <cell id="6025">
+                        <data id="6026">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4063,8 +4184,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Seven</property>
                         </data>
                     </cell>
-                    <cell id="6007">
-                        <data id="6008">
+                    <cell id="6027">
+                        <data id="6028">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4088,8 +4209,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Eight</property>
                         </data>
                     </cell>
-                    <cell id="6009">
-                        <data id="6010">
+                    <cell id="6029">
+                        <data id="6030">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4113,8 +4234,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Nine</property>
                         </data>
                     </cell>
-                    <cell id="6011">
-                        <data id="6012">
+                    <cell id="6031">
+                        <data id="6032">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4138,8 +4259,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Ten</property>
                         </data>
                     </cell>
-                    <cell id="6013">
-                        <data id="6014">
+                    <cell id="6033">
+                        <data id="6034">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4163,8 +4284,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Eleven</property>
                         </data>
                     </cell>
-                    <cell id="6015">
-                        <data id="6016">
+                    <cell id="6035">
+                        <data id="6036">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4188,8 +4309,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twelve</property>
                         </data>
                     </cell>
-                    <cell id="6017">
-                        <data id="6018">
+                    <cell id="6037">
+                        <data id="6038">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4213,8 +4334,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Thirteen</property>
                         </data>
                     </cell>
-                    <cell id="6019">
-                        <data id="6020">
+                    <cell id="6039">
+                        <data id="6040">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4238,8 +4359,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Fourteen</property>
                         </data>
                     </cell>
-                    <cell id="6021">
-                        <data id="6022">
+                    <cell id="6041">
+                        <data id="6042">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4263,8 +4384,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Fifteen</property>
                         </data>
                     </cell>
-                    <cell id="6023">
-                        <data id="6024">
+                    <cell id="6043">
+                        <data id="6044">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4288,8 +4409,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Sixteen</property>
                         </data>
                     </cell>
-                    <cell id="6025">
-                        <data id="6026">
+                    <cell id="6045">
+                        <data id="6046">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4313,8 +4434,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Seventeen</property>
                         </data>
                     </cell>
-                    <cell id="6027">
-                        <data id="6028">
+                    <cell id="6047">
+                        <data id="6048">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4338,8 +4459,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Eighteen</property>
                         </data>
                     </cell>
-                    <cell id="6029">
-                        <data id="6030">
+                    <cell id="6049">
+                        <data id="6050">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4363,8 +4484,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Nineteen</property>
                         </data>
                     </cell>
-                    <cell id="6031">
-                        <data id="6032">
+                    <cell id="6051">
+                        <data id="6052">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4388,8 +4509,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twenty</property>
                         </data>
                     </cell>
-                    <cell id="6033">
-                        <data id="6034">
+                    <cell id="6053">
+                        <data id="6054">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4413,8 +4534,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentyone</property>
                         </data>
                     </cell>
-                    <cell id="6035">
-                        <data id="6036">
+                    <cell id="6055">
+                        <data id="6056">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4438,8 +4559,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentytwo</property>
                         </data>
                     </cell>
-                    <cell id="6037">
-                        <data id="6038">
+                    <cell id="6057">
+                        <data id="6058">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4463,8 +4584,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentythree</property>
                         </data>
                     </cell>
-                    <cell id="6039">
-                        <data id="6040">
+                    <cell id="6059">
+                        <data id="6060">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4488,8 +4609,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentyfour</property>
                         </data>
                     </cell>
-                    <cell id="6041">
-                        <data id="6042">
+                    <cell id="6061">
+                        <data id="6062">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4513,8 +4634,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentyfiv</property>
                         </data>
                     </cell>
-                    <cell id="6043">
-                        <data id="6044">
+                    <cell id="6063">
+                        <data id="6064">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4538,8 +4659,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentysix</property>
                         </data>
                     </cell>
-                    <cell id="6045">
-                        <data id="6046">
+                    <cell id="6065">
+                        <data id="6066">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4563,8 +4684,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentyseven</property>
                         </data>
                     </cell>
-                    <cell id="6047">
-                        <data id="6048">
+                    <cell id="6067">
+                        <data id="6068">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4588,8 +4709,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentyeight</property>
                         </data>
                     </cell>
-                    <cell id="6049">
-                        <data id="6050">
+                    <cell id="6069">
+                        <data id="6070">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4613,8 +4734,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Twentynine</property>
                         </data>
                     </cell>
-                    <cell id="6051">
-                        <data id="6052">
+                    <cell id="6071">
+                        <data id="6072">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4638,8 +4759,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Thirty</property>
                         </data>
                     </cell>
-                    <cell id="6053">
-                        <data id="6054">
+                    <cell id="6073">
+                        <data id="6074">
                             <list-property name="highlightRules">
                                 <structure>
                                     <property name="operator">eq</property>
@@ -4663,13 +4784,13 @@ row["thirtyone"]
                             <property name="resultSetColumn">Thirtyone</property>
                         </data>
                     </cell>
-                    <cell id="6055">
-                        <data id="5643">
+                    <cell id="6075">
+                        <data id="6076">
                             <property name="resultSetColumn">totalSalary</property>
                         </data>
                     </cell>
-                    <cell id="5655">
-                        <data id="5664">
+                    <cell id="6077">
+                        <data id="6078">
                             <list-property name="mapRules">
                                 <structure>
                                     <expression name="testExpr" type="javascript">row["Registra"]</expression>
@@ -4680,8 +4801,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">Registra</property>
                         </data>
                     </cell>
-                    <cell id="5659">
-                        <data id="5665">
+                    <cell id="6079">
+                        <data id="6080">
                             <list-property name="mapRules">
                                 <structure>
                                     <expression name="testExpr" type="javascript">row["Patent"]</expression>
@@ -4692,18 +4813,49 @@ row["thirtyone"]
                             <property name="resultSetColumn">Patent</property>
                         </data>
                     </cell>
-                    <cell id="5620">
-                        <data id="5624">
+                    <cell id="6081">
+                        <data id="6082">
                             <property name="resultSetColumn">TotalExpense</property>
                         </data>
                     </cell>
-                    <cell id="6056">
-                        <data id="5617">
-                            <property name="resultSetColumn">Advance</property>
+                    <cell id="6083">
+                        <data id="6231">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["different"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">different</property>
                         </data>
                     </cell>
-                    <cell id="6057">
-                        <data id="6058">
+                    <cell id="6210">
+                        <data id="6234">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["registraexp2"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">registraexp2</property>
+                        </data>
+                    </cell>
+                    <cell id="6222">
+                        <data id="6233">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PatentExp"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">PatentExp</property>
+                        </data>
+                    </cell>
+                    <cell id="6085">
+                        <data id="6086">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -4755,8 +4907,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">PenaltyNotCame</property>
                         </data>
                     </cell>
-                    <cell id="6059">
-                        <data id="6060">
+                    <cell id="6087">
+                        <data id="6088">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -4808,8 +4960,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">PenaltyCloth</property>
                         </data>
                     </cell>
-                    <cell id="6061">
-                        <data id="6062">
+                    <cell id="6089">
+                        <data id="6090">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -4861,8 +5013,8 @@ row["thirtyone"]
                             <property name="resultSetColumn">PenaltyCompany</property>
                         </data>
                     </cell>
-                    <cell id="6063">
-                        <data id="6064">
+                    <cell id="6091">
+                        <data id="6092">
                             <property name="backgroundAttachment">scroll</property>
                             <property name="backgroundPositionX">0%</property>
                             <property name="backgroundPositionY">0%</property>
@@ -4914,60 +5066,26 @@ row["thirtyone"]
                             <property name="resultSetColumn">Penaltywherehous</property>
                         </data>
                     </cell>
-                    <cell id="5645">
-                        <data id="5649">
+                    <cell id="6093">
+                        <data id="6094">
                             <property name="resultSetColumn">Paid</property>
                         </data>
                     </cell>
-                    <cell id="5626">
-                        <data id="5630">
+                    <cell id="6095">
+                        <data id="6096">
                             <property name="resultSetColumn">PayType</property>
                         </data>
                     </cell>
-                    <cell id="5651">
-                        <data id="6065">
+                    <cell id="6097">
+                        <data id="6098">
                             <property name="resultSetColumn">TotalSal</property>
                         </data>
                     </cell>
-                    <cell id="6066"/>
+                    <cell id="6099"/>
                 </row>
             </detail>
             <footer>
-                <row id="6067">
-                    <cell id="5633"/>
-                    <cell id="6068"/>
-                    <cell id="6069"/>
-                    <cell id="6070"/>
-                    <cell id="6071"/>
-                    <cell id="6072"/>
-                    <cell id="6073"/>
-                    <cell id="6074"/>
-                    <cell id="6075"/>
-                    <cell id="6076"/>
-                    <cell id="6077"/>
-                    <cell id="6078"/>
-                    <cell id="6079"/>
-                    <cell id="6080"/>
-                    <cell id="6081"/>
-                    <cell id="6082"/>
-                    <cell id="6083"/>
-                    <cell id="6084"/>
-                    <cell id="6085"/>
-                    <cell id="6086"/>
-                    <cell id="6087"/>
-                    <cell id="6088"/>
-                    <cell id="6089"/>
-                    <cell id="6090"/>
-                    <cell id="6091"/>
-                    <cell id="6092"/>
-                    <cell id="6093"/>
-                    <cell id="6094"/>
-                    <cell id="6095"/>
-                    <cell id="6096"/>
-                    <cell id="6097"/>
-                    <cell id="6098"/>
-                    <cell id="6099"/>
-                    <cell id="6100"/>
+                <row id="6100">
                     <cell id="6101"/>
                     <cell id="6102"/>
                     <cell id="6103"/>
@@ -4976,18 +5094,54 @@ row["thirtyone"]
                     <cell id="6106"/>
                     <cell id="6107"/>
                     <cell id="6108"/>
-                    <cell id="5656"/>
-                    <cell id="5660"/>
-                    <cell id="5621"/>
                     <cell id="6109"/>
                     <cell id="6110"/>
                     <cell id="6111"/>
                     <cell id="6112"/>
                     <cell id="6113"/>
-                    <cell id="5646"/>
-                    <cell id="5627"/>
-                    <cell id="5652"/>
                     <cell id="6114"/>
+                    <cell id="6115"/>
+                    <cell id="6116"/>
+                    <cell id="6117"/>
+                    <cell id="6118"/>
+                    <cell id="6119"/>
+                    <cell id="6120"/>
+                    <cell id="6121"/>
+                    <cell id="6122"/>
+                    <cell id="6123"/>
+                    <cell id="6124"/>
+                    <cell id="6125"/>
+                    <cell id="6126"/>
+                    <cell id="6127"/>
+                    <cell id="6128"/>
+                    <cell id="6129"/>
+                    <cell id="6130"/>
+                    <cell id="6131"/>
+                    <cell id="6132"/>
+                    <cell id="6133"/>
+                    <cell id="6134"/>
+                    <cell id="6135"/>
+                    <cell id="6136"/>
+                    <cell id="6137"/>
+                    <cell id="6138"/>
+                    <cell id="6139"/>
+                    <cell id="6140"/>
+                    <cell id="6141"/>
+                    <cell id="6142"/>
+                    <cell id="6143"/>
+                    <cell id="6144"/>
+                    <cell id="6145"/>
+                    <cell id="6146"/>
+                    <cell id="6211"/>
+                    <cell id="6223"/>
+                    <cell id="6147"/>
+                    <cell id="6148"/>
+                    <cell id="6149"/>
+                    <cell id="6150"/>
+                    <cell id="6151"/>
+                    <cell id="6152"/>
+                    <cell id="6153"/>
+                    <cell id="6154"/>
                 </row>
             </footer>
         </table>

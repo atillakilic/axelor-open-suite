@@ -25,6 +25,7 @@ import com.axelor.exception.AxelorException;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -91,6 +92,31 @@ public class EmployeeDailyActivityLineController {
       response.setFlash(
           "Employee salary month is diffrent then current month, please correct on contract form.");
       return;
+    }
+  }
+
+  public void validateDailyActivity(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+    EmployeeDailyActivityLineRu employeeDailyActivityLine =
+        request.getContext().asType(EmployeeDailyActivityLineRu.class);
+
+    if (employeeDailyActivityLine.getIsAbsence()) {
+      if (employeeDailyActivityLine.getSalaryType() == 2) { // hourly
+        if (employeeDailyActivityLine.getDailyWorkHours().compareTo(new BigDecimal(0)) != 0) {
+          response.setValue("dailyWorkHours", 0);
+        }
+      }
+
+      if (employeeDailyActivityLine.getAbsenceReason() == null) {
+        response.setError("Please add absence reason.");
+      }
+    } else {
+      if (employeeDailyActivityLine.getSalaryType() == 2) { // hourly
+        if (employeeDailyActivityLine.getDailyWorkHours().compareTo(new BigDecimal(0)) == 0) {
+          response.setValue("dailyWorkHours", -1);
+          response.setFlash("Employee work hours should br in between 1 to 24");
+        }
+      }
     }
   }
 }

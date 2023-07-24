@@ -5,18 +5,34 @@
 
   <grid name="hr-employee-company-daily-expences-line-ru-grid" editable="true"
     title="Company Daily Expences Line" model="com.axelor.apps.hr.db.CompanyDailyExpencesLineRu">
-    <field name="companyExpenceType"/>
-    <field name="quentity"/>
+    <field name="companyExpenceType"
+      onChange="action-company-daily-expense-line-set-prise,action-company-daily-expense-line-calculate-total-cost"/>
+    <field name="_expensePrise" title="Expense Prise" readonly="true"/>
+    <field name="quentity" onChange="action-company-daily-expense-line-calculate-total-cost"/>
+    <field name="totalCost" readonly="true"/>
   </grid>
 
   <form name="hr-employee-company-daily-expences-line-ru-form"
     title="Company Daily Expences Line" model="com.axelor.apps.hr.db.CompanyDailyExpencesLineRu"
     width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
-      <field name="companyExpenceType"/>
-      <field name="quentity"/>
+      <field name="companyExpenceType"
+        onChange="action-company-daily-expense-line-set-prise,action-company-daily-expense-line-calculate-total-cost"/>
+      <field name="_expensePrise" title="Expense Prise" readonly="true"/>
+      <field name="quentity" onChange="action-company-daily-expense-line-calculate-total-cost"/>
+      <field name="totalCost" readonly="true"/>
     </panel>
-
   </form>
+
+  <action-attrs name="action-company-daily-expense-line-set-prise">
+    <attribute name="value" for="_expensePrise"
+      expr="eval: companyExpenceType?.totalPrise"/>
+  </action-attrs>
+
+  <action-attrs name="action-company-daily-expense-line-calculate-total-cost">
+    <attribute name="value" for="totalCost"
+      expr="eval: companyExpenceType?.totalPrise * quentity" if="companyExpenceType != null"/>
+    <attribute name="value" for="totalCost" expr="eval: 0" if="companyExpenceType == null"/>
+  </action-attrs>
 
 </object-views>

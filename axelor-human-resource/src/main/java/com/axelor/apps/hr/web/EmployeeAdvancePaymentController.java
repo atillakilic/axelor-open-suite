@@ -36,16 +36,42 @@ public class EmployeeAdvancePaymentController {
   @Transactional
   public void confirmRequest(ActionRequest request, ActionResponse response)
       throws AxelorException {
-    AdvanceRequestRu employeeSalaryRu = request.getContext().asType(AdvanceRequestRu.class);
+    AdvanceRequestRu advanceRequestRu = request.getContext().asType(AdvanceRequestRu.class);
 
-    for (AdvanceRequestLineRu advanceRequestLine : employeeSalaryRu.getAdvanceRequestLine()) {
+    for (AdvanceRequestLineRu advanceRequestLine : advanceRequestRu.getAdvanceRequestLine()) {
 
-      if (!advanceRequestLine.getConfirmCheckbox()) {
-        continue;
-      }
-      BigDecimal deservedTotal = advanceRequestLine.getDeserveTotal();
       EmployeeSalaryRu empSalary = advanceRequestLine.getEmpSalaryMonth();
-      empSalary.setTotalAdvancePay(empSalary.getTotalAdvancePay().add(deservedTotal));
+
+      BigDecimal totalAdvance = new BigDecimal(0);
+      BigDecimal totalRegistraExp = new BigDecimal(0);
+      BigDecimal totalPatentExp = new BigDecimal(0);
+      BigDecimal totalDifferentExp = new BigDecimal(0);
+
+      for (AdvanceRequestLineRu advancePaymentOnSalary : empSalary.getAdvancePayment()) {
+        if (!advanceRequestLine.getConfirmCheckbox()) {
+          continue;
+        }
+        totalAdvance = totalAdvance.add(advancePaymentOnSalary.getRequestTotal());
+
+        if (advancePaymentOnSalary.getAdvanceRequestType() == 1) { // RegistraExp
+          totalRegistraExp = totalRegistraExp.add(advancePaymentOnSalary.getRequestTotal());
+        }
+
+        if (advancePaymentOnSalary.getAdvanceRequestType() == 2) { // PatentExp
+          totalPatentExp = totalPatentExp.add(advancePaymentOnSalary.getRequestTotal());
+        }
+
+        if (advancePaymentOnSalary.getAdvanceRequestType() == 3) { // DifferentExp
+          totalDifferentExp = totalDifferentExp.add(advancePaymentOnSalary.getRequestTotal());
+        }
+      }
+
+      //      empSalary.setAdvanceRequestType(advanceRequestRu.getAdvanceRequestType());
+      empSalary.setTotalAdvancePay(totalAdvance);
+      empSalary.setRegistraExp(totalRegistraExp);
+      empSalary.setPatentExp(totalPatentExp);
+      empSalary.setDifferentExp(totalDifferentExp);
+      
       BigDecimal totalSalary =
           Beans.get(EmployeeSalaryService.class).calculateMonthlySalary(empSalary);
       empSalary.setTotalSalary(totalSalary);

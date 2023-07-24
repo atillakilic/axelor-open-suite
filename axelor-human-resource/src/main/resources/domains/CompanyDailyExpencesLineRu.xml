@@ -10,6 +10,7 @@
     <many-to-one name="companyExpenceType"
       ref="com.axelor.apps.hr.db.CompanyExpencesTypeRu" title="Company Expence Type"/>
     <decimal name="quentity" title="Quentity"/>
+    <decimal name="totalCost" title="Total Cost"/>
 
     <many-to-one ref="com.axelor.apps.hr.db.CompanyDailyExpencesRu"
       name="companyDailyExpences"/>

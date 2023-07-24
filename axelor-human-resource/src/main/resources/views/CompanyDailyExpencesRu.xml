@@ -7,19 +7,24 @@
     model="com.axelor.apps.hr.db.CompanyDailyExpencesRu">
     <field name="company"/>
     <field name="project"/>
+    <field name="statusShiftType"/>
     <field name="dailyExpenceDate"/>
+    <field name="totalSubCost"/>
   </grid>
 
   <form name="hr-employee-company-daily-expences-ru-form" title="Company Daily Expences"
     onNew="action-company-daily-expence-attrs-set-expence-date"
     model="com.axelor.apps.hr.db.CompanyDailyExpencesRu" width="large">
     <panel name="mainPanel" showTitle="false" title="Main Panel">
-      <field name="company"/>
-      <field name="project"/>
-      <field name="dailyExpenceDate"/>
+      <field name="company" colSpan="3"/>
+      <field name="project" colSpan="3"/>
+      <field name="statusShiftType" min="1" colSpan="3"/>
+      <field name="dailyExpenceDate" colSpan="3"/>
+      <field name="totalSubCost" colSpan="3" readonly="true"/>
     </panel>
 
     <panel-related field="companyDailyExpencesLine" title="Company DailyExpences Line"
+      onChange="action-company-daily-expence-method-calculate-total-sub-cost"
       grid-view="hr-employee-company-daily-expences-line-ru-grid"
       form-view="hr-employee-company-daily-expences-line-ru-form"/>
   </form>
@@ -27,5 +32,10 @@
   <action-attrs name="action-company-daily-expence-attrs-set-expence-date">
     <attribute name="value" for="dailyExpenceDate" expr="eval: __date__"/>
   </action-attrs>
+
+  <action-method name="action-company-daily-expence-method-calculate-total-sub-cost">
+    <call class="com.axelor.apps.hr.web.CompanyDailyExpenceRuController"
+      method="calculateSubTotal"/>
+  </action-method>
 
 </object-views>

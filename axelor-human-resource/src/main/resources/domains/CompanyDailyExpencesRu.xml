@@ -11,6 +11,9 @@
     <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
       title="Project"/>
     <date name="dailyExpenceDate" title="Expence Date"/>
+    <integer name="statusShiftType" title="Shift"
+      selection="hr.employee.daily.activity.shift.selection"/>
+    <decimal name="totalSubCost" title="Total Sub Cost"/>
 
     <one-to-many ref="com.axelor.apps.hr.db.CompanyDailyExpencesLineRu"
       name="companyDailyExpencesLine" mappedBy="companyDailyExpences"/>

@@ -239,7 +239,8 @@ public class EmployeeSalaryerviceImpl implements EmployeeSalaryService {
 
     BigDecimal totalExpense = new BigDecimal(0);
 
-    for (ExpencesLineRu expencesLine : employeeContractRu.getEmployeeExpences()) {
+    for (ExpencesLineRu expencesLine :
+        employeeContractRu.getEmployeeExpences()) { // expense calculation
       if (expencesLine.getIsActive()) {
         if (expencesLine.getExpencesType() != null) {
           BigDecimal percent = expencesLine.getPayFromCompanyPercent();

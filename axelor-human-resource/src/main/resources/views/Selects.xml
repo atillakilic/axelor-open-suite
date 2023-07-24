@@ -252,6 +252,7 @@
   <selection name="hr.employee.daily.activity">
     <option value="1">Team Work</option>
     <option value="2">Employee Work</option>
+    <option value="3">All Project Worker</option>
   </selection>
 
   <selection name="hr.employee.daily.activity.shift.selection">
@@ -268,6 +269,12 @@
   <selection name="hr.employee.salary.payment.payment.method">
     <option value="1">Bank Account</option>
     <option value="2">Cash Account</option>
+  </selection>
+
+  <selection name="hr.employee.request.type.select">
+    <option value="1">Registra Exp</option>
+    <option value="2">Patent Exp</option>
+    <option value="3">Different</option>
   </selection>
 
 </object-views>

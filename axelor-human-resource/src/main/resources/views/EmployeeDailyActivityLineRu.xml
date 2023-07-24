@@ -11,12 +11,14 @@
     <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
     <field name="salaryType"/>
     <field name="dailyWorkHoursOnContact" hidden="true"/>
-    <field name="dailyWorkHours" readonlyIf="salaryType == 1"/>
+    <field name="dailyWorkHours" readonlyIf="salaryType == 1 || isAbsence" min="0" max="24"
+      onChange="action-employee-daily-activity-line-on-save-validation"/>
     <field name="workArea" canNew="true" hidden="true"/>
     <field name="isAbsence"
       onChange="action-employee-daily-activity-line-attrs-set-work-hour-zero-on-true"/>
     <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
-      canEdit="true" grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false"/>
+      requiredIf="isAbsence" canEdit="true" grid-view="hr-employee-not-came-reason-grid"
+      readonlyIf="isAbsence == false"/>
     <field name="penaltyNotCame"/>
     <field name="penaltyCloths"/>
     <field name="penaltyWereHouse"/>
@@ -33,11 +35,13 @@
     <panel name="mainPanel" showTitle="false" title="Main Panel">
       <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
       <field name="salaryType"/>
-      <field name="dailyWorkHours"/>
+      <field name="dailyWorkHours" readonlyIf="salaryType == 1 || isAbsence" min="0" max="24"
+        onChange="action-employee-daily-activity-line-on-save-validation"/>
       <field name="isAbsence"
         onChange="action-employee-daily-activity-line-attrs-set-work-hour-zero-on-true"/>
       <field name="absenceReason" canNew="true" form-view="hr-employee-not-came-reason-form"
-        grid-view="hr-employee-not-came-reason-grid" readonlyIf="isAbsence == false" canEdit="true"/>
+        requiredIf="isAbsence" grid-view="hr-employee-not-came-reason-grid"
+        readonlyIf="isAbsence == false" canEdit="true"/>
       <field name="penaltyNotCame"/>
       <field name="penaltyCloths"/>
       <field name="penaltyWereHouse"/>
@@ -71,6 +75,13 @@
   <action-attrs
     name="action-employee-daily-activity-line-attrs-set-work-hour-zero-on-true">
     <attribute name="value" for="dailyWorkHours" expr="eval: 0" if="isAbsence"/>
+    <attribute name="value" for="dailyWorkHours" expr="eval: -1" if="!isAbsence"/>
+    <attribute name="focus" for="dailyWorkHours" expr="eval: true" if="!isAbsence"/>
   </action-attrs>
+
+  <action-method name="action-employee-daily-activity-line-on-save-validation">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityLineController"
+      method="validateDailyActivity"/>
+  </action-method>
 
 </object-views>

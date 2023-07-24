@@ -1883,6 +1883,2761 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
                 </cell>
             </row>
         </grid>
+        <table id="4987">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="marginTop">10pt</property>
+            <property name="dataSet">EmployeeSalary</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">id</property>
+                    <text-property name="displayName">id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Id</property>
+                    <expression name="expression" type="javascript">row["id"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">startdate</property>
+                    <text-property name="displayName">startdate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["startdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">salarytype</property>
+                    <text-property name="displayName">salarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["salarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">fixsalary</property>
+                    <text-property name="displayName">fixsalary</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fixsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">hourlyrate</property>
+                    <text-property name="displayName">hourlyrate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["hourlyrate"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">one</property>
+                    <text-property name="displayName">one</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["one"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">two</property>
+                    <text-property name="displayName">two</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["two"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">three</property>
+                    <text-property name="displayName">three</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["three"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">four</property>
+                    <text-property name="displayName">four</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["four"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">five</property>
+                    <text-property name="displayName">five</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["five"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Date</property>
+                    <expression name="expression" type="javascript">row["startdate"]</expression>
+                    <property name="dataType">date</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Type</property>
+                    <expression name="expression" type="javascript">row["salarytype"]</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">FixSalary</property>
+                    <expression name="expression" type="javascript">row["fixsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Hourly Rate</property>
+                    <expression name="expression" type="javascript">row["hourlyrate"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">empname</property>
+                    <text-property name="displayName">empname</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["empname"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">six</property>
+                    <text-property name="displayName">six</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["six"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">seven</property>
+                    <text-property name="displayName">seven</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["seven"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eight</property>
+                    <text-property name="displayName">eight</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eight"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">nine</property>
+                    <text-property name="displayName">nine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nine"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ten</property>
+                    <text-property name="displayName">ten</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ten"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eleven</property>
+                    <text-property name="displayName">eleven</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eleven"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twelve</property>
+                    <text-property name="displayName">twelve</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twelve"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thirteen</property>
+                    <text-property name="displayName">thirteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">fourteen</property>
+                    <text-property name="displayName">fourteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fourteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">fifteen</property>
+                    <text-property name="displayName">fifteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fifteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">sixteen</property>
+                    <text-property name="displayName">sixteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sixteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">seventeen</property>
+                    <text-property name="displayName">seventeen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["seventeen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">eighteen</property>
+                    <text-property name="displayName">eighteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eighteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">nineteen</property>
+                    <text-property name="displayName">nineteen</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nineteen"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twenty</property>
+                    <text-property name="displayName">twenty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twenty"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyone</property>
+                    <text-property name="displayName">twentyone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyone"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentytwo</property>
+                    <text-property name="displayName">twentytwo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentytwo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentythree</property>
+                    <text-property name="displayName">twentythree</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentythree"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyfour</property>
+                    <text-property name="displayName">twentyfour</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyfour"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyfiv</property>
+                    <text-property name="displayName">twentyfiv</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyfiv"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentysix</property>
+                    <text-property name="displayName">twentysix</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentysix"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyseven</property>
+                    <text-property name="displayName">twentyseven</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyseven"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyeight</property>
+                    <text-property name="displayName">twentyeight</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyeight"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">twentynine</property>
+                    <text-property name="displayName">twentynine</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentynine"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thirty</property>
+                    <text-property name="displayName">thirty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirty"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">thirtyone</property>
+                    <text-property name="displayName">thirtyone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirtyone"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Emp</property>
+                    <expression name="expression" type="javascript">str = ""
+if(row["empsurname"] != null){
+str = row["empsurname"];
+}
+if(row["empname"] != null){
+str = str + " " + row["empname"];
+}
+if(row["empfathername"] != null){
+str = str + " " + row["empfathername"];
+}</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">One</property>
+                    <expression name="expression" type="javascript">if(row["onesalarytype"]==1){
+ -1;
+}else{
+dataSetRow["one"];
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Two</property>
+                    <expression name="expression" type="javascript">if(row["twosalarytype"]==1){
+ -1;
+}else{
+row["two"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Three</property>
+                    <expression name="expression" type="javascript">if(row["threesalarytype"]==1){
+ -1;
+}else{
+row["three"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Four</property>
+                    <expression name="expression" type="javascript">if(row["foursalarytype"]==1){
+ -1;
+}else{
+row["four"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Five</property>
+                    <expression name="expression" type="javascript">if(row["fivesalarytype"]==1){
+ -1;
+}else{
+row["five"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Six</property>
+                    <expression name="expression" type="javascript">if(row["sixsalarytype"]==1){
+ -1;
+}else{
+row["six"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Seven</property>
+                    <expression name="expression" type="javascript">if(row["sevensalarytype"]==1){
+ -1;
+}else{
+row["seven"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Eight</property>
+                    <expression name="expression" type="javascript">if(row["eightsalarytype"]==1){
+ -1;
+}else{
+row["eight"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Nine</property>
+                    <expression name="expression" type="javascript">if(row["ninesalarytype"]==1){
+ -1;
+}else{
+row["nine"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Ten</property>
+                    <expression name="expression" type="javascript">if(row["tensalarytype"]==1){
+ -1;
+}else{
+row["ten"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Eleven</property>
+                    <expression name="expression" type="javascript">if(row["elevensalarytype"]==1){
+ -1;
+}else{
+row["eleven"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twelve</property>
+                    <expression name="expression" type="javascript">if(row["twelvesalarytype"]==1){
+ -1;
+}else{
+row["twelve"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Thirteen</property>
+                    <expression name="expression" type="javascript">if(row["thriteensalarytype"]==1){
+ -1;
+}else{
+row["thirteen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Fourteen</property>
+                    <expression name="expression" type="javascript">if(row["fourteensalarytype"]==1){
+ -1;
+}else{
+row["fourteen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Fifteen</property>
+                    <expression name="expression" type="javascript">if(row["fifteensalarytype"]==1){
+ -1;
+}else{
+row["fifteen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Sixteen</property>
+                    <expression name="expression" type="javascript">if(row["sixteensalarytype"]==1){
+ -1;
+}else{
+row["sixteen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Seventeen</property>
+                    <expression name="expression" type="javascript">if(row["seventeensalarytype"]==1){
+ -1;
+}else{
+row["seventeen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Eighteen</property>
+                    <expression name="expression" type="javascript">if(row["eighteensalarytype"]==1){
+ -1;
+}else{
+row["eighteen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Nineteen</property>
+                    <expression name="expression" type="javascript">if(row["nineteensalarytype"]==1){
+ -1;
+}else{
+row["nineteen"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twenty</property>
+                    <expression name="expression" type="javascript">if(row["twentysalarytype"]==1){
+ -1;
+}else{
+row["twenty"]
+}</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyone</property>
+                    <expression name="expression" type="javascript">if(row["twentyonesalarytype"]==1){
+ -1;
+}else{
+row["twentyone"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentytwo</property>
+                    <expression name="expression" type="javascript">if(row["twentytwosalarytype"]==1){
+ -1;
+}else{
+row["twentytwo"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentythree</property>
+                    <expression name="expression" type="javascript">if(row["twentythreesalarytype"]==1){
+ -1;
+}else{
+row["twentythree"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyfour</property>
+                    <expression name="expression" type="javascript">if(row["twentyfoursalarytype"]==1){
+ -1;
+}else{
+row["twentyfour"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyfiv</property>
+                    <expression name="expression" type="javascript">if(row["twentyfivesalarytype"]==1){
+ -1;
+}else{
+row["twentyfiv"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentysix</property>
+                    <expression name="expression" type="javascript">if(row["twentysixsalarytype"]==1){
+ -1;
+}else{
+row["twentysix"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyseven</property>
+                    <expression name="expression" type="javascript">if(row["twentysevensalarytype"]==1){
+ -1;
+}else{
+row["twentyseven"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentyeight</property>
+                    <expression name="expression" type="javascript">if(row["twentyeightsalarytype"]==1){
+ -1;
+}else{
+row["twentyeight"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Twentynine</property>
+                    <expression name="expression" type="javascript">if(row["twentyninesalarytype"]==1){
+ -1;
+}else{
+row["twentynine"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Thirty</property>
+                    <expression name="expression" type="javascript">if(row["thirtysalarytype"]==1){
+ -1;
+}else{
+row["thirty"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Thirtyone</property>
+                    <expression name="expression" type="javascript">if(row["thirtyonesalarytype"]==1){
+ -1;
+}else{
+row["thirtyone"]
+}</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">totalsal</property>
+                    <text-property name="displayName">totalsal</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["totalsal"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TotalSal</property>
+                    <expression name="expression" type="javascript">row["totalsal"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">onesalarytype</property>
+                    <text-property name="displayName">onesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["onesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">fivesalarytype</property>
+                    <text-property name="displayName">fivesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fivesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twosalarytype</property>
+                    <text-property name="displayName">twosalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twosalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">threesalarytype</property>
+                    <text-property name="displayName">threesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["threesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">foursalarytype</property>
+                    <text-property name="displayName">foursalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["foursalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">sixsalarytype</property>
+                    <text-property name="displayName">sixsalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sixsalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">sevensalarytype</property>
+                    <text-property name="displayName">sevensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sevensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eightsalarytype</property>
+                    <text-property name="displayName">eightsalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eightsalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">ninesalarytype</property>
+                    <text-property name="displayName">ninesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ninesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">tensalarytype</property>
+                    <text-property name="displayName">tensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">elevensalarytype</property>
+                    <text-property name="displayName">elevensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["elevensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twelvesalarytype</property>
+                    <text-property name="displayName">twelvesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twelvesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">thriteensalarytype</property>
+                    <text-property name="displayName">thriteensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thriteensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">fourteensalarytype</property>
+                    <text-property name="displayName">fourteensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fourteensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">fifteensalarytype</property>
+                    <text-property name="displayName">fifteensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fifteensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">sixteensalarytype</property>
+                    <text-property name="displayName">sixteensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["sixteensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">seventeensalarytype</property>
+                    <text-property name="displayName">seventeensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["seventeensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">eighteensalarytype</property>
+                    <text-property name="displayName">eighteensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["eighteensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">nineteensalarytype</property>
+                    <text-property name="displayName">nineteensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["nineteensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentysalarytype</property>
+                    <text-property name="displayName">twentysalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentysalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyonesalarytype</property>
+                    <text-property name="displayName">twentyonesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyonesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentytwosalarytype</property>
+                    <text-property name="displayName">twentytwosalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentytwosalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentythreesalarytype</property>
+                    <text-property name="displayName">twentythreesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentythreesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyfoursalarytype</property>
+                    <text-property name="displayName">twentyfoursalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyfoursalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyfivesalarytype</property>
+                    <text-property name="displayName">twentyfivesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyfivesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentysixsalarytype</property>
+                    <text-property name="displayName">twentysixsalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentysixsalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentysevensalarytype</property>
+                    <text-property name="displayName">twentysevensalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentysevensalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyeightsalarytype</property>
+                    <text-property name="displayName">twentyeightsalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyeightsalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">twentyninesalarytype</property>
+                    <text-property name="displayName">twentyninesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["twentyninesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">thirtysalarytype</property>
+                    <text-property name="displayName">thirtysalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirtysalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">thirtyonesalarytype</property>
+                    <text-property name="displayName">thirtyonesalarytype</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["thirtyonesalarytype"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltycloths</property>
+                    <text-property name="displayName">penaltycloths</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltycloths"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltycompany</property>
+                    <text-property name="displayName">penaltycompany</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltycompany"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltynotcame</property>
+                    <text-property name="displayName">penaltynotcame</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltynotcame"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">penaltywerehouse</property>
+                    <text-property name="displayName">penaltywerehouse</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["penaltywerehouse"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">PenaltyNotCame</property>
+                    <expression name="expression" type="javascript">row["penaltynotcame"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PenaltyCloth</property>
+                    <expression name="expression" type="javascript">row["penaltycloths"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PenaltyCompany</property>
+                    <expression name="expression" type="javascript">row["penaltycompany"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Penaltywherehous</property>
+                    <expression name="expression" type="javascript">row["penaltywerehouse"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">empsurname</property>
+                    <text-property name="displayName">empsurname</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["empsurname"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">empfathername</property>
+                    <text-property name="displayName">empfathername</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["empfathername"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">salarystatus</property>
+                    <text-property name="displayName">salarystatus</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["salarystatus"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">empstatus</property>
+                    <text-property name="displayName">empstatus</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["empstatus"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">paidsalary</property>
+                    <text-property name="displayName">paidsalary</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["paidsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">depname</property>
+                    <text-property name="displayName">depname</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["depname"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PayStatus</property>
+                    <expression name="expression" type="javascript">row["salarystatus"]</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">EmpStatus</property>
+                    <expression name="expression" type="javascript">row["empstatus"]</expression>
+                    <property name="dataType">boolean</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">DepNameposition</property>
+                    <expression name="expression" type="javascript">row["depname"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">totaladvancepay</property>
+                    <text-property name="displayName">totaladvancepay</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["totaladvancepay"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Advance</property>
+                    <expression name="expression" type="javascript">row["totaladvancepay"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">enddate</property>
+                    <text-property name="displayName">enddate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["enddate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">EndDate</property>
+                    <expression name="expression" type="javascript">row["enddate"]</expression>
+                    <property name="dataType">date</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">totalexpence</property>
+                    <text-property name="displayName">totalexpence</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["totalexpence"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TotalExpense</property>
+                    <expression name="expression" type="javascript">row["totalexpence"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">paymentmethod</property>
+                    <text-property name="displayName">paymentmethod</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["paymentmethod"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PayType</property>
+                    <expression name="expression" type="javascript">row["paymentmethod"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Row</property>
+                    <expression name="expression" type="javascript">row.__rownum + 1</expression>
+                    <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">netsalary</property>
+                    <text-property name="displayName">netsalary</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["netsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">totalSalary</property>
+                    <expression name="expression" type="javascript">row["netsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Paid</property>
+                    <expression name="expression" type="javascript">row["paidsalary"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">registraexpence</property>
+                    <text-property name="displayName">registraexpence</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["registraexpence"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">patentexpence</property>
+                    <text-property name="displayName">patentexpence</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["patentexpence"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Registra</property>
+                    <expression name="expression" type="javascript">row["registraexpence"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Patent</property>
+                    <expression name="expression" type="javascript">row["patentexpence"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">registraexp</property>
+                    <text-property name="displayName">registraexp</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["registraexp"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">patentexp</property>
+                    <text-property name="displayName">patentexp</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["patentexp"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">differentexp</property>
+                    <text-property name="displayName">differentexp</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["differentexp"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="5634">
+                <property name="width">0.8cm</property>
+            </column>
+            <column id="5274">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5270">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5106">
+                <property name="width">5cm</property>
+            </column>
+            <column id="5280">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5107">
+                <property name="width">2cm</property>
+            </column>
+            <column id="5285">
+                <property name="width">2cm</property>
+            </column>
+            <column id="5108">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5109">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5110">
+                <property name="width">1.5cm</property>
+            </column>
+            <column id="5111"/>
+            <column id="5112"/>
+            <column id="5113"/>
+            <column id="5114"/>
+            <column id="5115"/>
+            <column id="5116"/>
+            <column id="5117"/>
+            <column id="5118"/>
+            <column id="5119"/>
+            <column id="5120"/>
+            <column id="5121"/>
+            <column id="5122"/>
+            <column id="5123"/>
+            <column id="5124"/>
+            <column id="5125"/>
+            <column id="5126"/>
+            <column id="5127"/>
+            <column id="5128"/>
+            <column id="5129"/>
+            <column id="5130"/>
+            <column id="5131"/>
+            <column id="5132"/>
+            <column id="5133"/>
+            <column id="5134"/>
+            <column id="5135"/>
+            <column id="5136"/>
+            <column id="5137"/>
+            <column id="5138"/>
+            <column id="5139"/>
+            <column id="5140"/>
+            <column id="5141"/>
+            <column id="5142">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5657">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5661">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5622">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5234">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6217">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="6228">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5238">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5242">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5250">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5254">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5647">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5628">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5653">
+                <property name="width">2.5cm</property>
+            </column>
+            <column id="5258">
+                <property name="width">2.5cm</property>
+            </column>
+            <header>
+                <row id="4988">
+                    <property name="fontSize">10pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <cell id="5631">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5635">
+                            <text-property name="text">No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5271">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5275">
+                            <text-property name="text">Pay Status</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5267">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5276">
+                            <text-property name="text">Status</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4990">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5145">
+                            <text-property name="text">Employee</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5277">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5281">
+                            <text-property name="text">Position</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4991">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5146">
+                            <text-property name="text">Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5282">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5286">
+                            <text-property name="text">End Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4992">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5148">
+                            <text-property name="text">Salary Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4993">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5149">
+                            <text-property name="text">Fix Salary</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4994">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5150">
+                            <text-property name="text">Hourly Rate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4995">
+                        <label id="5151">
+                            <text-property name="text">01</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4996">
+                        <label id="5152">
+                            <text-property name="text">02</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4997">
+                        <label id="5153">
+                            <text-property name="text">03</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4998">
+                        <label id="5154">
+                            <text-property name="text">04</text-property>
+                        </label>
+                    </cell>
+                    <cell id="4999">
+                        <label id="5160">
+                            <text-property name="text">05</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5000">
+                        <label id="5161">
+                            <text-property name="text">06</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5001">
+                        <label id="5162">
+                            <text-property name="text">07</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5002">
+                        <label id="5165">
+                            <text-property name="text">08</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5003">
+                        <label id="5164">
+                            <text-property name="text">09</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5004">
+                        <label id="5166">
+                            <text-property name="text">10</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5005">
+                        <label id="5167">
+                            <text-property name="text">11</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5006">
+                        <label id="5168">
+                            <text-property name="text">12</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5007">
+                        <label id="5169">
+                            <text-property name="text">13</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5008">
+                        <label id="5170">
+                            <text-property name="text">14</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5009">
+                        <label id="5178">
+                            <text-property name="text">15</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5010">
+                        <label id="5177">
+                            <text-property name="text">16</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5011">
+                        <label id="5174">
+                            <text-property name="text">17</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5012">
+                        <label id="5175">
+                            <text-property name="text">18</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5013">
+                        <label id="5176">
+                            <text-property name="text">19</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5014">
+                        <label id="5179">
+                            <text-property name="text">20</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5015">
+                        <label id="5180">
+                            <text-property name="text">21</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5016">
+                        <label id="5181">
+                            <text-property name="text">22</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5017">
+                        <label id="5182">
+                            <text-property name="text">23</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5018">
+                        <label id="5183">
+                            <text-property name="text">24</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5019">
+                        <label id="5184">
+                            <text-property name="text">25</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5020">
+                        <label id="5185">
+                            <text-property name="text">26</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5021">
+                        <label id="5186">
+                            <text-property name="text">27</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5022">
+                        <label id="5187">
+                            <text-property name="text">28</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5023">
+                        <label id="5189">
+                            <text-property name="text">29</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5024">
+                        <label id="5190">
+                            <text-property name="text">30</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5025">
+                        <label id="5191">
+                            <text-property name="text">31</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5026">
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5192">
+                            <text-property name="text">Total Salary</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5654">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5662">
+                            <text-property name="text">Registra Exp</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5658">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5663">
+                            <text-property name="text">Patent Exp</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5619">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5623">
+                            <text-property name="text">Total Expense</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5231">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5244">
+                            <text-property name="text">Different Exp</text-property>
+                        </label>
+                    </cell>
+                    <cell id="6214">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="6218">
+                            <text-property name="text">Registra Exp</text-property>
+                        </label>
+                    </cell>
+                    <cell id="6225">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="6229">
+                            <text-property name="text">Patent Exp</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5235">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5245">
+                            <text-property name="text">Penalty Not came</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5239">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5246">
+                            <text-property name="text">Penalty Cloth</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5247">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5259">
+                            <text-property name="text">Penalty Company</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5251">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5260">
+                            <text-property name="text">Penalty Wherehouse</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5644">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5648">
+                            <text-property name="text">Paid</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5625">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5629">
+                            <text-property name="text">Payment Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5650">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <label id="5642">
+                            <text-property name="text">Sum</text-property>
+                        </label>
+                    </cell>
+                    <cell id="5255">
+                        <label id="5261">
+                            <text-property name="text">Signature</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="5027">
+                    <property name="fontSize">9pt</property>
+                    <property name="textAlign">center</property>
+                    <cell id="5632">
+                        <data id="5636">
+                            <property name="resultSetColumn">Row</property>
+                        </data>
+                    </cell>
+                    <cell id="5272">
+                        <data id="5614">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Not Paid</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Not Paid</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">2</value>
+                                    </simple-property-list>
+                                    <text-property name="display">half Paid</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">3</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Paid</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">PayStatus</property>
+                        </data>
+                    </cell>
+                    <cell id="5268">
+                        <data id="5615">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
+                                    <property name="operator">is-true</property>
+                                    <text-property name="display">Active</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
+                                    <property name="operator">is-false</property>
+                                    <text-property name="display">DeActive</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">EmpStatus</property>
+                        </data>
+                    </cell>
+                    <cell id="5029">
+                        <data id="5155">
+                            <property name="resultSetColumn">Emp</property>
+                        </data>
+                    </cell>
+                    <cell id="5278">
+                        <data id="5616">
+                            <property name="resultSetColumn">DepNameposition</property>
+                        </data>
+                    </cell>
+                    <cell id="5030">
+                        <data id="5156">
+                            <property name="style">DateFormat</property>
+                            <property name="resultSetColumn">Date</property>
+                        </data>
+                    </cell>
+                    <cell id="5283">
+                        <data id="5618">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd/MM/yy</property>
+                            </structure>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">EndDate</property>
+                        </data>
+                    </cell>
+                    <cell id="5031">
+                        <data id="5157">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["salarytype"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Monthly</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["salarytype"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">2</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Hourly</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Type</property>
+                        </data>
+                    </cell>
+                    <cell id="5032">
+                        <data id="5158">
+                            <property name="resultSetColumn">FixSalary</property>
+                        </data>
+                    </cell>
+                    <cell id="5033">
+                        <data id="5159">
+                            <property name="resultSetColumn">Hourly Rate</property>
+                        </data>
+                    </cell>
+                    <cell id="5034">
+                        <data id="5193">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["One"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["One"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">One</property>
+                        </data>
+                    </cell>
+                    <cell id="5035">
+                        <data id="5194">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Two"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Two"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Two</property>
+                        </data>
+                    </cell>
+                    <cell id="5036">
+                        <data id="5195">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Three"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Three"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Three</property>
+                        </data>
+                    </cell>
+                    <cell id="5037">
+                        <data id="5196">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Four"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Four"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Four</property>
+                        </data>
+                    </cell>
+                    <cell id="5038">
+                        <data id="5197">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Five"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Five"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Five</property>
+                        </data>
+                    </cell>
+                    <cell id="5039">
+                        <data id="5198">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Six"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Six"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Six</property>
+                        </data>
+                    </cell>
+                    <cell id="5040">
+                        <data id="5199">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Seven"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Seven"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Seven</property>
+                        </data>
+                    </cell>
+                    <cell id="5041">
+                        <data id="5201">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Eight"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Eight"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Eight</property>
+                        </data>
+                    </cell>
+                    <cell id="5042">
+                        <data id="5202">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Nine"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Nine"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Nine</property>
+                        </data>
+                    </cell>
+                    <cell id="5043">
+                        <data id="5203">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Ten"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Ten"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Ten</property>
+                        </data>
+                    </cell>
+                    <cell id="5044">
+                        <data id="5204">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Eleven"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Eleven"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Eleven</property>
+                        </data>
+                    </cell>
+                    <cell id="5045">
+                        <data id="5205">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twelve"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twelve"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twelve</property>
+                        </data>
+                    </cell>
+                    <cell id="5046">
+                        <data id="5206">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Thirteen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Thirteen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Thirteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5047">
+                        <data id="5207">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Fourteen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Fourteen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Fourteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5048">
+                        <data id="5208">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Fifteen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Fifteen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Fifteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5049">
+                        <data id="5209">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Sixteen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Sixteen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Sixteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5050">
+                        <data id="5210">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Seventeen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Seventeen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Seventeen</property>
+                        </data>
+                    </cell>
+                    <cell id="5051">
+                        <data id="5211">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Eighteen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Eighteen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Eighteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5052">
+                        <data id="5213">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Nineteen"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Nineteen"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Nineteen</property>
+                        </data>
+                    </cell>
+                    <cell id="5053">
+                        <data id="5214">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twenty"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twenty"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twenty</property>
+                        </data>
+                    </cell>
+                    <cell id="5054">
+                        <data id="5215">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentyone"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentyone"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentyone</property>
+                        </data>
+                    </cell>
+                    <cell id="5055">
+                        <data id="5216">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentytwo"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentytwo"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentytwo</property>
+                        </data>
+                    </cell>
+                    <cell id="5056">
+                        <data id="5217">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentythree"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentythree"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentythree</property>
+                        </data>
+                    </cell>
+                    <cell id="5057">
+                        <data id="5218">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentyfour"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentyfour"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentyfour</property>
+                        </data>
+                    </cell>
+                    <cell id="5058">
+                        <data id="5219">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentyfiv"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentyfiv"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentyfiv</property>
+                        </data>
+                    </cell>
+                    <cell id="5059">
+                        <data id="5220">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentysix"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentysix"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentysix</property>
+                        </data>
+                    </cell>
+                    <cell id="5060">
+                        <data id="5221">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentyseven"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentyseven"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentyseven</property>
+                        </data>
+                    </cell>
+                    <cell id="5061">
+                        <data id="5222">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentyeight"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentyeight"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentyeight</property>
+                        </data>
+                    </cell>
+                    <cell id="5062">
+                        <data id="5223">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Twentynine"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Twentynine"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Twentynine</property>
+                        </data>
+                    </cell>
+                    <cell id="5063">
+                        <data id="5224">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Thirty"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Thirty"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Thirty</property>
+                        </data>
+                    </cell>
+                    <cell id="5064">
+                        <data id="5225">
+                            <list-property name="highlightRules">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <property name="backgroundColor">#58595B</property>
+                                    <expression name="testExpr" type="javascript">row["Thirtyone"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Thirtyone"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">-1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">X</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Thirtyone</property>
+                        </data>
+                    </cell>
+                    <cell id="5065">
+                        <data id="5643">
+                            <property name="resultSetColumn">totalSalary</property>
+                        </data>
+                    </cell>
+                    <cell id="5655">
+                        <data id="5664">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Registra"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Registra</property>
+                        </data>
+                    </cell>
+                    <cell id="5659">
+                        <data id="5665">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["Patent"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">Patent</property>
+                        </data>
+                    </cell>
+                    <cell id="5620">
+                        <data id="5624">
+                            <property name="resultSetColumn">TotalExpense</property>
+                        </data>
+                    </cell>
+                    <cell id="5232">
+                        <data id="6235">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["different"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">different</property>
+                        </data>
+                    </cell>
+                    <cell id="6215">
+                        <data id="6236">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["registraexp2"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">registraexp2</property>
+                        </data>
+                    </cell>
+                    <cell id="6226">
+                        <data id="6237">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PatentExp"]</expression>
+                                    <property name="operator">is-null</property>
+                                    <text-property name="display">0</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">PatentExp</property>
+                        </data>
+                    </cell>
+                    <cell id="5236">
+                        <data id="5263">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">PenaltyNotCame</property>
+                        </data>
+                    </cell>
+                    <cell id="5240">
+                        <data id="5264">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">PenaltyCloth</property>
+                        </data>
+                    </cell>
+                    <cell id="5248">
+                        <data id="5265">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">PenaltyCompany</property>
+                        </data>
+                    </cell>
+                    <cell id="5252">
+                        <data id="5266">
+                            <property name="backgroundAttachment">scroll</property>
+                            <property name="backgroundPositionX">0%</property>
+                            <property name="backgroundPositionY">0%</property>
+                            <property name="backgroundRepeat">repeat</property>
+                            <property name="fontFamily">sans-serif</property>
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">normal</property>
+                            <property name="fontStyle">normal</property>
+                            <property name="fontVariant">normal</property>
+                            <property name="color">black</property>
+                            <property name="textLineThrough">none</property>
+                            <property name="textOverline">none</property>
+                            <property name="textUnderline">none</property>
+                            <property name="borderBottomColor">black</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderBottomWidth">medium</property>
+                            <property name="borderLeftColor">black</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderLeftWidth">medium</property>
+                            <property name="borderRightColor">black</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderRightWidth">medium</property>
+                            <property name="borderTopColor">black</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="borderTopWidth">medium</property>
+                            <property name="marginTop">0pt</property>
+                            <property name="marginLeft">0pt</property>
+                            <property name="marginBottom">0pt</property>
+                            <property name="marginRight">0pt</property>
+                            <property name="paddingTop">1pt</property>
+                            <property name="paddingLeft">1pt</property>
+                            <property name="paddingBottom">1pt</property>
+                            <property name="paddingRight">1pt</property>
+                            <property name="textAlign">center</property>
+                            <property name="letterSpacing">normal</property>
+                            <property name="lineHeight">normal</property>
+                            <property name="orphans">2</property>
+                            <property name="textTransform">none</property>
+                            <property name="whiteSpace">normal</property>
+                            <property name="widows">2</property>
+                            <property name="wordSpacing">normal</property>
+                            <property name="display">block</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <property name="showIfBlank">false</property>
+                            <property name="canShrink">false</property>
+                            <property name="overflow">hidden</property>
+                            <property name="resultSetColumn">Penaltywherehous</property>
+                        </data>
+                    </cell>
+                    <cell id="5645">
+                        <data id="5649">
+                            <property name="resultSetColumn">Paid</property>
+                        </data>
+                    </cell>
+                    <cell id="5626">
+                        <data id="5630">
+                            <property name="resultSetColumn">PayType</property>
+                        </data>
+                    </cell>
+                    <cell id="5651">
+                        <data id="5226">
+                            <property name="resultSetColumn">TotalSal</property>
+                        </data>
+                    </cell>
+                    <cell id="5256"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="5066">
+                    <cell id="5633"/>
+                    <cell id="5273"/>
+                    <cell id="5269"/>
+                    <cell id="5068"/>
+                    <cell id="5279"/>
+                    <cell id="5069"/>
+                    <cell id="5284"/>
+                    <cell id="5070"/>
+                    <cell id="5071"/>
+                    <cell id="5072"/>
+                    <cell id="5073"/>
+                    <cell id="5074"/>
+                    <cell id="5075"/>
+                    <cell id="5076"/>
+                    <cell id="5077"/>
+                    <cell id="5078"/>
+                    <cell id="5079"/>
+                    <cell id="5080"/>
+                    <cell id="5081"/>
+                    <cell id="5082"/>
+                    <cell id="5083"/>
+                    <cell id="5084"/>
+                    <cell id="5085"/>
+                    <cell id="5086"/>
+                    <cell id="5087"/>
+                    <cell id="5088"/>
+                    <cell id="5089"/>
+                    <cell id="5090"/>
+                    <cell id="5091"/>
+                    <cell id="5092"/>
+                    <cell id="5093"/>
+                    <cell id="5094"/>
+                    <cell id="5095"/>
+                    <cell id="5096"/>
+                    <cell id="5097"/>
+                    <cell id="5098"/>
+                    <cell id="5099"/>
+                    <cell id="5100"/>
+                    <cell id="5101"/>
+                    <cell id="5102"/>
+                    <cell id="5103"/>
+                    <cell id="5104"/>
+                    <cell id="5656"/>
+                    <cell id="5660"/>
+                    <cell id="5621"/>
+                    <cell id="5233"/>
+                    <cell id="6216"/>
+                    <cell id="6227"/>
+                    <cell id="5237"/>
+                    <cell id="5241"/>
+                    <cell id="5249"/>
+                    <cell id="5253"/>
+                    <cell id="5646"/>
+                    <cell id="5627"/>
+                    <cell id="5652"/>
+                    <cell id="5257"/>
+                </row>
+            </footer>
+        </table>
         <table id="5882">
             <property name="borderBottomStyle">solid</property>
             <property name="borderBottomWidth">thin</property>

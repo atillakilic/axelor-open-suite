@@ -38,7 +38,7 @@
       <button
         onClick="save,action-method-employee-advance-request-confirm-request,action-method-employee-advance-request-set-status-confirm,save"
         name="confirmRequestBtn" title="Confirm request" showIf="statusSelect == 2"
-        prompt="ARe you sure you want to confirm advance payment?"/>
+        prompt="Are you sure you want to confirm advance payment?"/>
 
       <button
         onClick="action-method-employee-advance-request-set-status-sent-hr-manager,save"

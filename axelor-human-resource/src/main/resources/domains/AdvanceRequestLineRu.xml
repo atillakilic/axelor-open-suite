@@ -15,6 +15,9 @@
     <decimal name="deserveTotal" title="Deserve Total"/>
     <boolean name="confirmCheckbox" title="Confirm Checkbox"/>
 
+    <integer name="advanceRequestType" title="Advance Type"
+      selection="hr.employee.request.type.select"/>
+
     <many-to-one name="advanceRequest" ref="com.axelor.apps.hr.db.AdvanceRequestRu"
       title="Advance Request"/>
 

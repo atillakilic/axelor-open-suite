@@ -44,11 +44,23 @@ public class EmployeeDailyActivityController {
     EmployeeDailyActivityRu employeeDailyActivity =
         request.getContext().asType(EmployeeDailyActivityRu.class);
 
-    List<EmployeeRu> employeeList =
-        Beans.get(EmployeeRuRepository.class)
-            .all()
-            .filter("self.projectTeam = ?", employeeDailyActivity.getProjectTeam())
-            .fetch();
+    List<EmployeeRu> employeeList = new ArrayList<EmployeeRu>();
+
+    if (employeeDailyActivity.getSelectActivityType() == 1) { // team of employee
+      employeeList =
+          Beans.get(EmployeeRuRepository.class)
+              .all()
+              .filter("self.projectTeam = ?", employeeDailyActivity.getProjectTeam())
+              .fetch();
+    }
+
+    if (employeeDailyActivity.getSelectActivityType() == 3) { // project employee
+      employeeList =
+          Beans.get(EmployeeRuRepository.class)
+              .all()
+              .filter("self.project = ?", employeeDailyActivity.getProject())
+              .fetch();
+    }
 
     List<EmployeeDailyActivityLineRu> employeeDailyActivityLineRuList =
         new ArrayList<EmployeeDailyActivityLineRu>();

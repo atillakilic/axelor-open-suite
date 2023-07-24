@@ -13,8 +13,11 @@
     <string name="name"/>
     <string name="code"/>
     <boolean name="expenceStatus" title="Status"/>
-    <date name="expenseDate" title="Date"/>
-    <decimal name="expencePrice" title="Expence Price"/>
+
+    <decimal name="totalPrise" title="Total Prise"/>
+
+    <one-to-many ref="com.axelor.apps.hr.db.CompanyExpencesTypeLineRu"
+      name="companyExpenceTypeLine" title=" Company Expence TypeLine" mappedBy="companyExpenceType"/>
 
   </entity>
 

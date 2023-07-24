@@ -172,7 +172,6 @@
       <field name="penaltyWereHouse" title="Penalty Werehous" readonly="true" colSpan="3"/>
       <field name="penaltyCompany" title="Penalty Company" readonly="true" colSpan="3"/>
       <field name="totalNetSalary" readonly="true" colSpan="3"/>
-      <field name="totalAdvancePay" readonly="true" colSpan="3"/>
       <field name="totalSalary" title="Total Salary" readonly="true" colSpan="3"/>
       <field name="totalPaidSalary" readonly="true" colSpan="3"/>
       <field name="registraExpence" readonly="true" colSpan="3"/>
@@ -180,7 +179,12 @@
       <field name="totalExpence" readonly="true" colSpan="3"/>
       <field name="salaryStatus" readonly="true" colSpan="3"/>
       <field name="paymentMethod" readonly="true" colSpan="3"/>
+      <field name="registraExp" colSpan="3" readonly="true"/>
+      <field name="patentExp" colSpan="3" readonly="true"/>
+      <field name="differentExp" colSpan="3" readonly="true"/>
+      <field name="totalAdvancePay" readonly="true" colSpan="3"/>
       <spacer colSpan="12"/>
+
     </panel>
 
     <panel name="dailyHors" title="Daily Work Hour" colSpan="12" readonly="true" hidden="true">
