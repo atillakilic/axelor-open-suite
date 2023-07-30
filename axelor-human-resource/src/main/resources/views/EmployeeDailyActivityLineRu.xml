@@ -8,8 +8,9 @@
     model="com.axelor.apps.hr.db.EmployeeDailyActivityLineRu">
     <hilite if="isAlert" color="danger"/>
     <field name="activityDate" hidden="true"/>
-    <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"/>
-    <field name="salaryType"/>
+    <field name="employee" onChange="action-employee-daily-activity-line-on-select-employee"
+      readonlyIf="employee != null"/>
+    <field name="salaryType" readonly="true"/>
     <field name="dailyWorkHoursOnContact" hidden="true"/>
     <field name="dailyWorkHours" readonlyIf="salaryType == 1 || isAbsence" min="0" max="24"
       onChange="action-employee-daily-activity-line-on-save-validation"/>

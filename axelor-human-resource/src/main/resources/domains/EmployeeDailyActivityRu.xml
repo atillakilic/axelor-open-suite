@@ -28,6 +28,8 @@
     <decimal name="totalworked" title="Total Employee Worked"/>
     <decimal name="totalEmpNotWorked" title="Total Employee Not Worked"/>
 
+    <decimal name="dailyWorkHoursFill" title="Working hours" scale="2" precision="20"/>
+
     <boolean name="isConfirm" title="Is Confirm"/>
   </entity>
 

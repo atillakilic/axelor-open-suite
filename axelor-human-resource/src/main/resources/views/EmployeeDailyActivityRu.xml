@@ -14,6 +14,7 @@
 
   <form name="hr-employee-daily-activity-ru-form" title="Daily Activity"
     onNew="action-attrs-hr-employee-daily-activity-on-new"
+    onSave="action-validation-hr-employee-daily-activity-on-save-validation"
     model="com.axelor.apps.hr.db.EmployeeDailyActivityRu" width="large">
 
     <panel name="mainPanel" showTitle="false" title="Main Panel" readonlyIf="isConfirm">
@@ -34,10 +35,13 @@
               showIf="selectActivityType == 1 || selectActivityType == 3"
               onClick="save,action-employee-daily-activity-set-employee,action-employee-daily-activity-calculate-employee-work,save,reload"/>
           </panel>
+          <panel colSpan="12" showIf="selectActivityType == 1 &amp;&amp; projectTeam != null">
+            <field name="dailyWorkHoursFill" colSpan="3"/>
+            <button name="btnDailyWorkHoursFill" title="Fill Work Hours" colSpan="3"
+              onClick="save,action-employee-daily-activity-set-employee-work-hours,save"/>
+          </panel>
         </panel>
-
       </panel>
-
       <panel colSpan="4">
         <field name="totalEmp" title="Total Project Employee" readonly="true" colSpan="4"
           showIf="selectActivityType == 3"/>
@@ -52,9 +56,11 @@
           colSpan="4" showIf="selectActivityType == 1"/>
         <field name="totalEmpNotWorked" title="Total Team Employee not worked" readonly="true"
           colSpan="4" showIf="selectActivityType == 1"/>
-      </panel>
 
+      </panel>
     </panel>
+
+
 
     <panel-related field="activityRecord"
       onChange="action-employee-daily-activity-calculate-employee-work,save"
@@ -84,6 +90,11 @@
       method="setEmployeeAndRate"/>
   </action-method>
 
+  <action-method name="action-employee-daily-activity-set-employee-work-hours">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+      method="setEmployeeWorkhours"/>
+  </action-method>
+
   <action-method name="action-employee-daily-activity-calculate-employee-work">
     <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="calculateEmployeeWork"/>
@@ -104,5 +115,11 @@
     <attribute name="value" for="totalworked" expr="eval: 0"/>
     <attribute name="value" for="totalEmpNotWorked" expr="eval: 0"/>
   </action-attrs>
+
+  <action-validate
+    name="action-validation-hr-employee-daily-activity-on-save-validation">
+    <error message="Please select Employee Shift"
+      if="statusShiftType != 1 &amp;&amp; statusShiftType != 2"/>
+  </action-validate>
 
 </object-views>

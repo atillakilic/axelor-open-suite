@@ -147,4 +147,21 @@ public class EmployeeDailyActivityController {
         request.getContext().asType(EmployeeDailyActivityRu.class);
     Beans.get(EmployeeDailyActivityService.class).updateRecordOnSalary(employeeDailyActivity);
   }
+
+  public void setEmployeeWorkhours(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+
+    EmployeeDailyActivityRu employeeDailyActivity =
+        request.getContext().asType(EmployeeDailyActivityRu.class);
+
+    List<EmployeeDailyActivityLineRu> employeeDailyActivityLineList =
+        new ArrayList<EmployeeDailyActivityLineRu>();
+    for (EmployeeDailyActivityLineRu employeeDailyActivityLine :
+        employeeDailyActivity.getActivityRecord()) {
+      employeeDailyActivityLine.setDailyWorkHours(employeeDailyActivity.getDailyWorkHoursFill());
+      employeeDailyActivityLineList.add(employeeDailyActivityLine);
+    }
+
+    response.setValue("activityRecord", employeeDailyActivityLineList);
+  }
 }

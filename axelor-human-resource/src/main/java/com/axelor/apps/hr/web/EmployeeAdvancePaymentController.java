@@ -71,7 +71,7 @@ public class EmployeeAdvancePaymentController {
       empSalary.setRegistraExp(totalRegistraExp);
       empSalary.setPatentExp(totalPatentExp);
       empSalary.setDifferentExp(totalDifferentExp);
-      
+
       BigDecimal totalSalary =
           Beans.get(EmployeeSalaryService.class).calculateMonthlySalary(empSalary);
       empSalary.setTotalSalary(totalSalary);
