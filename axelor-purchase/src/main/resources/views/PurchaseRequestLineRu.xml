@@ -32,7 +32,7 @@
         <field name="productCategory" colSpan="12"/>
         <field name="product" colSpan="12" form-view="product-form" grid-view="product-grid"
           domain="self.productCategory = :productCategory "
-          onChange="action-purchase-request-payment-attrs-set-product-unit" canNew="true"
+          onChange="action-purchase-request-payment-attrs-set-product" canNew="true"
           required="true"/>
         <field name="unit" colSpan="12"/>
         <field name="quantity" colSpan="12" x-scale="2" required="true"/>
@@ -117,8 +117,10 @@
     <attribute name="value" for="isPaymentDone" expr="eval: true" if="paymentInfo != null"/>
   </action-attrs>
 
-  <action-attrs name="action-purchase-request-payment-attrs-set-product-unit">
-    <attribute name="value" for="unit" expr="eval: product?.unit"/>
+  <action-attrs name="action-purchase-request-payment-attrs-set-product">
+    <attribute name="value" for="unit" expr="eval: product?.unit" if="product != null"/> 
+    <attribute name="value" for="unit" expr="eval: null" if="product == null"/> 
+    <attribute name="value" for="picture" expr="eval: product?.picture"/>
   </action-attrs>
 
 </object-views>
