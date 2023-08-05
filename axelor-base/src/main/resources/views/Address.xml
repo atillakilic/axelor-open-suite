@@ -39,15 +39,15 @@
         grid-view="city-grid"/>
       <field name="zip" onChange="action-address-method-autocomplete-address"/>
       <field name="addressL6" x-bind="{{addressL6|uppercase}}" required="true" colSpan="12"/>
-      <static name="addressL6Text" colSpan="12"><![CDATA[Notice: The Zip/City field is automatically filled when the city is selected. You can change it when the Zip/City pair is missing or in case of minor change.]]></static>
-      <button-group name="map1BtnGroup" colSpan="6" hideIf="$popup()" readonlyIf="!id">
+      <static name="addressL6Text" colSpan="12" hidden="true"><![CDATA[Notice: The Zip/City field is automatically filled when the city is selected. You can change it when the Zip/City pair is missing or in case of minor change.]]></static>
+      <button-group name="map1BtnGroup" colSpan="6" readonlyIf="!id" hidden="true">
         <button name="mapBtn" title="View map" icon="fa-map-marker"
           onClick="action-base-address-method-view-map"/>
         <button name="directionsBtn" title="Get direction" icon="fa-location-arrow"
           onClick="action-base-address-method-view-direction"/>
       </button-group>
       <spacer name="btnGrpSpacer" colSpan="6"/>
-      <button-group name="map2BtnGroup" colSpan="6" showIf="$popup()" readonlyIf="!id">
+      <button-group name="map2BtnGroup" colSpan="6" hidden="true" readonlyIf="!id">
         <button name="mapBtn" title="View map" icon="fa-map-marker"
           onClick="action-base-address-method-view-map,close"/>
         <button name="directionsBtn" title="Get direction" icon="fa-location-arrow"
@@ -96,21 +96,21 @@
         grid-view="city-grid"/>
       <field name="zip" onChange="action-address-method-autocomplete-address"/>
       <field name="addressL6" x-bind="{{addressL6|uppercase}}" required="true" colSpan="12"/>
-      <static name="addressL6Text" colSpan="12"><![CDATA[Notice: The Zip/City field is automatically filled when the city is selected. You can change it when the Zip/City pair is missing or in case of minor change.]]></static>
+      <static name="addressL6Text" colSpan="12" hidden="true"><![CDATA[Notice: The Zip/City field is automatically filled when the city is selected. You can change it when the Zip/City pair is missing or in case of minor change.]]></static>
       <field name="isInvoicingAddr" type="boolean" showIf="$popup() &amp;&amp; id == null"
         title="Invoicing address"/>
       <field name="isDeliveryAddr" type="boolean" showIf="$popup() &amp;&amp; id == null"
         title="Delivery address"/>
       <field name="isDefault" type="boolean" showIf="$popup() &amp;&amp; id == null"
         title="Default"/>
-      <button-group colSpan="6" hideIf="$popup()" readonlyIf="!id">
+      <button-group colSpan="6" readonlyIf="!id" hidden="true">
         <button name="mapBtn" title="View map" icon="fa-map-marker"
           onClick="action-base-address-method-view-map"/>
         <button name="directionsBtn" title="Get direction" icon="fa-location-arrow"
           onClick="action-base-address-method-view-direction"/>
       </button-group>
       <spacer name="btnGrpSpacer" colSpan="6"/>
-      <button-group colSpan="6" showIf="$popup()" readonlyIf="!id">
+      <button-group colSpan="6" readonlyIf="!id" hidden="true">
         <button name="mapBtn" title="View map" icon="fa-map-marker"
           onClick="action-base-address-method-view-map,close"/>
         <button name="directionsBtn" title="Get direction" icon="fa-location-arrow"
@@ -159,9 +159,9 @@
   </action-record>
 
   <action-record name="default-address-country-record"
-    model="com.axelor.apps.base.db.Country" search="('self.alpha3Code LIKE ?1', 'FRA')">
-    <field name="alpha3Code" expr="FRA"/>
-    <field name="name" expr="FRANCE"/>
+    model="com.axelor.apps.base.db.Country" search="('self.alpha3Code LIKE ?1', 'RUS')">
+    <field name="alpha3Code" expr="RUS"/>
+    <field name="name" expr="RUSSIA"/>
   </action-record>
 
   <action-record name="action-base-address-set-address-used"

@@ -24,29 +24,42 @@
   <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
     onLoad="action-purchase-request-line-attrs-on-load"
     onNew="action-purchase-request-line-attrs-on-load" name="purchase-request-line-ru-form">
-    <panel name="mainPanel" readonlyIf="isPaymentDone">
-      <field name="newProduct" widget="boolean-switch" colSpan="2"/>
-      <spacer/>
-      <field name="product" colSpan="6" form-view="product-form" grid-view="product-grid"
-        onChange="action-purchase-request-payment-attrs-set-product-unit" canNew="true"
-        required="true"/>
-      <field name="specialty"/>
-      <field name="unit" colSpan="6"/>
-      <field name="quantity" colSpan="6" x-scale="2" required="true"/>
-      <field name="requesterUser"/>
-      <field name="purpose"/>
-      <field name="projectStockLocation"/>
-      <spacer/>
-      <field name="totalSupplier" readonly="true"/>
-      <field name="totalCost" readonly="true"/>
-      <field name="paymentInfo" form-view="purchase-request-payment-ru-form"
+    <panel name="mainPanel" readonlyIf="isPaymentDone" colSpan="12">
+
+      <panel name="mainPanelContentPanel" colSpan="6">
+        <field name="newProduct" widget="boolean-switch" colSpan="2" hidden="true"/>
+        <spacer/>
+        <field name="productCategory" colSpan="12"/>
+        <field name="product" colSpan="12" form-view="product-form" grid-view="product-grid"
+          domain="self.productCategory = :productCategory "
+          onChange="action-purchase-request-payment-attrs-set-product-unit" canNew="true"
+          required="true"/>
+        <field name="unit" colSpan="12"/>
+        <field name="quantity" colSpan="12" x-scale="2" required="true"/>
+        <field name="requesterUser" colSpan="12"/>
+        <field name="projectStockLocation" colSpan="12"/>
+        <field name="specialty" colSpan="12"/>
+        <field name="purpose" colSpan="12"/>
+      </panel>
+      <panel colSpan="6">
+        <spacer colSpan="12"/>
+        <field name="picture" colSpan="12" css="center" showTitle="false" widget="Image"
+          height="250px" width="350px"/>
+      </panel>
+    </panel>
+    <panel>
+      <field name="totalSupplier" readonly="true" colSpan="6"/>
+      <field name="totalCost" readonly="true" colSpan="6"/>
+      <field name="paymentInfo" form-view="purchase-request-payment-ru-form" colSpan="6"
         grid-view="purchase-request-payment-ru-grid" canSelect="true" canNew="true" canEdit="true"/>
       <spacer/>
       <button name="payBtn" title="Pay" icon="fa-check" css="btn-primary"
         onClick="save,action-purchase-request-payment-validate-clear-payment,action-purchase-request-payment-attrs-clear,save"/>
       <field name="isPaymentDone" readonly="true" showIf="isPaymentDone"/>
     </panel>
-    <panel>
+
+
+    <panel hidden="true">
       <field name="quantityArrived" x-scale="2"/>
     </panel>
     <panel-related field="supplierLineList" readonlyIf="isPaymentDone"

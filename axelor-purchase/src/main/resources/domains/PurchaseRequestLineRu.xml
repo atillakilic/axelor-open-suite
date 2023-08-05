@@ -6,6 +6,10 @@
   <module name="purchase" package="com.axelor.apps.purchase.db"/>
 
   <entity name="PurchaseRequestLineRu" lang="java">
+    <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
+      index="false"/>
+    <many-to-one name="productCategory" ref="com.axelor.apps.base.db.ProductCategory"
+      title="Product category"/>
     <many-to-one name="product" ref="com.axelor.apps.base.db.Product" title="Product"/>
     <boolean name="newProduct" title="New product"/>
     <many-to-one name="unit" ref="com.axelor.apps.base.db.Unit" title="Unit"/>

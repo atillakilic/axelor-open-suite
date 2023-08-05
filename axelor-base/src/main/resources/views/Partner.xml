@@ -299,10 +299,10 @@
         <field name="$factorCantBeRemoved" hidden="true" type="boolean" showIf="false"/>
       </panel>
     </panel>
-    <panel-related name="partnerRoleSetPanel" field="partnerRoleSet"
-      form-view="partner-role-form" grid-view="partner-role-grid"
-      showIf="isContact || partnerTypeSelect == 2" canNew="false"/>
-    <panel name="partnerDetailsPanel" title="Partner Details" hideIf="isEmployee" colSpan="12">
+    <!-- Ru <panel-related name="partnerRoleSetPanel" field="partnerRoleSet" form-view="partner-role-form"
+      grid-view="partner-role-grid" showIf="isContact || partnerTypeSelect == 2" canNew="false"/> -->
+    <!-- Ru <panel name="partnerDetailsPanel" title="Partner Details" hideIf="isEmployee" colSpan="12"> -->
+    <panel name="partnerDetailsPanel" title="Partner Details" hideIf="isSupplier" colSpan="12">
       <panel colSpan="6" name="partnerCategoryPanel">
         <field name="partnerCategory" widget="SuggestBox" colSpan="6"
           form-view="partner-category-form" grid-view="partner-category-grid"/>
@@ -464,7 +464,7 @@
       </panel>
       <panel-related name="accountingSituationListPanel" if-module="axelor-account"
         if="__config__.app.isApp('account')" field="accountingSituationList"
-        title="Accounting situation" hideIf="isContact" colSpan="12"
+        title="Accounting situation" hideIf="isContact" colSpan="12" showIf="partnerTypeSelect == 2"
         grid-view="accounting-situation-partner-grid" form-view="accounting-situation-partner-form"
         onSelect="action-account-accounting-situation-method-update-customer-account"/>
       <panel-include if-module="axelor-account" view="incl-blocking-partner-form"
@@ -544,7 +544,8 @@
       </panel>
 
       <panel name="supplierPanel" title="Supplier" if-module="axelor-purchase"
-        showIf="isSupplier || isSubcontractor" if="__config__.app.isApp('purchase')">
+        showIf="(isSupplier || isSubcontractor) &amp;&amp; partnerTypeSelect == 2"
+        if="__config__.app.isApp('purchase')">
         <field name="purchaseOrderInformation"/>
         <field name="purchasePartnerPriceList" canEdit="false" domain="self.typeSelect = 2"
           form-view="purchase-partner-price-list-form" grid-view="partner-price-list-grid"/>
@@ -578,8 +579,8 @@
           grid-view="freight-carrier-mode-freight-carrier-grid" colSpan="12"/>
       </panel>
       <panel name="deliveryPanel" title="Delivery"
-        showIf="isSupplier || isCustomer || isSubcontractor" if="__config__.app.isApp('stock')"
-        if-module="axelor-stock">
+        showIf="(isSupplier || isCustomer || isSubcontractor) &amp;&amp; partnerTypeSelect == 2"
+        if="__config__.app.isApp('stock')" if-module="axelor-stock">
         <field name="deliveryDelay" showIf="isSupplier || isSubcontractor"/>
         <spacer name="deliveryDelaySpacer"/>
         <field name="shipmentMode" form-view="shipment-mode-form"

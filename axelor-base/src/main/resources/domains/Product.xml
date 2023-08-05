@@ -20,7 +20,9 @@
       initParam="true" massUpdate="true"/>
     <many-to-one name="productFamily" ref="ProductFamily" title="Accounting family"
       initParam="true" massUpdate="true"/>
-    <many-to-one name="unit" ref="Unit" title="Unit" initParam="true" massUpdate="true"/>
+    <many-to-one name="unit" ref="Unit" title="Unit1" initParam="true" massUpdate="true"/>
+    <many-to-one name="unit2" ref="Unit" title="Unit2" massUpdate="true"/>
+    <boolean name="isActiveUnit2" title="Active Unit2"/>
 
     <integer name="saleSupplySelect" title="Sale supply default method on sale order"
       selection="product.sale.supply.select" initParam="true" massUpdate="true"/>

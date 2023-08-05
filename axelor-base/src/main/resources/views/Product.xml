@@ -171,6 +171,17 @@
           <field name="standardDelay" colSpan="12"
             showIf="saleSupplySelect == 2 || saleSupplySelect == 3" hidden="true"
             if-module="axelor-supplychain" if="__config__.app.isApp('supplychain')"/>
+
+          <panel name="unitsPanel" title="Units" colSpan="12">
+            <field name="unit" canEdit="false" colSpan="6" form-view="unit-form"
+              grid-view="unit-grid"/>
+            <spacer/>
+            <field name="isActiveUnit2" colSpan="6"/>
+            <field name="unit2" canEdit="false" colSpan="6" form-view="unit-form"
+              showIf="isActiveUnit2" grid-view="unit-grid"/>
+
+          </panel>
+
         </panel>
         <panel name="categorizationPanel" title="Categorization" colSpan="6"
           colWidths="30%,70%">
@@ -197,7 +208,7 @@
       </panel>
     </panel>
     <panel-tabs name="productSpecificAttributes" title="Product specific attributes">
-      <panel name="salePanel" title="Sale" showTitle="false">
+      <panel name="salePanel" title="Sale" showTitle="false" hidden="true">
         <panel name="subSalePanel" title="Sales" colSpan="6">
           <field name="sellable" colSpan="6"/>
           <field name="tradingNameSellerSet"
@@ -263,7 +274,22 @@
           <field name="internalDescription" showTitle="false" colSpan="12" widget="html"/>
         </panel>
       </panel>
+
       <panel name="purchaseCostsPanel" title="Purchase/Costs" showTitle="false">
+        <panel name="purchasePanel" title="Purchases" colSpan="6">
+          <field name="purchasable" colSpan="12"/>
+          <field name="lastPurchaseDate" showIf="purchasable" colSpan="6" readonly="true"/>
+          <field name="lastPurchasePrice" showIf="purchasable" colSpan="3" readonly="true"/>
+        </panel>
+        <panel name="costsPanel" title="Costs" colSpan="6">
+          <field name="costPrice" colSpan="6" readonlyIf="costTypeSelect != 1"
+            onChange="action-product-record-compute-sale-price"/>
+          <field name="costTypeSelect" colSpan="6"
+            onChange="action-product-group-cost-type-select-onchange"/>
+        </panel>
+      </panel>
+
+      <panel name="purchaseCostsPanel" title="Purchase/Costs" showTitle="false" hidden="true">
         <panel name="purchasePanel" title="Purchases" colSpan="6">
           <field name="purchasable" colSpan="12"/>
           <field name="tradingNameBuyerSet"
@@ -314,9 +340,33 @@
           form-view="account-management-form" grid-view="account-management-product-grid"
           domain="self.typeSelect = 1" title="Accounting" showTitle="false" colSpan="12"/>
       </panel>
+
       <panel name="stockPanel" title="Stock" showTitle="false"
         showIf="productTypeSelect == 'storable'" if-module="axelor-stock"
         if="__config__.app.isApp('stock')">
+        <panel name="stockPanel" colSpan="12" if-module="axelor-supplychain"
+          if="__config__.app.isApp('supplychain')">
+          <field name="controlOnReceipt" readonlyIf="productApproval.controlOnReceipt"/>
+          <button name="showAllStockMoveLineBtn" title="Show all stock moves" colSpan="6"
+            onClick="action-product-view-stock-move-line"/>
+          <field name="avgPrice" hideIf="!stockManaged"
+            if="!__config__.app.getApp('base')?.companySpecificProductFieldsSet?.find({it.name == 'avgPrice'})"/>
+          <spacer name="avgPriceSpacer"/>
+          <panel-dashlet name="productStockPanel" colSpan="12"
+            action="action-product-view-stock" showIf="id &amp;&amp; stockManaged"/>
+          <panel-dashlet name="stockReportPanel" colSpan="12"
+            action="action-stock-report-for-product" showIf="id &amp;&amp; stockManaged"/>
+          <panel-dashlet name="stockHistoryReportPanel" colSpan="12"
+            action="action-stock-history-report-for-product" showIf="id &amp;&amp; stockManaged"/>
+          <panel-dashlet action="action-stock-view-stock-rule" name="stockRulePanel"
+            colSpan="12"/>
+          <panel-dashlet action="action-stock-view-stock-history-line"
+            name="stockHistoryLinePanel" colSpan="12" showIf="productTypeSelect == 'storable'"/>
+        </panel>
+      </panel>
+
+      <panel name="stockPanel2" title="Stock" showTitle="false" if-module="axelor-stock"
+        hidden="true" if="__config__.app.isApp('stock')">
         <panel name="procurementSettingsPanel" title="Procurement settings" colSpan="12"
           if-module="axelor-supplychain" if="__config__.app.isApp('supplychain')">
           <field name="excludeFromMrp"
@@ -387,7 +437,7 @@
           <field name="checkExpirationDateAtStockMoveRealization"
             showIf="hasWarranty || isPerishable"/>
         </panel>
-        <panel colSpan="12" name="trackingConfigPanel">
+        <panel colSpan="12" name="trackingConfigPanel" hidden="true">
           <field name="trackingNumberConfiguration"
             requiredIf="checkExpirationDateAtStockMoveRealization" canNew="true"
             form-view="tracking-number-configuration-form"

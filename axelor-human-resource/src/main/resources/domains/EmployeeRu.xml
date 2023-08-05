@@ -28,7 +28,7 @@
     <many-to-one name="citizenship" title="Citizenship"
       ref="com.axelor.apps.base.db.Citizenship"/>
     <string name="maritalName" title="Marital name"/>
-    <string name="entegrationCode" title="Entegration Code"/>
+    <string name="entegrationCode" title="Entegration Code" unique="true"/>
 
     <string name="emergencyContact" title="Emergency contact"/>
     <string name="emergencyNumber" title="Phone"/>

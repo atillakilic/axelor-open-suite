@@ -5,7 +5,12 @@
 
   <form name="incl-invoice-payment-partner-form" title="Partner"
     model="com.axelor.apps.base.db.Partner" onLoad="action-partner-attrs-show-specific-tax-note">
-    <panel name="mainPanel" colSpan="12">
+    <panel showIf="partnerTypeSelect == 1">
+      <field name="currency" canEdit="false"
+        requiredIf="!isContact &amp;&amp; partnerTypeSelect != 2" form-view="currency-form"
+        grid-view="currency-grid"/>
+    </panel>
+    <panel name="mainPanel" colSpan="12" showIf="partnerTypeSelect == 2">
       <field name="payNoticeSendingMethodSelect"/>
       <field name="invoiceSendingFormatSelect" hideIf="isEmployee"/>
       <field name="invoicesCopySelect"

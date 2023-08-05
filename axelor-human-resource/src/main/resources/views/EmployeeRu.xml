@@ -25,12 +25,13 @@
       <field name="stepByStepSelect" widget="NavSelect" colSpan="12" showTitle="false"/>
       <field name="picture" colSpan="2" css="center" showTitle="false" widget="Image"/>
       <panel name="contactDetailsPanel" colSpan="10">
-        <field name="name" colSpan="4"/>
-        <field name="surname" colSpan="4"/>
-        <field name="fatherName" colSpan="4"/>
-        <field name="email" colSpan="4"/>
-        <field name="mobilePhone" colSpan="4" widget="phone" x-initial-country="RU"/>
-        <field name="phone" colSpan="4" widget="phone" x-initial-country="RU"/>
+        <field name="name" colSpan="4" required="true"/>
+        <field name="surname" colSpan="4" required="true"/>
+        <field name="fatherName" colSpan="4" required="true"/>
+        <field name="email" colSpan="4" required="true"/>
+        <field name="mobilePhone" colSpan="4" widget="phone" x-initial-country="RU"
+          required="true"/>
+        <field name="phone" colSpan="4" widget="phone" x-initial-country="RU" required="true"/>
       </panel>
 
       <panel showIf="stepByStepSelect == 1" colSpan="12">
@@ -47,11 +48,12 @@
         <field name="emergencyContactRelationship" colSpan="4"/>
 
         <spacer colSpan="12"/>
-        <field name="project" colSpan="4"/>
-        <field name="projectTeam" colSpan="4" canNew="true"/>
+        <field name="project" colSpan="4" required="true"/>
+        <field name="projectTeam" colSpan="4" canNew="true" required="true"/>
         <field name="projectDepartment" colSpan="4" canNew="true"/>
-        <field name="paymentStatus" colSpan="6" canNew="true" canSelect="true"/>
-        <field name="technicalStatus" colSpan="6" canNew="true" canSelect="true"/>
+        <field name="paymentStatus" colSpan="6" canNew="true" canSelect="true" required="true"/>
+        <field name="technicalStatus" colSpan="6" canNew="true" canSelect="true"
+          required="true"/>
       </panel>
     </panel>
 
