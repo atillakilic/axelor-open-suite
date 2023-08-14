@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-area-line-ru-grid" title="Daily Activity Area Line"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityAreaLineRu" editable="true">
+    <field name="projectArea"/>
+    <field name="employeeWorked"/>
+    <field name="todayDate" hidden="true"/>
+  </grid>
+
+  <grid name="hr-employee-daily-activity-area-line-ru-dashboard-grid"
+    title="Daily Activity Area Line" model="com.axelor.apps.hr.db.EmployeeDailyActivityAreaLineRu"
+    editable="false">
+    <field name="projectArea"/>
+    <field name="employeeWorked"/>
+    <field name="todayDate"/>
+  </grid>
+
+  <form name="hr-employee-daily-activity-area-line-ru-form" title="Daily Activity area Line"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityAreaLineRu" width="large">
+
+    <panel name="mainPanel" showTitle="false" title="Main Panel" readonlyIf="isConfirm"
+      colSpan="12">
+      <field name="projectArea" colSpan="6"/>
+      <field name="employeeWorked" colSpan="6"/>
+      <field name="todayDate" hidden="true"/>
+    </panel>
+  </form>
+
+
+
+</object-views>

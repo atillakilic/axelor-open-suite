@@ -29,7 +29,7 @@
     <panel name="statusSelectPanel" colSpan="12">
       <field name="statusSelect" readonly="true" colSpan="12" widget="nav-select"
         showTitle="false"/>
-      <field name="purchaseRequestSeq" title="Request Code" readonlyIf="statusSelect > 1"/>
+      <field name="purchaseRequestSeq" title="Request Code" readonly="true"/>
     </panel>
     <panel name="mainPanel" readonlyIf="statusSelect > 1">
       <field name="company" form-view="company-form" grid-view="company-grid" canEdit="false"

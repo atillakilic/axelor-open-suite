@@ -17,6 +17,7 @@
  */
 package com.axelor.apps.hr.web;
 
+import com.axelor.apps.hr.db.EmployeeDailyActivityAreaLineRu;
 import com.axelor.apps.hr.db.EmployeeDailyActivityLineRu;
 import com.axelor.apps.hr.db.EmployeeDailyActivityRu;
 import com.axelor.apps.hr.db.EmployeeDashboardCountRu;
@@ -25,6 +26,7 @@ import com.axelor.apps.hr.db.EmployeeDashboardEmpPenaltyRu;
 import com.axelor.apps.hr.db.EmployeeDashboardRu;
 import com.axelor.apps.hr.db.EmployeeDashboardWorkShiftRu;
 import com.axelor.apps.hr.db.EmployeeRu;
+import com.axelor.apps.hr.db.repo.EmployeeDailyActivityAreaLineRuRepository;
 import com.axelor.apps.hr.db.repo.EmployeeDailyActivityLineRuRepository;
 import com.axelor.apps.hr.db.repo.EmployeeDailyActivityRuRepository;
 import com.axelor.apps.project.db.ProjectAreaRu;
@@ -51,6 +53,8 @@ public class EmployeeDashboardController {
     response.setValue("employeeActivityToDate", yesterDay);
     response.setValue("employeePenaltyFromDate", yesterDay);
     response.setValue("employeePenaltyToDate", yesterDay);
+    response.setValue("dailyActivityAreaFromDate", yesterDay);
+    response.setValue("dailyActivityAreaToDate", yesterDay);
   }
 
   @Transactional
@@ -278,5 +282,25 @@ public class EmployeeDashboardController {
       }
     }
     response.setValue("employeePenalty", employeePenaltyList);
+  }
+
+  public void getEmployeeDailyActivityArea(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+    EmployeeDashboardRu dashboard = request.getContext().asType(EmployeeDashboardRu.class);
+
+    LocalDate fromDate = dashboard.getDailyActivityAreaFromDate();
+    LocalDate toDate = dashboard.getDailyActivityAreaToDate();
+
+    if (toDate == null || fromDate == null) {
+      return;
+    }
+
+    List<EmployeeDailyActivityAreaLineRu> dailyActivityAreaLineList =
+        Beans.get(EmployeeDailyActivityAreaLineRuRepository.class)
+            .all()
+            .filter("self.todayDate >= ? AND self.todayDate <= ?", fromDate, toDate)
+            .fetch();
+
+    response.setValue("dailyActivityAreaLine", dailyActivityAreaLineList);
   }
 }

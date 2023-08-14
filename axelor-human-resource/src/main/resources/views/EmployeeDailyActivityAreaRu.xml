@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+  <grid name="hr-employee-daily-activity-area-ru-grid" title="Daily Activity Area"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityAreaRu">
+    <field name="todayDate"/>
+    <field name="project"/>
+    <field name="statusShiftType"/>
+    <field name="totalWorkerProject"/>
+    <field name="totalWorkedInArea"/>
+    <field name="totalEmpNotWorked"/>
+  </grid>
+
+  <form name="hr-employee-daily-activity-area-ru-form" title="Daily Activity area"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityAreaRu" width="large">
+
+    <panel name="mainPanel" showTitle="false" title="Main Panel" readonlyIf="isConfirm"
+      colSpan="12">
+      <field name="todayDate" colSpan="2" required="true"/>
+      <field name="project" colSpan="2" required="true"/>
+      <field name="statusShiftType" colSpan="2" min="1"/>
+      <field name="totalWorkerProject" colSpan="2" readonly="true"/>
+      <field name="totalWorkedInArea" colSpan="2" readonly="true"/>
+      <field name="totalEmpNotWorked" colSpan="2" readonly="true"/>
+    </panel>
+    <panel>
+      <spacer colSpan="12"/>
+      <button
+        onClick="save,action-employee-daily-activity-area-method-get-activity-area,save"
+        name="getDailyActivityAreaLine" title="Get Activity Area" colSpan="2"/>
+      <spacer colSpan="12"/>
+    </panel>
+
+    <panel>
+      <panel-related field="dailyActivityAreaLine" canNew="false" canRemove="false"
+        form-view="hr-employee-daily-activity-area-line-ru-form"
+        grid-view="hr-employee-daily-activity-area-line-ru-grid" colSpan="6" canEdit="true"
+        title="DailyActivity Area Line"
+        onChange="action-employee-daily-activity-area-method-calculate-total-employeeWorked"/>
+    </panel>
+
+  </form>
+
+  <action-method name="action-employee-daily-activity-area-method-get-activity-area">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityAreaController"
+      method="getProjectAreaList"/>
+  </action-method>
+
+  <action-method
+    name="action-employee-daily-activity-area-method-calculate-total-employeeWorked">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityAreaController"
+      method="calculateTotalEmployeeWorked"/>
+  </action-method>
+
+</object-views>

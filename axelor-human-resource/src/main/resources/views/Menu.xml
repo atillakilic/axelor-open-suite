@@ -65,6 +65,15 @@
     <view type="form" name="hr-employee-daily-activity-ru-form"/>
   </action-view>
 
+  <menuitem name="employee-daily-activity-area-ru" parent="hr-root-emp-mgt"
+    title="Daily Activity Area" action="employee.daily.activity.area.ru"/>
+
+  <action-view name="employee.daily.activity.area.ru" title="Daily Activity Area"
+    model="com.axelor.apps.hr.db.EmployeeDailyActivityAreaRu">
+    <view type="grid" name="hr-employee-daily-activity-area-ru-grid"/>
+    <view type="form" name="hr-employee-daily-activity-area-ru-form"/>
+  </action-view>
+
   <menuitem name="employee-dashboard-view-ru" parent="hr-root-emp-mgt" title="Dashboard"
     action="employee.dashboard.ru"/>
 

@@ -54,6 +54,19 @@
         grid-view="hr-employee-dashboard-employee-penalty-ru-grid" canEdit="false"/>
     </panel>
 
+    <panel>
+      <spacer colOffset="12"/>
+      <spacer colOffset="12"/>
+      <field name="dailyActivityAreaFromDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-daily-activity-area-line"/>
+      <field name="dailyActivityAreaToDate" colSpan="3"
+        onChange="action-employee-dashboard-method-employee-daily-activity-area-line"/>
+
+      <panel-related field="dailyActivityAreaLine" canNew="false" readonly="true"
+        colSpan="12" form-view="hr-employee-daily-activity-area-line-ru-form"
+        grid-view="hr-employee-daily-activity-area-line-ru-dashboard-grid" canEdit="false"/>
+    </panel>
+
   </form>
 
   <action-group name="action-employee-dashboard-group-on-load-new">
@@ -62,6 +75,7 @@
     <action name="action-employee-dashboard-method-employee-show-total-shift-employee"/>
     <action name="action-employee-dashboard-method-employee-activity"/>
     <action name="action-employee-dashboard-method-employee-penalty"/>
+    <action name="action-employee-dashboard-method-employee-daily-activity-area-line"/>
   </action-group>
 
   <action-method name="action-employee-dashboard-method-on-load">
@@ -84,6 +98,12 @@
 
   <action-method name="action-employee-dashboard-method-employee-penalty">
     <call class="com.axelor.apps.hr.web.EmployeeDashboardController" method="employeePenalty"/>
+  </action-method>
+
+  <action-method
+    name="action-employee-dashboard-method-employee-daily-activity-area-line">
+    <call class="com.axelor.apps.hr.web.EmployeeDashboardController"
+      method="getEmployeeDailyActivityArea"/>
   </action-method>
 
 </object-views>

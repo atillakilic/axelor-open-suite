@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="human-resource" package="com.axelor.apps.hr.db"/>
+
+  <entity name="EmployeeDailyActivityAreaLineRu" cacheable="true">
+
+    <many-to-one name="projectArea" ref="com.axelor.apps.project.db.ProjectAreaRu"
+      title="Project Area"/>
+    <decimal name="employeeWorked" title="Employee Worked"/>
+    <date name="todayDate" title="Date"/>
+
+    <many-to-one ref="com.axelor.apps.hr.db.EmployeeDailyActivityAreaRu"
+      name="dailyActivityArea" title="DailyActivity Area"/>
+
+    <many-to-one name="employeeDashboardRu"
+      ref="com.axelor.apps.hr.db.EmployeeDashboardRu" title="EmployeeDashboardRu"/>
+
+  </entity>
+
+</domain-models>
+

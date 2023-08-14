@@ -39,6 +39,14 @@
       ref="com.axelor.apps.hr.db.EmployeeDashboardEmpPenaltyRu" mappedBy="employeeDashboardRu"
       title="Employees Penalty"/>
 
+    <!-- Daily Activity Area Dash board -->
+
+    <date name="dailyActivityAreaFromDate" title="From Date"/>
+    <date name="dailyActivityAreaToDate" title="TO Date"/>
+    <one-to-many name="dailyActivityAreaLine"
+      ref="com.axelor.apps.hr.db.EmployeeDailyActivityAreaLineRu" mappedBy="employeeDashboardRu"
+      title="Daily Activity Area"/>
+
   </entity>
 
 </domain-models>
