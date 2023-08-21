@@ -6,6 +6,10 @@
   <module name="purchase" package="com.axelor.apps.purchase.db"/>
 
   <entity name="PurchaseRequestLineRu" lang="java">
+
+    <integer name="statusSelect" title="Status"
+      selection="purchase.request.line.status.ru.select"/>
+
     <many-to-one name="picture" ref="com.axelor.meta.db.MetaFile" title="Photo"
       index="false"/>
     <many-to-one name="productCategory" ref="com.axelor.apps.base.db.ProductCategory"
@@ -30,6 +34,14 @@
     <boolean name="isPaymentDone" title="Is Payment Done"/>
     <decimal name="quantityArrived" title="Quantity Arrived" precision="20" scale="10"
       min="0"/>
+    <decimal name="quantityArrived2" title="Quantity Arrived 2" precision="20" scale="10"
+      min="0"/>
+    <many-to-one name="unit2" ref="com.axelor.apps.base.db.Unit" title="Unit2"/>
+
+    <many-to-one name="supplier" ref="com.axelor.apps.base.db.Partner" title="Supplier"/>
+    <date name="requestDate" title="Request Date"/>
+    <many-to-one name="projectRu" title="Project"
+      ref="com.axelor.apps.project.db.ProjectRu"/>
 
     <many-to-one name="purchaseRequestRu"
       ref="com.axelor.apps.purchase.db.PurchaseRequestRu" title="Purchase request"/>

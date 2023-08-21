@@ -44,6 +44,7 @@ public class PurchaseOrderLineRuController {
     if (totalSupplier > 0) {
       for (RequestSupplierListRu requestSupplierList : purchaseOrderLine.getSupplierLineList()) {
         if (requestSupplierList.getOfferSupplier()) {
+          response.setValue("supplier", requestSupplierList.getSupplierUser());
           supplierOfferCount = supplierOfferCount + 1;
         }
       }

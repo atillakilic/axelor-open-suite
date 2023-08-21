@@ -7,23 +7,48 @@
     title="Purchase Request Lines" name="purchase-request-line-ru-grid">
     <hilite background="success" if="quantityArrived == quantity"/>
     <hilite color="success" if="isPaymentDone"/>
+    <field name="productCategory"/>
     <field name="product"/>
-    <field name="specialty"/>
-    <field name="quantity" x-scale="2"/>
     <field name="unit"/>
+    <field name="quantity" x-scale="2"/>
     <field name="requesterUser"/>
-    <field name="purpose"/>
     <field name="projectStockLocation"/>
-    <field name="totalSupplier" readonly="true"/>
-    <field name="totalCost"/>
-    <field name="paymentInfo"/>
-    <field name="quantityArrived" x-scale="2" title="Qty Arrived"/>
+    <field name="specialty"/>
+    <field name="purpose"/>
+    <field name="totalSupplier" readonly="true" hidden="true"/>
+    <field name="totalCost" hidden="true"/>
+    <field name="paymentInfo" hidden="true"/>
+    <field name="quantityArrived" x-scale="2" title="Qty Arrived" hidden="true"/>
     <field name="isPaymentDone" hidden="true"/>
+  </grid>
+
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+    title="Purchase Request Lines" name="purchase-request-line-ru-product-accepts-grid">
+    <hilite background="success" if="quantityArrived == quantity"/>
+    <hilite color="success" if="isPaymentDone"/>
+    <field name="product"/>
+    <field name="unit"/>
+    <field name="quantity" x-scale="2"/>
+    <field name="quantityArrived" x-scale="2" title="Qty Arrived"/>
+    <field name="quantityArrived2" x-scale="2"/>
+    <field name="unit2"/>
+    <field name="isPaymentDone" hidden="true"/>
+  </grid>
+
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+    title="Purchase Request Lines" name="purchase-request-line-order-product-ru-grid">
+    <field name="supplier"/>
+    <field name="requestDate"/>
+    <field name="projectRu"/>
+    <field name="product"/>
+    <field name="totalCost"/>
+    <field name="statusSelect"/>
   </grid>
 
   <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
     onLoad="action-purchase-request-line-attrs-on-load"
-    onNew="action-purchase-request-line-attrs-on-load" name="purchase-request-line-ru-form">
+    onNew="action-purchase-request-line-attrs-on-load,action-purchase-request-line-attrs-on-new"
+    name="purchase-request-line-ru-form">
     <panel name="mainPanel" readonlyIf="isPaymentDone" colSpan="12">
 
       <panel name="mainPanelContentPanel" colSpan="6">
@@ -46,7 +71,7 @@
           height="250px" width="350px"/>
       </panel>
     </panel>
-    <panel>
+    <panel hidden="false">
       <field name="totalSupplier" readonly="true" colSpan="6"/>
       <field name="totalCost" readonly="true" colSpan="6"/>
       <field name="paymentInfo" form-view="purchase-request-payment-ru-form" colSpan="6"
@@ -68,7 +93,79 @@
     <panel readonly="true" hidden="true">
       <field name="purchaseRequestRu" hidden="false"/>
     </panel>
+
+    <panel readonly="true" hidden="true">
+      <field name="supplier"/>
+      <field name="projectRu"/>
+      <field name="requestDate"/>
+    </panel>
+
   </form>
+
+  <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
+    name="purchase-request-line-order-product-ru-form" width="large">
+    <panel readonly="true" colSpan="12">
+      <field name="supplier" colSpan="3"/>
+      <field name="projectRu" colSpan="3"/>
+      <field name="requestDate" colSpan="3"/>
+      <field name="statusSelect" colSpan="3"/>
+    </panel>
+    <panel name="mainPanel" readonlyIf="isPaymentDone" colSpan="12">
+      <panel name="mainPanelContentPanel" colSpan="6">
+        <field name="newProduct" widget="boolean-switch" colSpan="2" hidden="true"/>
+        <spacer/>
+        <field name="productCategory" colSpan="12"/>
+        <field name="product" colSpan="12" form-view="product-form" grid-view="product-grid"
+          domain="self.productCategory = :productCategory "
+          onChange="action-purchase-request-payment-attrs-set-product" canNew="true" required="true"/>
+        <field name="unit" colSpan="12"/>
+        <field name="quantity" colSpan="12" x-scale="2" required="true"/>
+        <field name="requesterUser" colSpan="12"/>
+        <field name="projectStockLocation" colSpan="12"/>
+        <field name="specialty" colSpan="12"/>
+        <field name="purpose" colSpan="12"/>
+      </panel>
+      <panel colSpan="6" hidden="true">
+        <spacer colSpan="12"/>
+        <field name="picture" colSpan="12" css="center" showTitle="false" widget="Image"
+          height="250px" width="350px"/>
+      </panel>
+    </panel>
+    <panel hidden="false">
+      <field name="totalCost" readonly="true" colSpan="6"/>
+      <field name="paymentInfo" form-view="purchase-request-payment-ru-form" colSpan="6"
+        grid-view="purchase-request-payment-ru-grid" canSelect="true" canNew="true" canEdit="true"/>
+      <spacer/>
+      <button name="payBtn" title="Pay" icon="fa-check" css="btn-primary"
+        onClick="save,action-purchase-request-payment-validate-clear-payment,action-purchase-request-payment-attrs-clear,save"/>
+      <field name="isPaymentDone" readonly="true" showIf="isPaymentDone"/>
+    </panel>
+
+
+    <panel hidden="true">
+      <field name="quantityArrived" x-scale="2"/>
+    </panel>
+    <panel-related field="supplierLineList" readonlyIf="isPaymentDone" hidden="true"
+      onChange="action-purchase-request-line-group-on-change-suppier-line"
+      form-view="purchase-request-supplier-line-list-ru-form"
+      grid-view="purchase-request-supplier-line-list-ru-grid"/>
+    <panel readonly="true" hidden="true">
+      <field name="purchaseRequestRu" hidden="false"/>
+    </panel>
+  </form>
+
+  <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
+    name="purchase-request-line-ru-product-accepts-form" width="large">
+    <panel colSpan="12">
+      <field name="product"/>
+      <field name="unit"/>
+      <field name="quantity" x-scale="2"/>
+      <field name="quantityArrived" x-scale="2" title="Qty Arrived"/>
+      <field name="quantityArrived2" x-scale="2"/>
+      <field name="unit2"/>
+    </panel>
+  </form>
+
 
   <action-attrs name="action-purchase-request-line-attrs-on-load">
     <attribute name="hidden" for="supplierLineList" expr="eval: true"
@@ -114,12 +211,18 @@
 
   <action-attrs name="action-purchase-request-payment-attrs-clear">
     <attribute name="value" for="isPaymentDone" expr="eval: true" if="paymentInfo != null"/>
+    <attribute name="value" for="statusSelect" expr="eval: 2" if="paymentInfo != null"/>
   </action-attrs>
 
   <action-attrs name="action-purchase-request-payment-attrs-set-product">
     <attribute name="value" for="unit" expr="eval: product?.unit" if="product != null"/>
     <attribute name="value" for="unit" expr="eval: null" if="product == null"/>
     <attribute name="value" for="picture" expr="eval: product?.picture"/>
+  </action-attrs>
+
+  <action-attrs name="action-purchase-request-line-attrs-on-new">
+    <attribute name="value" for="projectRu" expr="eval: _parent?.projectRu"/>
+    <attribute name="value" for="requestDate" expr="eval: _parent?.requestDate"/>
   </action-attrs>
 
 </object-views>

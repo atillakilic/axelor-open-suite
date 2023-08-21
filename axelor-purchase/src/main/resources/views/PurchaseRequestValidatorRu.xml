@@ -5,13 +5,13 @@
 
   <grid name="purchase-request-validator-ru-draf-grid" title="Purchase request Validator"
     editable="true" model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu">
-    <field name="userValidator"/>
+    <field name="validator"/>
     <field name="comments"/>
   </grid>
 
   <grid name="purchase-request-validator-ru-grid" title="Purchase request Validator"
     editable="true" model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu">
-    <field name="userValidator"/>
+    <field name="validator"/>
     <field name="confirm"/>
     <field name="comments"/>
   </grid>
@@ -20,7 +20,7 @@
   <form name="purchase-request-validator-ru-draf-form" title="Purchase request Validator"
     model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu" width="large">
     <panel name="mainPanel">
-      <field name="userValidator"/>
+      <field name="validator"/>
       <field name="comments"/>
     </panel>
   </form>
@@ -28,7 +28,7 @@
   <form name="purchase-request-validator-ru-form" title="Purchase request Validator"
     model="com.axelor.apps.purchase.db.PurchaseRequestValidatorRu" width="large">
     <panel name="mainPanel">
-      <field name="userValidator"/>
+      <field name="validator"/>
       <field name="confirm"/>
       <field name="comments"/>
     </panel>

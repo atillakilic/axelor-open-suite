@@ -117,4 +117,22 @@ public class PurchaseRequestRuController {
       TraceBackService.trace(response, e);
     }
   }
+
+  public void setProductLineStatus(ActionRequest request, ActionResponse response) {
+    try {
+      PurchaseRequestRu purchaseRequest = request.getContext().asType(PurchaseRequestRu.class);
+
+      List<PurchaseRequestLineRu> purchaseRequestLineList =
+          purchaseRequest.getPurchaseRequestLineList();
+
+      for (PurchaseRequestLineRu PurchaseRequestLine : purchaseRequestLineList) {
+        PurchaseRequestLine.setStatusSelect(1);
+      }
+
+      response.setValue("purchaseRequestLineList", purchaseRequestLineList);
+
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
+  }
 }

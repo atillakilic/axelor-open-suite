@@ -30,15 +30,13 @@
   </selection>
 
   <selection name="purchase.request.status.ru.select">
-    <option value="1">Draft</option>
-    <option value="2">Requested</option>
-    <option value="3">Accepted and Order</option>
-    <option value="4">Order Confirm</option>
-    <option value="5">Payment Process</option>
-    <option value="6">Paid</option>
-    <option value="7">Arrived</option>
-    <option value="8">Refused</option>
-    <option value="9">Canceled</option>
+    <option value="1">Request and Approve</option>
+    <option value="2">Price Search</option>
+    <option value="3">Approved</option>
+    <!-- <option value="3">Accepted and Order</option> <option value="4">Order Confirm</option> <option
+      value="5">Payment Process</option> <option value="6">Paid</option> <option value="7">Arrived</option>
+      <option value="8">Refused</option> -->
+    <option value="4">Canceled</option>
   </selection>
 
   <selection name="base.blocking.select" id="purchase.blocking.select">
@@ -59,6 +57,11 @@
   <selection name="purchase.payment.method.ru.select">
     <option value="1">Bank</option>
     <option value="2">Cash</option>
+  </selection>
+
+  <selection name="purchase.request.line.status.ru.select">
+    <option value="1">Order Product</option>
+    <option value="2">Registered Payment</option>
   </selection>
 
 </object-views>

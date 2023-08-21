@@ -14,15 +14,25 @@
   </grid>
 
   <form model="com.axelor.apps.purchase.db.PurchasePaymentRu" title="Purchase Payment"
-    name="purchase-request-payment-ru-form">
+    onNew="action-purchase-payment-attrs-set-amount" name="purchase-request-payment-ru-form">
     <panel name="mainPanel">
+      <field name="supplier"/>
+      <field name="paymentDate"/>
+      <field name="reciptNumber" required="true"/>
       <field name="paymentMethod" min="1"/>
       <field name="bankAccount"/>
       <field name="cashAccount"/>
+      <field name="subTotal" readonly="true"/>
       <field name="amount"/>
-      <field name="reciptNumber"/>
+
       <field name="description"/>
     </panel>
   </form>
+
+  <action-attrs name="action-purchase-payment-attrs-set-amount">
+    <attribute name="value" for="amount" expr="eval: _parent?.totalCost"/>
+    <attribute name="value" for="subTotal" expr="eval: _parent?.totalCost"/>
+    <attribute name="value" for="supplier" expr="eval: _parent?.supplier"/>
+  </action-attrs>
 
 </object-views>

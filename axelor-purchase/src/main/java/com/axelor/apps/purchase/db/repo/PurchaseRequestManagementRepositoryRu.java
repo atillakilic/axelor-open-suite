@@ -17,11 +17,8 @@
  */
 package com.axelor.apps.purchase.db.repo;
 
-import javax.persistence.PersistenceException;
-
 import com.axelor.apps.base.db.repo.SequenceRepository;
 import com.axelor.apps.base.service.administration.SequenceService;
-import com.axelor.apps.purchase.db.PurchaseRequest;
 import com.axelor.apps.purchase.db.PurchaseRequestRu;
 import com.axelor.apps.purchase.exception.PurchaseExceptionMessage;
 import com.axelor.exception.AxelorException;
@@ -29,6 +26,7 @@ import com.axelor.exception.db.repo.TraceBackRepository;
 import com.axelor.exception.service.TraceBackService;
 import com.axelor.i18n.I18n;
 import com.axelor.inject.Beans;
+import javax.persistence.PersistenceException;
 
 public class PurchaseRequestManagementRepositoryRu extends PurchaseRequestRuRepository {
 

@@ -30,6 +30,12 @@
     <string name="purchaseRequestNumber" title="Purchase Request Number"/>
 
     <decimal name="totalCost" title="Total Cost"/>
+    <many-to-one name="supplier" ref="com.axelor.apps.base.db.Partner" title="Supplier"/>
+    <boolean name="isPaymentDone" title="Is Payment Done"/>
+    <many-to-one name="paymentInfo" title="Payment Info"
+      ref="com.axelor.apps.purchase.db.PurchasePaymentRu"/>
+
+
     <!-- Internal purches request -->
 
     <unique-constraint columns="purchaseRequestSeq"/>

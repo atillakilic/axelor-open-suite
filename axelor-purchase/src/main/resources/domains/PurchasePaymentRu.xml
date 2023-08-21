@@ -7,6 +7,11 @@
 
   <entity name="PurchasePaymentRu" lang="java" cacheable="true">
 
+
+    <many-to-one name="supplier" ref="com.axelor.apps.base.db.Partner" title="Supplier"/>
+
+    <date name="paymentDate" title="Payment Date"/>
+
     <integer name="paymentMethod" title="Payment Method"
       selection="purchase.payment.method.ru.select"/>
 
@@ -16,9 +21,10 @@
     <many-to-one name="cashAccount" title="Cash Account"
       ref="com.axelor.apps.base.db.CashAccountRu"/>
 
-    <decimal name="amount" title="Amount"/>
+    <decimal name="subTotal" title="Sub Total"/>
+    <decimal name="amount" title="Pay"/>
 
-    <string name="reciptNumber" title="Recipt Number" namecolumn="true"/>
+    <string name="reciptNumber" title="Supplier Bill Number" namecolumn="true"/>
 
     <string name="description" title="Description"/>
 
