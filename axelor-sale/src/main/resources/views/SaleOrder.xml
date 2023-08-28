@@ -234,6 +234,8 @@
       <button name="reportsBtn" title="Reports" icon="fa-print"
         hideIf="clientPartner == null" readonlyIf="!id"
         onClick="save,action-sale-order-view-reports-wizard"/>
+      <button name="shippingLabelBtn" title="Print Label" icon="fa-print"
+        onClick="save,action-sale-order-method-print-shippinf-label"/>
     </toolbar>
     <menubar>
       <menu name="saleOrderToolsMenu" title="Tools">
@@ -2226,5 +2228,9 @@
           (stockLocation != null &amp;&amp; deliveryAddress?.addressL7Country?.alpha2Code != stockLocation?.address?.addressL7Country?.alpha2Code)
           || (stockLocation == null &amp;&amp; deliveryAddress?.addressL7Country?.alpha2Code != company.address?.addressL7Country?.alpha2Code)) &amp;&amp; statusSelect == 2"/>
   </action-attrs>
+
+  <action-method name="action-sale-order-method-print-shippinf-label">
+    <call class="com.axelor.apps.sale.web.SaleOrderController" method="printShippingLabel"/>
+  </action-method>
 
 </object-views>

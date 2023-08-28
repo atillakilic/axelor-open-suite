@@ -17,6 +17,7 @@
  */
 package com.axelor.apps.sale.web;
 
+import com.axelor.apps.ReportFactory;
 import com.axelor.apps.account.db.FiscalPosition;
 import com.axelor.apps.account.db.PaymentMode;
 import com.axelor.apps.base.db.BankDetails;
@@ -668,6 +669,23 @@ public class SaleOrderController {
         Beans.get(SaleOrderLineService.class).updateLinesAfterFiscalPositionChange(saleOrder);
       }
       response.setValue("saleOrderLineList", saleOrder.getSaleOrderLineList());
+    } catch (Exception e) {
+      TraceBackService.trace(response, e);
+    }
+  }
+
+  public void printShippingLabel(ActionRequest request, ActionResponse response) {
+    try {
+      SaleOrder saleOrder = request.getContext().asType(SaleOrder.class);
+
+      String fileLink =
+          ReportFactory.createReport("ShippingLabel.rptdesign", "ShippingLabel" + "-${date}")
+              .addParam("id", saleOrder.getId())
+              .generate()
+              .getFileLink();
+
+      //    System.err.println(fileLink); debug
+      response.setView(ActionView.define("Shipping Label").add("html", fileLink).map());
     } catch (Exception e) {
       TraceBackService.trace(response, e);
     }

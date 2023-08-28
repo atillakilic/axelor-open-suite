@@ -46,6 +46,9 @@
     <many-to-one name="purchaseRequestRu"
       ref="com.axelor.apps.purchase.db.PurchaseRequestRu" title="Purchase request"/>
 
+    <string name="purchaseRequestSeq" title="Request Code"/>
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"/>
+
   </entity>
 
 </domain-models>

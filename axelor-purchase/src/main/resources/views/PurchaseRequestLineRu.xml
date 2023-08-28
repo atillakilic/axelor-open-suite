@@ -45,6 +45,32 @@
     <field name="statusSelect"/>
   </grid>
 
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+    title="Purchase Request Lines" name="purchase-request-line-order-product-ru-export-grid">
+    <field name="purchaseRequestSeq"/>
+    <field name="requestDate"/>
+    <field name="projectRu"/>
+    <field name="projectStockLocation"/>
+    <field name="productCategory"/>
+    <field name="product"/>
+    <field name="unit"/>
+    <field name="quantity"/>
+  </grid>
+
+  <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+    title="Purchase Request Lines" name="purchase-request-line-order-product-ru-export-form">
+    <panel>
+      <field name="purchaseRequestSeq"/>
+      <field name="requestDate"/>
+      <field name="projectRu"/>
+      <field name="projectStockLocation"/>
+      <field name="productCategory"/>
+      <field name="product"/>
+      <field name="unit"/>
+      <field name="quantity"/>
+    </panel>
+  </form>
+
   <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
     onLoad="action-purchase-request-line-attrs-on-load"
     onNew="action-purchase-request-line-attrs-on-load,action-purchase-request-line-attrs-on-new"
@@ -90,8 +116,12 @@
       showIf="id != null" onChange="action-purchase-request-line-group-on-change-suppier-line"
       form-view="purchase-request-supplier-line-list-ru-form"
       grid-view="purchase-request-supplier-line-list-ru-grid"/>
-    <panel readonly="true" hidden="true">
-      <field name="purchaseRequestRu" hidden="false"/>
+    <panel hidden="true">
+      <field name="purchaseRequestRu"/>
+      <field name="purchaseRequestSeq"/>
+      <field name="requestDate"/>
+      <field name="projectRu"/>
+      <field name="projectStockLocation"/>
     </panel>
 
     <panel readonly="true" hidden="true">
@@ -103,7 +133,8 @@
   </form>
 
   <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Purchase Request Line"
-    name="purchase-request-line-order-product-ru-form" width="large">
+    name="purchase-request-line-order-product-ru-form"
+    onNew="action-purchase-request-line-attrs-on-new" width="large">
     <panel readonly="true" colSpan="12">
       <field name="supplier" colSpan="3"/>
       <field name="projectRu" colSpan="3"/>
@@ -149,8 +180,12 @@
       onChange="action-purchase-request-line-group-on-change-suppier-line"
       form-view="purchase-request-supplier-line-list-ru-form"
       grid-view="purchase-request-supplier-line-list-ru-grid"/>
-    <panel readonly="true" hidden="true">
-      <field name="purchaseRequestRu" hidden="false"/>
+    <panel hidden="true">
+      <field name="purchaseRequestRu"/>
+      <field name="purchaseRequestSeq"/>
+      <field name="requestDate"/>
+      <field name="projectRu"/>
+      <field name="projectStockLocation"/>
     </panel>
   </form>
 
@@ -223,6 +258,9 @@
   <action-attrs name="action-purchase-request-line-attrs-on-new">
     <attribute name="value" for="projectRu" expr="eval: _parent?.projectRu"/>
     <attribute name="value" for="requestDate" expr="eval: _parent?.requestDate"/>
+    <attribute name="value" for="purchaseRequestSeq"
+      expr="eval: _parent?.purchaseRequestSeq"/>
+    <attribute name="value" for="company" expr="eval: _parent?.company"/>
   </action-attrs>
 
 </object-views>

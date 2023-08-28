@@ -23,7 +23,7 @@
     <date name="birthDate" title="Birth date"/>
     <string name="maritalStatus" title="Marital status"
       selection="hr.employee.marital.status"/>
-    <string name="sexSelect" title="Sex" selection="employee.hr.sex.select"/>
+    <string name="sexSelect" title="Sex" selection="employee.hr.sex.select" default="M"/>
 
     <many-to-one name="citizenship" title="Citizenship"
       ref="com.axelor.apps.base.db.Citizenship"/>
@@ -49,6 +49,8 @@
 
     <one-to-many name="employeeContract" ref="com.axelor.apps.hr.db.EmployeeContractRu"
       title="Employee Contract" mappedBy="employeeRu"/>
+
+    <string name="fullName" title="Full Name" namecolumn="true"/>
 
   </entity>
 

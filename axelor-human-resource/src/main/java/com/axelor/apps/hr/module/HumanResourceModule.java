@@ -29,7 +29,9 @@ import com.axelor.apps.bankpayment.service.move.MoveReverseServiceBankPaymentImp
 import com.axelor.apps.base.db.repo.UserBaseRepository;
 import com.axelor.apps.base.service.batch.MailBatchService;
 import com.axelor.apps.hr.db.repo.EmployeeHRRepository;
+import com.axelor.apps.hr.db.repo.EmployeeHRRuRepository;
 import com.axelor.apps.hr.db.repo.EmployeeRepository;
+import com.axelor.apps.hr.db.repo.EmployeeRuRepository;
 import com.axelor.apps.hr.db.repo.EmploymentContractHRRepository;
 import com.axelor.apps.hr.db.repo.EmploymentContractRepository;
 import com.axelor.apps.hr.db.repo.ExpenseHRRepository;
@@ -151,5 +153,6 @@ public class HumanResourceModule extends AxelorModule {
     bind(MoveReverseServiceBankPaymentImpl.class).to(ExpenseMoveReverseServiceImpl.class);
     bind(EmployeeDailyActivityService.class).to(EmployeeDailyActivityServiceImpl.class);
     bind(EmployeeSalaryService.class).to(EmployeeSalaryerviceImpl.class);
+    bind(EmployeeRuRepository.class).to(EmployeeHRRuRepository.class);
   }
 }

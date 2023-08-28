@@ -12,7 +12,7 @@
         onClick="action-emp-salary-method-print-salary-salary-report"/>
     </toolbar>
 
-    <field name="employeeRu" title="Employee" required="true"
+    <field name="employeeRu" title="Employee" required="true" hidden="true"
       onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
     <field name="dateOfStart" title="Date" required="true"
       onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
@@ -67,7 +67,7 @@
         onClick="action-emp-salary-method-print-salary-salary-report"/>
     </toolbar>
 
-    <field name="employeeRu" title="Employee" required="true"
+    <field name="employeeRu" title="Employee" required="true" hidden="true"
       onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
     <field name="dateOfStart" title="Date" required="true"
       onChange="action-employee-salary-ru-attrs-on-change-set-emp-salary-info-name-column"/>
