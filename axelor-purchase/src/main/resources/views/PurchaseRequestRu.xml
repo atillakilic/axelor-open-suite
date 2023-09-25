@@ -48,12 +48,25 @@
       <spacer colSpan="12"/>
       <field name="fileUpload" widget="binary-link"/>
     </panel>
+    <panel>
+      <button name="importBtn" title="Import" onClick="save,purchase.request.ru.import.popup"/>
+    </panel>
     <panel-related field="validatores" readonlyIf="statusSelect &gt; 3"
       form-view="purchase-request-validator-ru-form" showIf="statusSelect == 2"
       grid-view="purchase-request-validator-ru-grid"/>
 
+    <panel>
+      <field name="requestImageSelection" title="Request Type"/>
+    </panel>
+
     <panel-related field="purchaseRequestLineList"
       form-view="purchase-request-line-ru-form" grid-view="purchase-request-line-ru-grid"
+      showIf="requestImageSelection == 1"
+      onChange="action-purchase-request-method-calculate-total,save"/>
+
+    <panel-related field="purchaseRequestLineList"
+      form-view="purchase-request-line-ru-form" grid-view="purchase-request-line-ru-editabe-grid"
+      showIf="requestImageSelection == 2"
       onChange="action-purchase-request-method-calculate-total,save"/>
 
     <panel-tabs name="descriptionPanelTab">
@@ -147,6 +160,9 @@
     <panel hideIf="statusSelect == 1" readonlyIf="statusSelect &gt; 3">
       <spacer colSpan="12"/>
       <field name="fileUpload" widget="binary-link"/>
+    </panel>
+    <panel>
+      <button name="importBtn" title="Import" onClick="save,purchase.request.ru.import.popup"/>
     </panel>
     <panel-related field="validatores" readonlyIf="statusSelect &gt; 3"
       form-view="purchase-request-validator-ru-form" showIf="statusSelect == 2"
@@ -251,5 +267,11 @@
     name="action-purchase-request-payment-attrs-validate-clear-payment">
     <error message="Please add payment Info." if="paymentInfo == null"/>
   </action-validate>
+
+  <action-view name="purchase.request.ru.import.popup" title="Import"
+    model="com.axelor.apps.base.db.ImportConfiguration">
+    <view type="form" name="import-configuration-form"/>
+    <view-param name="popup" value="true"/>
+  </action-view>
 
 </object-views>

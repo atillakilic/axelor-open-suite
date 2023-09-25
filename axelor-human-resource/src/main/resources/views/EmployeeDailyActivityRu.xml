@@ -73,13 +73,21 @@
 
     <panel>
       <button title="Confirm" readonlyIf="isConfirm"
-        onClick="save,action-employee-daily-activity-set-daily-activity-data-on-salary,action-attrs-employee-daily-activity-set-daily-activity-confirm,save"
-        name="confirmBtn" colSpan="4"
+        onClick="action-employee-daily-activity-set-daily-activity-data-group" name="confirmBtn"
+        colSpan="4"
         prompt="Are you sure you want to confirm daily activity record? it will not editable once it is confirm."/>
-      <field name="isConfirm" readonly="true" colSpan="4"/>
+      <field name="isConfirm" readonly="false" colSpan="4"/>
     </panel>
 
   </form>
+
+  <action-group name="action-employee-daily-activity-set-daily-activity-data-group">
+    <action name="save"/>
+    <action name="action-employee-daily-activity-set-daily-activity-data-on-salary"/>
+    <action name="action-attrs-employee-daily-activity-set-daily-activity-confirm"/>
+    <action name="action-attrs-employee-daily-activity-set-employee-absent-plan"/>
+    <action name="save"/>
+  </action-group>
 
   <action-attrs name="action-attrs-hr-employee-daily-activity-on-new">
     <attribute name="value" for="todayDate" expr="eval: __date__"/>
@@ -104,6 +112,11 @@
     name="action-employee-daily-activity-set-daily-activity-data-on-salary">
     <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
       method="updateRecordOnSalary"/>
+  </action-method>
+
+  <action-method name="action-attrs-employee-daily-activity-set-employee-absent-plan">
+    <call class="com.axelor.apps.hr.web.EmployeeDailyActivityController"
+      method="setEmployeeAbsentPlan"/>
   </action-method>
 
   <action-attrs name="action-attrs-employee-daily-activity-set-daily-activity-confirm">

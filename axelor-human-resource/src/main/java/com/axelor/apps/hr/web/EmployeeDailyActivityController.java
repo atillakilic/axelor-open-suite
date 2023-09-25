@@ -148,6 +148,14 @@ public class EmployeeDailyActivityController {
     Beans.get(EmployeeDailyActivityService.class).updateRecordOnSalary(employeeDailyActivity);
   }
 
+  public void setEmployeeAbsentPlan(ActionRequest request, ActionResponse response)
+      throws AxelorException {
+
+    EmployeeDailyActivityRu employeeDailyActivity =
+        request.getContext().asType(EmployeeDailyActivityRu.class);
+    Beans.get(EmployeeDailyActivityService.class).setEmployeeAbsentPlan(employeeDailyActivity);
+  }
+
   public void setEmployeeWorkhours(ActionRequest request, ActionResponse response)
       throws AxelorException {
 

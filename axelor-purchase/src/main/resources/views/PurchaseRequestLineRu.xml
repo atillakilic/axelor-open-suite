@@ -5,10 +5,29 @@
 
   <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
     title="Purchase Request Lines" name="purchase-request-line-ru-grid">
-    <hilite background="success" if="quantityArrived == quantity"/>
+    <hilite background="success" if="quantityArrived == quantity &amp;&amp; quantity > 0"/>
     <hilite color="success" if="isPaymentDone"/>
     <field name="productCategory"/>
     <field name="product"/>
+    <field name="unit"/>
+    <field name="quantity" x-scale="2"/>
+    <field name="requesterUser"/>
+    <field name="projectStockLocation"/>
+    <field name="specialty"/>
+    <field name="purpose"/>
+    <field name="totalSupplier" readonly="true" hidden="true"/>
+    <field name="totalCost" hidden="true"/>
+    <field name="paymentInfo" hidden="true"/>
+    <field name="quantityArrived" x-scale="2" title="Qty Arrived" hidden="true"/>
+    <field name="isPaymentDone" hidden="true"/>
+  </grid>
+
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" editable="true"
+    title="Purchase Request Lines" name="purchase-request-line-ru-editabe-grid">
+    <hilite background="success" if="quantityArrived == quantity &amp;&amp; quantity > 0"/>
+    <hilite color="success" if="isPaymentDone"/>
+    <field name="productCategory"/>
+    <field name="product" domain="self.productCategory = :productCategory"/>
     <field name="unit"/>
     <field name="quantity" x-scale="2"/>
     <field name="requesterUser"/>

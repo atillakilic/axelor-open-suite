@@ -183,6 +183,10 @@
       <field name="patentExp" colSpan="3" readonly="true"/>
       <field name="differentExp" colSpan="3" readonly="true"/>
       <field name="totalAdvancePay" readonly="true" colSpan="3"/>
+      <field name="totalDays" readonly="false" colSpan="3"/>
+      <field name="totalNotComeWithoutReason" readonly="false" colSpan="3"/>
+      <field name="totalNotComeWithReason" readonly="false" colSpan="3"/>
+      <field name="vacation" readonly="false" colSpan="3"/>
       <spacer colSpan="12"/>
 
     </panel>

@@ -35,6 +35,8 @@
     <many-to-one name="paymentInfo" title="Payment Info"
       ref="com.axelor.apps.purchase.db.PurchasePaymentRu"/>
 
+    <integer name="requestImageSelection" title="Status"
+      selection="purchase.request.image.selecion.ru.select" default="2"/>
 
     <!-- Internal purches request -->
 

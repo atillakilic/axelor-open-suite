@@ -23,4 +23,6 @@ import com.axelor.exception.AxelorException;
 public interface EmployeeDailyActivityService {
 
   public boolean updateRecordOnSalary(EmployeeDailyActivityRu dailyActivity) throws AxelorException;
+
+  public void setEmployeeAbsentPlan(EmployeeDailyActivityRu dailyActivity) throws AxelorException;
 }

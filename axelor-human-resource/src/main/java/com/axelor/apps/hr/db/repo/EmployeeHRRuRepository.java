@@ -21,12 +21,11 @@ import com.axelor.apps.hr.db.EmployeeRu;
 
 public class EmployeeHRRuRepository extends EmployeeRuRepository {
 
-
   @Override
   public EmployeeRu save(EmployeeRu entity) {
-	String fullName = "";
-	fullName = entity.getName() + " " + entity.getSurname() + " " + entity.getFatherName(); 
-	entity.setFullName(fullName);
+    String fullName = "";
+    fullName = entity.getName() + " " + entity.getSurname() + " " + entity.getFatherName();
+    entity.setFullName(fullName);
     return super.save(entity);
   }
 }

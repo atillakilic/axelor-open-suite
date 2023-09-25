@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
     <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201706222054</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">4976</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">4976</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">4976</property>
+        </structure>
+    </list-property>
     <property name="units">cm</property>
     <method name="beforeFactory"><![CDATA[if(params["HeaderHeight"].value != 0 ) {
 reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty("headerHeight",params["HeaderHeight"].value+"cm");
@@ -52,7 +66,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
     </data-sources>
     <data-sets>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="EmployeeSalary" id="4976">
-            <property name="nullsOrdering">nulls lowest</property>
             <list-property name="columnHints">
                 <structure>
                     <property name="columnName">id</property>
@@ -612,18 +625,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="displayName">enddate</text-property>
                     <text-property name="heading">enddate</text-property>
                 </structure>
-                <structure>
-                    <property name="columnName">emppaystatus</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">emppaystatus</text-property>
-                    <text-property name="heading">emppaystatus</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">emptechstatus</property>
-                    <property name="analysis">dimension</property>
-                    <text-property name="displayName">emptechstatus</text-property>
-                    <text-property name="heading">emptechstatus</text-property>
-                </structure>
             </list-property>
             <list-property name="parameters"/>
             <structure name="cachedMetaData">
@@ -1092,16 +1093,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                         <property name="position">93</property>
                         <property name="name">enddate</property>
                         <property name="dataType">date</property>
-                    </structure>
-                    <structure>
-                        <property name="position">94</property>
-                        <property name="name">emppaystatus</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">95</property>
-                        <property name="name">emptechstatus</property>
-                        <property name="dataType">string</property>
                     </structure>
                 </list-property>
             </structure>
@@ -1759,20 +1750,6 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <property name="dataType">date</property>
                     <property name="nativeDataType">91</property>
                 </structure>
-                <structure>
-                    <property name="position">94</property>
-                    <property name="name">emppaystatus</property>
-                    <property name="nativeName">emppaystatus</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">95</property>
-                    <property name="name">emptechstatus</property>
-                    <property name="nativeName">emptechstatus</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select EmpSalary.id as Id,
 Employee.name as EmpName,
@@ -1866,15 +1843,11 @@ EmpSalary.total_not_come_without_reason as NotComeWithoutReason,
 EmpSalary.total_not_come_with_reason as NotComeWithReason,
 EmpSalary.vacation as Vacation,
 EmployeeDepart.name as DepName,
-EmployeeContract.end_date as EndDate,
-EmployeePayStatus.name as EmpPayStatus,
-EmployeeTechStatus.name as EmpTechStatus
+EmployeeContract.end_date as EndDate
 
 
 from hr_employee_salary_ru as EmpSalary
 left outer join hr_employee_ru as Employee on (EmpSalary.employee_ru = Employee.id)
-left outer join hr_emp_payment_status as EmployeePayStatus on (EmployeePayStatus.id = Employee.emp_payment_status)
-left outer join hr_emp_technical_status as EmployeeTechStatus on (EmployeeTechStatus.id = Employee.emp_technical_status)
 left outer join project_project_department_ru as EmployeeDepart on (Employee.project_department = EmployeeDepart.id)
 left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employee_contract = EmployeeContract.id)
 @INJECTEDWHERE]]></xml-property>
@@ -1976,6 +1949,12 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
                 <cell id="4715">
                     <property name="colSpan">3</property>
                     <property name="rowSpan">1</property>
+                    <label id="4727">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Employee Salary Report</text-property>
+                    </label>
                 </cell>
             </row>
         </grid>
@@ -2831,6 +2810,12 @@ row["thirtyone"]
                     <property name="dataType">integer</property>
                 </structure>
                 <structure>
+                    <property name="name">empstatus</property>
+                    <text-property name="displayName">empstatus</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["empstatus"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
                     <property name="name">paidsalary</property>
                     <text-property name="displayName">paidsalary</text-property>
                     <expression name="expression" type="javascript">dataSetRow["paidsalary"]</expression>
@@ -2846,6 +2831,12 @@ row["thirtyone"]
                     <property name="name">PayStatus</property>
                     <expression name="expression" type="javascript">row["salarystatus"]</expression>
                     <property name="dataType">integer</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">EmpStatus</property>
+                    <expression name="expression" type="javascript">row["empstatus"]</expression>
+                    <property name="dataType">boolean</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
@@ -3050,36 +3041,6 @@ row["thirtyone"]
                     <expression name="expression" type="javascript">dataSetRow["notcomewithreason"]</expression>
                     <property name="dataType">decimal</property>
                 </structure>
-                <structure>
-                    <property name="name">empstatus</property>
-                    <text-property name="displayName">empstatus</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["empstatus"]</expression>
-                    <property name="dataType">integer</property>
-                </structure>
-                <structure>
-                    <property name="name">emppaystatus</property>
-                    <text-property name="displayName">emppaystatus</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["emppaystatus"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">emptechstatus</property>
-                    <text-property name="displayName">emptechstatus</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["emptechstatus"]</expression>
-                    <property name="dataType">string</property>
-                </structure>
-                <structure>
-                    <property name="name">EmpPaystatus</property>
-                    <expression name="expression" type="javascript">dataSetRow["emppaystatus"]</expression>
-                    <property name="dataType">string</property>
-                    <property name="allowExport">true</property>
-                </structure>
-                <structure>
-                    <property name="name">empTechStatus</property>
-                    <expression name="expression" type="javascript">dataSetRow["emptechstatus"]</expression>
-                    <property name="dataType">string</property>
-                    <property name="allowExport">true</property>
-                </structure>
             </list-property>
             <column id="6155">
                 <property name="width">0.8cm</property>
@@ -3198,57 +3159,142 @@ row["thirtyone"]
                     <property name="borderBottomStyle">solid</property>
                     <property name="borderBottomWidth">thin</property>
                     <cell id="6273">
-                        <property name="colSpan">8</property>
-                        <property name="rowSpan">1</property>
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                     </cell>
-                    <cell id="6281">
-                        <property name="colSpan">31</property>
-                        <property name="rowSpan">1</property>
+                    <cell id="6274">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <text id="6332">
-                            <property name="contentType">html</property>
-                            <text-property name="content"><![CDATA[МАЖОР РАБОЧИЕ ЗАРПЛАТА ЗА-
-<VALUE-OF>if(BirtDateTime.month(BirtDateTime.now()) == "1"){
-"Январь"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "2"){
-"Февраль"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "3"){
-"Март"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "4"){
-"Апрель"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "5"){
-"Май"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "6"){
-"Июнь"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "7"){
-"Июль"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "8"){
-"Август"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "9"){
-"Сентябрь"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "10"){
-"Октябрь"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "11"){
-"Ноябрь"
-}else if(BirtDateTime.month(BirtDateTime.now()) == "12"){
-"Декабрь"
-}
-
-</VALUE-OF>-<VALUE-OF>BirtDateTime.year(BirtDateTime.now())</VALUE-OF> 
- ]]></text-property>
-                        </text>
                     </cell>
-                    <cell id="6312">
-                        <property name="colSpan">18</property>
-                        <property name="rowSpan">1</property>
-                        <text id="6333">
-                            <property name="contentType">auto</property>
-                            <text-property name="content"><![CDATA[МАЖОР РАБОЧИЕ]]></text-property>
-                        </text>
+                    <cell id="6275">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
                     </cell>
+                    <cell id="6276">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6277">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6278">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6279">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6280">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6281"/>
+                    <cell id="6282"/>
+                    <cell id="6283"/>
+                    <cell id="6284"/>
+                    <cell id="6285"/>
+                    <cell id="6286"/>
+                    <cell id="6287"/>
+                    <cell id="6288"/>
+                    <cell id="6289"/>
+                    <cell id="6290"/>
+                    <cell id="6291"/>
+                    <cell id="6292"/>
+                    <cell id="6293"/>
+                    <cell id="6294"/>
+                    <cell id="6295"/>
+                    <cell id="6296"/>
+                    <cell id="6297"/>
+                    <cell id="6298"/>
+                    <cell id="6299"/>
+                    <cell id="6300"/>
+                    <cell id="6301"/>
+                    <cell id="6302"/>
+                    <cell id="6303"/>
+                    <cell id="6304"/>
+                    <cell id="6305"/>
+                    <cell id="6306"/>
+                    <cell id="6307"/>
+                    <cell id="6308"/>
+                    <cell id="6309"/>
+                    <cell id="6310"/>
+                    <cell id="6311"/>
+                    <cell id="6312"/>
+                    <cell id="6313">
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6314">
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6315">
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6316">
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6317">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6318">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6319">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6320">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6321">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6322">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6323">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6324">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6325">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6326">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6327">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6328">
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                    </cell>
+                    <cell id="6329"/>
                 </row>
                 <row id="5883">
                     <property name="fontFamily">monospace</property>
@@ -3618,111 +3664,61 @@ row["thirtyone"]
                     <cell id="5995">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <data id="6334">
-                            <property name="backgroundAttachment">scroll</property>
-                            <property name="backgroundPositionX">0%</property>
-                            <property name="backgroundPositionY">0%</property>
-                            <property name="backgroundRepeat">repeat</property>
-                            <property name="fontFamily">sans-serif</property>
-                            <property name="fontSize">9pt</property>
-                            <property name="fontWeight">normal</property>
-                            <property name="fontStyle">normal</property>
-                            <property name="fontVariant">normal</property>
-                            <property name="color">black</property>
-                            <property name="textLineThrough">none</property>
-                            <property name="textOverline">none</property>
-                            <property name="textUnderline">none</property>
-                            <property name="borderBottomColor">black</property>
-                            <property name="borderBottomStyle">none</property>
-                            <property name="borderBottomWidth">medium</property>
-                            <property name="borderLeftColor">black</property>
-                            <property name="borderLeftStyle">none</property>
-                            <property name="borderLeftWidth">medium</property>
-                            <property name="borderRightColor">black</property>
-                            <property name="borderRightStyle">none</property>
-                            <property name="borderRightWidth">medium</property>
-                            <property name="borderTopColor">black</property>
-                            <property name="borderTopStyle">none</property>
-                            <property name="borderTopWidth">medium</property>
-                            <property name="marginTop">0pt</property>
-                            <property name="marginLeft">0pt</property>
-                            <property name="marginBottom">0pt</property>
-                            <property name="marginRight">0pt</property>
-                            <property name="paddingTop">1pt</property>
-                            <property name="paddingLeft">1pt</property>
-                            <property name="paddingBottom">1pt</property>
-                            <property name="paddingRight">1pt</property>
-                            <property name="textAlign">center</property>
-                            <property name="letterSpacing">normal</property>
-                            <property name="lineHeight">normal</property>
-                            <property name="orphans">2</property>
-                            <property name="textTransform">none</property>
-                            <property name="whiteSpace">normal</property>
-                            <property name="widows">2</property>
-                            <property name="wordSpacing">normal</property>
-                            <property name="display">block</property>
-                            <property name="pageBreakAfter">auto</property>
-                            <property name="pageBreakBefore">auto</property>
-                            <property name="pageBreakInside">auto</property>
-                            <property name="showIfBlank">false</property>
-                            <property name="canShrink">false</property>
-                            <property name="overflow">hidden</property>
-                            <property name="resultSetColumn">EmpPaystatus</property>
+                        <data id="5996">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Not Paid</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">1</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Not Paid</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">2</value>
+                                    </simple-property-list>
+                                    <text-property name="display">half Paid</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["PayStatus"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">3</value>
+                                    </simple-property-list>
+                                    <text-property name="display">Paid</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">PayStatus</property>
                         </data>
                     </cell>
                     <cell id="5997">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <data id="6335">
-                            <property name="backgroundAttachment">scroll</property>
-                            <property name="backgroundPositionX">0%</property>
-                            <property name="backgroundPositionY">0%</property>
-                            <property name="backgroundRepeat">repeat</property>
-                            <property name="fontFamily">sans-serif</property>
-                            <property name="fontSize">9pt</property>
-                            <property name="fontWeight">normal</property>
-                            <property name="fontStyle">normal</property>
-                            <property name="fontVariant">normal</property>
-                            <property name="color">black</property>
-                            <property name="textLineThrough">none</property>
-                            <property name="textOverline">none</property>
-                            <property name="textUnderline">none</property>
-                            <property name="borderBottomColor">black</property>
-                            <property name="borderBottomStyle">none</property>
-                            <property name="borderBottomWidth">medium</property>
-                            <property name="borderLeftColor">black</property>
-                            <property name="borderLeftStyle">none</property>
-                            <property name="borderLeftWidth">medium</property>
-                            <property name="borderRightColor">black</property>
-                            <property name="borderRightStyle">none</property>
-                            <property name="borderRightWidth">medium</property>
-                            <property name="borderTopColor">black</property>
-                            <property name="borderTopStyle">none</property>
-                            <property name="borderTopWidth">medium</property>
-                            <property name="marginTop">0pt</property>
-                            <property name="marginLeft">0pt</property>
-                            <property name="marginBottom">0pt</property>
-                            <property name="marginRight">0pt</property>
-                            <property name="paddingTop">1pt</property>
-                            <property name="paddingLeft">1pt</property>
-                            <property name="paddingBottom">1pt</property>
-                            <property name="paddingRight">1pt</property>
-                            <property name="textAlign">center</property>
-                            <property name="letterSpacing">normal</property>
-                            <property name="lineHeight">normal</property>
-                            <property name="orphans">2</property>
-                            <property name="textTransform">none</property>
-                            <property name="whiteSpace">normal</property>
-                            <property name="widows">2</property>
-                            <property name="wordSpacing">normal</property>
-                            <property name="display">block</property>
-                            <property name="pageBreakAfter">auto</property>
-                            <property name="pageBreakBefore">auto</property>
-                            <property name="pageBreakInside">auto</property>
-                            <property name="showIfBlank">false</property>
-                            <property name="canShrink">false</property>
-                            <property name="overflow">hidden</property>
-                            <property name="resultSetColumn">empTechStatus</property>
+                        <data id="5998">
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
+                                    <property name="operator">is-true</property>
+                                    <text-property name="display">Active</text-property>
+                                </structure>
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["EmpStatus"]</expression>
+                                    <property name="operator">is-false</property>
+                                    <text-property name="display">DeActive</text-property>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">EmpStatus</property>
                         </data>
                     </cell>
                     <cell id="5999">

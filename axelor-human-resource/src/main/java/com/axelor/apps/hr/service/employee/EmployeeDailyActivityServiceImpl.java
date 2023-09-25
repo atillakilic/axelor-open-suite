@@ -360,4 +360,41 @@ public class EmployeeDailyActivityServiceImpl implements EmployeeDailyActivitySe
 
     return false;
   }
+
+  @Transactional
+  @Override
+  public void setEmployeeAbsentPlan(EmployeeDailyActivityRu dailyActivity) throws AxelorException {
+    System.err.println("hello world");
+    for (EmployeeDailyActivityLineRu activityLine : dailyActivity.getActivityRecord()) {
+
+      EmployeeSalaryRu employeeSalary = activityLine.getEmployeeActiveSalaryContract();
+
+      BigDecimal totalDays = new BigDecimal(0);
+      BigDecimal totalNotComeWithoutReason = new BigDecimal(0);
+      BigDecimal totalNotComeWithReason = new BigDecimal(0);
+      BigDecimal vacation = new BigDecimal(0);
+
+      for (EmployeeDailyActivityLineRu dailyActivityLine : employeeSalary.getDailyActivityLine()) {
+        totalDays = totalDays.add(new BigDecimal(1));
+        if (dailyActivityLine.getIsAbsence()) {
+          if (dailyActivityLine.getAbsenceReason() == null) {
+            totalNotComeWithoutReason = totalNotComeWithoutReason.add(new BigDecimal(1));
+          }
+          if (dailyActivityLine.getAbsenceReason() != null) {
+            totalNotComeWithReason = totalNotComeWithReason.add(new BigDecimal(1));
+
+            if (dailyActivityLine.getAbsenceReason().getMonthlyLeave()) {
+              vacation = vacation.add(new BigDecimal(1));
+            }
+          }
+        }
+      }
+      employeeSalary.setTotalDays(totalDays);
+      employeeSalary.setTotalNotComeWithoutReason(totalNotComeWithoutReason);
+      employeeSalary.setTotalNotComeWithReason(totalNotComeWithReason);
+      employeeSalary.setVacation(vacation);
+
+      Beans.get(EmployeeSalaryRuRepository.class).save(employeeSalary);
+    }
+  }
 }

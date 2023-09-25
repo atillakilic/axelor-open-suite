@@ -128,6 +128,12 @@
 
     <one-to-many ref="com.axelor.apps.hr.db.AdvanceRequestLineRu" name="advancePayment"
       title="EMployee Advance Payment" mappedBy="empSalaryMonth"/>
+
+    <decimal name="totalDays" title="Total Days"/>
+    <decimal name="totalNotComeWithoutReason" title="NotCome Without Reason"/>
+    <decimal name="totalNotComeWithReason" title="NotCome With Reason"/>
+    <decimal name="vacation" title="Vacation"/>
+
   </entity>
 
 </domain-models>

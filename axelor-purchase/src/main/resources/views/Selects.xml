@@ -64,4 +64,8 @@
     <option value="2">Registered Payment</option>
   </selection>
 
+  <selection name="purchase.request.image.selecion.ru.select">
+    <option value="1">With Image</option>
+    <option value="2">Without Image</option>
+  </selection>
 </object-views>

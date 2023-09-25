@@ -41,10 +41,10 @@
       title="Project Team"/>
     <many-to-one name="projectDepartment"
       ref="com.axelor.apps.project.db.ProjectDepartmentRu" title="Department"/>
-    <many-to-one name="paymentStatus" ref="com.axelor.apps.hr.db.EmpTechnicalStatus"
+    <many-to-one name="empPaymentStatus" ref="com.axelor.apps.hr.db.EmpPaymentStatus"
       title="Payment Status"/>
-    <many-to-one name="technicalStatus" ref="com.axelor.apps.hr.db.EmpPaymentStatus"
-      title="Technical Status"/>
+    <many-to-one name="empTechnicalStatus"
+      ref="com.axelor.apps.hr.db.EmpTechnicalStatus" title="Technical Status"/>
 
 
     <one-to-many name="employeeContract" ref="com.axelor.apps.hr.db.EmployeeContractRu"
