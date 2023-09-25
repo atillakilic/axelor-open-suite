@@ -2574,7 +2574,7 @@ row["thirtyone"]
                 </structure>
                 <structure>
                     <property name="name">TotalSal</property>
-                    <expression name="expression" type="javascript">row["totalsal"]</expression>
+                    <expression name="expression" type="javascript">row["sum"]-1</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
                 </structure>
@@ -3080,6 +3080,18 @@ row["thirtyone"]
                     <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">sum</property>
+                    <expression name="expression" type="javascript">row["totalSalary"]+row["Registra"]+row["Patent"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">totalsalsum</property>
+                    <expression name="expression" type="javascript">row["sum"]-row["different"]-row["registraexp2"]-row["PatentExp"]-row["PenaltyNotCame"]-row["PenaltyCloth"]-row["PenaltyCompany"]-row["penaltywerehouse"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <column id="6155">
                 <property name="width">0.8cm</property>
@@ -3148,17 +3160,14 @@ row["thirtyone"]
             <column id="6258">
                 <property name="width">2cm</property>
             </column>
-            <column id="6196">
-                <property name="width">2.5cm</property>
-            </column>
             <column id="6197">
                 <property name="width">4cm</property>
             </column>
             <column id="6198">
                 <property name="width">3cm</property>
             </column>
-            <column id="6199">
-                <property name="width">5cm</property>
+            <column id="6345">
+                <property name="width">3cm</property>
             </column>
             <column id="6200">
                 <property name="width">2.5cm</property>
@@ -3242,7 +3251,7 @@ row["thirtyone"]
                         </text>
                     </cell>
                     <cell id="6312">
-                        <property name="colSpan">18</property>
+                        <property name="colSpan">17</property>
                         <property name="rowSpan">1</property>
                         <text id="6333">
                             <property name="contentType">auto</property>
@@ -3499,15 +3508,6 @@ row["thirtyone"]
                             <text-property name="text">ОТПУСК</text-property>
                         </label>
                     </cell>
-                    <cell id="5966">
-                        <property name="borderLeftStyle">solid</property>
-                        <property name="borderLeftWidth">thin</property>
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <label id="5967">
-                            <text-property name="text">СУММА</text-property>
-                        </label>
-                    </cell>
                     <cell id="5968">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
@@ -3524,12 +3524,11 @@ row["thirtyone"]
                             <text-property name="text">ПАТЕНТА</text-property>
                         </label>
                     </cell>
-                    <cell id="5972">
+                    <cell id="6342">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <label id="5973">
-                            <property name="fontSize">9pt</property>
-                            <text-property name="text">Общий расход</text-property>
+                        <label id="6346">
+                            <text-property name="text">СУММА</text-property>
                         </label>
                     </cell>
                     <cell id="5974">
@@ -3585,7 +3584,7 @@ row["thirtyone"]
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <label id="5985">
-                            <text-property name="text">Оплачено</text-property>
+                            <text-property name="text">ОПЛАТА ВАНКОМ</text-property>
                         </label>
                     </cell>
                     <cell id="5988">
@@ -4679,13 +4678,6 @@ row["thirtyone"]
                             <property name="resultSetColumn">vacationdays</property>
                         </data>
                     </cell>
-                    <cell id="6075">
-                        <property name="borderRightStyle">solid</property>
-                        <property name="borderRightWidth">thin</property>
-                        <data id="6076">
-                            <property name="resultSetColumn">totalSalary</property>
-                        </data>
-                    </cell>
                     <cell id="6077">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
@@ -4714,11 +4706,11 @@ row["thirtyone"]
                             <property name="resultSetColumn">Patent</property>
                         </data>
                     </cell>
-                    <cell id="6081">
+                    <cell id="6343">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <data id="6082">
-                            <property name="resultSetColumn">TotalExpense</property>
+                        <data id="6347">
+                            <property name="resultSetColumn">sum</property>
                         </data>
                     </cell>
                     <cell id="6083">
@@ -4986,15 +4978,12 @@ row["thirtyone"]
                     <cell id="6093">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
-                        <data id="6094">
-                            <property name="resultSetColumn">Paid</property>
-                        </data>
                     </cell>
                     <cell id="6097">
                         <property name="borderRightStyle">solid</property>
                         <property name="borderRightWidth">thin</property>
                         <data id="6098">
-                            <property name="resultSetColumn">TotalSal</property>
+                            <property name="resultSetColumn">totalsalsum</property>
                         </data>
                     </cell>
                     <cell id="6099">
@@ -5057,10 +5046,9 @@ row["thirtyone"]
                     <cell id="6249"/>
                     <cell id="6253"/>
                     <cell id="6257"/>
-                    <cell id="6142"/>
                     <cell id="6143"/>
                     <cell id="6144"/>
-                    <cell id="6145"/>
+                    <cell id="6344"/>
                     <cell id="6146"/>
                     <cell id="6211"/>
                     <cell id="6223"/>
