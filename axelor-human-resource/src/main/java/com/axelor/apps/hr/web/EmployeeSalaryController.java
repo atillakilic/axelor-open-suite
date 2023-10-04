@@ -69,12 +69,10 @@ public class EmployeeSalaryController {
       EmployeeSalaryRu employeeSalaryRu = request.getContext().asType(EmployeeSalaryRu.class);
 
       if (employeeSalaryRu.getEmployeeRu() == null) {
-        response.setValue("salaryInfo", "hello");
         return;
       }
 
       if (employeeSalaryRu.getDateOfStart() == null) {
-        response.setValue("salaryInfo", "hello");
         return;
       }
 

@@ -20,6 +20,8 @@
     <decimal name="monthlyLeave" title="Monthly leave (Days)"/>
 
     <date name="endDate" title="End date"/>
+    <date name="cronJobDate" title="CronJob date"/>
+
     <many-to-one name="endOfContractReason"
       ref="com.axelor.apps.hr.db.EndOfContractReason" title="End of contract reason"/>
     <string name="endContractDetails" title="Details"/>

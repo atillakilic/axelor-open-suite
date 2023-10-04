@@ -14,6 +14,7 @@
   </grid>
 
   <form name="employee-contract-status-ru-form" title="Employee Contract"
+    onNew="action-employee-contract-ru-on-new-set-cron-job-end-date"
     model="com.axelor.apps.hr.db.EmployeeContractRu" width="large">
 
     <panel name="statusPanel" title="Status" colSpan="12">
@@ -46,12 +47,23 @@
     </panel>
 
     <panel name="mainPanel" colSpan="12" title="Contract End">
-      <field name="endDate" colSpan="6"/>
-      <spacer colSpan="6"/>
+      <field name="endDate" colSpan="6"
+        onChange="action-employee-contract-ru-on-new-update-cron-job-end-date"/>
+      <field name="cronJobDate" colSpan="6"
+        onChange="action-employee-contract-ru-on-new-update-cron-job-end-date"/>
       <field name="endOfContractReason" colSpan="6" canEdit="true" canNew="true"/>
       <field name="endContractDetails" colSpan="6"/>
     </panel>
 
   </form>
+
+  <action-method name="action-employee-contract-ru-on-new-set-cron-job-end-date">
+    <call class="com.axelor.apps.hr.web.EmployeeContractRuController" method="setCronJobDate"/>
+  </action-method>
+
+  <action-method name="action-employee-contract-ru-on-new-update-cron-job-end-date">
+    <call class="com.axelor.apps.hr.web.EmployeeContractRuController"
+      method="updateCronJobDate"/>
+  </action-method>
 
 </object-views>

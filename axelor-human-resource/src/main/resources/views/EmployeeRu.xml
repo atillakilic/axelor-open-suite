@@ -7,7 +7,7 @@
     orderBy="">
     <field name="name"/>
     <field name="surname"/>
-    <field name="fatherName"/> 
+    <field name="fatherName"/>
     <field name="projectTeam"/>
     <field name="projectDepartment"/>
     <field name="empPaymentStatus"/>
