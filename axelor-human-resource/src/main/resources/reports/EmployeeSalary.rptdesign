@@ -613,6 +613,12 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     <text-property name="heading">enddate</text-property>
                 </structure>
                 <structure>
+                    <property name="columnName">dateofhire</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dateofhire</text-property>
+                    <text-property name="heading">dateofhire</text-property>
+                </structure>
+                <structure>
                     <property name="columnName">emppaystatus</property>
                     <property name="analysis">dimension</property>
                     <text-property name="displayName">emppaystatus</text-property>
@@ -1095,11 +1101,16 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                     </structure>
                     <structure>
                         <property name="position">94</property>
+                        <property name="name">dateofhire</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">95</property>
                         <property name="name">emppaystatus</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
-                        <property name="position">95</property>
+                        <property name="position">96</property>
                         <property name="name">emptechstatus</property>
                         <property name="dataType">string</property>
                     </structure>
@@ -1761,13 +1772,20 @@ reportContext.getDesignHandle().findMasterPage("Simple MasterPage").setProperty(
                 </structure>
                 <structure>
                     <property name="position">94</property>
+                    <property name="name">dateofhire</property>
+                    <property name="nativeName">dateofhire</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">95</property>
                     <property name="name">emppaystatus</property>
                     <property name="nativeName">emppaystatus</property>
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                 </structure>
                 <structure>
-                    <property name="position">95</property>
+                    <property name="position">96</property>
                     <property name="name">emptechstatus</property>
                     <property name="nativeName">emptechstatus</property>
                     <property name="dataType">string</property>
@@ -1867,6 +1885,7 @@ EmpSalary.total_not_come_with_reason as NotComeWithReason,
 EmpSalary.vacation as Vacation,
 EmployeeDepart.name as DepName,
 EmployeeContract.end_date as EndDate,
+EmployeeContract.date_of_hire as DateOfHire,
 EmployeePayStatus.name as EmpPayStatus,
 EmployeeTechStatus.name as EmpTechStatus
 
@@ -2057,7 +2076,7 @@ left outer join hr_employee_contract_ru as EmployeeContract on (EmpSalary.employ
                 </structure>
                 <structure>
                     <property name="name">Date</property>
-                    <expression name="expression" type="javascript">row["startdate"]</expression>
+                    <expression name="expression" type="javascript">row["dateofhire"]</expression>
                     <property name="dataType">date</property>
                     <property name="allowExport">true</property>
                 </structure>
@@ -3022,8 +3041,9 @@ row["thirtyone"]
                 </structure>
                 <structure>
                     <property name="name">totalDay</property>
-                    <expression name="expression" type="javascript">row["totaldays"]</expression>
-                    <property name="dataType">decimal</property>
+                    <expression name="expression" type="javascript">str = row["dateofhire"]
+BirtDateTime.diffDay(str,BirtDateTime.today())</expression>
+                    <property name="dataType">string</property>
                     <property name="allowExport">true</property>
                 </structure>
                 <structure>
@@ -3237,6 +3257,12 @@ row["thirtyone"]
                     <expression name="expression" type="javascript">row["Row"]</expression>
                     <property name="dataType">decimal</property>
                     <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">dateofhire</property>
+                    <text-property name="displayName">dateofhire</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dateofhire"]</expression>
+                    <property name="dataType">date</property>
                 </structure>
             </list-property>
             <column id="6155">

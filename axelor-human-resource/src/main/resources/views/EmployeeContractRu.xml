@@ -14,7 +14,7 @@
   </grid>
 
   <form name="employee-contract-status-ru-form" title="Employee Contract"
-    onNew="action-employee-contract-ru-on-new-set-cron-job-end-date"
+    onNew="action-employee-contract-ru-on-new-set-values"
     model="com.axelor.apps.hr.db.EmployeeContractRu" width="large">
 
     <panel name="statusPanel" title="Status" colSpan="12">
@@ -22,8 +22,9 @@
     </panel>
     <panel name="mainPanel" colSpan="12">
       <field name="name"/>
+      <field name="employeeRu" required="true"
+        onChange="action-employee-contract-ru-attrs-set-fields-from-employee"/>
       <field name="dateOfHire"/>
-      <field name="employeeRu" required="true"/>
       <field name="payCompany"/>
     </panel>
     <panel name="mainPanel" colSpan="12" title="Contract Information">
@@ -57,6 +58,11 @@
 
   </form>
 
+  <action-group name="action-employee-contract-ru-on-new-set-values">
+    <action name="action-employee-contract-ru-on-new-set-cron-job-end-date"/>
+    <action name="action-employee-contract-ru-on-attrs-set-statue-active"/>
+  </action-group>
+
   <action-method name="action-employee-contract-ru-on-new-set-cron-job-end-date">
     <call class="com.axelor.apps.hr.web.EmployeeContractRuController" method="setCronJobDate"/>
   </action-method>
@@ -66,4 +72,12 @@
       method="updateCronJobDate"/>
   </action-method>
 
+  <action-attrs name="action-employee-contract-ru-attrs-set-fields-from-employee">
+    <attribute name="value" for="dateOfHire" expr="eval: employeeRu?.dateOfHire"/>
+    <attribute name="value" for="payCompany" expr="eval: employeeRu?.company"/>
+  </action-attrs>
+
+  <action-attrs name="action-employee-contract-ru-on-attrs-set-statue-active">
+  	<attribute name="value" for="status" expr="eval: 2"/>
+  </action-attrs>
 </object-views>

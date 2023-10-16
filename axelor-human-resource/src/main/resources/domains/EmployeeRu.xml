@@ -52,6 +52,14 @@
 
     <string name="fullName" title="Full Name" namecolumn="true"/>
 
+    <date name="dateOfHire" title="Date Of Hire"/>
+
+    <integer name="salaryType" title="Salary Type"
+      selection="employee.salary.type.ru.select"/>
+    <decimal name="fixSalary" title="Fix Salary"/>
+    <decimal name="hourlyRate" title="Hourly Rate"/>
+    <many-to-one name="company" ref="com.axelor.apps.base.db.Company"/>
+
   </entity>
 
 </domain-models>

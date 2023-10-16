@@ -327,6 +327,10 @@
 
   <action-attrs name="action-employee-salary-ru-attrs-set-employee">
     <attribute name="value" for="employeeRu" expr="eval: __parent__.employeeRu"/>
+    <attribute name="value" for="salaryType" expr="eval: __parent__.employeeRu.salaryType"/>
+    <attribute name="value" for="hourlyRate" expr="eval: __parent__.employeeRu.hourlyRate"/>
+    <attribute name="value" for="fixSalary" expr="eval: __parent__.employeeRu.fixSalary"/>
+    <attribute name="value" for="currentlyActive" expr="eval: true"/>
   </action-attrs>
 
   <action-attrs name="action-employee-salary-ru-attrs-on-change-salary-type">
