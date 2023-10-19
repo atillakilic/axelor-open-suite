@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="cash-management" package="com.axelor.apps.cash.management.db"/>
+
+  <entity name="CashManagement" lang="java">
+
+    <string name="sequence" title="Sequence"/>
+
+    <date name="dateRecord" title="Date"/>
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+
+    <integer name="cashManagementType" title="Type" selection="cash.management.type.select"
+      default="1"/>
+
+    <string name="description" title="Description"/>
+
+    <decimal name="incomeAmount" title="Income Amount"/>
+
+    <integer name="expensePaymentType" title="Type"
+      selection="cash.management.expense.payment.type.select" default="1"/>
+
+    <decimal name="expenseAmount" title="Expense Amount"/>
+
+    <many-to-one name="employee" ref="com.axelor.apps.hr.db.EmployeeRu" title="Worker"/>
+
+    <many-to-one name="productCategory" ref="com.axelor.apps.base.db.ProductCategory"
+      title="Product category"/>
+
+    <many-to-one name="product" ref="com.axelor.apps.base.db.Product"
+      title="Product or Service"/>
+
+  </entity>
+
+</domain-models>

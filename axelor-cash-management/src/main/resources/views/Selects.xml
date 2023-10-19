@@ -90,5 +90,14 @@
     <option value="0">End Of Month</option>
   </selection>
 
+  <selection name="cash.management.type.select">
+    <option value="1">Income</option>
+    <option value="2">expense</option>
+  </selection>
+
+  <selection name="cash.management.expense.payment.type.select">
+    <option value="1">Advance payment</option>
+    <option value="2">Product / Servıces payment</option>
+  </selection>
 
 </object-views>

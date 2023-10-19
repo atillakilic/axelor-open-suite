@@ -61,6 +61,15 @@
     <view type="form" name="forecast-recap-line-type-form"/>
   </action-view>
 
+  <menuitem name="cash-management-cash-management" order="10" parent="forecast-root"
+    title="Cash Management" action="cash.management.cash.management"/>
+
+  <action-view name="cash.management.cash.management" title="Cash Management"
+    model="com.axelor.apps.cash.management.db.CashManagement">
+    <view type="grid" name="cash-management-grid"/>
+    <view type="form" name="cash-management-form"/>
+  </action-view>
+
   <menuitem name="menu-cash-management-dashboard-1" parent="forecast-root"
     title="Cash Management Dashboard" action="cash.management.dashboard.1.view"/>
 

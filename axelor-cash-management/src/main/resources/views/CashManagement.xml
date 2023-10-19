@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="cash-management-grid" title="Cash Management"
+    model="com.axelor.apps.cash.management.db.CashManagement">
+    <field name="project"/>
+    <field name="sequence" title="Name / No"/>
+    <field name="dateRecord"/>
+    <field name="employee"/>
+    <field name="incomeAmount"/>
+    <field name="expenseAmount"/>
+  </grid>
+
+  <form name="cash-management-form" title="Cash Management"
+    model="com.axelor.apps.cash.management.db.CashManagement">
+    <panel name="generalPanel" colSpan="12">
+      <field name="sequence" title="Name / No"/>
+      <field name="cashManagementType" colSpan="3"/>
+      <field name="expensePaymentType" showIf="cashManagementType == 2" colSpan="3"/>
+      <field name="dateRecord"/>
+      <field name="project"/>
+    </panel>
+
+    <panel-tabs name="mainPanelTab">
+      <panel name="incomeTab" title="Income" showIf="cashManagementType == 1">
+        <field name="description"/>
+        <field name="incomeAmount"/>
+      </panel>
+
+      <panel name="advancePaymentTab" title="Advance Payment"
+        showIf="cashManagementType == 2 &amp;&amp; expensePaymentType == 1">
+        <field name="employee"/>
+        <field name="description"/>
+        <field name="expenseAmount"/>
+      </panel>
+
+      <panel name="productTab" title="Product/Service Payment"
+        showIf="cashManagementType == 2 &amp;&amp; expensePaymentType == 2">
+        <field name="productCategory" colSpan="4"/>
+        <field name="product" colSpan="4"/>
+        <field name="employee" colSpan="4"/>
+        <field name="description"/>
+        <field name="expenseAmount"/>
+      </panel>
+    </panel-tabs>
+  </form>
+
+
+</object-views>

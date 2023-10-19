@@ -78,6 +78,6 @@
   </action-attrs>
 
   <action-attrs name="action-employee-contract-ru-on-attrs-set-statue-active">
-  	<attribute name="value" for="status" expr="eval: 2"/>
+    <attribute name="value" for="status" expr="eval: 2"/>
   </action-attrs>
 </object-views>
