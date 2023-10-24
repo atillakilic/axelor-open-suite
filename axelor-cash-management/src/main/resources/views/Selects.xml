@@ -39,6 +39,7 @@
     id="cash.management.sequence.generic.code.select">
     <option value="forecastRecap">Forecast Recap</option>
     <option value="forecast">Forecast</option>
+    <option value="cashManagementSeq">CashManagement</option>
   </selection>
 
   <selection name="forecast.recap.report.type.select">

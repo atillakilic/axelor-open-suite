@@ -12,6 +12,7 @@
         //SEQUENCE SELECT
   		public static final String FORECAST_RECAP_SEQUENCE = "forecastRecap";
   		public static final String FORECAST_SEQUENCE = "forecast";
+  		public static final String CASH_MANAGEMENT_SEQUENCE = "cashManagementSeq";
 
      ]]></extra-code>
 

@@ -6,7 +6,7 @@
   <grid name="cash-management-grid" title="Cash Management"
     model="com.axelor.apps.cash.management.db.CashManagement">
     <field name="project"/>
-    <field name="sequence" title="Name / No"/>
+    <field name="cashManagementSeq" title="No"/>
     <field name="dateRecord"/>
     <field name="employee"/>
     <field name="incomeAmount"/>
@@ -16,7 +16,7 @@
   <form name="cash-management-form" title="Cash Management"
     model="com.axelor.apps.cash.management.db.CashManagement">
     <panel name="generalPanel" colSpan="12">
-      <field name="sequence" title="Name / No"/>
+      <field name="cashManagementSeq" title="No"/>
       <field name="cashManagementType" colSpan="3"/>
       <field name="expensePaymentType" showIf="cashManagementType == 2" colSpan="3"/>
       <field name="dateRecord"/>
@@ -46,6 +46,5 @@
       </panel>
     </panel-tabs>
   </form>
-
-
+  
 </object-views>

@@ -7,7 +7,7 @@
 
   <entity name="CashManagement" lang="java">
 
-    <string name="sequence" title="Sequence"/>
+    <string name="cashManagementSeq" title="Sequence" namecolumn="true"/>
 
     <date name="dateRecord" title="Date"/>
 
