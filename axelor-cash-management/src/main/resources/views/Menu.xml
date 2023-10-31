@@ -70,6 +70,15 @@
     <view type="form" name="cash-management-form"/>
   </action-view>
 
+  <menuitem name="cash-management-advance-payment-cash" order="10" parent="forecast-root"
+    title="Advance Payment" action="cash.management.advance.payment.cash"/>
+
+  <action-view name="cash.management.advance.payment.cash" title="Advance Payment"
+    model="com.axelor.apps.cash.management.db.AdvancePaymentCash">
+    <view type="grid" name="advance-payment-cash-grid"/>
+    <view type="form" name="advance-payment-cash-form"/>
+  </action-view>
+
   <menuitem name="menu-cash-management-dashboard-1" parent="forecast-root"
     title="Cash Management Dashboard" action="cash.management.dashboard.1.view"/>
 

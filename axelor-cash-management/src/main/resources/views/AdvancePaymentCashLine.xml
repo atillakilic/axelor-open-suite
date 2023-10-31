@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="advance-payment-line-cash-grid" title="Advance Payment Line" orderBy="seqNumber" editable="true"
+    model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
+    <field name="seqNumber"/>
+    <field name="employeeRu"/>
+    <field name="advanceSum"/>
+    <field name="advanceText"/>
+  </grid>
+
+  <form name="advance-payment-line-cash-form" title="Advance Payment"
+    model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
+    <panel name="generalPanel" colSpan="12">
+      <field name="seqNumber"/>
+      <field name="employeeRu"/>
+      <field name="advanceSum"/>
+      <field name="advanceText"/>
+    </panel>
+  </form>
+
+</object-views>
