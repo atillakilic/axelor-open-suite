@@ -14,12 +14,12 @@
 
   <form name="advance-payment-cash-form" title="Advance Payment"
     model="com.axelor.apps.cash.management.db.AdvancePaymentCash">
-    
-     <toolbar>
-      <button name="reportsBtn" title="Reports" icon="fa-print" 
+
+    <toolbar>
+      <button name="reportsBtn" title="Reports" icon="fa-print"
         onClick="save,action-advance-payment-cash-view-reports"/>
     </toolbar>
-    
+
     <panel name="generalPanel" colSpan="12">
       <field name="dateRecord" colSpan="4"/>
       <field name="project" colSpan="4"/>
@@ -27,7 +27,7 @@
       <field name="fillSum"/>
       <field name="fillText"/>
       <button name="setEmployeeBtn" title="Get List" colSpan="3"
-              onClick="save,action-advance-payment-cash-set-employee,save,reload"/>
+        onClick="save,action-advance-payment-cash-set-employee,save,reload"/>
     </panel>
 
     <panel colSpan="12">
@@ -37,14 +37,14 @@
     </panel>
 
   </form>
-  
-    <action-method name="action-advance-payment-cash-set-employee">
+
+  <action-method name="action-advance-payment-cash-set-employee">
     <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashController"
       method="setEmployee"/>
   </action-method>
-  
+
   <action-method name="action-advance-payment-cash-view-reports">
-  	<call class="com.axelor.apps.cash.management.web.AdvancePaymentCashController"
+    <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashController"
       method="printReport"/>
   </action-method>
 

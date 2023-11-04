@@ -3,8 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
-  <grid name="advance-payment-line-cash-grid" title="Advance Payment Line" orderBy="seqNumber" editable="true"
-    model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
+  <grid name="advance-payment-line-cash-grid" title="Advance Payment Line" orderBy="seqNumber"
+    editable="true" model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
     <field name="seqNumber"/>
     <field name="employeeRu"/>
     <field name="advanceSum"/>
