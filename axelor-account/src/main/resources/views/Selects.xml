@@ -828,4 +828,11 @@
     <option value="2" order="2">Multiple accounts</option>
     <option value="3" order="1">Single account</option>
   </selection>
+
+  <selection name="general.report.category.type.select">
+    <option value="1" order="3">Product Services</option>
+    <option value="2" order="2">Employee Salaries</option>
+    <option value="3" order="1">Company Expenses</option>
+  </selection>
+
 </object-views>

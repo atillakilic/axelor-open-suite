@@ -33,6 +33,7 @@
     <panel colSpan="12">
       <panel-related name="advancePaymentCashLinePanel" field="advancePaymentCashLine"
         colSpan="12" form-view="advance-payment-line-cash-form"
+        onChange="action-advance-payment-cash-method-calculate-advance-total-sum"
         grid-view="advance-payment-line-cash-grid"/>
     </panel>
 
@@ -46,6 +47,11 @@
   <action-method name="action-advance-payment-cash-view-reports">
     <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashController"
       method="printReport"/>
+  </action-method>
+
+  <action-method name="action-advance-payment-cash-method-calculate-advance-total-sum">
+    <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashController"
+      method="calculate"/>
   </action-method>
 
 </object-views>

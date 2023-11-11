@@ -11,7 +11,7 @@
 
     <integer name="statusSelect" title="Status"
       selection="purchase.request.status.ru.select" default="1"/>
-    <string name="purchaseRequestSeq" title="Ref."/>
+    <string name="purchaseRequestSeq" title="Ref." namecolumn="true"/>
 
     <one-to-many ref="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
       name="purchaseRequestLineList" title="Purchase Request Lines" mappedBy="purchaseRequestRu"/>

@@ -20,6 +20,7 @@ package com.axelor.apps.cash.management.web;
 import com.axelor.apps.ReportFactory;
 import com.axelor.apps.cash.management.db.AdvancePaymentCash;
 import com.axelor.apps.cash.management.db.AdvancePaymentCashLine;
+import com.axelor.apps.cash.management.service.NumToStrMoney;
 import com.axelor.apps.hr.db.EmployeeRu;
 import com.axelor.apps.hr.db.repo.EmployeeRuRepository;
 import com.axelor.exception.service.TraceBackService;
@@ -28,6 +29,7 @@ import com.axelor.meta.schema.actions.ActionView;
 import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.google.inject.Singleton;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,5 +72,21 @@ public class AdvancePaymentCashController {
     } catch (Exception e) {
       TraceBackService.trace(response, e);
     }
+  }
+
+  public void calculate(ActionRequest request, ActionResponse response) {
+    AdvancePaymentCash advancePaymentCash = request.getContext().asType(AdvancePaymentCash.class);
+
+    BigDecimal totalSum = new BigDecimal(0);
+    for (AdvancePaymentCashLine advancePaymentCashLine :
+        advancePaymentCash.getAdvancePaymentCashLine()) {
+
+      totalSum = totalSum.add(advancePaymentCashLine.getAdvanceSum());
+    }
+    NumToStrMoney ntsm = new NumToStrMoney(totalSum.toString());
+    String text = ntsm.num2str();
+
+    response.setValue("fillText", text);
+    response.setValue("fillSum", totalSum);
   }
 }

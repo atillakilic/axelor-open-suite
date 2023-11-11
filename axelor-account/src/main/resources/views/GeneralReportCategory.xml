@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+
+  <grid name="general-report-category-grid" title="General Report Category"
+    model="com.axelor.apps.account.db.GeneralReportCategory">
+    <field name="project"/>
+    <field name="code"/>
+    <field name="name"/>
+    <field name="priority"/>
+    <field name="categoryType"/>
+    <field name="projectTeam"/>
+  </grid>
+
+  <form name="general-report-category-form" title="General Report Category"
+    model="com.axelor.apps.account.db.GeneralReportCategory">
+    <panel name="mainPanel">
+      <field name="project" colSpan="3"/>
+      <field name="code" colSpan="3"/>
+      <field name="name" colSpan="3"/>
+      <field name="priority" colSpan="3"/>
+      <field name="categoryType" colSpan="3"/>
+      <field name="projectTeam" colSpan="3" showIf="categoryType == 2"
+        domain="self.projectRu = :project"/>
+      <spacer/>
+      <field name="description" colSpan="6"/>
+    </panel>
+  </form>
+
+</object-views>

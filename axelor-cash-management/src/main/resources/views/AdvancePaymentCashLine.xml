@@ -7,7 +7,8 @@
     editable="true" model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
     <field name="seqNumber"/>
     <field name="employeeRu"/>
-    <field name="advanceSum"/>
+    <field name="advanceSum"
+      onChange="action-advance-payment-cash-line-method-set-number-to-text"/>
     <field name="advanceText"/>
   </grid>
 
@@ -16,9 +17,15 @@
     <panel name="generalPanel" colSpan="12">
       <field name="seqNumber"/>
       <field name="employeeRu"/>
-      <field name="advanceSum"/>
+      <field name="advanceSum"
+        onChange="action-advance-payment-cash-line-method-set-number-to-text"/>
       <field name="advanceText"/>
     </panel>
   </form>
+
+  <action-method name="action-advance-payment-cash-line-method-set-number-to-text">
+    <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashLineController"
+      method="convertNumberToText"/>
+  </action-method>
 
 </object-views>

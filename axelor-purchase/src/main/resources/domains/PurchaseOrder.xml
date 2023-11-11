@@ -89,6 +89,11 @@
     <boolean name="groupProductsOnPrintings" title="Group products on printings"
       default="false"/>
 
+    <many-to-one name="generalReportCategory" title="General Report Category"
+      ref="com.axelor.apps.account.db.GeneralReportCategory"/>
+    <many-to-many name="purchaseRequestSelect" title="Purchase Request Select"
+      ref="com.axelor.apps.purchase.db.PurchaseRequestRu"/>
+
     <unique-constraint columns="purchaseOrderSeq,company"/>
 
     <extra-code>

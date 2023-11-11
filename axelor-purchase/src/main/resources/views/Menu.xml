@@ -64,11 +64,11 @@
   </action-view>
 
   <menuitem name="sc-root-purchase-request-ru-validate-all-purchase-request-line"
-    parent="sc-root-purchase-request-ru" order="52" title="All Request Line"
+    parent="sc-root-purchase-request-ru" order="52" title="Requested Prodcuts"
     action="sc.root.purchase.request.ru.all.purchase.request.line"/>
 
   <action-view name="sc.root.purchase.request.ru.all.purchase.request.line"
-    title="Purchase Request Ru" model="com.axelor.apps.purchase.db.PurchaseRequestLineRu">
+    title="Requested Prodcuts" model="com.axelor.apps.purchase.db.PurchaseRequestLineRu">
     <view type="grid" name="purchase-request-line-order-product-ru-export-grid"/>
     <view type="form" name="purchase-request-line-order-product-ru-export-form"/>
   </action-view>

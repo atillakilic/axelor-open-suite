@@ -17,6 +17,18 @@
  */
 package com.axelor.apps.purchase.web;
 
+import java.lang.invoke.MethodHandles;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
+import javax.annotation.Nullable;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.axelor.apps.account.db.FiscalPosition;
 import com.axelor.apps.account.db.PaymentMode;
 import com.axelor.apps.base.db.BankDetails;
@@ -36,6 +48,8 @@ import com.axelor.apps.base.service.PartnerPriceListService;
 import com.axelor.apps.base.service.TradingNameService;
 import com.axelor.apps.purchase.db.PurchaseOrder;
 import com.axelor.apps.purchase.db.PurchaseOrderLine;
+import com.axelor.apps.purchase.db.PurchaseRequestLineRu;
+import com.axelor.apps.purchase.db.PurchaseRequestRu;
 import com.axelor.apps.purchase.db.repo.PurchaseOrderRepository;
 import com.axelor.apps.purchase.exception.PurchaseExceptionMessage;
 import com.axelor.apps.purchase.service.PurchaseOrderDomainService;
@@ -62,14 +76,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.inject.Singleton;
-import java.lang.invoke.MethodHandles;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import javax.annotation.Nullable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.google.inject.persist.Transactional;
 
 @Singleton
 public class PurchaseOrderController {
@@ -596,4 +603,33 @@ public class PurchaseOrderController {
       TraceBackService.trace(response, e);
     }
   }
+  
+  @Transactional
+  public void createPurchaseOrderLine(ActionRequest request, ActionResponse response) {
+	    try {
+	      PurchaseOrder purchaseOrder = request.getContext().asType(PurchaseOrder.class);
+	      Set<PurchaseRequestRu> purchaseRequestRuSet = purchaseOrder.getPurchaseRequestSelect();
+	      
+	      List<PurchaseOrderLine> purchaseOrderLineList = new ArrayList<PurchaseOrderLine>();
+	      for(PurchaseRequestRu purchaseRequestRu : purchaseRequestRuSet) {
+	    	  
+	    	  for(PurchaseRequestLineRu purchaseRequestLineRu : purchaseRequestRu.getPurchaseRequestLineList()) {
+	    		  if(purchaseRequestLineRu.getRequestStatus() == 1) {
+	    			  PurchaseOrderLine purchaseOrderLine = new PurchaseOrderLine();
+	    	    	  purchaseOrderLine.setProduct(purchaseRequestLineRu.getProduct());	 
+	    	    	  purchaseOrderLine.setUnit(purchaseRequestLineRu.getUnit());
+	    	    	  purchaseOrderLine.setQty(purchaseRequestLineRu.getQuantity());
+	    	    	  purchaseOrderLine.setProductName(purchaseRequestLineRu.getProduct().getFullName());
+	    	    	  
+	    	    	  purchaseOrderLineList.add(purchaseOrderLine);
+	    		  }
+	    	  }
+	      }
+
+	      response.setValue("purchaseOrderLineList", purchaseOrderLineList);
+	    } catch (Exception e) {
+	      TraceBackService.trace(response, e);
+	    }
+	  }
+  
 }

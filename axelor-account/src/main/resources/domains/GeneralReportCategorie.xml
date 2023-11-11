@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="account" package="com.axelor.apps.account.db"/>
+
+  <entity name="GeneralReportCategory" lang="java" cacheable="true">
+
+    <string name="code" title="Code"/>
+    <string name="name" title="Name" required="true"/>
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+    <many-to-one name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team"/>
+    <integer name="priority" title="Priority"/>
+    <integer name="categoryType" title="Category Type"
+      selection="general.report.category.type.select"/>
+    <string name="description" title="Description"/>
+  </entity>
+
+</domain-models>

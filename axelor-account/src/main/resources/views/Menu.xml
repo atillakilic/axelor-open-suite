@@ -582,6 +582,16 @@
   <menuitem name="account-conf" parent="account-root" title="Configuration" order="50"
     icon="fa-cog"/>
 
+  <menuitem name="general-report-category-account-conf" parent="account-conf" order="1000"
+    title="General Report Category" action="account.conf.general.report.category"/>
+
+  <action-view name="account.conf.general.report.category"
+    title="General Report Category" model="com.axelor.apps.account.db.GeneralReportCategory">
+    <view type="grid" name="general-report-category-grid"/>
+    <view type="form" name="general-report-category-form"/>
+  </action-view>
+
+
   <menuitem name="account-conf-financial" parent="account-conf" title="Financial"/>
 
   <menuitem name="account-conf-fiscal-position" parent="account-conf-financial"

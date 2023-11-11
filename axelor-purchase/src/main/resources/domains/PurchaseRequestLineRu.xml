@@ -49,6 +49,11 @@
     <string name="purchaseRequestSeq" title="Request Code"/>
     <many-to-one name="company" ref="com.axelor.apps.base.db.Company" title="Company"/>
 
+    <integer name="requestStatus" title="Is Request Approved"
+      selection="purchase.request.line.request.status.ru.select"/>
+    <integer name="orderStatus" title="Is Ordered"
+      selection="purchase.request.line.order.status.ru.select"/>
+
   </entity>
 
 </domain-models>

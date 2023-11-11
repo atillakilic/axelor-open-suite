@@ -198,6 +198,11 @@
           showTitle="false"
           hideIf="supplierPartner == null || supplierPartner.purchaseOrderInformation == null"/>
       </panel>
+      <panel>
+        <field name="generalReportCategory"/>
+        <field name="purchaseRequestSelect" widget="TagSelect"/>
+        <button name="createContentLineBtn" title="Create Line" onClick="save,purchase-order-line-create-purchase-order-line-from-request"/>
+      </panel>
     </panel>
     <panel-tabs name="mainPanelTab"
       hideIf="supplierPartner == null || ($enablePurchasesProductByTradName &amp;&amp; company.tradingNameSet != null &amp;&amp; company.tradingNameSet.length != 0 &amp;&amp; tradingName == null)">
@@ -1070,6 +1075,11 @@
   <action-method name="action-method-purchase-order-validate-budget-distribution-list">
     <call class="com.axelor.apps.supplychain.web.PurchaseOrderController"
       method="confirmBudgetDistributionList"/>
+  </action-method>
+
+  <action-method name="purchase-order-line-create-purchase-order-line-from-request">
+    <call class="com.axelor.apps.purchase.web.PurchaseOrderController"
+      method="createPurchaseOrderLine"/>
   </action-method>
 
 </object-views>

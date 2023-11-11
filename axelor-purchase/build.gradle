@@ -15,6 +15,7 @@ axelor {
 dependencies {
 	api project(":modules:axelor-base")
 	api project(":modules:axelor-project")
+	api project(":modules:axelor-account")
 
 	implementation libs.commons_lang3
 }

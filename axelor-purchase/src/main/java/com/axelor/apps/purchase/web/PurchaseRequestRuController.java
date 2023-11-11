@@ -127,6 +127,8 @@ public class PurchaseRequestRuController {
 
       for (PurchaseRequestLineRu PurchaseRequestLine : purchaseRequestLineList) {
         PurchaseRequestLine.setStatusSelect(1);
+        System.err.println("djbfjd");
+        PurchaseRequestLine.setRequestStatus(1);
       }
 
       response.setValue("purchaseRequestLineList", purchaseRequestLineList);
