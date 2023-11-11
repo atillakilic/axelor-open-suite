@@ -201,7 +201,8 @@
       <panel>
         <field name="generalReportCategory"/>
         <field name="purchaseRequestSelect" widget="TagSelect"/>
-        <button name="createContentLineBtn" title="Create Line" onClick="save,purchase-order-line-create-purchase-order-line-from-request"/>
+        <button name="createContentLineBtn" title="Create Line"
+          onClick="save,purchase-order-line-create-purchase-order-line-from-request"/>
       </panel>
     </panel>
     <panel-tabs name="mainPanelTab"

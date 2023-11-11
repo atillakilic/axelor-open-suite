@@ -64,8 +64,8 @@
     <field name="statusSelect"/>
   </grid>
 
-  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Requested Prodcuts" canNew="false" canDelete="false"
-    name="purchase-request-line-order-product-ru-export-grid">
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Requested Prodcuts"
+    canNew="false" canDelete="false" name="purchase-request-line-order-product-ru-export-grid">
     <field name="requestStatus"/>
     <field name="orderStatus"/>
     <field name="requestDate"/>
@@ -80,7 +80,8 @@
     <field name="purpose"/>
   </grid>
 
-  <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Requested Prodcut" canNew="false" canDelete="false" canEdit="false"
+  <form model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" title="Requested Prodcut"
+    canNew="false" canDelete="false" canEdit="false"
     name="purchase-request-line-order-product-ru-export-form">
     <panel readonly="true">
       <field name="requestStatus"/>
