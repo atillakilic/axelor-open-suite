@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="purchase-order-ru-line-purchase-order-ru-grid" title="PO lines"
+    model="com.axelor.apps.purchase.db.PurchaseOrderLineRu">
+    <field name="productCategory"/>
+    <field name="product"/>
+    <field name="unit"/>
+    <field name="quantity"/>
+    <field name="unitPrice"/>
+    <field name="requesterUser"/>
+    <field name="projectStockLocation"/>
+    <field name="specialty"/>
+    <field name="purpose"/>
+  </grid>
+
+
+  <form name="purchase-order-ru-line-purchase-order-ru-form" title="PO line"
+    model="com.axelor.apps.purchase.db.PurchaseOrderLineRu" width="large">
+    <panel name="mainPanel">
+      <field name="productCategory"/>
+      <field name="product"/>
+      <field name="unit"/>
+      <field name="quantity"/>
+      <field name="unitPrice"/>
+      <field name="requesterUser"/>
+      <field name="projectStockLocation"/>
+      <field name="specialty"/>
+      <field name="purpose"/>
+    </panel>
+  </form>
+
+</object-views>

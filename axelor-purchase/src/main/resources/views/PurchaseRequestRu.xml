@@ -49,7 +49,8 @@
       <field name="fileUpload" widget="binary-link"/>
     </panel>
     <panel>
-      <button name="importBtn" title="Import" onClick="save,purchase.request.ru.import.popup" hidden="true"/>
+      <button name="importBtn" title="Import" onClick="save,purchase.request.ru.import.popup"
+        hidden="true"/>
     </panel>
     <panel-related field="validatores" readonlyIf="statusSelect &gt; 3"
       form-view="purchase-request-validator-ru-form" showIf="statusSelect == 2"

@@ -17,9 +17,6 @@
  */
 package com.axelor.apps.cash.management.web;
 
-import java.math.BigDecimal;
-import java.util.Map;
-
 import com.axelor.apps.cash.management.db.AdvancePaymentCash;
 import com.axelor.apps.cash.management.db.AdvancePaymentCashLine;
 import com.axelor.apps.cash.management.db.repo.AdvancePaymentCashRepository;
@@ -29,6 +26,8 @@ import com.axelor.rpc.ActionRequest;
 import com.axelor.rpc.ActionResponse;
 import com.axelor.rpc.Context;
 import com.google.inject.Singleton;
+import java.math.BigDecimal;
+import java.util.Map;
 
 @Singleton
 public class AdvancePaymentCashLineController {
@@ -41,23 +40,23 @@ public class AdvancePaymentCashLineController {
     String text = ntsm.num2str();
     response.setValue("advanceText", text);
   }
-  
+
   public void setSeqNumber(ActionRequest request, ActionResponse response) {
-	  Context context= request.getContext();
-	    
-	    AdvancePaymentCash advancePaymentCash = null;
-	    if (context.get("_parent") != null) {
-	      Map<String, Object> _parent = (Map<String, Object>) context.get("_parent");
-	      advancePaymentCash =
-	          Beans.get(AdvancePaymentCashRepository.class)
-	              .find(Long.parseLong(_parent.get("id").toString()));
-	    }
-	    
-	    int listSize = 0;
-	    if(advancePaymentCash != null) {
-	    	listSize = advancePaymentCash.getAdvancePaymentCashLine().size();
-	    }
-	    
-	    response.setValue("seqNumber", listSize+1);
+    Context context = request.getContext();
+
+    AdvancePaymentCash advancePaymentCash = null;
+    if (context.get("_parent") != null) {
+      Map<String, Object> _parent = (Map<String, Object>) context.get("_parent");
+      advancePaymentCash =
+          Beans.get(AdvancePaymentCashRepository.class)
+              .find(Long.parseLong(_parent.get("id").toString()));
+    }
+
+    int listSize = 0;
+    if (advancePaymentCash != null) {
+      listSize = advancePaymentCash.getAdvancePaymentCashLine().size();
+    }
+
+    response.setValue("seqNumber", listSize + 1);
   }
 }

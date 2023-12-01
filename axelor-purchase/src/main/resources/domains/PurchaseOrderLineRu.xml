@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="purchase" package="com.axelor.apps.purchase.db"/>
+
+  <entity name="PurchaseOrderLineRu" lang="java">
+
+    <many-to-one name="productCategory" ref="com.axelor.apps.base.db.ProductCategory"
+      title="Product category"/>
+    <many-to-one name="product" ref="com.axelor.apps.base.db.Product" title="Product"/>
+    <many-to-one name="unit" ref="com.axelor.apps.base.db.Unit" title="Unit"/>
+    <decimal name="quantity" title="Quantity" precision="20" scale="10" min="0"/>
+    <decimal name="unitPrice" title="Unit Price"/>
+    <decimal name="totalPrice" title="Total Price"/>
+    <many-to-one name="requesterUser" title="Requester" ref="com.axelor.auth.db.User"/>
+    <many-to-one ref="com.axelor.apps.project.db.ProjectLocaltionRu"
+      name="projectStockLocation" title="Project Stock Location"/>
+    <string name="specialty" title="Specialty"/>
+    <string name="purpose" title="Purpose"/>
+
+    <many-to-one ref="com.axelor.apps.purchase.db.PurchaseOrderRu"
+      name="purchaseOrderRu" title="Purchase Order"/>
+  </entity>
+
+</domain-models>

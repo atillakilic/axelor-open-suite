@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="purchase-order-ru-gird" title="Sale quotations"
+    model="com.axelor.apps.purchase.db.PurchaseOrder" orderBy="-orderDate,-purchaseOrderSeq">
+    <field name="purchaseOrderSeq"/>
+    <field name="company"/>
+    <field name="supplierPartner"/>
+    <field name="orderDate"/>
+    <field name="inTaxTotal"/>
+    <field name="statusSelect"/>
+  </grid>
+
+
+  <form name="purchase-order-ru-form" model="com.axelor.apps.purchase.db.PurchaseOrderRu"
+    title="Sale quotations" onNew="" width="large">
+    <panel name="mainPanel" colSpan="6" colOffset="3">
+      <field name="statusSelect" showTitle="false" widget="NavSelect" colSpan="12"
+        readonly="true"/>
+    </panel>
+    <panel>
+      <field name="purchaseOrderSeq" colSpan="4"/>
+      <spacer colSpan="8"/>
+      <field name="company" colSpan="4"/>
+      <spacer colSpan="8"/>
+      <field name="supplierPartner" colSpan="4"/>
+      <field name="supplierReference" colSpan="4"/>
+      <field name="orderDate" colSpan="4"/>
+    </panel>
+
+    <panel>
+      <field name="generalReportCategory"/>
+      <field name="purchaseRequestSelect" widget="TagSelect"/>
+      <button name="createContentLineBtn" title="Create Line"
+        onClick="save,purchase-order-ru-method-create-purchase-order-line-from-request"/>
+    </panel>
+
+    <panel-tabs name="mainPanelTab">
+      <panel name="contentPanel" title="Content" colSpan="12">
+        <panel-related name="purchaseOrderLinePanel" field="purchaseOrderLine"
+          canNew="statusSelect &lt; 3" canRemove="statusSelect &lt; 3"
+          grid-view="purchase-order-ru-line-purchase-order-ru-grid" title="PO lines detail"
+          colSpan="12" onChange="" form-view="purchase-order-ru-line-purchase-order-ru-form"
+          canMove="true" height="30"/>
+        <field name="notes" colSpan="12" x-lite="true" widget="html"/>
+      </panel>
+    </panel-tabs>
+
+    <panel name="sideBarPanel" sidebar="true">
+      <field name="inTaxTotal" readonly="true"/>
+    </panel>
+  </form>
+
+  <action-method
+    name="purchase-order-ru-method-create-purchase-order-line-from-request">
+    <call class="com.axelor.apps.purchase.web.PurchaseOrderRuController"
+      method="createPurchaseOrderLineRu"/>
+  </action-method>
+</object-views>
