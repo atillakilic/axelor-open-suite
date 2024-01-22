@@ -12,7 +12,7 @@
     <field name="fillText"/>
   </grid>
 
-  <form name="advance-payment-cash-form" title="Advance Payment"
+  <form name="advance-payment-cash-form" width="large" title="Advance Payment"
     model="com.axelor.apps.cash.management.db.AdvancePaymentCash">
 
     <toolbar>

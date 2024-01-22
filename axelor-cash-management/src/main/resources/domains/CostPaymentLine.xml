@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="cash-management" package="com.axelor.apps.cash.management.db"/>
+
+  <entity name="CostPaymentCashLine" lang="java">
+
+    <string name="seqNumber" title="No"/>
+
+    <many-to-one name="employeeRu" ref="com.axelor.apps.hr.db.EmployeeRu"
+      title="Employee"/>
+
+    <decimal name="costSum" title="Cost Sum"/>
+
+    <string name="costText" title="Cost Text"/>
+
+    <many-to-one name="costPaymentCash" title="Cost Payment"
+      ref="com.axelor.apps.cash.management.db.CostPaymentCash"/>
+  </entity>
+
+</domain-models>

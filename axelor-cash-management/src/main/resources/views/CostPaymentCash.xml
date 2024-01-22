@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="cost-payment-cash-grid" title="Cost Payment"
+    model="com.axelor.apps.cash.management.db.CostPaymentCash">
+    <field name="dateRecord"/>
+    <field name="project"/>
+    <field name="projectTeam"/>
+    <field name="fillSum"/>
+    <field name="fillText"/>
+  </grid>
+
+  <form name="cost-payment-cash-form" width="large" title="Cost Payment"
+    model="com.axelor.apps.cash.management.db.CostPaymentCash">
+
+    <toolbar>
+      <button name="reportsBtn" title="Reports" icon="fa-print"
+        onClick="save,action-cost-payment-cash-view-reports"/>
+    </toolbar>
+
+    <panel name="generalPanel" colSpan="12">
+      <field name="dateRecord" colSpan="4"/>
+      <field name="project" colSpan="4"/>
+      <field name="projectTeam" colSpan="4"/>
+      <field name="fillSum"/>
+      <field name="fillText"/>
+      <button name="setEmployeeBtn" title="Get List" colSpan="3"
+        onClick="save,action-cost-payment-cash-set-employee,save,reload"/>
+    </panel>
+
+    <panel colSpan="12">
+      <panel-related name="costPaymentCashLinePanel" field="costPaymentCashLine"
+        colSpan="12" form-view="cost-payment-line-cash-form"
+        onChange="action-cost-payment-cash-method-calculate-cost-total-sum"
+        grid-view="cost-payment-line-cash-grid"/>
+    </panel>
+
+  </form>
+
+  <action-method name="action-cost-payment-cash-set-employee">
+    <call class="com.axelor.apps.cash.management.web.CostPaymentCashController"
+      method="setEmployee"/>
+  </action-method>
+
+  <action-method name="action-cost-payment-cash-view-reports">
+    <call class="com.axelor.apps.cash.management.web.CostPaymentCashController"
+      method="printReport"/>
+  </action-method>
+
+  <action-method name="action-cost-payment-cash-method-calculate-cost-total-sum">
+    <call class="com.axelor.apps.cash.management.web.CostPaymentCashController"
+      method="calculate"/>
+  </action-method>
+
+</object-views>

@@ -3,8 +3,9 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
-  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" onNew="action-purchase-request-line-attrs-on-new"
-    title="Purchase Request Lines" name="purchase-request-line-ru-grid">
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu"
+    onNew="action-purchase-request-line-attrs-on-new" title="Purchase Request Lines"
+    name="purchase-request-line-ru-grid">
     <hilite background="success" if="quantityArrived == quantity &amp;&amp; quantity > 0"/>
     <hilite color="success" if="isPaymentDone"/>
     <field name="productCategory"/>
@@ -20,15 +21,16 @@
     <field name="paymentInfo" hidden="true"/>
     <field name="quantityArrived" x-scale="2" title="Qty Arrived" hidden="true"/>
     <field name="isPaymentDone" hidden="true"/>
-    
+
     <field name="purchaseRequestSeq" hidden="true"/>
     <field name="requestDate" hidden="true"/>
     <field name="projectRu" hidden="true"/>
     <field name="company" hidden="true"/>
   </grid>
 
-  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" editable="true" onNew="action-purchase-request-line-attrs-on-new"
-    title="Purchase Request Lines" name="purchase-request-line-ru-editabe-grid">
+  <grid model="com.axelor.apps.purchase.db.PurchaseRequestLineRu" editable="true"
+    onNew="action-purchase-request-line-attrs-on-new" title="Purchase Request Lines"
+    name="purchase-request-line-ru-editabe-grid">
     <hilite background="success" if="quantityArrived == quantity &amp;&amp; quantity > 0"/>
     <hilite color="success" if="isPaymentDone"/>
     <field name="productCategory"/>
@@ -44,7 +46,7 @@
     <field name="paymentInfo" hidden="true"/>
     <field name="quantityArrived" x-scale="2" title="Qty Arrived" hidden="true"/>
     <field name="isPaymentDone" hidden="true"/>
-    
+
     <field name="purchaseRequestSeq" hidden="true"/>
     <field name="requestDate" hidden="true"/>
     <field name="projectRu" hidden="true"/>

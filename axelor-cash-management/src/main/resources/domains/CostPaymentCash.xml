@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+  <module name="cash-management" package="com.axelor.apps.cash.management.db"/>
+
+  <entity name="CostPaymentCash" lang="java">
+
+    <date name="dateRecord" title="Date"/>
+
+    <many-to-one name="project" ref="com.axelor.apps.project.db.ProjectRu"
+      title="Project"/>
+
+    <many-to-one name="projectTeam" ref="com.axelor.apps.project.db.ProjectTeamRu"
+      title="Project Team"/>
+
+    <decimal name="fillSum" title="Fill Sum"/>
+
+    <string name="fillText" title="Fill Text"/>
+
+    <one-to-many name="costPaymentCashLine"
+      ref="com.axelor.apps.cash.management.db.CostPaymentCashLine" title="Cost Payments"
+      mappedBy="costPaymentCash"/>
+
+  </entity>
+
+</domain-models>
