@@ -7,9 +7,9 @@
     model="com.axelor.apps.cash.management.db.CostPaymentCash">
     <field name="dateRecord"/>
     <field name="project"/>
-    <field name="projectTeam"/>
+    <field name="costPaymentCashDescription" />
     <field name="fillSum"/>
-    <field name="fillText"/>
+
   </grid>
 
   <form name="cost-payment-cash-form" width="large" title="Cost Payment"
@@ -23,11 +23,8 @@
     <panel name="generalPanel" colSpan="12">
       <field name="dateRecord" colSpan="4"/>
       <field name="project" colSpan="4"/>
-      <field name="projectTeam" colSpan="4"/>
-      <field name="fillSum"/>
-      <field name="fillText"/>
-      <button name="setEmployeeBtn" title="Get List" colSpan="3"
-        onClick="save,action-cost-payment-cash-set-employee,save,reload"/>
+
+
     </panel>
 
     <panel colSpan="12">
@@ -35,6 +32,10 @@
         colSpan="12" form-view="cost-payment-line-cash-form"
         onChange="action-cost-payment-cash-method-calculate-cost-total-sum"
         grid-view="cost-payment-line-cash-grid"/>
+    </panel>
+    <panel  sidebar="true">
+      <field name="fillSum" readonly="true" icon="fa-building-o"  widget="info-button"/>
+
     </panel>
 
   </form>

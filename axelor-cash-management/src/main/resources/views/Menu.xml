@@ -75,26 +75,26 @@
 
   <action-view name="cash.management.advance.payment.cash" title="Advance Payment"
     model="com.axelor.apps.cash.management.db.AdvancePaymentCash">
-    <view type="grid" name="cost-payment-cash-grid"/>
+    <view type="grid" name="advance-payment-cash-grid"/>
     <view type="form" name="advance-payment-cash-form"/>
   </action-view>
   <!-- Cost Payment starts -->
-   <menuitem name="cash-management-cost-payment-cash"  order="10" parent="forecast-root"
-             title="Cost Payment" action="cash.management.cost.payment.cash"/>
+  <menuitem name="cash-management-cost-payment-cash" order="10" parent="forecast-root"
+    title="Cost Payment" action="cash.management.cost.payment.cash"/>
 
-   <action-view name="cash.management.cost.payment.cash" title="Cost Payment"
-                model="com.axelor.apps.cash.management.db.CostPaymentCash">
-     <view type="grid" name="cost-payment-cash-grid"/>
-     <view type="form" name="cost-payment-cash-form"/>
-   </action-view>
-  <!-- Cost Payment Finish  -->
-   <menuitem name="menu-cash-management-dashboard-1" parent="forecast-root"
-     title="Cash Management Dashboard" action="cash.management.dashboard.1.view"/>
+  <action-view name="cash.management.cost.payment.cash" title="Cost Payment"
+    model="com.axelor.apps.cash.management.db.CostPaymentCash">
+    <view type="grid" name="cost-payment-cash-grid"/>
+    <view type="form" name="cost-payment-cash-form"/>
+  </action-view>
+  <!-- Cost Payment Finish -->
+  <menuitem name="menu-cash-management-dashboard-1" parent="forecast-root"
+    title="Cash Management Dashboard" action="cash.management.dashboard.1.view"/>
 
-   <action-view name="cash.management.dashboard.1.view" title="Cash Management Dashboard"
-     model="com.axelor.apps.base.db.Wizard">
-     <view type="form" name="forecast-dashboard-form"/>
-     <context name="_userId" expr="eval: 0"/>
-   </action-view>
+  <action-view name="cash.management.dashboard.1.view" title="Cash Management Dashboard"
+    model="com.axelor.apps.base.db.Wizard">
+    <view type="form" name="forecast-dashboard-form"/>
+    <context name="_userId" expr="eval: 0"/>
+  </action-view>
 
- </object-views>
+</object-views>

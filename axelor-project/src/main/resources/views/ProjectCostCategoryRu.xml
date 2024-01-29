@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+  <grid name="project-cost-category-ru-grid" title="Project CostCategory"
+    model="com.axelor.apps.project.db.ProjectCostCategoryRu" orderBy="priorityCategory" >
+    <field name="name"/>
+    <field name="code"/>
+    <field name="priorityCategory"/>
+    <field name="isActive"/>
+    <field name="notes"/>
+  </grid>
+
+  <form name="project-cost-category-ru-form" title="Project Cost Category"
+    model="com.axelor.apps.project.db.ProjectCostCategoryRu" onSave="">
+    <panel name="informationPanel">
+      <field name="costCategoryName"/>
+      <field name="priorityCategory"/>
+      <field name="code"/>
+      <field name="isActive"/>
+      <field name="notes"/>
+        </panel>
+
+    <panel-related name="projectCostCategoryList" title="Project Cost Category" colSpan="12"
+      field="projectCostCategoryList" form-view="project-cost-category-ru-form" grid-view="project-cost-category-ru-grid"/>
+  </form>
+
+</object-views>

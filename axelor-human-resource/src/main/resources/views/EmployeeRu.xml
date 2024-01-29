@@ -55,11 +55,13 @@
           required="true"/>
         <field name="empTechnicalStatus" colSpan="6" canNew="true" canSelect="true"
           required="true"/>
+        <!-- This area connected with emp contract, we need to add actions for update contract grid
         <field name="dateOfHire" colSpan="2"/>
         <field name="salaryType" colSpan="2"/>
         <field name="fixSalary" title="Fix Salary" readonlyIf="salaryType != 1" colSpan="2"/>
         <field name="hourlyRate" title="Hourly Rate" readonlyIf="salaryType != 2" colSpan="2"/>
         <field name="company" colSpan="2"/>
+        -->
       </panel>
     </panel>
 

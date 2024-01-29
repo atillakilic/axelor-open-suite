@@ -47,5 +47,7 @@
     <many-to-many name="cashAccountRu" ref="com.axelor.apps.base.db.CashAccountRu"
       title="Cash accounts"/>
 
+    <many-to-many name="costCategoryRu" ref="com.axelor.apps.project.db.ProjectCostCategoryRu"
+                  title="Cost Category"/>
   </entity>
 </domain-models>

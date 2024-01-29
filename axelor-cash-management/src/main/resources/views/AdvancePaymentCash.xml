@@ -8,8 +8,9 @@
     <field name="dateRecord"/>
     <field name="project"/>
     <field name="projectTeam"/>
+    <field name="advancePaymentCashDescription" />
     <field name="fillSum"/>
-    <field name="fillText"/>
+
   </grid>
 
   <form name="advance-payment-cash-form" width="large" title="Advance Payment"
@@ -21,13 +22,13 @@
     </toolbar>
 
     <panel name="generalPanel" colSpan="12">
-      <field name="dateRecord" colSpan="4"/>
-      <field name="project" colSpan="4"/>
-      <field name="projectTeam" colSpan="4"/>
-      <field name="fillSum"/>
-      <field name="fillText"/>
+      <field name="dateRecord" colSpan="3"/>
+      <field name="project" colSpan="3"/>
+      <field name="projectTeam" colSpan="3"/>
       <button name="setEmployeeBtn" title="Get List" colSpan="3"
-        onClick="save,action-advance-payment-cash-set-employee,save,reload"/>
+              onClick="save,action-advance-payment-cash-set-employee,save,reload"/>
+     
+
     </panel>
 
     <panel colSpan="12">
@@ -36,7 +37,14 @@
         onChange="action-advance-payment-cash-method-calculate-advance-total-sum"
         grid-view="advance-payment-line-cash-grid"/>
     </panel>
+    <panel  sidebar="true">
+      <field name="fillSum" readonly="true" icon="fa-building-o"  widget="info-button"/>
 
+    </panel>
+
+    <panel name="notesPanel" title="Notes" colSpan="12">
+      <field name="advancePaymentCashDescription" colSpan="12" height="8" showTitle="false" widget="Html"/>
+    </panel>
   </form>
 
   <action-method name="action-advance-payment-cash-set-employee">

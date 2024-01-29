@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="author">Roxxon</property>
     <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201706222054</property>
     <list-property name="propertyBindings">
         <structure>
@@ -53,7 +54,7 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">jdbc:postgresql://localhost:5432/alican653</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/erp22</property>
             <property name="odaUser">postgres</property>
             <encrypted-property name="odaPassword" encryptionID="base64">cm9vdA==</encrypted-property>
         </oda-data-source>
@@ -246,9 +247,12 @@ where AdvancePayment.id = ?;
     </data-sets>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
             <property name="orientation">landscape</property>
-            <property name="headerHeight">0.1in</property>
-            <property name="footerHeight">0.1in</property>
+            <property name="height">300mm</property>
+            <property name="width">297mm</property>
+            <property name="headerHeight">0.1mm</property>
+            <property name="footerHeight">0.1mm</property>
         </simple-master-page>
     </page-setup>
     <body>
@@ -351,6 +355,30 @@ where AdvancePayment.id = ?;
                                 <property name="dataType">date</property>
                                 <property name="allowExport">true</property>
                             </structure>
+                            <structure>
+                                <property name="name">aciklama</property>
+                                <expression name="expression" type="javascript">row["Emp"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_1</property>
+                                <expression name="expression" type="javascript">row["daterecord"]&amp;row["Emp"]&amp;"AVANS ODEMESI"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_2</property>
+                                <expression name="expression" type="javascript">row["daterecord"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_3</property>
+                                <expression name="expression" type="javascript">row["Emp"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
                         </list-property>
                         <list-property name="filter">
                             <structure>
@@ -382,6 +410,7 @@ where AdvancePayment.id = ?;
                                 <property name="borderRightWidth">thin</property>
                                 <property name="borderTopStyle">solid</property>
                                 <property name="borderTopWidth">thin</property>
+                                <property name="height">4.814814814814815in</property>
                                 <cell id="60">
                                     <property name="colSpan">3</property>
                                     <property name="rowSpan">1</property>
@@ -654,6 +683,15 @@ where AdvancePayment.id = ?;
                                                 <property name="rowSpan">1</property>
                                                 <property name="borderBottomStyle">dotted</property>
                                                 <property name="borderBottomWidth">thin</property>
+                                                <label id="379">
+                                                    <text-property name="text">AVANS ODEMESI</text-property>
+                                                </label>
+                                                <data id="380">
+                                                    <property name="resultSetColumn">Column Binding_2</property>
+                                                </data>
+                                                <data id="381">
+                                                    <property name="resultSetColumn">Column Binding_3</property>
+                                                </data>
                                             </cell>
                                         </row>
                                         <row id="38">
@@ -1062,6 +1100,24 @@ where AdvancePayment.id = ?;
                                 <property name="dataType">date</property>
                                 <property name="allowExport">true</property>
                             </structure>
+                            <structure>
+                                <property name="name">Column Binding_1</property>
+                                <expression name="expression" type="javascript">row["Emp"]&amp;" "&amp;row["date"]&amp;" "&amp; "AVANS ODEMESI"</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_2</property>
+                                <expression name="expression" type="javascript">row["daterecord"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_3</property>
+                                <expression name="expression" type="javascript">row["Emp"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
                         </list-property>
                         <list-property name="filter">
                             <structure>
@@ -1093,6 +1149,7 @@ where AdvancePayment.id = ?;
                                 <property name="borderRightWidth">thin</property>
                                 <property name="borderTopStyle">solid</property>
                                 <property name="borderTopWidth">thin</property>
+                                <property name="height">4.802469135802469in</property>
                                 <cell id="316">
                                     <property name="colSpan">3</property>
                                     <property name="rowSpan">1</property>
@@ -1365,6 +1422,15 @@ where AdvancePayment.id = ?;
                                                 <property name="rowSpan">1</property>
                                                 <property name="borderBottomStyle">dotted</property>
                                                 <property name="borderBottomWidth">thin</property>
+                                                <label id="382">
+                                                    <text-property name="text">AVANS ODEMESI</text-property>
+                                                </label>
+                                                <data id="383">
+                                                    <property name="resultSetColumn">Column Binding_2</property>
+                                                </data>
+                                                <data id="384">
+                                                    <property name="resultSetColumn">Column Binding_3</property>
+                                                </data>
                                             </cell>
                                         </row>
                                         <row id="341">
@@ -1590,10 +1656,12 @@ where AdvancePayment.id = ?;
                                                 <property name="colSpan">3</property>
                                                 <property name="rowSpan">1</property>
                                                 <grid id="353">
+                                                    <property name="height">0.9753086419753086in</property>
                                                     <column id="354"/>
                                                     <column id="355"/>
                                                     <column id="356"/>
                                                     <row id="357">
+                                                        <property name="height">0.9753086419753086in</property>
                                                         <cell id="358">
                                                             <label id="359">
                                                                 <property name="backgroundAttachment">scroll</property>

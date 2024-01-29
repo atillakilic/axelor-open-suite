@@ -80,7 +80,11 @@
           canNew="false" canSelect="true" canEdit="false" field="cashAccountRu"
           form-view="cash-account-ru-grid" grid-view="cash-account-ru-grid"/>
       </panel>
-
+      <panel name="projectCostCategoryRoot" title="Cost Category">
+        <panel-related name="costCategoryRu" title="Cost Category" colSpan="12"
+                       canNew="true" canSelect="true" canEdit="true" field="costCategoryRu"
+                       form-view="project-cost-category-ru-form" grid-view="project-cost-category-ru-grid"/>
+      </panel>
 
     </panel-tabs>
 

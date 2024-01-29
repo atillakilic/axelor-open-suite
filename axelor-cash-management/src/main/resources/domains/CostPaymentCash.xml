@@ -22,6 +22,7 @@
     <one-to-many name="costPaymentCashLine"
       ref="com.axelor.apps.cash.management.db.CostPaymentCashLine" title="Cost Payments"
       mappedBy="costPaymentCash"/>
+    <string name="costPaymentCashDescription" title="Description"/>
 
   </entity>
 

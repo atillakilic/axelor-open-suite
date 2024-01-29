@@ -11,6 +11,10 @@
 
     <many-to-one name="employeeRu" ref="com.axelor.apps.hr.db.EmployeeRu"
       title="Employee"/>
+    <string name="description" title="Description"/>
+
+    <many-to-one name="costCategoryName" title="Project Cost Category"
+                 ref="com.axelor.apps.project.db.ProjectCostCategoryRu"/>
 
     <decimal name="costSum" title="Cost Sum"/>
 

@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <object-views xmlns="http://axelor.com/xml/ns/object-views"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
 
   <grid name="advance-payment-line-cash-grid" title="Advance Payment Line" orderBy="seqNumber"
-    onNew="action-advance-payment-cash-line-method-set-seq-number,save" editable="true"
-    model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
-    <field name="seqNumber" readonly="true"/>
+        editable="true" model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
+  <!--  <field name="seqNumber" readonly="true" /> -->
     <field name="employeeRu"/>
     <field name="advanceSum"
-      onChange="action-advance-payment-cash-line-method-set-number-to-text"/>
+           onChange="action-advance-payment-cash-line-method-set-number-to-text"/>
     <field name="advanceText"/>
   </grid>
 
-  <form name="advance-payment-line-cash-form" title="Advance Payment"
-    onNew="action-advance-payment-cash-line-method-set-seq-number,save"
-    model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
+  <form name="advance-payment-line-cash-form" title="Advance Payment" onNew="action-advance-payment-cash-line-method-set-seq-number,save"
+        model="com.axelor.apps.cash.management.db.AdvancePaymentCashLine">
     <panel name="generalPanel" colSpan="12">
-      <field name="seqNumber" readonly="true"/>
+      <field name="seqNumber"   />
+
       <field name="employeeRu"/>
       <field name="advanceSum"
-        onChange="action-advance-payment-cash-line-method-set-number-to-text"/>
+             onChange="action-advance-payment-cash-line-method-set-number-to-text"/>
       <field name="advanceText"/>
     </panel>
   </form>
 
   <action-method name="action-advance-payment-cash-line-method-set-number-to-text">
     <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashLineController"
-      method="convertNumberToText"/>
+          method="convertNumberToText"/>
   </action-method>
 
   <action-method name="action-advance-payment-cash-line-method-set-seq-number">
-    <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashLineController"
-      method="setSeqNumber"/>
+    <call class="com.axelor.apps.cash.management.web.AdvancePaymentCashLineController" method="setSeqNumber"/>
   </action-method>
 
 </object-views>
